@@ -1,4 +1,4 @@
-# NepSense - NEPSE Open Data Lake
+# NepseDataHome - NEPSE Open Data Lake
 
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-2000--2026-blue)
@@ -39,16 +39,16 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 ### Latest Release: v0.2.0
 ```
 CSV Format (human-readable):
-  nepsense_prices.csv (~24MB)
-  nepsense_adjusted_prices.csv (~150MB)
+  NepseDataHome_prices.csv (~24MB)
+  NepseDataHome_adjusted_prices.csv (~150MB)
 
 Parquet Format (compressed):
-  nepsense_prices.parquet (~5MB)
-  nepsense_adjusted_prices.parquet (~25MB)
+  NepseDataHome_prices.parquet (~5MB)
+  NepseDataHome_adjusted_prices.parquet (~25MB)
 
 DuckDB Format (queryable):
-  nepsense_prices.duckdb (~8MB)
-  nepsense_adjusted.duckdb (~30MB)
+  NepseDataHome_prices.duckdb (~8MB)
+  NepseDataHome_adjusted.duckdb (~30MB)
 
 Public Data Book:
   data/history/nepse_all_prices.csv (~24MB)
@@ -70,8 +70,8 @@ from 2007-01-01 to 2026-05-02. Historical rows from the public
 
 ```bash
 # Clone repository
-git clone https://github.com/sakshyambanjade/NepSense.git
-cd NepSense
+git clone https://github.com/sakshyambanjade/NepseDataHome.git
+cd NepseDataHome
 
 # Setup Python 3.11+
 python3 --version    # Must be 3.11 or higher
@@ -82,7 +82,7 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -e .
 
 # Verify
-nepsense --help
+NepseDataHome --help
 ```
 
 ## Quick Start
@@ -90,22 +90,22 @@ nepsense --help
 ### Collect & Process Today's Data
 ```bash
 # Collect latest prices
-nepsense collect
+NepseDataHome collect
 
 # Normalize, adjust, build, validate
-nepsense daily-run
+NepseDataHome daily-run
 ```
 
 ### Build The Public Data Book
 ```bash
 # Rebuild master files plus easy-access history files
-nepsense databook
+NepseDataHome databook
 ```
 
 Outputs:
-- `data/master/nepsense_prices.csv`
-- `data/master/nepsense_prices.parquet`
-- `data/master/nepsense_prices.duckdb`
+- `data/master/NepseDataHome_prices.csv`
+- `data/master/NepseDataHome_prices.parquet`
+- `data/master/NepseDataHome_prices.duckdb`
 - `data/history/nepse_all_prices.csv`
 - `data/history/by_symbol/NABIL.csv`
 - `data/history/by_date/YYYY-MM-DD.csv`
@@ -114,10 +114,10 @@ Outputs:
 ### Import Historical Archives
 ```bash
 # Import dated CSV files such as 2024-01-02.csv or market_20240102.csv
-nepsense import-archive /path/to/historical-csvs --source verified_archive --source-confidence 0.70
+NepseDataHome import-archive /path/to/historical-csvs --source verified_archive --source-confidence 0.70
 
 # Import company-wise histories such as NABIL.csv, EBL.csv, SCB.csv
-nepsense import-companywise /path/to/company-wise-csvs --source verified_companywise --source-confidence 0.70
+NepseDataHome import-companywise /path/to/company-wise-csvs --source verified_companywise --source-confidence 0.70
 ```
 
 This copies files into `data/raw/source=<source>/YYYY/MM/`, normalizes them into
@@ -126,16 +126,16 @@ This copies files into `data/raw/source=<source>/YYYY/MM/`, normalizes them into
 ### Historical Backfill
 ```bash
 # Backfill from 2010 to today (takes ~5 minutes)
-nepsense backfill --start 2010-01-01 --end today --build
+NepseDataHome backfill --start 2010-01-01 --end today --build
 
 # Or full 20+ year history (once sources are configured)
-nepsense backfill --start 2000-01-01 --end today
+NepseDataHome backfill --start 2000-01-01 --end today
 ```
 
 ### Data Coverage Report
 ```bash
 # Generate coverage_report.md with statistics
-nepsense coverage
+NepseDataHome coverage
 ```
 
 ### Load Data for Analysis
@@ -144,7 +144,7 @@ import pandas as pd
 import duckdb
 
 # Load from DuckDB (fastest)
-con = duckdb.connect("data/master/nepsense.duckdb")
+con = duckdb.connect("data/master/NepseDataHome.duckdb")
 df = con.execute("""
     SELECT * FROM daily_prices 
     WHERE symbol = 'NABIL'
@@ -152,16 +152,16 @@ df = con.execute("""
 """).fetchdf()
 
 # Or load from Parquet
-df = pd.read_parquet("data/master/nepsense_prices.parquet")
+df = pd.read_parquet("data/master/NepseDataHome_prices.parquet")
 
 # Or CSV
-df = pd.read_csv("data/master/nepsense_prices.csv")
+df = pd.read_csv("data/master/NepseDataHome_prices.csv")
 ```
 
 ## Architecture
 
 ```
-nepsense/
+NepseDataHome/
 ├── collectors/              # Data extraction
 │   └── ShareSansar daily scraper
 ├── processors/              # Data pipeline
@@ -198,17 +198,17 @@ Quality Metrics
 
 ```bash
 # Daily operations
-nepsense collect                  # Collect today's data
-nepsense normalize                # Normalize all raw files
-nepsense adjust                   # Apply corporate adjustments
-nepsense build [--adjusted]       # Build master datasets
-nepsense validate                 # Check data quality
-nepsense daily-run                # Full pipeline
+NepseDataHome collect                  # Collect today's data
+NepseDataHome normalize                # Normalize all raw files
+NepseDataHome adjust                   # Apply corporate adjustments
+NepseDataHome build [--adjusted]       # Build master datasets
+NepseDataHome validate                 # Check data quality
+NepseDataHome daily-run                # Full pipeline
 
 # Advanced
-nepsense backfill --start 2000-01-01 --end today --build
-nepsense coverage                 # Generate coverage report
-nepsense version                  # Show version
+NepseDataHome backfill --start 2000-01-01 --end today --build
+NepseDataHome coverage                 # Generate coverage report
+NepseDataHome version                  # Show version
 ```
 
 ## Metadata
@@ -246,7 +246,7 @@ HBL,2023-06-15,RIGHT,0,1:2,300,TRUE
 
 ### Validation Report
 ```bash
-nepsense validate
+NepseDataHome validate
 # Output: validation_report.json
 ```
 
@@ -259,7 +259,7 @@ Shows:
 
 ### Coverage Report
 ```bash
-nepsense coverage
+NepseDataHome coverage
 # Output: coverage_report.md
 ```
 
@@ -286,7 +286,7 @@ Every row includes a `source_confidence` field (0.20-1.00):
 ## Documentation
 
 - 📄 **[ADJUSTMENT_METHOD.md](docs/ADJUSTMENT_METHOD.md)** - Corporate action adjustments (bonus, right, split, merger)
-- 📄 **[BACKTESTING_GUIDE.md](docs/BACKTESTING_GUIDE.md)** - How to use NepSense for backtesting with examples
+- 📄 **[BACKTESTING_GUIDE.md](docs/BACKTESTING_GUIDE.md)** - How to use NepseDataHome for backtesting with examples
 - 📄 **[SOURCES.md](docs/SOURCES.md)** - Data source documentation and coverage
 - 📄 **[DATA_DICTIONARY.md](docs/DATA_DICTIONARY.md)** - Column reference and data types
 
@@ -296,7 +296,7 @@ Every row includes a `source_confidence` field (0.20-1.00):
 ```python
 import pandas as pd
 
-df = pd.read_csv("data/master/nepsense_prices.csv")
+df = pd.read_csv("data/master/NepseDataHome_prices.csv")
 nabil = df[df["symbol"] == "NABIL"].sort_values("date")
 
 print(f"NABIL trading days: {len(nabil)}")
@@ -309,7 +309,7 @@ print(f"Latest close: {nabil['close'].iloc[-1]}")
 import pandas as pd
 
 # Load and filter
-df = pd.read_parquet("data/master/nepsense_prices.parquet")
+df = pd.read_parquet("data/master/NepseDataHome_prices.parquet")
 nabil = df[df["symbol"] == "NABIL"].sort_values("date").reset_index(drop=True)
 
 # Moving average signals
@@ -332,7 +332,7 @@ print(f"Total return: {total_return*100:.2f}%")
 ```python
 import duckdb
 
-con = duckdb.connect("data/master/nepsense.duckdb")
+con = duckdb.connect("data/master/NepseDataHome.duckdb")
 
 # Latest prices for all bank symbols
 banks = con.execute("""
@@ -377,7 +377,7 @@ See full examples in [docs/BACKTESTING_GUIDE.md](docs/BACKTESTING_GUIDE.md)
 
 ## Contributing
 
-Help improve NepSense:
+Help improve NepseDataHome:
 
 **High Priority:**
 1. Corporate action records (bonus, right, split history)
@@ -428,7 +428,7 @@ python -m pip install -e ".[dev]"
 python -m pytest
 
 # With coverage
-python -m pytest --cov=src/nepsense
+python -m pytest --cov=src/NepseDataHome
 ```
 
 If your shell says `pytest: command not found`, the virtual environment is not active. Either activate it with `source .venv/bin/activate` or run tests directly through the project environment:
@@ -446,7 +446,7 @@ If your shell says `pytest: command not found`, the virtual environment is not a
 
 ## Configuration
 
-Edit `src/nepsense/config.py`:
+Edit `src/NepseDataHome/config.py`:
 - `PROJECT_ROOT`: Base directory
 - `DATA_DIR`: Where to store data
 - `NEPAL_TZ`: Timezone (default: Asia/Kathmandu)
@@ -480,10 +480,10 @@ Edit `src/nepsense/config.py`:
 ## Citation
 
 ```bibtex
-@software{nepsense2024,
-  title={NepSense: Open NEPSE Data Lake},
+@software{NepseDataHome2024,
+  title={NepseDataHome: Open NEPSE Data Lake},
   author={Banjade, Sakshyam},
-  url={https://github.com/sakshyambanjade/NepSense},
+  url={https://github.com/sakshyambanjade/NepseDataHome},
   year={2024}
 }
 ```
@@ -516,7 +516,7 @@ For official data, use [NEPSE Official](https://www.nepse.com.np/)
 ## Changelog
 
 **v0.2.0** (2026-05-02)
-- Package rename to `nepsense`
+- Package rename to `NepseDataHome`
 - Modular architecture
 - Enhanced corporate actions (bonus, right, dividend, split, merger)
 - Symbol universe tracking
@@ -529,9 +529,9 @@ For official data, use [NEPSE Official](https://www.nepse.com.np/)
 
 ## Links
 
-- 📚 [GitHub](https://github.com/sakshyambanjade/NepSense)
-- 🐛 [Issues](https://github.com/sakshyambanjade/NepSense/issues)
-- 💬 [Discussions](https://github.com/sakshyambanjade/NepSense/discussions)
+- 📚 [GitHub](https://github.com/sakshyambanjade/NepseDataHome)
+- 🐛 [Issues](https://github.com/sakshyambanjade/NepseDataHome/issues)
+- 💬 [Discussions](https://github.com/sakshyambanjade/NepseDataHome/discussions)
 
 ---
 
