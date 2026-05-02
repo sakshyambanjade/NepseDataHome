@@ -30,9 +30,11 @@ console = Console()
 
 def build_trading_calendar(start_date: str, end_date: str) -> List[str]:
     """
-    Build list of trading dates (Nepal timezone, business days).
+    Build list of trading dates (Nepal timezone, trading days only).
     
-    Excludes weekends and standard Nepal holidays.
+    NEPSE trading schedule: Friday-Sunday
+    (As of 2024: Market operates Friday, Saturday, Sunday)
+    Excludes Monday-Thursday and standard Nepal holidays.
     """
     trading_dates = []
     
@@ -57,8 +59,9 @@ def build_trading_calendar(start_date: str, end_date: str) -> List[str]:
     
     current = start
     while current <= end:
-        # Skip weekends (Saturday=5, Sunday=6)
-        if current.weekday() < 5:
+        # Include only Friday (4), Saturday (5), Sunday (6)
+        # Exclude Monday (0) - Thursday (3)
+        if current.weekday() >= 4:
             # Skip holidays (rough approximation, not Nepal calendar)
             if (current.month, current.day) not in nepal_holidays:
                 trading_dates.append(current.isoformat())

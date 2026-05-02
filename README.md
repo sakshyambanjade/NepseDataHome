@@ -23,6 +23,7 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 
 ✅ **Daily Collection** - Automatic data scraping from ShareSansar  
 ✅ **Historical Backfill** - Load 20+ years of NEPSE history  
+✅ **Friday-Sunday Trading** - Correctly handles NEPSE's Fri-Sat-Sun schedule  
 ✅ **Schema Normalization** - Standardize 30+ column name variations  
 ✅ **Corporate Actions** - Bonus, right, dividend, split, merger adjustments  
 ✅ **Symbol Universe** - Track 250+ companies with IPOs, delistings, renames, mergers  
