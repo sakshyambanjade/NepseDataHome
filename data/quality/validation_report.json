@@ -1,0 +1,13 @@
+{
+  "files_checked": 1,
+  "total_errors": 0,
+  "total_warnings": 0,
+  "reports": [
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/clean/2026/05/2026-05-02.csv",
+      "rows": 3,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

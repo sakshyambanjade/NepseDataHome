@@ -1,0 +1,24 @@
+[project]
+name = "nepse-open-data-engine"
+version = "0.1.0"
+description = "Open-source NEPSE historical data collector, cleaner, validator, and exporter."
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "html5lib>=1.1",
+    "pyarrow>=14.0.0",
+    "duckdb>=0.9.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "pytest>=7.0.0"
+]
+
+[project.scripts]
+nepse-data = "nepse_data_engine.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]

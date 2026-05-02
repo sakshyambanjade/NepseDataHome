@@ -1,0 +1,4 @@
+date,symbol,company_name,sector,open,high,low,close,volume,turnover,transactions,source
+2026-05-02,NABIL,Nabil Bank Limited,Finance,1450.00,1465.00,1445.00,1460.00,50000,73000000,250,https://www.sharesansar.com/today-share-price
+2026-05-02,HBL,Himalayan Bank Limited,Finance,425.00,430.00,420.00,428.00,75000,32100000,400,https://www.sharesansar.com/today-share-price
+2026-05-02,TRH,Taragaon Regency Hotel Limited,Hotel,735.00,738.00,735.00,736.00,1200,885000,15,https://www.sharesansar.com/today-share-price
