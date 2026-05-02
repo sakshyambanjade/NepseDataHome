@@ -1,5 +1,3 @@
-"""Tests for corporate action adjustments."""
-
 import pandas as pd
 import pytest
 from datetime import datetime
