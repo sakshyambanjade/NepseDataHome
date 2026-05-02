@@ -1,0 +1,25 @@
+Backfilling 2000-01-01 to today...
+Starting backfill: 2000-01-01 to today
+✗ Backfill failed: time data 'today' does not match format '%Y-%m-%d'
+2026-05-02 18:30:03,648 - nepsense.cli - ERROR - Backfill failed
+Traceback (most recent call last):
+  File "/Users/skb/Molvis/NepSense/NepSense/src/nepsense/cli.py", line 215, in backfill_cmd
+    stats = backfill(
+        start_date=start,
+    ...<2 lines>...
+        build_after=build,
+    )
+  File "/Users/skb/Molvis/NepSense/NepSense/src/nepsense/pipelines/backfill_pipeline.py", line 246, in backfill
+    stats = backfill_date_range(start_date, end_date, sources, skip_existing)
+  File "/Users/skb/Molvis/NepSense/NepSense/src/nepsense/pipelines/backfill_pipeline.py", line 92, in backfill_date_range
+    trading_dates = build_trading_calendar(start_date, end_date)
+  File "/Users/skb/Molvis/NepSense/NepSense/src/nepsense/pipelines/backfill_pipeline.py", line 40, in build_trading_calendar
+    end = datetime.strptime(end_date, "%Y-%m-%d").date()
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_strptime.py", line 815, in _strptime_datetime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_strptime.py", line 555, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+                     (data_string, format))
+ValueError: time data 'today' does not match format '%Y-%m-%d'

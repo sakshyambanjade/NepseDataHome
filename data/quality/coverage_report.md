@@ -1,18 +1,19 @@
 # NepSense Data Coverage Report
 
-**Generated:** 2026-05-02T18:27:14.019606+05:45
+**Generated:** 2026-05-02T18:34:20.050810+05:45
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Generated At | 2026-05-02T18:27:14.019606+05:45 |
-| Total Rows | 3 |
-| Total Files | 1 |
-| Total Symbols | 3 |
-| Active Symbols | 3 |
-| Date Range | 2026-05-02 to 2026-05-02 |
-| Trading Days | 1 |
+| Generated At | 2026-05-02T18:34:20.050810+05:45 |
+| Total Rows | 175 |
+| Total Files | 44 |
+| Total Symbols | 4 |
+| Active Symbols | 175 |
+| Date Range | 2024-01-02 to 2026-05-02 |
+| Trading Days | 44 |
+| Average Source Confidence | nan |
 
 ## Data Quality
 
@@ -20,15 +21,18 @@
 
 ### Missing Values by Column
 
+- transactions: 172
+- source: 172
+- source_confidence: 175
 
 ## Source Distribution
 
-- No source information available
+- https://www.sharesansar.com/today-share-price: 3 (1.7%)
 
 ## Symbol Universe
 
-**Total Symbols:** 3
+**Total Symbols:** 4
 
 **Listed Symbols:**
 
-HBL, NABIL, TRH, 
+HBL, ICICIHFC, NABIL, TRH, 

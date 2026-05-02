@@ -23,6 +23,7 @@ from nepsense.collectors import collect_daily
 from nepsense.processors import normalize_file
 from nepsense.processors.validate_data import validate_file
 from nepsense.storage import build_master
+from nepsense.utils import resolve_date
 
 console = Console()
 
@@ -34,6 +35,10 @@ def build_trading_calendar(start_date: str, end_date: str) -> List[str]:
     Excludes weekends and standard Nepal holidays.
     """
     trading_dates = []
+    
+    # Resolve date strings (handle "today" string)
+    start_date = resolve_date(start_date)
+    end_date = resolve_date(end_date)
     
     # Parse dates
     start = datetime.strptime(start_date, "%Y-%m-%d").date()
