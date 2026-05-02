@@ -167,6 +167,52 @@ class TestFileNormalization:
             output_root / "source=archive" / "2024" / "01" / "2024-01-02.csv"
         ).exists()
 
+    def test_normalize_file_coalesces_duplicate_alias_columns(self, tmp_path):
+        """Test duplicate aliases do not trigger ambiguous Series truth checks."""
+        df = pd.DataFrame(
+            {
+                "date": ["2024-01-02", "2024-01-02"],
+                "Symbol": ["NABIL", "HBL"],
+                "Close": [None, 550],
+                "LTP": [100, None],
+            }
+        )
+        input_file = tmp_path / "2024-01-02.csv"
+        output_file = tmp_path / "normalized.csv"
+        df.to_csv(input_file, index=False)
+
+        normalize_file(input_file, output_file)
+
+        output = pd.read_csv(output_file)
+        assert output.loc[output["symbol"] == "NABIL", "close"].item() == 100
+        assert output.loc[output["symbol"] == "HBL", "close"].item() == 550
+
+    def test_normalize_all_skips_non_daily_source_csvs(self, tmp_path):
+        """Test symbol-level source files do not abort daily normalization."""
+        input_root = tmp_path / "raw"
+        output_root = tmp_path / "normalized"
+        by_symbol_dir = input_root / "source=archive" / "by_symbol"
+        daily_dir = input_root / "2024" / "01"
+        by_symbol_dir.mkdir(parents=True)
+        daily_dir.mkdir(parents=True)
+
+        pd.DataFrame({"symbol": ["NABIL"], "close": [100]}).to_csv(
+            by_symbol_dir / "NABIL.csv",
+            index=False,
+        )
+        pd.DataFrame(
+            {
+                "date": ["2024-01-02"],
+                "Symbol": ["NABIL"],
+                "LTP": [100],
+            }
+        ).to_csv(daily_dir / "2024-01-02.csv", index=False)
+
+        count = normalize_all(input_root, output_root)
+
+        assert count == 1
+        assert (output_root / "2024" / "01" / "2024-01-02.csv").exists()
+
 
 class TestDataValidation:
     """Test data validation during normalization."""

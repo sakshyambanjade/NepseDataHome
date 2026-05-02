@@ -92,6 +92,33 @@ def normalize_column_name(name: object) -> str:
     return COLUMN_ALIASES.get(text, text)
 
 
+def _coalesce_duplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Merge columns that normalize to the same standard name."""
+    if not df.columns.has_duplicates:
+        return df
+
+    merged = pd.DataFrame(index=df.index)
+    seen: set[str] = set()
+
+    for col in df.columns:
+        if col in seen:
+            continue
+
+        matches = df.loc[:, df.columns == col]
+        if isinstance(matches, pd.Series):
+            merged[col] = matches
+        else:
+            merged[col] = matches.bfill(axis=1).iloc[:, 0]
+            logger.warning(
+                "Coalesced %s duplicate columns named '%s' after alias normalization",
+                matches.shape[1],
+                col,
+            )
+        seen.add(col)
+
+    return merged
+
+
 def normalize_file(
     input_file: Path,
     output_file: Path,
@@ -119,6 +146,7 @@ def normalize_file(
     # Normalize column names
     original_columns = list(df.columns)
     df.columns = [normalize_column_name(c) for c in df.columns]
+    df = _coalesce_duplicate_columns(df)
     normalized_columns = list(df.columns)
     
     # Log column mapping
@@ -261,16 +289,20 @@ def normalize_all(
     
     normalized = 0
     for input_file in files:
-        date_str = input_file.stem
-        relative_parts = input_file.relative_to(input_root).parts
-        if relative_parts and relative_parts[0].startswith("source="):
-            year, month, _ = date_str.split("-")
-            output_file = output_root / relative_parts[0] / year / month / input_file.name
-            output_file.parent.mkdir(parents=True, exist_ok=True)
-        else:
-            output_file = dated_output_path(output_root, date_str)
-        
         try:
+            date_str = input_file.stem
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_str):
+                logger.info("Skipping raw CSV without YYYY-MM-DD filename: %s", input_file)
+                continue
+
+            relative_parts = input_file.relative_to(input_root).parts
+            if relative_parts and relative_parts[0].startswith("source="):
+                year, month, _ = date_str.split("-")
+                output_file = output_root / relative_parts[0] / year / month / input_file.name
+                output_file.parent.mkdir(parents=True, exist_ok=True)
+            else:
+                output_file = dated_output_path(output_root, date_str)
+
             normalize_file(input_file, output_file)
             normalized += 1
         except Exception as e:

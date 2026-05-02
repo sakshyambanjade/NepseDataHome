@@ -51,11 +51,9 @@ Repository = "https://github.com/sakshyambanjade/NepSense.git"
 nepsense = "nepsense.cli:app"
 nepse-data = "nepsense.cli:app"
 
-[tool.setuptools]
-packages = ["nepsense"]
-
-[tool.setuptools.package-dir]
-nepsense = "src/nepsense"
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["nepsense*", "nepse_data_engine*"]
 
 [tool.black]
 line-length = 100
