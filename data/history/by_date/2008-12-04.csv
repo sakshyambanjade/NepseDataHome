@@ -1,0 +1,2 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2008-12-04,EDBL,1093.0,1196.0,1114.0,1177.0,760.0,0.0,,aabishkar2_nepse_data,0.7

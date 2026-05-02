@@ -1,8 +1,8 @@
 # Historical Data Completeness
 
 NepSense aims to become a backtesting-ready NEPSE data lake from 2000 to today.
-The repository should not claim that coverage until the generated coverage report
-proves it.
+The first broad historical import now covers 2007 onward from a public
+MIT-licensed company-wise archive, plus the project daily sample data.
 
 ## Current Local Coverage
 
@@ -10,13 +10,16 @@ As of the latest local coverage run:
 
 | Metric | Value |
 |--------|-------|
-| Rows | 175 |
-| Symbols | 4 |
-| Date range | 2024-01-02 to 2026-05-02 |
-| Trading days | 44 |
+| Rows | 265,426 |
+| Symbols | 125 |
+| Date range | 2007-01-01 to 2026-05-02 |
+| Trading days | 4,369 |
+| Primary historical source | Aabishkar2/nepse-data (`MIT`) |
+| Historical source confidence | 0.70 |
 
-The current checked-in data is a proof-of-concept slice, not a complete
-2000-to-today dataset.
+This is a major historical data baseline, but it is not yet a fully verified
+official/licensed dataset. Adjusted prices and corporate-action completeness
+still require additional verification.
 
 ## Required For 2000-To-Today Coverage
 
@@ -32,6 +35,8 @@ The current checked-in data is a proof-of-concept slice, not a complete
      not the current-day page replayed across old dates.
    - `nepsense import-archive /path/to/csvs --source <name>` is the preferred
      path for verified bulk CSV archives today.
+   - `nepsense import-companywise /path/to/company-wise-csvs --source <name>`
+     imports `SYMBOL.csv` archives into daily files.
 
 3. **Company universe reconstruction**
    - Track IPOs, delistings, mergers, symbol changes, sector changes, and

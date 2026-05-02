@@ -1,0 +1,15 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2011-04-10,ADBL,128.0,128.0,126.0,128.0,1531.0,194797.0,,aabishkar2_nepse_data,0.7
+2011-04-10,AHPC,418.0,428.0,415.0,417.0,1185.0,500482.0,,aabishkar2_nepse_data,0.7
+2011-04-10,ALICL,214.0,214.0,210.0,212.0,1890.0,400250.0,,aabishkar2_nepse_data,0.7
+2011-04-10,BPCL,671.0,724.0,671.0,724.0,152.0,103410.0,,aabishkar2_nepse_data,0.7
+2011-04-10,CFCL,203.0,213.0,213.0,213.0,10.0,2130.0,,aabishkar2_nepse_data,0.7
+2011-04-10,CHCL,940.0,940.0,934.0,934.0,950.0,891800.0,,aabishkar2_nepse_data,0.7
+2011-04-10,CZBIL,208.0,206.0,201.0,206.0,1830.0,373230.0,,aabishkar2_nepse_data,0.7
+2011-04-10,JBBL,106.0,110.0,105.0,108.0,7220.0,775400.0,,aabishkar2_nepse_data,0.7
+2011-04-10,KBL,266.0,279.0,261.0,279.0,420.0,112667.0,,aabishkar2_nepse_data,0.7
+2011-04-10,MBL,136.0,135.0,131.0,131.0,1714.0,227766.0,,aabishkar2_nepse_data,0.7
+2011-04-10,NIB,536.0,546.0,529.0,529.0,410.0,218698.0,,aabishkar2_nepse_data,0.7
+2011-04-10,NMB,229.0,233.0,229.0,233.0,235.0,54379.0,,aabishkar2_nepse_data,0.7
+2011-04-10,PLIC,180.0,180.0,176.0,176.0,1110.0,199280.0,,aabishkar2_nepse_data,0.7
+2011-04-10,SBI,531.0,535.0,535.0,535.0,66.0,35310.0,,aabishkar2_nepse_data,0.7

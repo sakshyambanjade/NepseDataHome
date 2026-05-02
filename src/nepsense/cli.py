@@ -9,6 +9,8 @@ from rich.console import Console
 from nepsense import __version__
 from nepsense.collectors import collect_daily
 from nepsense.collectors.archive_importer import import_archive
+from nepsense.collectors.companywise_importer import import_github_companywise_archive
+from nepsense.collectors.companywise_importer import import_local_companywise_archive
 from nepsense.config import QUALITY_DIR
 from nepsense.databook import build_data_book
 from nepsense.processors import normalize_all
@@ -280,6 +282,90 @@ def import_archive_cmd(
 
 
 @app.command()
+def import_companywise_github_cmd(
+    repo: str = typer.Option("Aabishkar2/nepse-data", help="GitHub repo owner/name"),
+    repo_path: str = typer.Option("data/company-wise", help="Path containing SYMBOL.csv files"),
+    branch: str = typer.Option("main", help="Git branch/ref"),
+    source: str = typer.Option("aabishkar2_nepse_data", help="Source label for provenance"),
+    source_confidence: float = typer.Option(0.70, help="Confidence score from 0.0 to 1.0"),
+    start: str = typer.Option("2007-01-01", help="Earliest date to import"),
+    build: bool = typer.Option(True, help="Rebuild the public data book after import"),
+) -> None:
+    """Import a GitHub company-wise NEPSE archive into daily history files."""
+    try:
+        console.print(f"[bold cyan]Importing company-wise archive from {repo}...[/bold cyan]")
+        stats = import_github_companywise_archive(
+            repo=repo,
+            repo_path=repo_path,
+            branch=branch,
+            source=source,
+            source_confidence=source_confidence,
+            start_date=start,
+        )
+        console.print("[green]✓ Company-wise archive import complete[/green]")
+        console.print(f"  Symbols found: {stats['symbols_found']}")
+        console.print(f"  Symbols imported: {stats['symbols_imported']}")
+        console.print(f"  Rows: {stats['rows']:,}")
+        console.print(f"  Trading days: {stats['trading_days']}")
+        console.print(
+            "  Date range: "
+            f"{stats['date_range']['start']} to {stats['date_range']['end']}"
+        )
+        console.print(f"  Failed symbols: {len(stats['failed'])}")
+
+        if build:
+            manifest = build_data_book()
+            console.print(
+                f"  Data book rebuilt: {manifest['rows']:,} rows, "
+                f"{manifest['symbols']} symbols"
+            )
+    except Exception as e:
+        console.print(f"[red]✗ Company-wise import failed:[/red] {e}")
+        logger.exception("Company-wise import failed")
+        raise typer.Exit(1)
+
+
+@app.command()
+def import_companywise_cmd(
+    input_dir: Path = typer.Argument(..., help="Folder containing SYMBOL.csv company histories"),
+    source: str = typer.Option("companywise_archive", help="Source label for provenance"),
+    source_confidence: float = typer.Option(0.70, help="Confidence score from 0.0 to 1.0"),
+    start: str = typer.Option("2007-01-01", help="Earliest date to import"),
+    build: bool = typer.Option(True, help="Rebuild the public data book after import"),
+) -> None:
+    """Import local company-wise NEPSE CSV files into daily history files."""
+    try:
+        console.print(f"[bold cyan]Importing local company-wise archive from {input_dir}...[/bold cyan]")
+        stats = import_local_companywise_archive(
+            input_dir=input_dir,
+            source=source,
+            source_confidence=source_confidence,
+            start_date=start,
+        )
+        console.print("[green]✓ Local company-wise archive import complete[/green]")
+        console.print(f"  Symbols found: {stats['symbols_found']}")
+        console.print(f"  Symbols imported: {stats['symbols_imported']}")
+        console.print(f"  Rows: {stats['rows']:,}")
+        console.print(f"  Trading days: {stats['trading_days']}")
+        console.print(
+            "  Date range: "
+            f"{stats['date_range']['start']} to {stats['date_range']['end']}"
+        )
+        console.print(f"  Failed symbols: {len(stats['failed'])}")
+
+        if build:
+            manifest = build_data_book()
+            console.print(
+                f"  Data book rebuilt: {manifest['rows']:,} rows, "
+                f"{manifest['symbols']} symbols"
+            )
+    except Exception as e:
+        console.print(f"[red]✗ Local company-wise import failed:[/red] {e}")
+        logger.exception("Local company-wise import failed")
+        raise typer.Exit(1)
+
+
+@app.command()
 def coverage_cmd() -> None:
     """Generate data coverage and quality report.
     
@@ -346,6 +432,8 @@ app.command(name="build")(build_master_cmd)
 app.command(name="validate")(validate_cmd)
 app.command(name="backfill")(backfill_cmd)
 app.command(name="import-archive")(import_archive_cmd)
+app.command(name="import-companywise")(import_companywise_cmd)
+app.command(name="import-companywise-github")(import_companywise_github_cmd)
 app.command(name="coverage")(coverage_cmd)
 app.command(name="databook")(databook_cmd)
 

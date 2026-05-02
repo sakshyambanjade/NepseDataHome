@@ -39,25 +39,32 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 ### Latest Release: v0.2.0
 ```
 CSV Format (human-readable):
-  nepsense_prices.csv (~150MB)
+  nepsense_prices.csv (~24MB)
   nepsense_adjusted_prices.csv (~150MB)
 
 Parquet Format (compressed):
-  nepsense_prices.parquet (~25MB)
+  nepsense_prices.parquet (~5MB)
   nepsense_adjusted_prices.parquet (~25MB)
 
 DuckDB Format (queryable):
-  nepsense.duckdb (~30MB)
+  nepsense_prices.duckdb (~8MB)
   nepsense_adjusted.duckdb (~30MB)
 
+Public Data Book:
+  data/history/nepse_all_prices.csv (~24MB)
+  data/history/by_symbol/*.csv
+  data/history/by_date/*.csv
+
 Metadata:
-  company_master.csv (100 companies tracked)
+  company_master.csv
   symbol_events.csv (mergers, delistings, renames)
   corporate_actions.csv (bonus, right, dividend history)
   coverage_report.md (data quality metrics)
 ```
 
-**Note:** Files available after [GitHub Release](https://github.com/sakshyambanjade/NepSense/releases) publication. Currently available locally after running `nepsense build`.
+**Current checked-in coverage:** 265,426 rows, 125 symbols, 4,369 trading days,
+from 2007-01-01 to 2026-05-02. Historical rows from the public
+`Aabishkar2/nepse-data` archive are marked with source confidence `0.70`.
 
 ## Installation
 
@@ -108,6 +115,9 @@ Outputs:
 ```bash
 # Import dated CSV files such as 2024-01-02.csv or market_20240102.csv
 nepsense import-archive /path/to/historical-csvs --source verified_archive --source-confidence 0.70
+
+# Import company-wise histories such as NABIL.csv, EBL.csv, SCB.csv
+nepsense import-companywise /path/to/company-wise-csvs --source verified_companywise --source-confidence 0.70
 ```
 
 This copies files into `data/raw/source=<source>/YYYY/MM/`, normalizes them into

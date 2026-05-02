@@ -1,0 +1,16 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2015-05-24,ADBL,432.0,424.0,392.0,392.0,90.0,36080.0,,aabishkar2_nepse_data,0.7
+2015-05-24,AHPC,346.0,340.0,322.0,322.0,46.0,15244.0,,aabishkar2_nepse_data,0.7
+2015-05-24,CCBL,313.0,307.0,307.0,307.0,50.0,15350.0,,aabishkar2_nepse_data,0.7
+2015-05-24,CFCL,191.0,188.0,172.0,172.0,548.0,95928.0,,aabishkar2_nepse_data,0.7
+2015-05-24,CHCL,1593.0,1562.0,1434.0,1434.0,78.0,115286.0,,aabishkar2_nepse_data,0.7
+2015-05-24,CZBIL,456.0,447.0,447.0,447.0,10.0,4470.0,,aabishkar2_nepse_data,0.7
+2015-05-24,EBL,2133.0,2091.0,1920.0,1920.0,110.0,222530.0,,aabishkar2_nepse_data,0.7
+2015-05-24,JBBL,162.0,162.0,162.0,162.0,10.0,1620.0,,aabishkar2_nepse_data,0.7
+2015-05-24,MDB,474.0,465.0,427.0,427.0,381.0,164355.0,,aabishkar2_nepse_data,0.7
+2015-05-24,NBB,488.0,479.0,443.0,443.0,65.0,30100.0,,aabishkar2_nepse_data,0.7
+2015-05-24,NBL,292.0,287.0,263.0,263.0,217.0,59051.0,,aabishkar2_nepse_data,0.7
+2015-05-24,NLIC,4101.0,4019.0,3691.0,3691.0,1357.0,5221839.0,,aabishkar2_nepse_data,0.7
+2015-05-24,PRVU,345.0,339.0,311.0,311.0,110.0,35504.0,,aabishkar2_nepse_data,0.7
+2015-05-24,SHPC,718.0,708.0,703.0,703.0,36.0,25438.0,,aabishkar2_nepse_data,0.7
+2015-05-24,SRBL,402.0,394.0,362.0,362.0,470.0,171589.0,,aabishkar2_nepse_data,0.7

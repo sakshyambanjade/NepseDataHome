@@ -1,0 +1,2 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2008-08-28,CHCL,1450.0,1460.0,1455.0,1460.0,630.0,0.0,,aabishkar2_nepse_data,0.7

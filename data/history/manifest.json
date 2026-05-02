@@ -1,10 +1,10 @@
 {
   "dataset": "nepsense-data-book",
-  "rows": 175,
-  "symbols": 4,
-  "trading_days": 44,
+  "rows": 265327,
+  "symbols": 125,
+  "trading_days": 4369,
   "date_range": {
-    "start": "2024-01-02",
+    "start": "2007-01-01",
     "end": "2026-05-02"
   },
   "outputs": {
@@ -17,11 +17,270 @@
   },
   "symbol_files": [
     {
+      "symbol": "ADBL",
+      "rows": 3552,
+      "first_date": "2010-09-16",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/ADBL.csv"
+    },
+    {
+      "symbol": "AHPC",
+      "rows": 3653,
+      "first_date": "2009-11-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/AHPC.csv"
+    },
+    {
+      "symbol": "AKJCL",
+      "rows": 1665,
+      "first_date": "2018-12-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/AKJCL.csv"
+    },
+    {
+      "symbol": "AKPL",
+      "rows": 2015,
+      "first_date": "2017-07-02",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/AKPL.csv"
+    },
+    {
+      "symbol": "ALICL",
+      "rows": 3503,
+      "first_date": "2010-06-13",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/ALICL.csv"
+    },
+    {
+      "symbol": "API",
+      "rows": 2364,
+      "first_date": "2015-12-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/API.csv"
+    },
+    {
+      "symbol": "BARUN",
+      "rows": 2314,
+      "first_date": "2015-10-28",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/BARUN.csv"
+    },
+    {
+      "symbol": "BFC",
+      "rows": 1815,
+      "first_date": "2011-06-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/BFC.csv"
+    },
+    {
+      "symbol": "BOKL",
+      "rows": 1294,
+      "first_date": "2016-11-20",
+      "last_date": "2023-01-08",
+      "file": "by_symbol/BOKL.csv"
+    },
+    {
+      "symbol": "BPCL",
+      "rows": 3540,
+      "first_date": "2007-01-18",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/BPCL.csv"
+    },
+    {
+      "symbol": "CBL",
+      "rows": 1846,
+      "first_date": "2013-05-19",
+      "last_date": "2023-02-23",
+      "file": "by_symbol/CBL.csv"
+    },
+    {
+      "symbol": "CCBL",
+      "rows": 1884,
+      "first_date": "2014-06-18",
+      "last_date": "2023-01-09",
+      "file": "by_symbol/CCBL.csv"
+    },
+    {
+      "symbol": "CFCL",
+      "rows": 2573,
+      "first_date": "2007-01-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CFCL.csv"
+    },
+    {
+      "symbol": "CGH",
+      "rows": 1215,
+      "first_date": "2021-02-07",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CGH.csv"
+    },
+    {
+      "symbol": "CHCL",
+      "rows": 4228,
+      "first_date": "2007-01-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CHCL.csv"
+    },
+    {
+      "symbol": "CHDC",
+      "rows": 1115,
+      "first_date": "2021-07-05",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CHDC.csv"
+    },
+    {
+      "symbol": "CHL",
+      "rows": 1915,
+      "first_date": "2017-09-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CHL.csv"
+    },
+    {
+      "symbol": "CIT",
+      "rows": 2959,
+      "first_date": "2011-08-10",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CIT.csv"
+    },
+    {
+      "symbol": "CORBL",
+      "rows": 1813,
+      "first_date": "2012-03-11",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CORBL.csv"
+    },
+    {
+      "symbol": "CZBIL",
+      "rows": 3803,
+      "first_date": "2009-06-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/CZBIL.csv"
+    },
+    {
+      "symbol": "DHPL",
+      "rows": 1965,
+      "first_date": "2017-04-20",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/DHPL.csv"
+    },
+    {
+      "symbol": "EBL",
+      "rows": 3405,
+      "first_date": "2011-05-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/EBL.csv"
+    },
+    {
+      "symbol": "EDBL",
+      "rows": 3007,
+      "first_date": "2008-03-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/EDBL.csv"
+    },
+    {
+      "symbol": "GBBL",
+      "rows": 3108,
+      "first_date": "2011-06-05",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GBBL.csv"
+    },
+    {
+      "symbol": "GBIME",
+      "rows": 2662,
+      "first_date": "2012-09-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GBIME.csv"
+    },
+    {
+      "symbol": "GFCL",
+      "rows": 2412,
+      "first_date": "2013-07-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GFCL.csv"
+    },
+    {
+      "symbol": "GHL",
+      "rows": 1465,
+      "first_date": "2019-06-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GHL.csv"
+    },
+    {
+      "symbol": "GLH",
+      "rows": 1165,
+      "first_date": "2021-04-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GLH.csv"
+    },
+    {
+      "symbol": "GLICL",
+      "rows": 2404,
+      "first_date": "2011-10-20",
+      "last_date": "2023-05-08",
+      "file": "by_symbol/GLICL.csv"
+    },
+    {
+      "symbol": "GMFIL",
+      "rows": 2211,
+      "first_date": "2012-06-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GMFIL.csv"
+    },
+    {
+      "symbol": "GRDBL",
+      "rows": 2065,
+      "first_date": "2017-01-31",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GRDBL.csv"
+    },
+    {
+      "symbol": "GUFL",
+      "rows": 2015,
+      "first_date": "2017-04-19",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/GUFL.csv"
+    },
+    {
       "symbol": "HBL",
-      "rows": 44,
-      "first_date": "2024-01-02",
+      "rows": 3151,
+      "first_date": "2011-04-18",
       "last_date": "2026-05-02",
       "file": "by_symbol/HBL.csv"
+    },
+    {
+      "symbol": "HDHPC",
+      "rows": 1363,
+      "first_date": "2020-03-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/HDHPC.csv"
+    },
+    {
+      "symbol": "HIDCL",
+      "rows": 2215,
+      "first_date": "2016-08-24",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/HIDCL.csv"
+    },
+    {
+      "symbol": "HPPL",
+      "rows": 1965,
+      "first_date": "2017-09-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/HPPL.csv"
+    },
+    {
+      "symbol": "HURJA",
+      "rows": 1565,
+      "first_date": "2019-05-22",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/HURJA.csv"
+    },
+    {
+      "symbol": "ICFC",
+      "rows": 3057,
+      "first_date": "2011-05-16",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/ICFC.csv"
     },
     {
       "symbol": "ICICIHFC",
@@ -31,18 +290,606 @@
       "file": "by_symbol/ICICIHFC.csv"
     },
     {
+      "symbol": "JBBL",
+      "rows": 3206,
+      "first_date": "2011-03-24",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/JBBL.csv"
+    },
+    {
+      "symbol": "JFL",
+      "rows": 2907,
+      "first_date": "2011-05-15",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/JFL.csv"
+    },
+    {
+      "symbol": "JLI",
+      "rows": 283,
+      "first_date": "2021-04-25",
+      "last_date": "2022-06-27",
+      "file": "by_symbol/JLI.csv"
+    },
+    {
+      "symbol": "JOSHI",
+      "rows": 1565,
+      "first_date": "2019-01-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/JOSHI.csv"
+    },
+    {
+      "symbol": "KBL",
+      "rows": 3214,
+      "first_date": "2011-03-20",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/KBL.csv"
+    },
+    {
+      "symbol": "KKHC",
+      "rows": 2065,
+      "first_date": "2017-01-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/KKHC.csv"
+    },
+    {
+      "symbol": "KPCL",
+      "rows": 1663,
+      "first_date": "2018-12-02",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/KPCL.csv"
+    },
+    {
+      "symbol": "KRBL",
+      "rows": 2557,
+      "first_date": "2011-05-11",
+      "last_date": "2024-12-24",
+      "file": "by_symbol/KRBL.csv"
+    },
+    {
+      "symbol": "KSBBL",
+      "rows": 1965,
+      "first_date": "2017-09-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/KSBBL.csv"
+    },
+    {
+      "symbol": "LBBL",
+      "rows": 1965,
+      "first_date": "2017-09-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/LBBL.csv"
+    },
+    {
+      "symbol": "LBL",
+      "rows": 2724,
+      "first_date": "2011-06-15",
+      "last_date": "2023-07-13",
+      "file": "by_symbol/LBL.csv"
+    },
+    {
+      "symbol": "LEC",
+      "rows": 1265,
+      "first_date": "2020-11-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/LEC.csv"
+    },
+    {
+      "symbol": "LICN",
+      "rows": 3156,
+      "first_date": "2011-08-03",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/LICN.csv"
+    },
+    {
+      "symbol": "MBL",
+      "rows": 3057,
+      "first_date": "2011-03-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MBL.csv"
+    },
+    {
+      "symbol": "MDB",
+      "rows": 3106,
+      "first_date": "2011-07-28",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MDB.csv"
+    },
+    {
+      "symbol": "MEGA",
+      "rows": 1401,
+      "first_date": "2013-10-08",
+      "last_date": "2023-01-10",
+      "file": "by_symbol/MEGA.csv"
+    },
+    {
+      "symbol": "MEN",
+      "rows": 1215,
+      "first_date": "2021-02-07",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MEN.csv"
+    },
+    {
+      "symbol": "MFIL",
+      "rows": 2262,
+      "first_date": "2013-09-16",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MFIL.csv"
+    },
+    {
+      "symbol": "MHNL",
+      "rows": 1565,
+      "first_date": "2019-05-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MHNL.csv"
+    },
+    {
+      "symbol": "MKJC",
+      "rows": 1013,
+      "first_date": "2021-12-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MKJC.csv"
+    },
+    {
+      "symbol": "MLBL",
+      "rows": 2015,
+      "first_date": "2017-02-07",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MLBL.csv"
+    },
+    {
+      "symbol": "MNBBL",
+      "rows": 3205,
+      "first_date": "2011-12-27",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MNBBL.csv"
+    },
+    {
+      "symbol": "MPFL",
+      "rows": 1959,
+      "first_date": "2012-09-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/MPFL.csv"
+    },
+    {
+      "symbol": "NABBC",
+      "rows": 1260,
+      "first_date": "2011-05-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NABBC.csv"
+    },
+    {
       "symbol": "NABIL",
-      "rows": 44,
-      "first_date": "2024-01-02",
+      "rows": 3417,
+      "first_date": "2011-05-15",
       "last_date": "2026-05-02",
       "file": "by_symbol/NABIL.csv"
     },
     {
+      "symbol": "NBB",
+      "rows": 2391,
+      "first_date": "2011-05-10",
+      "last_date": "2022-01-12",
+      "file": "by_symbol/NBB.csv"
+    },
+    {
+      "symbol": "NBL",
+      "rows": 3007,
+      "first_date": "2013-02-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NBL.csv"
+    },
+    {
+      "symbol": "NCCB",
+      "rows": 2167,
+      "first_date": "2011-08-28",
+      "last_date": "2022-12-29",
+      "file": "by_symbol/NCCB.csv"
+    },
+    {
+      "symbol": "NFS",
+      "rows": 1464,
+      "first_date": "2012-07-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NFS.csv"
+    },
+    {
+      "symbol": "NGPL",
+      "rows": 2165,
+      "first_date": "2016-10-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NGPL.csv"
+    },
+    {
+      "symbol": "NHDL",
+      "rows": 1865,
+      "first_date": "2018-01-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NHDL.csv"
+    },
+    {
+      "symbol": "NHPC",
+      "rows": 3107,
+      "first_date": "2011-06-14",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NHPC.csv"
+    },
+    {
+      "symbol": "NIB",
+      "rows": 2335,
+      "first_date": "2011-03-24",
+      "last_date": "2023-01-10",
+      "file": "by_symbol/NIB.csv"
+    },
+    {
+      "symbol": "NICA",
+      "rows": 2907,
+      "first_date": "2013-07-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NICA.csv"
+    },
+    {
+      "symbol": "NIFRA",
+      "rows": 1165,
+      "first_date": "2021-04-25",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NIFRA.csv"
+    },
+    {
+      "symbol": "NLIC",
+      "rows": 3256,
+      "first_date": "2011-03-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NLIC.csv"
+    },
+    {
+      "symbol": "NLICL",
+      "rows": 3155,
+      "first_date": "2011-08-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NLICL.csv"
+    },
+    {
+      "symbol": "NMB",
+      "rows": 3061,
+      "first_date": "2011-03-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NMB.csv"
+    },
+    {
+      "symbol": "NRN",
+      "rows": 1315,
+      "first_date": "2020-09-09",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NRN.csv"
+    },
+    {
+      "symbol": "NYADI",
+      "rows": 1015,
+      "first_date": "2021-12-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/NYADI.csv"
+    },
+    {
+      "symbol": "OHL",
+      "rows": 3056,
+      "first_date": "2011-10-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/OHL.csv"
+    },
+    {
+      "symbol": "PCBL",
+      "rows": 3406,
+      "first_date": "2011-05-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PCBL.csv"
+    },
+    {
+      "symbol": "PFL",
+      "rows": 2510,
+      "first_date": "2013-06-18",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PFL.csv"
+    },
+    {
+      "symbol": "PLI",
+      "rows": 475,
+      "first_date": "2021-02-07",
+      "last_date": "2023-07-13",
+      "file": "by_symbol/PLI.csv"
+    },
+    {
+      "symbol": "PLIC",
+      "rows": 2555,
+      "first_date": "2011-03-25",
+      "last_date": "2023-05-08",
+      "file": "by_symbol/PLIC.csv"
+    },
+    {
+      "symbol": "PMHPL",
+      "rows": 1665,
+      "first_date": "2018-12-11",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PMHPL.csv"
+    },
+    {
+      "symbol": "PPCL",
+      "rows": 1515,
+      "first_date": "2019-08-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PPCL.csv"
+    },
+    {
+      "symbol": "PROFL",
+      "rows": 2113,
+      "first_date": "2011-05-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PROFL.csv"
+    },
+    {
+      "symbol": "PRVU",
+      "rows": 2261,
+      "first_date": "2015-02-15",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/PRVU.csv"
+    },
+    {
+      "symbol": "RADHI",
+      "rows": 1815,
+      "first_date": "2018-05-09",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/RADHI.csv"
+    },
+    {
+      "symbol": "RHPC",
+      "rows": 1594,
+      "first_date": "2014-07-24",
+      "last_date": "2021-11-02",
+      "file": "by_symbol/RHPC.csv"
+    },
+    {
+      "symbol": "RHPL",
+      "rows": 1515,
+      "first_date": "2019-08-11",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/RHPL.csv"
+    },
+    {
+      "symbol": "RLFL",
+      "rows": 2313,
+      "first_date": "2015-03-01",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/RLFL.csv"
+    },
+    {
+      "symbol": "RLI",
+      "rows": 504,
+      "first_date": "2020-09-09",
+      "last_date": "2023-03-22",
+      "file": "by_symbol/RLI.csv"
+    },
+    {
+      "symbol": "RRHP",
+      "rows": 700,
+      "first_date": "2018-08-28",
+      "last_date": "2021-11-02",
+      "file": "by_symbol/RRHP.csv"
+    },
+    {
+      "symbol": "RURU",
+      "rows": 1115,
+      "first_date": "2021-07-05",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/RURU.csv"
+    },
+    {
+      "symbol": "SADBL",
+      "rows": 2659,
+      "first_date": "2012-07-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SADBL.csv"
+    },
+    {
+      "symbol": "SAHAS",
+      "rows": 1015,
+      "first_date": "2021-12-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SAHAS.csv"
+    },
+    {
+      "symbol": "SANIMA",
+      "rows": 3206,
+      "first_date": "2012-04-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SANIMA.csv"
+    },
+    {
+      "symbol": "SAPDBL",
+      "rows": 1415,
+      "first_date": "2020-01-06",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SAPDBL.csv"
+    },
+    {
+      "symbol": "SBI",
+      "rows": 3406,
+      "first_date": "2011-03-29",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SBI.csv"
+    },
+    {
+      "symbol": "SBL",
+      "rows": 3257,
+      "first_date": "2011-06-02",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SBL.csv"
+    },
+    {
+      "symbol": "SCB",
+      "rows": 3406,
+      "first_date": "2011-06-02",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SCB.csv"
+    },
+    {
+      "symbol": "SFCL",
+      "rows": 1764,
+      "first_date": "2017-06-18",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SFCL.csv"
+    },
+    {
+      "symbol": "SHBL",
+      "rows": 199,
+      "first_date": "2015-01-04",
+      "last_date": "2017-06-07",
+      "file": "by_symbol/SHBL.csv"
+    },
+    {
+      "symbol": "SHEL",
+      "rows": 1115,
+      "first_date": "2021-07-05",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SHEL.csv"
+    },
+    {
+      "symbol": "SHINE",
+      "rows": 2560,
+      "first_date": "2013-12-05",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SHINE.csv"
+    },
+    {
+      "symbol": "SHL",
+      "rows": 3007,
+      "first_date": "2011-03-27",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SHL.csv"
+    },
+    {
+      "symbol": "SHPC",
+      "rows": 2757,
+      "first_date": "2014-03-24",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SHPC.csv"
+    },
+    {
+      "symbol": "SIFC",
+      "rows": 2260,
+      "first_date": "2011-10-17",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SIFC.csv"
+    },
+    {
+      "symbol": "SINDU",
+      "rows": 2314,
+      "first_date": "2014-02-24",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SINDU.csv"
+    },
+    {
+      "symbol": "SJCL",
+      "rows": 1515,
+      "first_date": "2019-08-12",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SJCL.csv"
+    },
+    {
+      "symbol": "SLI",
+      "rows": 258,
+      "first_date": "2021-09-20",
+      "last_date": "2023-03-22",
+      "file": "by_symbol/SLI.csv"
+    },
+    {
+      "symbol": "SLICL",
+      "rows": 2373,
+      "first_date": "2011-06-14",
+      "last_date": "2022-06-26",
+      "file": "by_symbol/SLICL.csv"
+    },
+    {
+      "symbol": "SPC",
+      "rows": 1010,
+      "first_date": "2021-12-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SPC.csv"
+    },
+    {
+      "symbol": "SPDL",
+      "rows": 2015,
+      "first_date": "2017-06-04",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SPDL.csv"
+    },
+    {
+      "symbol": "SRBL",
+      "rows": 2774,
+      "first_date": "2011-05-23",
+      "last_date": "2023-07-13",
+      "file": "by_symbol/SRBL.csv"
+    },
+    {
+      "symbol": "SSHL",
+      "rows": 1265,
+      "first_date": "2020-11-26",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/SSHL.csv"
+    },
+    {
+      "symbol": "TPC",
+      "rows": 1012,
+      "first_date": "2021-12-08",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/TPC.csv"
+    },
+    {
       "symbol": "TRH",
-      "rows": 44,
-      "first_date": "2024-01-02",
+      "rows": 2820,
+      "first_date": "2011-08-29",
       "last_date": "2026-05-02",
       "file": "by_symbol/TRH.csv"
+    },
+    {
+      "symbol": "ULI",
+      "rows": 214,
+      "first_date": "2021-09-20",
+      "last_date": "2023-05-08",
+      "file": "by_symbol/ULI.csv"
+    },
+    {
+      "symbol": "UMHL",
+      "rows": 2015,
+      "first_date": "2017-06-13",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/UMHL.csv"
+    },
+    {
+      "symbol": "UMRH",
+      "rows": 1215,
+      "first_date": "2021-02-07",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/UMRH.csv"
+    },
+    {
+      "symbol": "UNHPL",
+      "rows": 1515,
+      "first_date": "2019-07-24",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/UNHPL.csv"
+    },
+    {
+      "symbol": "UPCL",
+      "rows": 1565,
+      "first_date": "2019-05-21",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/UPCL.csv"
+    },
+    {
+      "symbol": "UPPER",
+      "rows": 1615,
+      "first_date": "2019-03-19",
+      "last_date": "2026-04-30",
+      "file": "by_symbol/UPPER.csv"
     }
   ]
 }

@@ -1,0 +1,4 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2008-05-14,BPCL,1201.0,1225.0,1225.0,1225.0,250.0,0.0,,aabishkar2_nepse_data,0.7
+2008-05-14,CFCL,712.0,740.0,715.0,740.0,1116.0,0.0,,aabishkar2_nepse_data,0.7
+2008-05-14,CHCL,1400.0,1445.0,1410.0,1425.0,2480.0,0.0,,aabishkar2_nepse_data,0.7

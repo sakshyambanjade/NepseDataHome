@@ -1,0 +1,5 @@
+date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
+2010-04-08,AHPC,455.0,460.0,454.0,460.0,570.0,0.0,,aabishkar2_nepse_data,0.7
+2010-04-08,BPCL,770.0,824.0,808.0,824.0,20.0,0.0,,aabishkar2_nepse_data,0.7
+2010-04-08,CHCL,900.0,905.0,890.0,905.0,2980.0,0.0,,aabishkar2_nepse_data,0.7
+2010-04-08,CZBIL,440.0,456.0,444.0,444.0,560.0,0.0,,aabishkar2_nepse_data,0.7
