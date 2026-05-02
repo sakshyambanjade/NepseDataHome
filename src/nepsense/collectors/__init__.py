@@ -10,7 +10,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from nepsense.config import RAW_DIR, SHARESANSAR_TODAY_URL
+from nepsense.config import RAW_DIR, SHARESANSAR_TODAY_URL, SOURCE_CONFIDENCE_SCALE
 from nepsense.utils import dated_output_path, resolve_date
 
 logger = logging.getLogger(__name__)
@@ -289,6 +289,7 @@ def collect_daily(
     # Add metadata
     df["date"] = date_str
     df["source"] = SHARESANSAR_TODAY_URL
+    df["source_confidence"] = SOURCE_CONFIDENCE_SCALE["reliable"]
 
     # Save
     output_file.parent.mkdir(parents=True, exist_ok=True)

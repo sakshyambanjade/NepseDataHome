@@ -30,6 +30,8 @@ The current checked-in data is a proof-of-concept slice, not a complete
    - The current ShareSansar collector is suitable for current market data.
    - Historical backfill must use a true historical endpoint or import archive,
      not the current-day page replayed across old dates.
+   - `nepsense import-archive /path/to/csvs --source <name>` is the preferred
+     path for verified bulk CSV archives today.
 
 3. **Company universe reconstruction**
    - Track IPOs, delistings, mergers, symbol changes, sector changes, and
@@ -47,6 +49,33 @@ The current checked-in data is a proof-of-concept slice, not a complete
      - broad active and inactive symbol coverage,
      - zero duplicate date-symbol pairs,
      - no unreviewed critical validation errors.
+
+## Two Complementary Systems
+
+### 1. Daily Collector
+
+Run `nepsense daily-run` after each market day. It collects the full market
+snapshot, normalizes it, rebuilds master data, validates quality, and publishes
+the public data book.
+
+### 2. Historical Importer
+
+Run `nepsense import-archive /path/to/historical-csvs --source verified_archive`
+whenever older daily market files are found or licensed. Files are partitioned
+by source and date so provenance remains visible:
+
+```text
+data/raw/source=verified_archive/YYYY/MM/YYYY-MM-DD.csv
+data/normalized/source=verified_archive/YYYY/MM/YYYY-MM-DD.csv
+```
+
+The public data book then exposes:
+
+```text
+data/history/nepse_all_prices.csv
+data/history/by_symbol/NABIL.csv
+data/history/by_date/2024-01-02.csv
+```
 
 ## Near-Term Project Priorities
 

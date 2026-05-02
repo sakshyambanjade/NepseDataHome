@@ -11,6 +11,7 @@ import pandas as pd
 from nepsense.config import (
     NORMALIZED_DIR,
     RAW_DIR,
+    SOURCE_CONFIDENCE_SCALE,
     STANDARD_OHLCV_COLUMNS,
 )
 from nepsense.utils import dated_output_path, resolve_date
@@ -68,6 +69,8 @@ COLUMN_ALIASES = {
     # Metadata
     "date": "date",
     "source": "source",
+    "source confidence": "source_confidence",
+    "source_confidence": "source_confidence",
 }
 
 
@@ -104,47 +107,134 @@ def normalize_file(
     """
     logger.info(f"Normalizing {input_file}...")
     
-    df = pd.read_csv(input_file)
+    try:
+        df = pd.read_csv(input_file, low_memory=False)
+    except Exception as e:
+        logger.error(f"Failed to read CSV file {input_file}: {e}")
+        raise
+    
     initial_rows = len(df)
+    logger.info(f"Loaded {initial_rows} raw rows with columns: {list(df.columns)}")
     
     # Normalize column names
+    original_columns = list(df.columns)
     df.columns = [normalize_column_name(c) for c in df.columns]
+    normalized_columns = list(df.columns)
+    
+    # Log column mapping
+    column_mapping = dict(zip(original_columns, normalized_columns))
+    logger.debug(f"Column mapping: {column_mapping}")
     
     # Validate required columns
     required = ["date", "symbol", "close"]
     missing = [c for c in required if c not in df.columns]
     if missing:
-        raise ValueError(f"Missing required columns: {missing}")
+        logger.warning(f"Missing required columns: {missing}")
+        logger.info(f"Available columns: {list(df.columns)}")
+        # Try to infer missing columns
+        if "date" in missing and "date" not in df.columns:
+            # Look for date-like columns
+            date_candidates = [c for c in df.columns if "date" in c.lower() or "time" in c.lower()]
+            if date_candidates:
+                logger.info(f"Using '{date_candidates[0]}' as date column")
+                df = df.rename(columns={date_candidates[0]: "date"})
+                missing.remove("date")
+        
+        if "symbol" in missing and "symbol" not in df.columns:
+            # Look for symbol-like columns
+            symbol_candidates = [c for c in df.columns if any(term in c.lower() for term in ["symbol", "code", "stock", "ticker"])]
+            if symbol_candidates:
+                logger.info(f"Using '{symbol_candidates[0]}' as symbol column")
+                df = df.rename(columns={symbol_candidates[0]: "symbol"})
+                missing.remove("symbol")
+        
+        if "close" in missing and "close" not in df.columns:
+            # Look for price-like columns
+            price_candidates = [c for c in df.columns if any(term in c.lower() for term in ["close", "ltp", "price", "last"])]
+            if price_candidates:
+                logger.info(f"Using '{price_candidates[0]}' as close column")
+                df = df.rename(columns={price_candidates[0]: "close"})
+                missing.remove("close")
+        
+        if missing:
+            raise ValueError(f"Missing required columns after inference: {missing}")
     
     # Ensure all standard columns exist
     for col in STANDARD_OHLCV_COLUMNS:
         if col not in df.columns:
             df[col] = None
+
+    source_label = next(
+        (part.removeprefix("source=") for part in input_file.parts if part.startswith("source=")),
+        None,
+    )
+    if source_label:
+        missing_source = df["source"].isna() | (df["source"].astype(str).str.strip() == "")
+        df.loc[missing_source, "source"] = source_label
     
     # Select only standard columns
     df = df[STANDARD_OHLCV_COLUMNS]
     
-    # Basic cleaning
-    df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date
-    df["symbol"] = df["symbol"].astype(str).str.strip().str.upper()
+    # Clean and validate data types
+    try:
+        # Handle date column
+        if df["date"].notna().any():
+            df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date
+        else:
+            logger.warning("Date column is empty, will be filled with collection date")
+            
+        # Clean symbol column
+        df["symbol"] = df["symbol"].astype(str).str.strip().str.upper()
+        
+        # Clean numeric columns
+        numeric_cols = ["open", "high", "low", "close", "volume", "turnover", "transactions"]
+        for col in numeric_cols:
+            if col in df.columns and df[col].notna().any():
+                # Remove commas and other formatting
+                df[col] = df[col].astype(str).str.replace(",", "").str.replace(" ", "")
+                # Convert to numeric, coercing errors
+                df[col] = pd.to_numeric(df[col], errors="coerce")
+
+        if "source_confidence" in df.columns:
+            df["source_confidence"] = pd.to_numeric(df["source_confidence"], errors="coerce")
+            sharesansar_rows = (
+                df["source"].astype(str).str.contains("sharesansar", case=False, na=False)
+                & df["source_confidence"].isna()
+            )
+            df.loc[sharesansar_rows, "source_confidence"] = 0.90
+            archive_rows = df["source"].notna() & df["source_confidence"].isna()
+            df.loc[archive_rows, "source_confidence"] = SOURCE_CONFIDENCE_SCALE["archive"]
+    
+    except Exception as e:
+        logger.error(f"Error during data cleaning: {e}")
+        raise
     
     # Remove rows with missing critical data
-    df = df.dropna(subset=["date", "symbol", "close"])
-    df = df[df["symbol"].str.len() > 0]
+    before_cleaning = len(df)
+    df = df.dropna(subset=["symbol", "close"])
+    df = df[df["symbol"].str.len() > 0]  # Remove empty symbols
     
-    # Remove duplicates
+    # Remove duplicate symbol-date pairs
     df = df.drop_duplicates(subset=["date", "symbol"])
+    
+    # Sort by date and symbol
     df = df.sort_values(["date", "symbol"])
+    
+    # Final validation
+    final_rows = len(df)
+    removed_rows = before_cleaning - final_rows
+    
+    if final_rows == 0:
+        raise ValueError(f"No valid data rows remaining after cleaning (removed {removed_rows} invalid rows)")
+    
+    logger.info(
+        f"Normalized to {final_rows} valid rows "
+        f"(removed {removed_rows} invalid/duplicate rows from {initial_rows} raw rows)"
+    )
     
     # Save
     output_file.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_file, index=False)
-    
-    final_rows = len(df)
-    logger.info(
-        f"Normalized to {final_rows} rows "
-        f"(removed {initial_rows - final_rows} invalid rows)"
-    )
     
     return output_file
 
@@ -162,13 +252,23 @@ def normalize_all(
     Returns:
         Count of normalized files
     """
-    files = sorted(input_root.glob("*/*/*.csv"))
+    files = sorted(
+        file
+        for file in input_root.rglob("*.csv")
+        if not any(part.startswith(".") for part in file.relative_to(input_root).parts)
+    )
     logger.info(f"Found {len(files)} raw files to normalize")
     
     normalized = 0
     for input_file in files:
         date_str = input_file.stem
-        output_file = dated_output_path(output_root, date_str)
+        relative_parts = input_file.relative_to(input_root).parts
+        if relative_parts and relative_parts[0].startswith("source="):
+            year, month, _ = date_str.split("-")
+            output_file = output_root / relative_parts[0] / year / month / input_file.name
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+        else:
+            output_file = dated_output_path(output_root, date_str)
         
         try:
             normalize_file(input_file, output_file)

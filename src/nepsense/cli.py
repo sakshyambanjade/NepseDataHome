@@ -8,7 +8,9 @@ from rich.console import Console
 
 from nepsense import __version__
 from nepsense.collectors import collect_daily
+from nepsense.collectors.archive_importer import import_archive
 from nepsense.config import QUALITY_DIR
+from nepsense.databook import build_data_book
 from nepsense.processors import normalize_all
 from nepsense.processors.adjust_prices import adjust_all
 from nepsense.processors.coverage_report import generate_coverage_report, save_coverage_report
@@ -181,7 +183,14 @@ def daily_run() -> None:
         console.print(f"   [green]✓[/green] {validation['total_errors']} errors, {validation['total_warnings']} warnings\n")
 
         # Manifest
-        console.print("[blue]6. Creating manifest...[/blue]")
+        console.print("[blue]6. Building public data book...[/blue]")
+        data_book = build_data_book(rebuild_master=False)
+        console.print(
+            f"   [green]✓[/green] Data book: {data_book['rows']} rows, "
+            f"{data_book['symbols']} symbols\n"
+        )
+
+        console.print("[blue]7. Creating manifest...[/blue]")
         create_manifest()
         console.print(f"   [green]✓[/green] Manifest created\n")
 
@@ -231,6 +240,46 @@ def backfill_cmd(
 
 
 @app.command()
+def import_archive_cmd(
+    input_dir: Path = typer.Argument(..., help="Folder containing dated historical CSV files"),
+    source: str = typer.Option("archive", help="Source label for provenance"),
+    source_confidence: float = typer.Option(0.70, help="Confidence score from 0.0 to 1.0"),
+    normalize: bool = typer.Option(True, help="Normalize imported raw files"),
+    build: bool = typer.Option(True, help="Rebuild the public data book after import"),
+) -> None:
+    """Import historical CSV archives into NepSense daily history.
+
+    Filenames must contain dates, for example:
+    2024-01-02.csv, 20240102.csv, or market_2024_01_02.csv.
+    """
+    try:
+        console.print(f"[bold cyan]Importing archive from {input_dir}...[/bold cyan]")
+        stats = import_archive(
+            input_dir=input_dir,
+            source=source,
+            source_confidence=source_confidence,
+            normalize=normalize,
+        )
+        console.print("[green]✓ Archive import complete[/green]")
+        console.print(f"  Files found: {stats['files_found']}")
+        console.print(f"  Imported raw files: {stats['imported']}")
+        console.print(f"  Normalized files: {stats['normalized']}")
+        console.print(f"  Skipped: {len(stats['skipped'])}")
+        console.print(f"  Failed: {len(stats['failed'])}")
+
+        if build:
+            manifest = build_data_book()
+            console.print(
+                f"  Data book rebuilt: {manifest['rows']} rows, "
+                f"{manifest['symbols']} symbols"
+            )
+    except Exception as e:
+        console.print(f"[red]✗ Archive import failed:[/red] {e}")
+        logger.exception("Archive import failed")
+        raise typer.Exit(1)
+
+
+@app.command()
 def coverage_cmd() -> None:
     """Generate data coverage and quality report.
     
@@ -261,6 +310,34 @@ def coverage_cmd() -> None:
         raise typer.Exit(1)
 
 
+@app.command()
+def databook_cmd() -> None:
+    """Build public all-market and per-symbol history files.
+
+    Outputs:
+    - data/history/nepse_all_prices.csv
+    - data/history/by_symbol/SYMBOL.csv
+    - data/history/by_date/YYYY-MM-DD.csv
+    - data/history/manifest.json
+    """
+    try:
+        console.print("[bold cyan]Building NepSense data book...[/bold cyan]")
+        manifest = build_data_book()
+        console.print("[green]✓ Data book created[/green]")
+        console.print(f"  Rows: {manifest['rows']}")
+        console.print(f"  Symbols: {manifest['symbols']}")
+        console.print(f"  Trading days: {manifest['trading_days']}")
+        console.print(
+            "  Date range: "
+            f"{manifest['date_range']['start']} to {manifest['date_range']['end']}"
+        )
+        console.print(f"  Output: {manifest['outputs']['all_prices_csv']}")
+    except Exception as e:
+        console.print(f"[red]✗ Data book build failed:[/red] {e}")
+        logger.exception("Data book build failed")
+        raise typer.Exit(1)
+
+
 # Add command aliases
 app.command(name="collect")(collect_daily_cmd)
 app.command(name="normalize")(normalize_cmd)
@@ -268,7 +345,9 @@ app.command(name="adjust")(adjust_cmd)
 app.command(name="build")(build_master_cmd)
 app.command(name="validate")(validate_cmd)
 app.command(name="backfill")(backfill_cmd)
+app.command(name="import-archive")(import_archive_cmd)
 app.command(name="coverage")(coverage_cmd)
+app.command(name="databook")(databook_cmd)
 
 
 if __name__ == "__main__":

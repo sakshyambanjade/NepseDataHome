@@ -1,0 +1,48 @@
+{
+  "dataset": "nepsense-data-book",
+  "rows": 175,
+  "symbols": 4,
+  "trading_days": 44,
+  "date_range": {
+    "start": "2024-01-02",
+    "end": "2026-05-02"
+  },
+  "outputs": {
+    "all_prices_csv": "data/history/nepse_all_prices.csv",
+    "master_csv": "data/master/nepsense_prices.csv",
+    "master_parquet": "data/master/nepsense_prices.parquet",
+    "master_duckdb": "data/master/nepsense_prices.duckdb",
+    "by_symbol_dir": "data/history/by_symbol",
+    "by_date_dir": "data/history/by_date"
+  },
+  "symbol_files": [
+    {
+      "symbol": "HBL",
+      "rows": 44,
+      "first_date": "2024-01-02",
+      "last_date": "2026-05-02",
+      "file": "by_symbol/HBL.csv"
+    },
+    {
+      "symbol": "ICICIHFC",
+      "rows": 43,
+      "first_date": "2024-01-02",
+      "last_date": "2024-02-29",
+      "file": "by_symbol/ICICIHFC.csv"
+    },
+    {
+      "symbol": "NABIL",
+      "rows": 44,
+      "first_date": "2024-01-02",
+      "last_date": "2026-05-02",
+      "file": "by_symbol/NABIL.csv"
+    },
+    {
+      "symbol": "TRH",
+      "rows": 44,
+      "first_date": "2024-01-02",
+      "last_date": "2026-05-02",
+      "file": "by_symbol/TRH.csv"
+    }
+  ]
+}

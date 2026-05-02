@@ -3,7 +3,7 @@ import pytest
 from pathlib import Path
 import tempfile
 
-from nepsense.processors import normalize_column_name, normalize_file
+from nepsense.processors import normalize_all, normalize_column_name, normalize_file
 from nepsense.config import STANDARD_OHLCV_COLUMNS
 
 
@@ -141,6 +141,31 @@ class TestFileNormalization:
         # Date is required - should raise error
         with pytest.raises(ValueError, match="Missing required columns"):
             normalize_file(input_file, output_file)
+
+    def test_normalize_all_preserves_source_partitions(self, tmp_path):
+        """Test source-partitioned raw files normalize into matching partitions."""
+        input_root = tmp_path / "raw"
+        output_root = tmp_path / "normalized"
+        raw_dir = input_root / "source=archive" / "2024" / "01"
+        raw_dir.mkdir(parents=True)
+
+        df = pd.DataFrame(
+            {
+                "date": ["2024-01-02"],
+                "Symbol": ["NABIL"],
+                "LTP": [100],
+                "source": ["archive"],
+                "source_confidence": [0.7],
+            }
+        )
+        df.to_csv(raw_dir / "2024-01-02.csv", index=False)
+
+        count = normalize_all(input_root, output_root)
+
+        assert count == 1
+        assert (
+            output_root / "source=archive" / "2024" / "01" / "2024-01-02.csv"
+        ).exists()
 
 
 class TestDataValidation:

@@ -24,7 +24,8 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 
 ✅ **Daily Collection** - Automatic data scraping from ShareSansar  
 ✅ **Historical Backfill** - Load 20+ years of NEPSE history  
-✅ **Friday-Sunday Trading** - Correctly handles NEPSE's Fri-Sat-Sun schedule  
+✅ **Public Data Book** - All-market, per-symbol, and per-date history files  
+✅ **Versioned Trading Calendar** - Handles historical Sunday-Thursday and current Monday-Friday schedules  
 ✅ **Schema Normalization** - Standardize 30+ column name variations  
 ✅ **Corporate Actions** - Bonus, right, dividend, split, merger adjustments  
 ✅ **Symbol Universe** - Track 250+ companies with IPOs, delistings, renames, mergers  
@@ -87,6 +88,30 @@ nepsense collect
 # Normalize, adjust, build, validate
 nepsense daily-run
 ```
+
+### Build The Public Data Book
+```bash
+# Rebuild master files plus easy-access history files
+nepsense databook
+```
+
+Outputs:
+- `data/master/nepsense_prices.csv`
+- `data/master/nepsense_prices.parquet`
+- `data/master/nepsense_prices.duckdb`
+- `data/history/nepse_all_prices.csv`
+- `data/history/by_symbol/NABIL.csv`
+- `data/history/by_date/YYYY-MM-DD.csv`
+- `data/history/manifest.json`
+
+### Import Historical Archives
+```bash
+# Import dated CSV files such as 2024-01-02.csv or market_20240102.csv
+nepsense import-archive /path/to/historical-csvs --source verified_archive --source-confidence 0.70
+```
+
+This copies files into `data/raw/source=<source>/YYYY/MM/`, normalizes them into
+`data/normalized/source=<source>/YYYY/MM/`, and rebuilds the public data book.
 
 ### Historical Backfill
 ```bash
