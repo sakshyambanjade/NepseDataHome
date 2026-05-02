@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import logging
 from pathlib import Path
+from urllib.parse import quote
 
 import pandas as pd
 
@@ -23,6 +24,11 @@ def _display_path(path: Path) -> str:
         return str(path.relative_to(PROJECT_ROOT))
     except ValueError:
         return str(path)
+
+
+def _symbol_filename(symbol: str) -> str:
+    """Return a filesystem-safe filename for a market symbol."""
+    return f"{quote(symbol, safe='-._~')}.csv"
 
 
 def build_data_book(
@@ -62,7 +68,7 @@ def build_data_book(
 
     symbols = []
     for symbol, history in data.groupby("symbol", sort=True):
-        symbol_path = by_symbol_dir / f"{symbol}.csv"
+        symbol_path = by_symbol_dir / _symbol_filename(symbol)
         history.sort_values("date").to_csv(symbol_path, index=False)
         symbols.append(
             {

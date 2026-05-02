@@ -105,15 +105,15 @@ def _coalesce_duplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
             continue
 
         matches = df.loc[:, df.columns == col]
-        if isinstance(matches, pd.Series):
-            merged[col] = matches
-        else:
+        if matches.shape[1] > 1:
             merged[col] = matches.bfill(axis=1).iloc[:, 0]
             logger.warning(
-                "Coalesced %s duplicate columns named '%s' after alias normalization",
+                "Coalesced %s columns named '%s' after alias normalization",
                 matches.shape[1],
                 col,
             )
+        else:
+            merged[col] = matches.iloc[:, 0]
         seen.add(col)
 
     return merged
