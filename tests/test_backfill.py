@@ -10,29 +10,38 @@ from nepsense.utils import resolve_date
 
 
 class TestTradingCalendarGeneration:
-    """Test trading calendar generation (Friday-Sunday schedule)."""
-    
-    def test_trading_calendar_includes_friday_to_sunday(self):
-        """Test that only Friday-Sunday are included as trading days."""
+    """Test trading calendar generation across known NEPSE schedules."""
+
+    def test_trading_calendar_uses_sunday_to_thursday_before_2026_change(self):
+        """Test the historical Sunday-Thursday schedule."""
         # January 2024: Jan 5=Fri, 6=Sat, 7=Sun, 8=Mon, 9=Tue, 10=Wed
         dates = build_trading_calendar("2024-01-05", "2024-01-10")
-        
-        # Should have Fri-Sun (5, 6, 7) but NOT Mon-Wed (8, 9, 10)
+
+        # Should have Sun-Wed but NOT Fri-Sat
         dates_set = set(dates)
-        assert "2024-01-05" in dates_set  # Friday - trading
-        assert "2024-01-06" in dates_set  # Saturday - trading
+        assert "2024-01-05" not in dates_set  # Friday - non-trading
+        assert "2024-01-06" not in dates_set  # Saturday - non-trading
         assert "2024-01-07" in dates_set  # Sunday - trading
-        assert "2024-01-08" not in dates_set  # Monday - non-trading
-        assert "2024-01-09" not in dates_set  # Tuesday - non-trading
-        assert "2024-01-10" not in dates_set  # Wednesday - non-trading
-    
+        assert "2024-01-08" in dates_set  # Monday - trading
+        assert "2024-01-09" in dates_set  # Tuesday - trading
+        assert "2024-01-10" in dates_set  # Wednesday - trading
+
+    def test_trading_calendar_uses_monday_to_friday_after_2026_change(self):
+        """Test the current Monday-Friday schedule."""
+        dates = build_trading_calendar("2026-04-06", "2026-04-12")
+
+        dates_set = set(dates)
+        assert "2026-04-06" in dates_set  # Monday - trading
+        assert "2026-04-10" in dates_set  # Friday - trading
+        assert "2026-04-11" not in dates_set  # Saturday - non-trading
+        assert "2026-04-12" not in dates_set  # Sunday - non-trading
+
     def test_trading_calendar_date_range(self):
         """Test calendar includes all trading days (Fri-Sun) in range."""
         dates = build_trading_calendar("2024-01-05", "2024-01-21")
         
-        # Jan 5-7 (Fri-Sun), skip 8-11 (Mon-Thu), 12-14 (Fri-Sun), skip 15-18, 19-21 (Fri-Sun)
-        # So expect about 9 days (3 weeks × 3 trading days)
-        assert len(dates) >= 9
+        # Jan 7-11 (Sun-Thu), skip 12-13 (Fri-Sat), 14-18, skip 19-20, 21
+        assert len(dates) == 11
         
         # All dates should be in range
         for d in dates:
@@ -43,48 +52,41 @@ class TestTradingCalendarGeneration:
         """Test 'today' string is resolved."""
         dates = build_trading_calendar("2026-04-01", "today")
         
-        # Should have trading dates from April to today (May 2)
-        # May 2, 2026 is a Thursday (non-trading), so last should be May 1 (Wed) or earlier
+        # Should have trading dates from April to today.
         assert len(dates) > 0
-    
-    def test_trading_calendar_friday_trading(self):
-        """Test Friday is included as trading day."""
-        # April 3, 2026 is Friday
+
+    def test_trading_calendar_friday_before_change_is_excluded(self):
+        """Test Friday is excluded before the April 2026 schedule change."""
         dates = build_trading_calendar("2026-04-03", "2026-04-03")
-        
-        assert len(dates) == 1
-        assert dates[0] == "2026-04-03"
-    
-    def test_trading_calendar_saturday_trading(self):
-        """Test Saturday is included as trading day."""
-        # April 4, 2026 is Saturday
+
+        assert len(dates) == 0
+
+    def test_trading_calendar_saturday_is_excluded(self):
+        """Test Saturday is not a trading day."""
         dates = build_trading_calendar("2026-04-04", "2026-04-04")
-        
-        assert len(dates) == 1
-        assert dates[0] == "2026-04-04"
-    
-    def test_trading_calendar_sunday_trading(self):
-        """Test Sunday is included as trading day."""
-        # April 5, 2026 is Sunday
+
+        assert len(dates) == 0
+
+    def test_trading_calendar_sunday_before_change_is_trading(self):
+        """Test Sunday is included before the April 2026 schedule change."""
         dates = build_trading_calendar("2026-04-05", "2026-04-05")
-        
+
         assert len(dates) == 1
         assert dates[0] == "2026-04-05"
-    
-    def test_trading_calendar_monday_excluded(self):
-        """Test Monday is NOT a trading day."""
-        # April 6, 2026 is Monday
+
+    def test_trading_calendar_monday_after_change_is_trading(self):
+        """Test Monday is included after the April 2026 schedule change."""
         dates = build_trading_calendar("2026-04-06", "2026-04-06")
-        
-        assert len(dates) == 0
-    
-    def test_trading_calendar_weekday_excluded(self):
-        """Test Mon-Thu are NOT trading days."""
-        # April 6-9, 2026 is Mon-Thu
+
+        assert len(dates) == 1
+        assert dates[0] == "2026-04-06"
+
+    def test_trading_calendar_weekdays_after_change_are_included(self):
+        """Test Monday-Friday are included after the April 2026 change."""
         dates = build_trading_calendar("2026-04-06", "2026-04-09")
-        
-        assert len(dates) == 0
-    
+
+        assert dates == ["2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09"]
+
     def test_trading_calendar_order(self):
         """Test calendar is in chronological order."""
         dates = build_trading_calendar("2024-01-05", "2024-01-31")

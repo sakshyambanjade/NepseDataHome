@@ -16,6 +16,7 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 
 📥 **[Downloads](#downloads)** - Pre-built datasets  
 📖 **[Documentation](docs/)** - Adjustment methods, backtesting guide, data sources  
+📊 **[Historical Completeness](docs/HISTORICAL_DATA_COMPLETENESS.md)** - 2000-to-today readiness plan  
 💡 **[Examples](#examples)** - Real backtesting examples  
 ⚙️ **[Installation](#installation)** - Get started in 5 minutes  
 

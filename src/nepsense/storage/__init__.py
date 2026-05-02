@@ -23,7 +23,11 @@ def _read_all_csv(root: Path) -> pd.DataFrame:
     Returns:
         Combined DataFrame
     """
-    files = sorted(root.glob("*/*/*.csv"))
+    files = sorted(
+        file
+        for file in root.rglob("*.csv")
+        if not any(part.startswith(".") for part in file.relative_to(root).parts)
+    )
 
     if not files:
         raise RuntimeError(f"No CSV files found in {root}")

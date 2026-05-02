@@ -27,14 +27,15 @@ from nepsense.utils import resolve_date
 
 console = Console()
 
+MONDAY_FRIDAY_EFFECTIVE_DATE = datetime(2026, 4, 6).date()
+
 
 def build_trading_calendar(start_date: str, end_date: str) -> List[str]:
     """
     Build list of trading dates (Nepal timezone, trading days only).
-    
-    NEPSE trading schedule: Friday-Sunday
-    (As of 2024: Market operates Friday, Saturday, Sunday)
-    Excludes Monday-Thursday and standard Nepal holidays.
+
+    NEPSE historically traded Sunday-Thursday. From April 2026, public reports
+    describe a Monday-Friday schedule after Sunday became a public holiday.
     """
     trading_dates = []
     
@@ -59,9 +60,12 @@ def build_trading_calendar(start_date: str, end_date: str) -> List[str]:
     
     current = start
     while current <= end:
-        # Include only Friday (4), Saturday (5), Sunday (6)
-        # Exclude Monday (0) - Thursday (3)
-        if current.weekday() >= 4:
+        if current >= MONDAY_FRIDAY_EFFECTIVE_DATE:
+            is_trading_day = current.weekday() < 5
+        else:
+            is_trading_day = current.weekday() in {0, 1, 2, 3, 6}
+
+        if is_trading_day:
             # Skip holidays (rough approximation, not Nepal calendar)
             if (current.month, current.day) not in nepal_holidays:
                 trading_dates.append(current.isoformat())

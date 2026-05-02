@@ -67,12 +67,20 @@ def generate_coverage_report() -> Dict[str, Any]:
     
     # Calculate source confidence distribution if available
     if "source_confidence" in combined.columns:
+        source_confidence = pd.to_numeric(combined["source_confidence"], errors="coerce")
+        valid_confidence = source_confidence.dropna()
+
         metrics["source_confidence_distribution"] = {
-            "high (>0.80)": len(combined[combined["source_confidence"] > 0.80]),
-            "medium (0.50-0.80)": len(combined[(combined["source_confidence"] >= 0.50) & (combined["source_confidence"] <= 0.80)]),
-            "low (<0.50)": len(combined[combined["source_confidence"] < 0.50]),
+            "high (>0.80)": int((valid_confidence > 0.80).sum()),
+            "medium (0.50-0.80)": int(
+                ((valid_confidence >= 0.50) & (valid_confidence <= 0.80)).sum()
+            ),
+            "low (<0.50)": int((valid_confidence < 0.50).sum()),
+            "missing": int(source_confidence.isna().sum()),
         }
-        metrics["average_source_confidence"] = float(combined["source_confidence"].mean())
+
+        if not valid_confidence.empty:
+            metrics["average_source_confidence"] = float(valid_confidence.mean())
     
     # Calculate adjustment coverage
     if "adjustment_factor" in combined.columns:
