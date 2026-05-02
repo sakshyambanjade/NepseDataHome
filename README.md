@@ -387,14 +387,21 @@ Help improve NepSense:
 
 ```bash
 # Run tests
-pip install -e ".[dev]"
-pytest
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+python -m pytest
 
 # With coverage
-pytest --cov=src/nepsense
+python -m pytest --cov=src/nepsense
 ```
 
-**Test Results:** 58 passing tests
+If your shell says `pytest: command not found`, the virtual environment is not active. Either activate it with `source .venv/bin/activate` or run tests directly through the project environment:
+
+```bash
+.venv/bin/python -m pytest
+```
+
+**Test Results:** 73 passing tests
 - Normalization: 14 tests (schema, aliases, deduplication)
 - Corporate Actions: 10 tests (bonus, right, split, merger)
 - Backfill Pipeline: 13 tests (trading calendar, date resolution)
@@ -493,4 +500,3 @@ For official data, use [NEPSE Official](https://www.nepse.com.np/)
 ---
 
 **Status:** Early Alpha · **Last Updated:** May 2, 2026 · **Maintainer:** [@sakshyambanjade](https://github.com/sakshyambanjade)
-
