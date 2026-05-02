@@ -1,8 +1,24 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "nepse-open-data-engine"
-version = "0.1.0"
-description = "Open-source NEPSE historical data collector, cleaner, validator, and exporter."
-requires-python = ">=3.10"
+name = "nepsense"
+version = "0.2.0"
+description = "Open NEPSE historical market data lake. Daily + historical collection, cleaning, adjustment, validation, and export."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "NepSense Contributors"}]
+keywords = ["nepse", "nepal", "stock-market", "financial-data", "backtesting"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
 dependencies = [
     "pandas>=2.0.0",
     "numpy>=1.24.0",
@@ -14,11 +30,36 @@ dependencies = [
     "duckdb>=0.9.0",
     "typer>=0.9.0",
     "rich>=13.0.0",
-    "pytest>=7.0.0"
+    "pydantic>=2.0.0",
+    "python-dateutil>=2.8.2",
 ]
 
-[project.scripts]
-nepse-data = "nepse_data_engine.cli:app"
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+api = ["fastapi>=0.100.0", "uvicorn>=0.23.0"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[project.urls]
+Homepage = "https://github.com/sakshyambanjade/NepSense"
+Repository = "https://github.com/sakshyambanjade/NepSense.git"
+
+[project.scripts]
+nepsense = "nepsense.cli:app"
+nepse-data = "nepsense.cli:app"
+
+[tool.setuptools]
+packages = ["nepsense"]
+
+[tool.setuptools.package-dir]
+nepsense = "src/nepsense"
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=src/nepsense"

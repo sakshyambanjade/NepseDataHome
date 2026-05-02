@@ -1,4 +1,4 @@
-date,symbol,company_name,sector,open,high,low,close,volume,turnover,transactions,source,adjustment_factor,adjusted_open,adjusted_high,adjusted_low,adjusted_close
-2026-05-02,HBL,Himalayan Bank Limited,Finance,425.0,430.0,420.0,428.0,75000,32100000,400,https://www.sharesansar.com/today-share-price,1.0,425.0,430.0,420.0,428.0
-2026-05-02,NABIL,Nabil Bank Limited,Finance,1450.0,1465.0,1445.0,1460.0,50000,73000000,250,https://www.sharesansar.com/today-share-price,1.0,1450.0,1465.0,1445.0,1460.0
-2026-05-02,TRH,Taragaon Regency Hotel Limited,Hotel,735.0,738.0,735.0,736.0,1200,885000,15,https://www.sharesansar.com/today-share-price,1.0,735.0,738.0,735.0,736.0
+date,symbol,open,high,low,close,volume,turnover,transactions,date_dt,adjustment_factor,adjusted_open,adjusted_high,adjusted_low,adjusted_close
+2026-05-02,HBL,425.0,430.0,420.0,428.0,75000,32100000,400,2026-05-02,1.0,425.0,430.0,420.0,428.0
+2026-05-02,NABIL,1450.0,1465.0,1445.0,1460.0,50000,73000000,250,2026-05-02,1.0,1450.0,1465.0,1445.0,1460.0
+2026-05-02,TRH,735.0,738.0,735.0,736.0,1200,885000,15,2026-05-02,1.0,735.0,738.0,735.0,736.0

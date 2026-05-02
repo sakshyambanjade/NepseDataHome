@@ -1,1 +1,3 @@
-symbol,book_close_date,action_type,bonus_percent,cash_dividend_percent,right_ratio,issue_price,notes
+symbol,book_close_date,announcement_date,action_type,bonus_percent,cash_dividend_percent,right_ratio,right_price,source_url,verified
+NABIL,2024-12-10,2024-11-15,BONUS,10,0,,,https://www.sharesansar.com,true
+HBL,2024-11-20,2024-10-30,CASH_DIVIDEND,0,15,,,https://www.sharesansar.com,true

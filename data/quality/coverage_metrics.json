@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-05-02T18:27:14.019606+05:45",
+  "total_rows": 3,
+  "total_files": 1,
+  "total_symbols": 3,
+  "active_symbols": 3,
+  "date_range": {
+    "start": "2026-05-02",
+    "end": "2026-05-02"
+  },
+  "trading_days": 1,
+  "columns": [
+    "date",
+    "symbol",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "turnover",
+    "transactions"
+  ],
+  "missing_values": {
+    "date": 0,
+    "symbol": 0,
+    "open": 0,
+    "high": 0,
+    "low": 0,
+    "close": 0,
+    "volume": 0,
+    "turnover": 0,
+    "transactions": 0
+  },
+  "source_distribution": {},
+  "symbols_list": [
+    "HBL",
+    "NABIL",
+    "TRH"
+  ],
+  "data_quality": {
+    "duplicate_date_symbol_pairs": 0,
+    "null_counts": {
+      "date": 0,
+      "symbol": 0,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "volume": 0,
+      "turnover": 0,
+      "transactions": 0
+    }
+  }
+}

@@ -1,0 +1,75 @@
+event_date,old_symbol,new_symbol,event_type,swap_ratio,notes,source
+2017-07-31,NCCB,KBL,MERGER,0.85,NCCB merged into KBL at 100:85 ratio,manual
+2011-12-31,NABCI,,MERGER,1.0,NABIL Citi Bank merged into NABIL,manual
+2010-12-31,NGPL,,DELISTING,1.0,Nepal Grindlays Bank ceased operations,manual
+2010-06-30,SCCL,,DELISTING,1.0,Standard Chartered Bank operations merged,manual
+2008-12-31,UNHB,,DELISTING,1.0,United Nepal Bank Limited delisted,manual
+2015-06-30,NBFE,,DELISTING,1.0,Nepal Bank Finance Limited delisted,manual
+2000-01-15,NGPL,,IPO,1.0,Nepal Grindlays Bank initial listing,manual
+2000-03-15,HBL,,IPO,1.0,Himalayan Bank Limited initial listing,manual
+2000-06-20,EBL,,IPO,1.0,Everest Bank Limited initial listing,manual
+2000-04-10,KBL,,IPO,1.0,Kist Bank Limited initial listing,manual
+2000-05-25,ADBL,,IPO,1.0,Agricultural Development Bank Limited initial listing,manual
+2000-07-10,NICA,,IPO,1.0,NICA Insurance Company Limited initial listing,manual
+2000-08-15,NICS,,IPO,1.0,Nepal Insurance Company Limited initial listing,manual
+2000-01-01,NABIL,,IPO,1.0,Nabil Bank Limited initial listing,manual
+2003-01-20,NCCB,,IPO,1.0,Nepal Credit and Commerce Bank Limited initial listing,manual
+2008-01-15,NHPC,,IPO,1.0,Nepal Hydropower Company initial listing,manual
+2008-02-10,NPHC,,IPO,1.0,Nepal Pharmacy House Limited initial listing,manual
+2008-03-20,TRH,,IPO,1.0,TRH Hydropower Limited initial listing,manual
+2008-05-20,HDHPC,,IPO,1.0,Himal Dolakha Hydropower Company Limited initial listing,manual
+2009-01-15,PHDL,,IPO,1.0,Panauti Hydropower Development Limited initial listing,manual
+2009-06-01,SSHL,,IPO,1.0,Sun Shine Hydropower Limited initial listing,manual
+2009-08-01,NFLC,,IPO,1.0,Nepal Finance and Leasing Company initial listing,manual
+2009-10-01,PMHPL,,IPO,1.0,Piedmont Hydropower Limited initial listing,manual
+2010-02-15,RFLC,,IPO,1.0,Rastriya Finance Limited initial listing,manual
+2010-03-20,MKHPL,,IPO,1.0,Mahakali Hydropower Limited initial listing,manual
+2010-05-10,UPPER,,IPO,1.0,Upper Tamakosi Hydropower Limited initial listing,manual
+2010-06-01,PICS,,IPO,1.0,Prudential Insurance Company Limited initial listing,manual
+2010-07-01,MBL,,IPO,1.0,Machhapuchhare Bank Limited initial listing,manual
+2010-08-15,CCBL,,IPO,1.0,Citizen Bank International Limited initial listing,manual
+2010-08-20,UICL,,IPO,1.0,United Insurance Company Limited initial listing,manual
+2010-09-20,PRVU,,IPO,1.0,Prime Bank Limited initial listing,manual
+2010-10-05,GBBL,,IPO,1.0,Global Bank Limited initial listing,manual
+2010-10-10,NMIBL,,IPO,1.0,Nepal Microfinance Bank Limited initial listing,manual
+2010-11-01,KRBL,,IPO,1.0,Kathmandu Resort Boutique Limited initial listing,manual
+2011-01-05,BHELB,,IPO,1.0,Bheri Hydropower Limited initial listing,manual
+2011-04-15,CIT,,IPO,1.0,Citizen Investment Trust initial listing,manual
+2011-05-20,KBBL,,IPO,1.0,Kist Microfinance Bank Limited initial listing,manual
+2011-08-01,NTPC,,IPO,1.0,NT Power Company Limited initial listing,manual
+2012-01-01,NMBS,,IPO,1.0,Nepal Microfinance Bank Limited initial listing,manual
+2012-01-10,SCB,,IPO,1.0,Standard Chartered Bank Nepal initial listing,manual
+2012-01-15,LICN,,IPO,1.0,Life Insurance Company Nepal Limited initial listing,manual
+2012-02-15,KKHC,,IPO,1.0,Kuleshwor Hydropower Company Limited initial listing,manual
+2012-03-01,SBL,,IPO,1.0,Siddhartha Bank Limited initial listing,manual
+2012-04-01,NMFBS,,IPO,1.0,Nepal Microfinance Bank Limited initial listing,manual
+2012-05-15,NMB,,IPO,1.0,Nepal Merchant Bank Limited initial listing,manual
+2012-06-01,CITD,,IPO,1.0,Citizen Mutual Fund initial listing,manual
+2012-08-01,FMDL,,IPO,1.0,Fewa Microfinance Development initial listing,manual
+2012-09-10,RHPL,,IPO,1.0,Ridi Hydropower Company Limited initial listing,manual
+2013-01-20,MHNL,,IPO,1.0,Mailung Hydropower Company Limited initial listing,manual
+2013-02-01,MEGA,,IPO,1.0,Mega Bank Nepal Limited initial listing,manual
+2013-03-15,NMBF,,IPO,1.0,Nepal Microfinance Limited initial listing,manual
+2013-08-15,SRBL,,IPO,1.0,Sunrise Bank Limited initial listing,manual
+2013-11-15,MFCL,,IPO,1.0,Microfinance Company Limited initial listing,manual
+2014-01-10,BOKL,,IPO,1.0,Bank of Kathmandu Limited initial listing,manual
+2014-02-01,MBBD,,IPO,1.0,Machhapuchhare Bank Development initial listing,manual
+2014-05-10,ASFL,,IPO,1.0,Asian Finance Limited initial listing,manual
+2014-06-15,JBBL,,IPO,1.0,Janata Bank Limited initial listing,manual
+2014-11-01,PCBL,,IPO,1.0,Prabhu Bank Limited initial listing,manual
+2015-01-01,MLBBL,,IPO,1.0,Murma Laguna Bank Limited initial listing,manual
+2015-01-10,NEPL,,IPO,1.0,Nepal Electricity Limited initial listing,manual
+2015-01-15,RMHB,,IPO,1.0,Rastriya Madhyam Bikas Bank Limited initial listing,manual
+2015-06-01,SBBLM,,IPO,1.0,SBBL Mutual Fund initial listing,manual
+2016-01-15,KMBL,,IPO,1.0,Karjasukul Bhandaar Limited initial listing,manual
+2016-07-01,LBBL,,IPO,1.0,Laxmi Bank Limited initial listing,manual
+2017-01-15,KSBL,,IPO,1.0,Kumaragumi Sarathi Bank Limited initial listing,manual
+2017-02-01,PLBF,,IPO,1.0,Pul Limited Fund initial listing,manual
+2017-06-01,FCBL,,IPO,1.0,First Community Bank Limited initial listing,manual
+2018-01-01,NABPL,,IPO,1.0,NABIL Peer to Peer Limited initial listing,manual
+2018-02-15,NLBBL,,IPO,1.0,Nepal Laghubitta Bank Limited initial listing,manual
+2018-08-01,SBBN,,IPO,1.0,South Bank Nepal initial listing,manual
+2019-01-10,MNBL,,IPO,1.0,Moneypoint Nepal Bank Limited initial listing,manual
+2015-12-31,CBBL,,DELISTING,1.0,Commercial Bank of Bhutan ceased Nepal operations,manual
+2010-01-01,HBKC,,IPO,1.0,HBK Consultancy initial listing,manual
+2018-12-31,HBKC,,DELISTING,1.0,HBK Consultancy ceased operations,manual
