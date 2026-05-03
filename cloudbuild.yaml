@@ -1,0 +1,33 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - api/Dockerfile
+      - -t
+      - ${_IMAGE}
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_IMAGE}
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image
+      - ${_IMAGE}
+      - --region
+      - ${_REGION}
+      - --platform
+      - managed
+      - --allow-unauthenticated
+      - --max-instances
+      - "2"
+substitutions:
+  _REGION: asia-south1
+  _SERVICE: nepsense-api
+  _IMAGE: gcr.io/$PROJECT_ID/nepsense-api:$SHORT_SHA
+
