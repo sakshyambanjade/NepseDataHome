@@ -76,6 +76,10 @@ def train_baseline(df: pd.DataFrame, features: list):
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     
+    if len(np.unique(y_train)) < 2:
+        logger.info("Training set contains only one class. Skipping training.")
+        return None, None
+        
     model = LogisticRegression(C=0.1)
     model.fit(X_train_scaled, y_train)
     
