@@ -104,6 +104,45 @@ def compute_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["avg_trades_20"] = df["transactions"].rolling(window=20).mean()
     df["liquidity_score"] = np.log1p(df["avg_turnover_20"]) # Simplified log-based score
     
+    # --- Watch Score Calculation (Advanced Phase) ---
+    
+    # 1. Trend Score (0-100): Price vs SMAs and MACD
+    trend_sma20 = np.where(price > df["sma_20"], 1, 0)
+    trend_sma50 = np.where(price > df["sma_50"], 1, 0)
+    trend_macd = np.where(df["macd_hist"] > 0, 1, 0)
+    trend_score = (trend_sma20 * 0.4 + trend_sma50 * 0.3 + trend_macd * 0.3) * 100
+    
+    # 2. Momentum Score (0-100): Weighted percentile of returns
+    # Since we process by symbol, we'll use a simplified version based on positive returns
+    mom_score = ((df["ret_5d"] > 0).astype(int) * 0.2 + 
+                 (df["ret_20d"] > 0).astype(int) * 0.3 + 
+                 (df["ret_60d"] > 0).astype(int) * 0.5) * 100
+                 
+    # 3. Liquidity Score (0-100): Based on turnover vs median
+    # For now, use a bounded log-based score
+    liq_score = np.clip((df["liquidity_score"] / 15) * 100, 0, 100)
+    
+    # 4. Risk Score (0-100): Inverse of volatility and drawdown
+    risk_score = 100 - np.clip((df["vol_20"] * 100) + (df["drawdown"].abs() * 100), 0, 100)
+    
+    # Combined Watch Score
+    df["score_trend"] = trend_score
+    df["score_momentum"] = mom_score
+    df["score_liquidity"] = liq_score
+    df["score_risk"] = risk_score
+    
+    df["watch_score"] = (
+        df["score_trend"] * 0.4 + 
+        df["score_momentum"] * 0.3 + 
+        df["score_liquidity"] * 0.2 + 
+        df["score_risk"] * 0.1
+    ).round(1)
+
+    # 5. Event Flags (Optional, if corporate_actions available in context)
+    # This part would normally happen in a join, but we can add placeholders
+    df["has_event"] = False
+    df["event_type"] = None
+
     # Cleanup temporary columns
     temp_cols = ["prev_close", "tr", "up_move", "down_move", "plus_dm", "minus_dm", "plus_di", "minus_di", "dx", "cum_max"]
     df = df.drop(columns=[c for c in temp_cols if c in df.columns])

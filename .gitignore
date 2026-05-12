@@ -5,3 +5,7 @@
 .env
 .DS_Store
 *.sqlite3
+web/node_modules/
+data/
+dist/
+web/dist/

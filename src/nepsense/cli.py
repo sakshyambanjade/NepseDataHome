@@ -176,6 +176,18 @@ def dashboard_cmd() -> None:
 
 
 @app.command()
+def ml_cmd() -> None:
+    """Train ML models and generate predictions."""
+    try:
+        from nepsense.ml.train import run_ml_pipeline
+        run_ml_pipeline()
+        console.print("[green]✓ ML pipeline completed. Predictions saved to data/features/predictions_latest.csv[/green]")
+    except Exception as e:
+        console.print(f"[red]✗ ML pipeline failed:[/red] {e}")
+        raise typer.Exit(1)
+
+
+@app.command()
 def daily_run() -> None:
     """Run complete daily pipeline.
     
@@ -230,13 +242,18 @@ def daily_run() -> None:
         compute_all_indicators(ADJUSTED_DIR, DATA_DIR / "features")
         console.print(f"   [green]✓[/green] Indicators computed\n")
 
-        console.print("[blue]8. Generating dashboard artifacts...[/blue]")
+        console.print("[blue]8. Training ML models and predicting...[/blue]")
+        from nepsense.ml.train import run_ml_pipeline
+        run_ml_pipeline()
+        console.print(f"   [green]✓[/green] ML predictions generated\n")
+
+        console.print("[blue]9. Generating dashboard artifacts...[/blue]")
         import pandas as pd
         indicators_df = pd.read_csv(DATA_DIR / "features" / "indicators_all.csv")
         generate_dashboard_json(indicators_df, DATA_DIR / "dashboard")
         console.print(f"   [green]✓[/green] Dashboard JSON generated\n")
 
-        console.print("[blue]9. Creating manifest...[/blue]")
+        console.print("[blue]10. Creating manifest...[/blue]")
         create_manifest()
         console.print(f"   [green]✓[/green] Manifest created\n")
 
@@ -482,6 +499,7 @@ app.command(name="coverage")(coverage_cmd)
 app.command(name="databook")(databook_cmd)
 app.command(name="indicators")(indicators_cmd)
 app.command(name="dashboard")(dashboard_cmd)
+app.command(name="ml")(ml_cmd)
 
 
 if __name__ == "__main__":

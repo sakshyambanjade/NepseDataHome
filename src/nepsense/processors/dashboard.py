@@ -32,6 +32,13 @@ def generate_dashboard_json(
     latest_date = indicators_df["date"].max()
     latest_df = indicators_df[indicators_df["date"] == latest_date]
     
+    # Load ML predictions if available
+    predictions_path = DATA_DIR / "features" / "predictions_latest.csv"
+    if predictions_path.exists():
+        preds_df = pd.read_csv(predictions_path)
+        latest_df = latest_df.merge(preds_df[["symbol", "p_up_5d"]], on="symbol", how="left")
+        logger.info("Merged ML predictions into dashboard")
+
     # 1. Market Overview
     market_overview = {
         "generated_at": datetime.now().isoformat(),
@@ -56,7 +63,9 @@ def generate_dashboard_json(
     index_cols = [
         "symbol", "date", "close", "adjusted_close", "ret_1d", "ret_5d", "ret_20d",
         "rsi_14", "macd_hist", "adx_14", "atr_pct", "vol_20", "drawdown",
-        "liquidity_score", "sma_20_gap", "sma_50_gap"
+        "liquidity_score", "sma_20_gap", "sma_50_gap",
+        "watch_score", "score_trend", "score_momentum", "score_liquidity", "score_risk",
+        "p_up_5d"
     ]
     # Filter to only columns that exist
     index_cols = [c for c in index_cols if c in latest_df.columns]

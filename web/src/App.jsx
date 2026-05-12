@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useSearchParams } from "react-router-dom";
 import { apiGet, apiPost, getAuthToken, setAuthToken, submitGatewayForm } from "./api";
+import { AnalyticsDashboard } from "./Analytics";
+import "./styles.css";
 
 const defaultUserId = "";
 
@@ -60,6 +62,7 @@ function TopNav({ account, onLogout }) {
     ["/", "Home"],
     ["/pricing", "Pricing"],
     ["/docs", "Docs"],
+    ["/analytics", "Analytics"],
     ["/dashboard", "Dashboard"],
     ["/data", "Data"],
     ["/status", "Status"],
@@ -669,6 +672,7 @@ function App() {
         <Route path="/billing/failed" element={<BillingFailedPage />} />
         <Route path="/data" element={<DataPage />} />
         <Route path="/status" element={<StatusPage />} />
+        <Route path="/analytics" element={<Page title="Market Intelligence" subtitle="Real-time indicators and trend analysis."><AnalyticsDashboard /></Page>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
