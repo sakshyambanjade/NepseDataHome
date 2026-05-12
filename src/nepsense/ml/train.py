@@ -32,11 +32,15 @@ def prepare_ml_data(indicators_df: pd.DataFrame, horizon: int = 5):
         "atr_pct", "vol_20", "drawdown", "liquidity_score", "sma_20_gap", "sma_50_gap"
     ]
     
+    # Handle Infinity and extremely large values
+    df[features] = df[features].replace([np.inf, -np.inf], np.nan)
+    
     # Optional: fill NaNs with zero or mean for demo purposes
     df[features] = df[features].fillna(0)
     
-    # Only drop rows where we have absolutely no data (e.g. all features are zero)
-    # but for now let's keep it and drop only in train_baseline
+    # Clip extreme outliers to prevent scaling issues
+    for col in features:
+        df[col] = df[col].clip(-10, 10) # Adjust bounds as needed for specific features
     
     return df, features
 

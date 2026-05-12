@@ -7,5 +7,12 @@
 *.sqlite3
 web/node_modules/
 /data/
+!/data/metadata/
 dist/
 web/dist/
+/data/raw/
+/data/normalized/
+/data/adjusted/
+/data/features/
+/data/dashboard/
+/data/quality/
