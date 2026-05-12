@@ -7,3 +7,4 @@ file,level,message
 /Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-08.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
 /Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-11.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
 /Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-12.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-13.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"

@@ -45,7 +45,7 @@ export function BrokerIntelligence() {
             <h3 className="text-lg font-bold text-white">Top Accumulation</h3>
           </div>
           <div className="space-y-4">
-            {data.most_accumulated.map((item, i) => (
+            {data.most_accumulated?.map((item, i) => (
               <div key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-green-500/30 transition-all">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
@@ -70,7 +70,7 @@ export function BrokerIntelligence() {
             <h3 className="text-lg font-bold text-white">Smart Money Flow</h3>
           </div>
           <div className="space-y-4">
-            {data.smart_money_ranking.map((item, i) => (
+            {data.smart_money_ranking?.map((item, i) => (
               <div key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
@@ -93,7 +93,7 @@ export function BrokerIntelligence() {
             <h3 className="text-lg font-bold text-white">Unusual Concentration</h3>
           </div>
           <div className="space-y-3">
-            {data.unusual_activity.slice(0, 8).map((item) => (
+            {data.unusual_activity?.slice(0, 8).map((item) => (
               <div key={item.symbol} className="p-3 rounded-2xl bg-white/5 border border-white/5">
                 <div className="flex justify-between items-start mb-1">
                   <span className="font-bold text-white">{item.symbol}</span>

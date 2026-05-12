@@ -63,8 +63,13 @@ def generate_broker_artifacts_v2(date: str):
         "operator_watchlist": final_scores.nlargest(15, "operator_like_score")[
             ["symbol", "operator_like_score", "operator_pattern", "churn_score"]
         ].to_dict(orient="records"),
+        "unusual_activity": final_scores.nlargest(10, "operator_like_score")[
+            ["symbol", "operator_like_score", "operator_pattern"]
+        ].to_dict(orient="records"), # Compatibility alias
         "most_accumulated": final_scores.nlargest(10, "accumulation_score")[["symbol", "accumulation_score"]].to_dict(orient="records"),
-        "most_distributed": final_scores.nlargest(10, "distribution_score")[["symbol", "distribution_score"]].to_dict(orient="records"),
+        "smart_money_ranking": final_scores.nlargest(10, "pressure_score")[
+            ["symbol", "pressure_score"]
+        ].rename(columns={"pressure_score": "smart_money_score"}).to_dict(orient="records"),
     }
     
     DASHBOARD_DIR.mkdir(parents=True, exist_ok=True)

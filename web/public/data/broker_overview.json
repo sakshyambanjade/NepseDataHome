@@ -2,148 +2,200 @@
   "date": "2026-05-12",
   "operator_watchlist": [
     {
-      "symbol": "GBIME",
-      "operator_like_score": 18.9,
+      "symbol": "PCBL",
+      "operator_like_score": 20.0,
       "operator_pattern": "Normal broker flow",
-      "churn_score": 16.8
-    },
-    {
-      "symbol": "SHL",
-      "operator_like_score": 18.9,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 23.1
-    },
-    {
-      "symbol": "HRL",
-      "operator_like_score": 18.4,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 21.2
-    },
-    {
-      "symbol": "UPPER",
-      "operator_like_score": 16.8,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 14.5
-    },
-    {
-      "symbol": "STC",
-      "operator_like_score": 15.7,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 10.2
-    },
-    {
-      "symbol": "NTC",
-      "operator_like_score": 15.4,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 15.5
+      "churn_score": 19.7
     },
     {
       "symbol": "NICL",
-      "operator_like_score": 14.1,
+      "operator_like_score": 19.5,
       "operator_pattern": "Normal broker flow",
-      "churn_score": 14.5
+      "churn_score": 18.2
+    },
+    {
+      "symbol": "NTC",
+      "operator_like_score": 17.4,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 13.5
+    },
+    {
+      "symbol": "UPPER",
+      "operator_like_score": 17.1,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 11.4
+    },
+    {
+      "symbol": "STC",
+      "operator_like_score": 16.8,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 19.0
+    },
+    {
+      "symbol": "GBIME",
+      "operator_like_score": 16.0,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 12.4
+    },
+    {
+      "symbol": "SHL",
+      "operator_like_score": 16.0,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 13.5
+    },
+    {
+      "symbol": "HRL",
+      "operator_like_score": 15.1,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 15.4
     },
     {
       "symbol": "HDL",
-      "operator_like_score": 13.9,
+      "operator_like_score": 13.4,
       "operator_pattern": "Normal broker flow",
-      "churn_score": 13.0
+      "churn_score": 14.0
     },
     {
       "symbol": "NABIL",
-      "operator_like_score": 13.6,
+      "operator_like_score": 12.9,
       "operator_pattern": "Normal broker flow",
-      "churn_score": 10.5
-    },
+      "churn_score": 11.9
+    }
+  ],
+  "unusual_activity": [
     {
       "symbol": "PCBL",
-      "operator_like_score": 13.5,
-      "operator_pattern": "Normal broker flow",
-      "churn_score": 14.7
+      "operator_like_score": 20.0,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "NICL",
+      "operator_like_score": 19.5,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "NTC",
+      "operator_like_score": 17.4,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "UPPER",
+      "operator_like_score": 17.1,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "STC",
+      "operator_like_score": 16.8,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "GBIME",
+      "operator_like_score": 16.0,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "SHL",
+      "operator_like_score": 16.0,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "HRL",
+      "operator_like_score": 15.1,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "HDL",
+      "operator_like_score": 13.4,
+      "operator_pattern": "Normal broker flow"
+    },
+    {
+      "symbol": "NABIL",
+      "operator_like_score": 12.9,
+      "operator_pattern": "Normal broker flow"
     }
   ],
   "most_accumulated": [
     {
-      "symbol": "SHL",
-      "accumulation_score": 25.6
-    },
-    {
-      "symbol": "HRL",
-      "accumulation_score": 21.2
-    },
-    {
-      "symbol": "GBIME",
-      "accumulation_score": 16.8
-    },
-    {
-      "symbol": "NTC",
-      "accumulation_score": 15.5
-    },
-    {
       "symbol": "PCBL",
-      "accumulation_score": 14.7
-    },
-    {
-      "symbol": "NICL",
-      "accumulation_score": 14.5
-    },
-    {
-      "symbol": "UPPER",
-      "accumulation_score": 14.5
-    },
-    {
-      "symbol": "HDL",
-      "accumulation_score": 13.0
+      "accumulation_score": 28.5
     },
     {
       "symbol": "STC",
-      "accumulation_score": 10.8
+      "accumulation_score": 22.8
+    },
+    {
+      "symbol": "NICL",
+      "accumulation_score": 22.6
+    },
+    {
+      "symbol": "SHL",
+      "accumulation_score": 17.9
+    },
+    {
+      "symbol": "HRL",
+      "accumulation_score": 17.5
+    },
+    {
+      "symbol": "NTC",
+      "accumulation_score": 15.1
+    },
+    {
+      "symbol": "HDL",
+      "accumulation_score": 14.0
+    },
+    {
+      "symbol": "GBIME",
+      "accumulation_score": 13.9
     },
     {
       "symbol": "NABIL",
-      "accumulation_score": 10.5
+      "accumulation_score": 11.9
+    },
+    {
+      "symbol": "UPPER",
+      "accumulation_score": 11.4
     }
   ],
-  "most_distributed": [
-    {
-      "symbol": "HRL",
-      "distribution_score": 23.4
-    },
-    {
-      "symbol": "SHL",
-      "distribution_score": 23.1
-    },
-    {
-      "symbol": "NTC",
-      "distribution_score": 22.0
-    },
-    {
-      "symbol": "GBIME",
-      "distribution_score": 19.6
-    },
-    {
-      "symbol": "NICL",
-      "distribution_score": 17.7
-    },
-    {
-      "symbol": "NABIL",
-      "distribution_score": 17.4
-    },
-    {
-      "symbol": "UPPER",
-      "distribution_score": 15.8
-    },
-    {
-      "symbol": "HDL",
-      "distribution_score": 14.9
-    },
+  "smart_money_ranking": [
     {
       "symbol": "PCBL",
-      "distribution_score": 14.8
+      "smart_money_score": 24.1
     },
     {
       "symbol": "STC",
-      "distribution_score": 10.2
+      "smart_money_score": 20.9
+    },
+    {
+      "symbol": "NICL",
+      "smart_money_score": 20.4
+    },
+    {
+      "symbol": "HRL",
+      "smart_money_score": 16.4
+    },
+    {
+      "symbol": "SHL",
+      "smart_money_score": 15.7
+    },
+    {
+      "symbol": "HDL",
+      "smart_money_score": 14.4
+    },
+    {
+      "symbol": "NTC",
+      "smart_money_score": 14.3
+    },
+    {
+      "symbol": "GBIME",
+      "smart_money_score": 13.2
+    },
+    {
+      "symbol": "UPPER",
+      "smart_money_score": 12.8
+    },
+    {
+      "symbol": "NABIL",
+      "smart_money_score": 12.4
     }
   ]
 }

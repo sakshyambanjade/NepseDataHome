@@ -1,6 +1,6 @@
 {
-  "files_checked": 9,
-  "total_errors": 8,
+  "files_checked": 10,
+  "total_errors": 9,
   "total_warnings": 0,
   "reports": [
     {
@@ -67,6 +67,14 @@
     },
     {
       "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-12.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-13.csv",
       "rows": 338,
       "errors": [
         "High < max(Open, Close, Low) in 2 rows"
