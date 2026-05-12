@@ -6,6 +6,7 @@ import logging
 import numpy as np
 import pandas as pd
 from typing import List, Optional
+from nepsense.processors.scoring import compute_watch_score
 
 logger = logging.getLogger(__name__)
 
@@ -119,37 +120,8 @@ def compute_indicators(df: pd.DataFrame) -> pd.DataFrame:
     trend_up = price > df["sma_50"]
     df["market_regime"] = (vol_high.astype(int) + (1 - trend_up.astype(int)) * 2)
 
-    # --- Watch Score Calculation (Advanced Phase) ---
-    
-    # 1. Trend Score (0-100): Price vs SMAs and MACD
-    trend_sma20 = np.where(price > df["sma_20"], 1, 0)
-    trend_sma50 = np.where(price > df["sma_50"], 1, 0)
-    trend_macd = np.where(df["macd_hist"] > 0, 1, 0)
-    trend_score = (trend_sma20 * 0.4 + trend_sma50 * 0.3 + trend_macd * 0.3) * 100
-    
-    # 2. Momentum Score (0-100): Weighted percentile of returns
-    mom_score = ((df["ret_5d"] > 0).astype(int) * 0.2 + 
-                 (df["ret_20d"] > 0).astype(int) * 0.3 + 
-                 (df["ret_60d"] > 0).astype(int) * 0.5) * 100
-                 
-    # 3. Liquidity Score (0-100): Based on turnover vs median
-    liq_score = np.clip((df["liquidity_score"] / 15) * 100, 0, 100)
-    
-    # 4. Risk Score (0-100): Inverse of volatility and drawdown
-    risk_score = 100 - np.clip((df["vol_20"] * 100) + (df["drawdown"].abs() * 100), 0, 100)
-    
-    # Combined Watch Score
-    df["score_trend"] = trend_score
-    df["score_momentum"] = mom_score
-    df["score_liquidity"] = liq_score
-    df["score_risk"] = risk_score
-    
-    df["watch_score"] = (
-        df["score_trend"] * 0.4 + 
-        df["score_momentum"] * 0.3 + 
-        df["score_liquidity"] * 0.2 + 
-        df["score_risk"] * 0.1
-    ).round(1)
+    # --- Advanced Scoring ---
+    df = compute_watch_score(df)
 
     # Cleanup temporary columns
     temp_cols = ["prev_close", "tr", "up_move", "down_move", "plus_dm", "minus_dm", "plus_di", "minus_di", "dx", "cum_max"]

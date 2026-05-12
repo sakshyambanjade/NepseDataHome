@@ -110,6 +110,21 @@ def run_ml_pipeline():
     
     model, scaler = train_baseline(ml_df, features)
     
+    # Save model artifacts
+    if model and scaler:
+        import joblib
+        model_dir = DATA_DIR / "models"
+        model_dir.mkdir(parents=True, exist_ok=True)
+        joblib.dump(model, model_dir / "logistic_reg_latest.joblib")
+        joblib.dump(scaler, model_dir / "scaler_latest.joblib")
+        
+        # Log feature importance
+        importance = pd.DataFrame({
+            "feature": features,
+            "coefficient": model.coef_[0]
+        }).sort_values("coefficient", ascending=False)
+        logger.info(f"Top features:\n{importance.head(5)}")
+    
     # Generate predictions for the latest data
     latest_date = df["date"].max()
     latest_df = df[df["date"] == latest_date].copy()
@@ -124,13 +139,12 @@ def run_ml_pipeline():
             latest_df_valid = latest_df
             latest_df_valid["p_up_5d"] = np.nan
     else:
-        # Mock predictions for demo purposes when data is scarce
-        logger.info("Using mock predictions for demo (insufficient data for training)")
-        # Simple heuristic: positive watch score -> higher probability
+        # Heuristic fallback for demo
+        logger.info("Using heuristic predictions (insufficient data for training)")
         if "watch_score" in latest_df.columns:
-            latest_df["p_up_5d"] = (latest_df["watch_score"] / 100 * 0.4 + np.random.random(len(latest_df)) * 0.2 + 0.4).clip(0, 1)
+            latest_df["p_up_5d"] = (latest_df["watch_score"] / 100 * 0.3 + 0.45).clip(0, 1)
         else:
-            latest_df["p_up_5d"] = np.random.uniform(0.4, 0.6, size=len(latest_df))
+            latest_df["p_up_5d"] = 0.5
         latest_df_valid = latest_df
     
     # Save predictions

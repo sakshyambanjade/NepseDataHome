@@ -9,7 +9,7 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-from nepsense.config import DATA_DIR
+from nepsense.config import DATA_DIR, DASHBOARD_DIR
 
 logger = logging.getLogger(__name__)
 
@@ -112,4 +112,13 @@ def generate_dashboard_json(
         with open(output_dir / "symbols" / f"{symbol}.json", "w") as f:
             json.dump(symbol_detail, f)
 
-    logger.info(f"Generated dashboard artifacts in {output_dir}")
+def generate_dashboard_artifacts(output_dir: Path = DASHBOARD_DIR):
+    """Convenience wrapper for generating artifacts using the default output directory."""
+    from nepsense.config import DATA_DIR
+    indicators_path = DATA_DIR / "features" / "indicators_all.csv"
+    if not indicators_path.exists():
+        logger.error(f"Indicators not found at {indicators_path}")
+        return
+    
+    df = pd.read_csv(indicators_path)
+    generate_dashboard_json(df, output_dir)

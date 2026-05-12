@@ -12,6 +12,7 @@ NORMALIZED_DIR: Final = DATA_DIR / "normalized"
 ADJUSTED_DIR: Final = DATA_DIR / "adjusted"
 METADATA_DIR: Final = DATA_DIR / "metadata"
 MASTER_DIR: Final = DATA_DIR / "master"
+DASHBOARD_DIR: Final = PROJECT_ROOT / "web" / "public" / "data"
 QUALITY_DIR: Final = DATA_DIR / "quality"
 
 # Timezone
