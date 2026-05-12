@@ -220,7 +220,7 @@ def adjust_all(
         Count of adjusted files
     """
     actions = load_corporate_actions()
-    files = sorted(input_root.glob("*/*/*.csv"))
+    files = sorted(input_root.rglob("*.csv"))
     logger.info(f"Found {len(files)} normalized files to adjust")
 
     adjusted = 0

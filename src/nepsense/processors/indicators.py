@@ -151,7 +151,7 @@ def compute_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
 def compute_all_indicators(input_root: Path, output_root: Path):
     """Iterate through all adjusted files and compute indicators."""
-    files = sorted(input_root.glob("*/*/*.csv"))
+    files = sorted(input_root.rglob("*.csv"))
     logger.info(f"Computing indicators for {len(files)} files...")
     
     # Since indicators need historical context, we should group by symbol
