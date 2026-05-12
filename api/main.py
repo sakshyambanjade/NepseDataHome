@@ -52,7 +52,7 @@ app.include_router(downloads.router)
 app.include_router(platform.router)
 
 
-if WEB_DIST_DIR.exists():
+if (WEB_DIST_DIR / "assets").exists():
     app.mount("/assets", StaticFiles(directory=WEB_DIST_DIR / "assets"), name="web-assets")
 
     @app.get("/", include_in_schema=False)
