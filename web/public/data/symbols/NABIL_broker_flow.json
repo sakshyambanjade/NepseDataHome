@@ -1,0 +1,81 @@
+{
+  "symbol": "NABIL",
+  "date": "2026-05-12",
+  "total_quantity": 215470,
+  "total_amount": 164594572.78000003,
+  "top_buyers": [
+    {
+      "broker": 50,
+      "buy_qty": 15500.0,
+      "buy_amount": 17143405.15,
+      "buy_share": 0.07193576832041583
+    },
+    {
+      "broker": 28,
+      "buy_qty": 15060.0,
+      "buy_amount": 7424090.18,
+      "buy_share": 0.06989372070357823
+    },
+    {
+      "broker": 7,
+      "buy_qty": 13050.0,
+      "buy_amount": 10327646.74,
+      "buy_share": 0.06056527590847914
+    },
+    {
+      "broker": 10,
+      "buy_qty": 11100.0,
+      "buy_amount": 5379759.48,
+      "buy_share": 0.051515292152039725
+    },
+    {
+      "broker": 18,
+      "buy_qty": 10070.0,
+      "buy_amount": 8488153.860000001,
+      "buy_share": 0.04673504432171532
+    }
+  ],
+  "top_sellers": [
+    {
+      "broker": 24,
+      "sell_qty": 16000.0,
+      "sell_amount": 11275342.620000001,
+      "sell_share": 0.07425627697591312
+    },
+    {
+      "broker": 16,
+      "sell_qty": 15700.0,
+      "sell_amount": 13017716.0,
+      "sell_share": 0.07286397178261475
+    },
+    {
+      "broker": 59,
+      "sell_qty": 13010.0,
+      "sell_amount": 9249006.75,
+      "sell_share": 0.060379635216039354
+    },
+    {
+      "broker": 15,
+      "sell_qty": 11150.0,
+      "sell_amount": 7973824.27,
+      "sell_share": 0.05174734301758946
+    },
+    {
+      "broker": 35,
+      "sell_qty": 10660.0,
+      "sell_amount": 8822835.93,
+      "sell_share": 0.04947324453520212
+    }
+  ],
+  "scores": {
+    "buy_concentration_3": 0.20239476493247321,
+    "sell_concentration_3": 0.2074998839745672,
+    "buy_hhi": 0.03685257445040297,
+    "sell_hhi": 0.03815052140990543,
+    "dominance_score": 20.74998839745672,
+    "accumulation_score": 32.3,
+    "smart_money_score": 35.5,
+    "operator_like_score": 100.0,
+    "operator_pattern": "Extreme concentration pattern"
+  }
+}

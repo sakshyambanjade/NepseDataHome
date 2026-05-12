@@ -8,6 +8,7 @@ export function TopNav() {
   
   const links = [
     { path: "/", label: "Market Intelligence", icon: LayoutDashboard },
+    { path: "/brokers", label: "Broker Intelligence", icon: Users },
     { path: "/data", label: "Open Data", icon: Database },
     { path: "/about", label: "About", icon: Info },
   ];

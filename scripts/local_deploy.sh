@@ -14,13 +14,11 @@ echo "📊 Running Analytical Pipeline (daily-run)..."
 export PYTHONPATH=$PYTHONPATH:$PROJECT_ROOT/src
 $PYTHON_EXEC src/nepsense/cli.py daily-run
 
-# 2. Prepare Frontend Data
-echo "📦 Syncing dashboard artifacts to $WEB_DIR/public/data..."
-mkdir -p "$WEB_DIR/public/data"
-# Use -a for archive mode to preserve structure
-cp -rv data/dashboard/* "$WEB_DIR/public/data/"
+# 1.5 Generate Broker Intelligence Data
+echo "🕵️ Generating Broker Intelligence patterns..."
+$PYTHON_EXEC src/nepsense/ml/generate_broker_dashboard_data.py
 
-# 3. Build React Frontend
+# 2. Build React Frontend
 echo "🏗️ Building Vite frontend..."
 cd "$WEB_DIR"
 npm install

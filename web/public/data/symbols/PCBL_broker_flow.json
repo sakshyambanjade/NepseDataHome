@@ -1,0 +1,81 @@
+{
+  "symbol": "PCBL",
+  "date": "2026-05-12",
+  "total_quantity": 72630,
+  "total_amount": 68898795.2,
+  "top_buyers": [
+    {
+      "broker": 18,
+      "buy_qty": 6000.0,
+      "buy_amount": 5060362.57,
+      "buy_share": 0.08261049153242461
+    },
+    {
+      "broker": 53,
+      "buy_qty": 6000.0,
+      "buy_amount": 6021465.32,
+      "buy_share": 0.08261049153242461
+    },
+    {
+      "broker": 19,
+      "buy_qty": 5600.0,
+      "buy_amount": 7765261.19,
+      "buy_share": 0.07710312543026297
+    },
+    {
+      "broker": 45,
+      "buy_qty": 5510.0,
+      "buy_amount": 2530877.6500000004,
+      "buy_share": 0.0758639680572766
+    },
+    {
+      "broker": 58,
+      "buy_qty": 5200.0,
+      "buy_amount": 5971911.510000001,
+      "buy_share": 0.07159575932810133
+    }
+  ],
+  "top_sellers": [
+    {
+      "broker": 37,
+      "sell_qty": 6000.0,
+      "sell_amount": 3722547.4,
+      "sell_share": 0.08261049153242461
+    },
+    {
+      "broker": 25,
+      "sell_qty": 5260.0,
+      "sell_amount": 5405232.02,
+      "sell_share": 0.07242186424342559
+    },
+    {
+      "broker": 11,
+      "sell_qty": 5100.0,
+      "sell_amount": 6985117.420000001,
+      "sell_share": 0.07021891780256093
+    },
+    {
+      "broker": 47,
+      "sell_qty": 5010.0,
+      "sell_amount": 4919323.67,
+      "sell_share": 0.06897976042957456
+    },
+    {
+      "broker": 53,
+      "sell_qty": 5010.0,
+      "sell_amount": 5820722.890000001,
+      "sell_share": 0.06897976042957456
+    }
+  ],
+  "scores": {
+    "buy_concentration_3": 0.2423241084951122,
+    "sell_concentration_3": 0.22525127357841113,
+    "buy_hhi": 0.05935195483535161,
+    "sell_hhi": 0.05601690078185755,
+    "dominance_score": 24.232410849511222,
+    "accumulation_score": 35.1,
+    "smart_money_score": 38.6,
+    "operator_like_score": 100.0,
+    "operator_pattern": "Extreme concentration pattern"
+  }
+}

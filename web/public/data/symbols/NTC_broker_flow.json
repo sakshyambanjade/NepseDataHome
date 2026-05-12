@@ -1,0 +1,81 @@
+{
+  "symbol": "NTC",
+  "date": "2026-05-12",
+  "total_quantity": 69570,
+  "total_amount": 43602251.62,
+  "top_buyers": [
+    {
+      "broker": 10,
+      "buy_qty": 6050.0,
+      "buy_amount": 2411184.75,
+      "buy_share": 0.08696277130947247
+    },
+    {
+      "broker": 15,
+      "buy_qty": 6000.0,
+      "buy_amount": 6423822.43,
+      "buy_share": 0.086244070720138
+    },
+    {
+      "broker": 32,
+      "buy_qty": 5100.0,
+      "buy_amount": 3057142.03,
+      "buy_share": 0.07330746011211729
+    },
+    {
+      "broker": 16,
+      "buy_qty": 5050.0,
+      "buy_amount": 4353442.79,
+      "buy_share": 0.0725887595227828
+    },
+    {
+      "broker": 9,
+      "buy_qty": 5000.0,
+      "buy_amount": 2552623.61,
+      "buy_share": 0.07187005893344832
+    }
+  ],
+  "top_sellers": [
+    {
+      "broker": 60,
+      "sell_qty": 10100.0,
+      "sell_amount": 7800589.43,
+      "sell_share": 0.1451775190455656
+    },
+    {
+      "broker": 45,
+      "sell_qty": 10000.0,
+      "sell_amount": 3827035.7399999998,
+      "sell_share": 0.14374011786689664
+    },
+    {
+      "broker": 15,
+      "sell_qty": 6000.0,
+      "sell_amount": 2396014.66,
+      "sell_share": 0.086244070720138
+    },
+    {
+      "broker": 38,
+      "sell_qty": 5060.0,
+      "sell_amount": 5428762.319999999,
+      "sell_share": 0.0727324996406497
+    },
+    {
+      "broker": 23,
+      "sell_qty": 5050.0,
+      "sell_amount": 2964931.61,
+      "sell_share": 0.0725887595227828
+    }
+  ],
+  "scores": {
+    "buy_concentration_3": 0.24651430214172776,
+    "sell_concentration_3": 0.37516170763260026,
+    "buy_hhi": 0.06438918848693104,
+    "sell_hhi": 0.08317999091278155,
+    "dominance_score": 37.51617076326003,
+    "accumulation_score": 31.9,
+    "smart_money_score": 35.1,
+    "operator_like_score": 100.0,
+    "operator_pattern": "Extreme concentration pattern"
+  }
+}

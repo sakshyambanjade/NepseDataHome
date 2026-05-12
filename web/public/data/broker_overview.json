@@ -1,0 +1,74 @@
+{
+  "date": "2026-05-12",
+  "most_accumulated": [
+    {
+      "symbol": "PCBL",
+      "accumulation_score": 35.1
+    },
+    {
+      "symbol": "GBIME",
+      "accumulation_score": 33.6
+    },
+    {
+      "symbol": "NABIL",
+      "accumulation_score": 32.3
+    },
+    {
+      "symbol": "NTC",
+      "accumulation_score": 31.9
+    },
+    {
+      "symbol": "HRL",
+      "accumulation_score": 30.3
+    }
+  ],
+  "smart_money_ranking": [
+    {
+      "symbol": "PCBL",
+      "smart_money_score": 38.6
+    },
+    {
+      "symbol": "GBIME",
+      "smart_money_score": 37.0
+    },
+    {
+      "symbol": "NABIL",
+      "smart_money_score": 35.5
+    },
+    {
+      "symbol": "NTC",
+      "smart_money_score": 35.1
+    },
+    {
+      "symbol": "HRL",
+      "smart_money_score": 33.3
+    }
+  ],
+  "unusual_activity": [
+    {
+      "symbol": "GBIME",
+      "operator_like_score": 100.0,
+      "operator_pattern": "Extreme concentration pattern"
+    },
+    {
+      "symbol": "HRL",
+      "operator_like_score": 100.0,
+      "operator_pattern": "Extreme concentration pattern"
+    },
+    {
+      "symbol": "NABIL",
+      "operator_like_score": 100.0,
+      "operator_pattern": "Extreme concentration pattern"
+    },
+    {
+      "symbol": "NTC",
+      "operator_like_score": 100.0,
+      "operator_pattern": "Extreme concentration pattern"
+    },
+    {
+      "symbol": "PCBL",
+      "operator_like_score": 100.0,
+      "operator_pattern": "Extreme concentration pattern"
+    }
+  ]
+}
