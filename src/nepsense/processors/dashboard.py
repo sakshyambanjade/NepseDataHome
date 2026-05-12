@@ -39,6 +39,10 @@ def generate_dashboard_json(
         latest_df = latest_df.merge(preds_df[["symbol", "p_up_5d"]], on="symbol", how="left")
         logger.info("Merged ML predictions into dashboard")
 
+    # Sector performance
+    sector_perf = latest_df.groupby("sector")["ret_1d"].mean().reset_index()
+    sector_perf["ret_1d"] = sector_perf["ret_1d"].round(4)
+    
     # 1. Market Overview
     market_overview = {
         "generated_at": datetime.now().isoformat(),
@@ -50,6 +54,7 @@ def generate_dashboard_json(
         "advancers": int((latest_df["ret_1d"] > 0).sum()),
         "decliners": int((latest_df["ret_1d"] < 0).sum()),
         "unchanged": int((latest_df["ret_1d"] == 0).sum()),
+        "sector_performance": sector_perf.to_dict(orient="records"),
         "top_gainers": latest_df.nlargest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
         "top_losers": latest_df.nsmallest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
         "top_turnover": latest_df.nlargest(10, "turnover")[["symbol", "close", "turnover"]].to_dict(orient="records"),

@@ -57,9 +57,10 @@ export function AnalyticsDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const base = import.meta.env.BASE_URL || "/";
         const [marketResp, symbolsResp] = await Promise.all([
-          fetch('./data/market_overview.json').then(r => r.json()),
-          fetch('./data/symbols_index.json').then(r => r.json())
+          fetch(`${base}data/market_overview.json`).then(r => r.json()),
+          fetch(`${base}data/symbols_index.json`).then(r => r.json())
         ]);
         setMarketData(marketResp);
         setSymbols(symbolsResp);
@@ -109,6 +110,78 @@ export function AnalyticsDashboard() {
           value={(marketData?.total_volume / 1e6).toFixed(2) + ' M'} 
           icon={Layers} 
         />
+      </div>
+
+      {/* Sector Performance & Top Movers */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="glass rounded-xl p-6">
+          <h3 className="text-lg font-bold mb-6 flex items-center">
+            <Layers className="w-5 h-5 mr-2 text-blue-400" />
+            Sector Performance
+          </h3>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData?.sector_performance} layout="vertical">
+                <XAxis type="number" hide domain={['auto', 'auto']} />
+                <YAxis dataKey="sector" type="category" width={100} axisLine={false} tickLine={false} style={{ fontSize: '10px', fill: '#9ca3af' }} />
+                <Tooltip 
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{ backgroundColor: '#111827', border: '1px solid #374151', borderRadius: '8px' }}
+                />
+                <Bar dataKey="ret_1d">
+                  {marketData?.sector_performance?.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.ret_1d >= 0 ? '#10b981' : '#ef4444'} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="glass rounded-xl p-4">
+            <h4 className="text-xs font-bold text-gray-400 uppercase mb-3 flex items-center">
+              <TrendingUp className="w-3 h-3 mr-1 text-green-400" />
+              Top Gainers
+            </h4>
+            <div className="space-y-2">
+              {marketData?.top_gainers?.slice(0, 5).map(g => (
+                <div key={g.symbol} className="flex justify-between items-center text-sm p-2 rounded hover:bg-white/5 cursor-pointer" onClick={() => setSelectedSymbol(g.symbol)}>
+                  <span className="font-bold text-white">{g.symbol}</span>
+                  <span className="text-green-400 font-medium">+{(g.ret_1d * 100).toFixed(2)}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="glass rounded-xl p-4">
+            <h4 className="text-xs font-bold text-gray-400 uppercase mb-3 flex items-center">
+              <TrendingDown className="w-3 h-3 mr-1 text-red-400" />
+              Top Losers
+            </h4>
+            <div className="space-y-2">
+              {marketData?.top_losers?.slice(0, 5).map(l => (
+                <div key={l.symbol} className="flex justify-between items-center text-sm p-2 rounded hover:bg-white/5 cursor-pointer" onClick={() => setSelectedSymbol(l.symbol)}>
+                  <span className="font-bold text-white">{l.symbol}</span>
+                  <span className="text-red-400 font-medium">{(l.ret_1d * 100).toFixed(2)}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="glass rounded-xl p-4 col-span-2">
+            <h4 className="text-xs font-bold text-gray-400 uppercase mb-3 flex items-center">
+              <Activity className="w-3 h-3 mr-1 text-blue-400" />
+              Highest Turnover
+            </h4>
+            <div className="grid grid-cols-2 gap-x-4">
+              {marketData?.top_turnover?.slice(0, 4).map(t => (
+                <div key={t.symbol} className="flex justify-between items-center text-xs p-2 border-b border-gray-800/50" onClick={() => setSelectedSymbol(t.symbol)}>
+                  <span className="text-gray-300">{t.symbol}</span>
+                  <span className="text-white font-mono">Rs. {(t.turnover / 1e6).toFixed(1)}M</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -212,7 +285,8 @@ function SymbolInsight({ symbol }) {
   useEffect(() => {
     setData(null);
     setLoading(true);
-    fetch(`./data/symbols/${symbol}.json`)
+    const base = import.meta.env.BASE_URL || "/";
+    fetch(`${base}data/symbols/${symbol}.json`)
       .then(r => r.json())
       .then(d => {
         setData(d);
