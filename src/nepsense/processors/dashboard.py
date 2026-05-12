@@ -54,6 +54,7 @@ def generate_dashboard_json(
         "advancers": int((latest_df["ret_1d"] > 0).sum()),
         "decliners": int((latest_df["ret_1d"] < 0).sum()),
         "unchanged": int((latest_df["ret_1d"] == 0).sum()),
+        "market_regime": int(latest_df["market_regime"].mode()[0]) if "market_regime" in latest_df.columns else 0,
         "sector_performance": sector_perf.to_dict(orient="records"),
         "top_gainers": latest_df.nlargest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
         "top_losers": latest_df.nsmallest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
@@ -68,7 +69,7 @@ def generate_dashboard_json(
     index_cols = [
         "symbol", "date", "close", "adjusted_close", "ret_1d", "ret_5d", "ret_20d",
         "rsi_14", "macd_hist", "adx_14", "atr_pct", "vol_20", "drawdown",
-        "liquidity_score", "sma_20_gap", "sma_50_gap",
+        "liquidity_score", "sma_20_gap", "sma_50_gap", "vwap", "market_regime",
         "watch_score", "score_trend", "score_momentum", "score_liquidity", "score_risk",
         "p_up_5d"
     ]
