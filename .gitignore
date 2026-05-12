@@ -6,6 +6,6 @@
 .DS_Store
 *.sqlite3
 web/node_modules/
-data/
+/data/
 dist/
 web/dist/

@@ -58,8 +58,8 @@ export function AnalyticsDashboard() {
     const fetchData = async () => {
       try {
         const [marketResp, symbolsResp] = await Promise.all([
-          fetch('/data/dashboard/market_overview.json').then(r => r.json()),
-          fetch('/data/dashboard/symbols_index.json').then(r => r.json())
+          fetch('./data/market_overview.json').then(r => r.json()),
+          fetch('./data/symbols_index.json').then(r => r.json())
         ]);
         setMarketData(marketResp);
         setSymbols(symbolsResp);
@@ -212,7 +212,7 @@ function SymbolInsight({ symbol }) {
   useEffect(() => {
     setData(null);
     setLoading(true);
-    fetch(`/data/dashboard/symbols/${symbol}.json`)
+    fetch(`./data/symbols/${symbol}.json`)
       .then(r => r.json())
       .then(d => {
         setData(d);
