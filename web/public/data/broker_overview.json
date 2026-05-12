@@ -1,74 +1,149 @@
 {
   "date": "2026-05-12",
+  "operator_watchlist": [
+    {
+      "symbol": "GBIME",
+      "operator_like_score": 18.9,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 16.8
+    },
+    {
+      "symbol": "SHL",
+      "operator_like_score": 18.9,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 23.1
+    },
+    {
+      "symbol": "HRL",
+      "operator_like_score": 18.4,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 21.2
+    },
+    {
+      "symbol": "UPPER",
+      "operator_like_score": 16.8,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 14.5
+    },
+    {
+      "symbol": "STC",
+      "operator_like_score": 15.7,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 10.2
+    },
+    {
+      "symbol": "NTC",
+      "operator_like_score": 15.4,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 15.5
+    },
+    {
+      "symbol": "NICL",
+      "operator_like_score": 14.1,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 14.5
+    },
+    {
+      "symbol": "HDL",
+      "operator_like_score": 13.9,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 13.0
+    },
+    {
+      "symbol": "NABIL",
+      "operator_like_score": 13.6,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 10.5
+    },
+    {
+      "symbol": "PCBL",
+      "operator_like_score": 13.5,
+      "operator_pattern": "Normal broker flow",
+      "churn_score": 14.7
+    }
+  ],
   "most_accumulated": [
     {
-      "symbol": "PCBL",
-      "accumulation_score": 37.4
-    },
-    {
-      "symbol": "GBIME",
-      "accumulation_score": 34.3
-    },
-    {
-      "symbol": "NTC",
-      "accumulation_score": 31.7
+      "symbol": "SHL",
+      "accumulation_score": 25.6
     },
     {
       "symbol": "HRL",
-      "accumulation_score": 31.0
+      "accumulation_score": 21.2
+    },
+    {
+      "symbol": "GBIME",
+      "accumulation_score": 16.8
+    },
+    {
+      "symbol": "NTC",
+      "accumulation_score": 15.5
+    },
+    {
+      "symbol": "PCBL",
+      "accumulation_score": 14.7
+    },
+    {
+      "symbol": "NICL",
+      "accumulation_score": 14.5
+    },
+    {
+      "symbol": "UPPER",
+      "accumulation_score": 14.5
+    },
+    {
+      "symbol": "HDL",
+      "accumulation_score": 13.0
+    },
+    {
+      "symbol": "STC",
+      "accumulation_score": 10.8
     },
     {
       "symbol": "NABIL",
-      "accumulation_score": 30.3
+      "accumulation_score": 10.5
     }
   ],
-  "smart_money_ranking": [
+  "most_distributed": [
     {
-      "symbol": "PCBL",
-      "smart_money_score": 41.1
+      "symbol": "HRL",
+      "distribution_score": 23.4
     },
     {
-      "symbol": "GBIME",
-      "smart_money_score": 37.7
+      "symbol": "SHL",
+      "distribution_score": 23.1
     },
     {
       "symbol": "NTC",
-      "smart_money_score": 34.9
+      "distribution_score": 22.0
     },
-    {
-      "symbol": "HRL",
-      "smart_money_score": 34.1
-    },
-    {
-      "symbol": "NABIL",
-      "smart_money_score": 33.3
-    }
-  ],
-  "unusual_activity": [
     {
       "symbol": "GBIME",
-      "operator_like_score": 100.0,
-      "operator_pattern": "Extreme concentration pattern"
+      "distribution_score": 19.6
     },
     {
-      "symbol": "HRL",
-      "operator_like_score": 100.0,
-      "operator_pattern": "Extreme concentration pattern"
+      "symbol": "NICL",
+      "distribution_score": 17.7
     },
     {
       "symbol": "NABIL",
-      "operator_like_score": 100.0,
-      "operator_pattern": "Extreme concentration pattern"
+      "distribution_score": 17.4
     },
     {
-      "symbol": "NTC",
-      "operator_like_score": 100.0,
-      "operator_pattern": "Extreme concentration pattern"
+      "symbol": "UPPER",
+      "distribution_score": 15.8
+    },
+    {
+      "symbol": "HDL",
+      "distribution_score": 14.9
     },
     {
       "symbol": "PCBL",
-      "operator_like_score": 100.0,
-      "operator_pattern": "Extreme concentration pattern"
+      "distribution_score": 14.8
+    },
+    {
+      "symbol": "STC",
+      "distribution_score": 10.2
     }
   ]
 }

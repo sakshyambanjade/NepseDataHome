@@ -1,0 +1,89 @@
+{
+  "symbol": "UPPER",
+  "date": "2026-05-12",
+  "total_quantity": 169210,
+  "total_amount": 136815092.37,
+  "top_buyers": [
+    {
+      "broker": 10,
+      "buy_qty": 11660.0,
+      "buy_amount": 6595764.86,
+      "buy_share": 0.06890845694698895
+    },
+    {
+      "broker": 48,
+      "buy_qty": 10550.0,
+      "buy_amount": 10288809.600000001,
+      "buy_share": 0.06234856095975415
+    },
+    {
+      "broker": 44,
+      "buy_qty": 10100.0,
+      "buy_amount": 13709531.24,
+      "buy_share": 0.059689143667631936
+    },
+    {
+      "broker": 37,
+      "buy_qty": 10050.0,
+      "buy_amount": 6563049.0,
+      "buy_share": 0.05939365285739614
+    },
+    {
+      "broker": 57,
+      "buy_qty": 7060.0,
+      "buy_amount": 5767546.57,
+      "buy_share": 0.0417233024052952
+    }
+  ],
+  "top_sellers": [
+    {
+      "broker": 27,
+      "sell_qty": 15000.0,
+      "sell_amount": 11483569.129999999,
+      "sell_share": 0.0886472430707405
+    },
+    {
+      "broker": 30,
+      "sell_qty": 11120.0,
+      "sell_amount": 6442707.460000001,
+      "sell_share": 0.06571715619644229
+    },
+    {
+      "broker": 53,
+      "sell_qty": 10100.0,
+      "sell_amount": 9500938.07,
+      "sell_share": 0.059689143667631936
+    },
+    {
+      "broker": 11,
+      "sell_qty": 10050.0,
+      "sell_amount": 7122015.49,
+      "sell_share": 0.05939365285739614
+    },
+    {
+      "broker": 33,
+      "sell_qty": 8150.0,
+      "sell_amount": 6665603.109999999,
+      "sell_share": 0.04816500206843567
+    }
+  ],
+  "scores": {
+    "buy_concentration_3": 0.19094616157437505,
+    "sell_concentration_3": 0.2140535429348147,
+    "buy_hhi": 0.03632150826528538,
+    "top_3_pair_share": 0.08929732285325927,
+    "price_impact_score": 100.0,
+    "trade_count": 170,
+    "active_brokers": 57,
+    "turnover": 136815092.37,
+    "accumulation_score": 14.5,
+    "net_buy_strength_score": 17.824005673423557,
+    "distribution_score": 15.8,
+    "net_sell_strength_score": 19.26600082737427,
+    "operator_like_score": 16.8,
+    "operator_pattern": "Normal broker flow",
+    "churn_score": 14.5,
+    "pressure_score": 15.2,
+    "conc_surprise": 0.0
+  }
+}

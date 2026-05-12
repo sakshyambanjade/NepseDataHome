@@ -1,60 +1,86 @@
-"""Bridge for Broker Intelligence static JSON generation."""
+"""Bridge for Broker Intelligence static JSON generation (V2)."""
 
 import logging
 import json
-from pathlib import Path
 import pandas as pd
+import numpy as np
+from pathlib import Path
 from nepsense.config import DASHBOARD_DIR, DATA_DIR
-from nepsense.processors.broker_flow import process_daily_broker_flow, calculate_concentration
-from nepsense.processors.broker_scores import calculate_accumulation_score, calculate_smart_money_score, detect_operator_patterns
+from nepsense.processors.broker_flow import process_daily_broker_flow, calculate_concentration_v2
+from nepsense.processors.broker_scores import (
+    calculate_accumulation_score, 
+    calculate_distribution_score, 
+    calculate_operator_score_v2
+)
 
 logger = logging.getLogger(__name__)
 
-def generate_broker_artifacts(date: str):
-    """Generate all broker-related JSON for the dashboard."""
+def generate_broker_artifacts_v2(date: str):
+    """Generate all broker-related JSON using V2 scoring logic."""
     floorsheet_path = DATA_DIR / "floorsheet" / "normalized" / f"{date}.csv"
     if not floorsheet_path.exists():
         logger.error(f"Floorsheet not found for {date}")
         return
         
-    # 1. Process Flow
-    flow_df = process_daily_broker_flow(floorsheet_path)
+    # 1. Process Flow & Pairs
+    flow_df, pairs_df = process_daily_broker_flow(floorsheet_path)
     
-    # 2. Calculate Stats & Scores
-    conc_df = calculate_concentration(flow_df)
-    acc_df = calculate_accumulation_score(flow_df, conc_df)
-    smart_df = calculate_smart_money_score(acc_df, flow_df)
-    op_df = detect_operator_patterns(flow_df)
+    # 2. Base Concentration & Metrics
+    metrics_df = calculate_concentration_v2(flow_df, pairs_df)
     
-    print(f"conc_df columns: {conc_df.columns.tolist()}")
-    print(f"acc_df columns: {acc_df.columns.tolist()}")
+    # 3. Acc/Dist Scores
+    acc_df = calculate_accumulation_score(flow_df, metrics_df)
+    dist_df = calculate_distribution_score(flow_df, metrics_df)
     
-    # Merge all scores
-    scores_df = conc_df.merge(acc_df, on="symbol").merge(smart_df, on="symbol").merge(op_df, on="symbol")
-    print(f"Scores columns: {scores_df.columns.tolist()}")
+    # Merge for easier looping
+    merged_metrics = metrics_df.merge(acc_df, on="symbol").merge(dist_df, on="symbol")
     
-    # 3. Generate Overview JSON
+    # 4. Final Operator Score V2
+    operator_results = []
+    for _, row in merged_metrics.iterrows():
+        symbol = row["symbol"]
+        
+        # Mock historical context for demo
+        # In production, this would be loaded from previous runs
+        historical = {
+            "rolling_avg_conc": 35.0, # Default avg
+            "persistence_score": np.random.randint(20, 60) # Random demo
+        }
+        
+        metrics_dict = row.to_dict()
+        res = calculate_operator_score_v2(symbol, metrics_dict, historical)
+        res["symbol"] = symbol
+        operator_results.append(res)
+        
+    op_df = pd.DataFrame(operator_results)
+    
+    # Final consolidated scores
+    final_scores = merged_metrics.merge(op_df, on="symbol")
+    
+    # 5. Generate Overview JSON
     overview = {
         "date": date,
-        "most_accumulated": scores_df.nlargest(10, "accumulation_score")[["symbol", "accumulation_score"]].to_dict(orient="records"),
-        "smart_money_ranking": scores_df.nlargest(10, "smart_money_score")[["symbol", "smart_money_score"]].to_dict(orient="records"),
-        "unusual_activity": op_df[op_df["operator_like_score"] > 50].to_dict(orient="records")
+        "operator_watchlist": final_scores.nlargest(15, "operator_like_score")[
+            ["symbol", "operator_like_score", "operator_pattern", "churn_score"]
+        ].to_dict(orient="records"),
+        "most_accumulated": final_scores.nlargest(10, "accumulation_score")[["symbol", "accumulation_score"]].to_dict(orient="records"),
+        "most_distributed": final_scores.nlargest(10, "distribution_score")[["symbol", "distribution_score"]].to_dict(orient="records"),
     }
     
     DASHBOARD_DIR.mkdir(parents=True, exist_ok=True)
     with open(DASHBOARD_DIR / "broker_overview.json", "w") as f:
         json.dump(overview, f, indent=2)
         
-    # 4. Generate Symbol Broker Flow JSON
+    # 6. Symbol Specific Flow
     (DASHBOARD_DIR / "symbols").mkdir(exist_ok=True)
     for symbol, group in flow_df.groupby("symbol"):
-        symbol_scores = scores_df[scores_df["symbol"] == symbol].iloc[0].to_dict()
+        symbol_scores = final_scores[final_scores["symbol"] == symbol].iloc[0].to_dict()
         
         flow_data = {
             "symbol": symbol,
             "date": date,
-            "total_quantity": int(group["buy_qty"].sum()),
-            "total_amount": float(group["buy_amount"].sum()),
+            "total_quantity": int(group["market_qty"].iloc[0]),
+            "total_amount": float(group["market_amount"].iloc[0]),
             "top_buyers": group.nlargest(5, "buy_qty")[["broker", "buy_qty", "buy_amount", "buy_share"]].to_dict(orient="records"),
             "top_sellers": group.nlargest(5, "sell_qty")[["broker", "sell_qty", "sell_amount", "sell_share"]].to_dict(orient="records"),
             "scores": {k: v for k, v in symbol_scores.items() if k != "symbol"}
@@ -63,11 +89,12 @@ def generate_broker_artifacts(date: str):
         with open(DASHBOARD_DIR / "symbols" / f"{symbol}_broker_flow.json", "w") as f:
             json.dump(flow_data, f, indent=2)
             
-    logger.info("Broker artifacts generated successfully.")
+    logger.info("Broker V2 artifacts generated.")
 
 if __name__ == "__main__":
-    # Mock run for demo
     from nepsense.collectors.floorsheet import generate_mock_floorsheet
     date = "2026-05-12"
-    generate_mock_floorsheet(date, ["NABIL", "GBIME", "NTC", "PCBL", "HRL"])
-    generate_broker_artifacts(date)
+    # Ensure symbols match previous runs or are broad enough
+    symbols = ["NABIL", "GBIME", "NTC", "PCBL", "HRL", "UPPER", "HDL", "SHL", "STC", "NICL"]
+    generate_mock_floorsheet(date, symbols)
+    generate_broker_artifacts_v2(date)

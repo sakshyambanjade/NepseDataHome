@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Activity, LayoutDashboard, Database, Info, Menu, X, Code } from 'lucide-react';
+import { Activity, LayoutDashboard, Database, Info, Menu, X, Code, ShieldAlert, Users } from 'lucide-react';
 
 export function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +8,7 @@ export function TopNav() {
   
   const links = [
     { path: "/", label: "Market Intelligence", icon: LayoutDashboard },
+    { path: "/operator", label: "Operator Watch", icon: ShieldAlert, highlight: true },
     { path: "/brokers", label: "Broker Intelligence", icon: Users },
     { path: "/data", label: "Open Data", icon: Database },
     { path: "/about", label: "About", icon: Info },
@@ -38,10 +39,12 @@ export function TopNav() {
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   active 
                     ? "bg-blue-600/10 text-blue-400 shadow-[inset_0_0_12px_rgba(59,130,246,0.1)]" 
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                    : link.highlight
+                      ? "text-amber-500 bg-amber-500/5 hover:bg-amber-500/10 border border-amber-500/10"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <Icon className="w-4 h-4 mr-2" />
+                <Icon className={`w-4 h-4 mr-2 ${link.highlight && !active ? 'text-amber-500' : ''}`} />
                 {link.label}
               </Link>
             );
