@@ -54,6 +54,16 @@ def get_user(user_id: str) -> dict[str, Any]:
     return user
 
 
+def get_user_by_email(email: str) -> dict[str, Any]:
+    init_db()
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
+    user = row_to_dict(row)
+    if not user:
+        raise ApiError("USER_NOT_FOUND", "User not found", {"email": email}, status_code=404)
+    return user
+
+
 def create_api_key(user_id: str, credits: int = 0, expires_at: str | None = None) -> dict[str, Any]:
     init_db()
     with connect() as conn:

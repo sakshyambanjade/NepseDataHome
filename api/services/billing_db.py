@@ -58,6 +58,8 @@ def row_to_dict(row: sqlite3.Row | None) -> dict[str, Any] | None:
     data = dict(row)
     if isinstance(data.get("raw_response"), str) and data["raw_response"]:
         data["raw_response"] = json.loads(data["raw_response"])
+    if isinstance(data.get("raw_payload"), str) and data["raw_payload"]:
+        data["raw_payload"] = json.loads(data["raw_payload"])
     return data
 
 
@@ -166,12 +168,24 @@ def init_db() -> None:
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
 
+            CREATE TABLE IF NOT EXISTS payment_events (
+                id TEXT PRIMARY KEY,
+                order_id TEXT REFERENCES payment_orders(id),
+                gateway TEXT NOT NULL,
+                event_type TEXT NOT NULL,
+                status TEXT NOT NULL,
+                message TEXT,
+                raw_payload TEXT,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+
             CREATE INDEX IF NOT EXISTS idx_api_keys_hash ON api_keys(key_hash);
             CREATE INDEX IF NOT EXISTS idx_api_keys_prefix ON api_keys(key_prefix);
             CREATE INDEX IF NOT EXISTS idx_orders_gateway_payment ON payment_orders(gateway_payment_id);
             CREATE INDEX IF NOT EXISTS idx_usage_api_key ON api_usage_logs(api_key_id);
             CREATE INDEX IF NOT EXISTS idx_ip_logs_api_key ON api_key_ip_logs(api_key_id);
             CREATE INDEX IF NOT EXISTS idx_sessions_user ON active_sessions(user_id, status);
+            CREATE INDEX IF NOT EXISTS idx_payment_events_order ON payment_events(order_id, created_at);
             """
         )
         _ensure_columns(conn)
@@ -218,3 +232,23 @@ def seed_plans(conn: sqlite3.Connection) -> None:
 
 def expiry_from_days(days: int) -> str:
     return (utc_now() + timedelta(days=days)).isoformat()
+
+
+def log_payment_event(
+    order_id: str | None,
+    gateway: str,
+    event_type: str,
+    status: str,
+    message: str | None = None,
+    raw_payload: dict[str, Any] | None = None,
+) -> None:
+    init_db()
+    payload = json.dumps(raw_payload or {}, default=str)
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO payment_events (id, order_id, gateway, event_type, status, message, raw_payload, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (new_id(), order_id, gateway, event_type, status, message, payload, iso_now()),
+        )

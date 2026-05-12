@@ -20,6 +20,36 @@ Open-source **NEPSE (Nepal Stock Exchange)** historical market data engine. Coll
 💡 **[Examples](#examples)** - Real backtesting examples  
 ⚙️ **[Installation](#installation)** - Get started in 5 minutes  
 
+## Unified Product Platform (Single Domain)
+
+This repository now supports a **single-domain NEPSE data product** shape:
+
+- `/` -> landing page (portfolio + product positioning)
+- `/pricing` -> credit packs (Rs. 50, Rs. 100, Rs. 500)
+- `/docs` -> developer docs page
+- `/dashboard` -> user dashboard
+- `/dashboard/billing` -> payment and credit history
+- `/dashboard/api-keys` -> API key management
+- `/data` -> dataset coverage and downloads
+- `/status` -> API + data/admin update status
+- `/api/v1/...` -> NEPSE API endpoints
+
+Interactive API reference is exposed at `/api/docs` and OpenAPI JSON at `/api/openapi.json`.
+
+### Local Product Run
+
+```bash
+# 1) API server (repo root)
+uvicorn api.main:app --reload --port 8000
+
+# 2) Optional frontend dev server (separate terminal)
+cd web
+npm install
+npm run dev
+```
+
+For production, the Docker image builds the frontend (`web/`) and serves it from FastAPI so both UI and API are on one domain.
+
 ## Key Features
 
 ✅ **Daily Collection** - Automatic data scraping from ShareSansar  

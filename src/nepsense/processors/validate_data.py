@@ -65,11 +65,16 @@ def validate_file(file: Path) -> dict:
     errors.extend(ohlc_result["errors"])
     warnings.extend(ohlc_result["warnings"])
 
-    # Check for data with no source
+    # Check for data with no source or low confidence
     if "source" in df.columns:
         no_source = df["source"].isna().sum()
         if no_source > 0:
             warnings.append(f"Rows missing source: {no_source}")
+
+    if "source_confidence" in df.columns:
+        low_confidence = (df["source_confidence"] < 0.7).sum()
+        if low_confidence > 0:
+            warnings.append(f"Low source confidence (< 0.7) in {low_confidence} rows")
 
     # Check for unusual price movements (>90% without corporate action)
     if "close" in df.columns and len(df) > 1:

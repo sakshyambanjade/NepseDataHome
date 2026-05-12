@@ -11,7 +11,7 @@ import requests
 
 from api.config import APP_BASE_URL, FRONTEND_URL, KHALTI_INIT_URL, KHALTI_LOOKUP_URL, KHALTI_SECRET_KEY
 from api.services.api_key_service import get_default_api_key
-from api.services.billing_db import connect, init_db, iso_now, new_id, row_to_dict
+from api.services.billing_db import connect, init_db, iso_now, log_payment_event, new_id, row_to_dict
 from api.services.credit_service import add_credits
 from api.services.csv_service import ApiError
 from api.services.payment_plans import get_plan
@@ -62,6 +62,7 @@ class KhaltiService:
                 """,
                 (order_id, user_id, plan.amount, plan.credits, poid, iso_now()),
             )
+            log_payment_event(order_id, "khalti", "initiate_started", "pending", raw_payload={"plan_id": plan_id})
 
         payload = {
             "return_url": f"{APP_BASE_URL}/api/v1/payments/khalti/callback",
@@ -92,6 +93,14 @@ class KhaltiService:
                     "UPDATE payment_orders SET status = 'failed', raw_response = ? WHERE id = ?",
                     (json.dumps(body), order_id),
                 )
+            log_payment_event(
+                order_id,
+                "khalti",
+                "initiate_failed",
+                "failed",
+                message="Khalti initiate returned error",
+                raw_payload=body,
+            )
             raise ApiError(
                 "KHALTI_INIT_FAILED",
                 "Could not initiate Khalti payment",
@@ -108,6 +117,7 @@ class KhaltiService:
                 """,
                 (body.get("pidx"), json.dumps(body), order_id),
             )
+        log_payment_event(order_id, "khalti", "initiate_success", "pending", raw_payload=body)
         return {"order_id": order_id, "purchase_order_id": poid, **body}
 
     def lookup_payment(self, pidx: str) -> dict[str, Any]:
@@ -148,6 +158,7 @@ class KhaltiService:
             )
 
         if order["status"] == "paid":
+            log_payment_event(order["id"], "khalti", "verify_idempotent", "paid", raw_payload=lookup)
             return {"status": "paid", "order": order, "idempotent": True}
 
         expected_paisa = int(order["amount"]) * 100
@@ -162,6 +173,7 @@ class KhaltiService:
                     """,
                     (json.dumps(lookup), lookup.get("transaction_id"), iso_now(), order["id"]),
                 )
+            log_payment_event(order["id"], "khalti", "verify_pending", "pending", raw_payload=lookup)
             return {"status": lookup.get("status", "pending"), "order": order}
         if paid_paisa != expected_paisa:
             with connect() as conn:
@@ -169,6 +181,14 @@ class KhaltiService:
                     "UPDATE payment_orders SET status = 'amount_mismatch', raw_response = ?, verified_at = ? WHERE id = ?",
                     (json.dumps(lookup), iso_now(), order["id"]),
                 )
+            log_payment_event(
+                order["id"],
+                "khalti",
+                "verify_amount_mismatch",
+                "amount_mismatch",
+                message="Paid amount does not match plan",
+                raw_payload=lookup,
+            )
             raise ApiError(
                 "PAYMENT_AMOUNT_MISMATCH",
                 "Verified amount does not match the selected credit pack",
@@ -188,6 +208,7 @@ class KhaltiService:
                 """,
                 (lookup.get("transaction_id"), json.dumps(lookup), iso_now(), order["id"]),
             )
+        log_payment_event(order["id"], "khalti", "verify_paid", "paid", raw_payload=lookup)
         return {"status": "paid", "order": order, "balance": balance, "idempotent": False}
 
 

@@ -20,6 +20,8 @@ from nepsense.processors.validate_data import (
     generate_symbol_coverage_report,
     validate_all,
 )
+from nepsense.processors.indicators import compute_indicators, compute_all_indicators
+from nepsense.processors.dashboard import generate_dashboard_json
 from nepsense.pipelines import backfill
 from nepsense.storage import build_master, create_manifest
 from nepsense.utils.logging import setup_logger
@@ -143,6 +145,37 @@ def validate_cmd(
 
 
 @app.command()
+def indicators_cmd() -> None:
+    """Compute technical indicators for all adjusted data."""
+    try:
+        from nepsense.config import ADJUSTED_DIR, DATA_DIR
+        compute_all_indicators(ADJUSTED_DIR, DATA_DIR / "features")
+        console.print("[green]✓ Indicators computed and saved to data/features/indicators_all.csv[/green]")
+    except Exception as e:
+        console.print(f"[red]✗ Indicators computation failed:[/red] {e}")
+        raise typer.Exit(1)
+
+
+@app.command()
+def dashboard_cmd() -> None:
+    """Generate dashboard JSON artifacts."""
+    try:
+        import pandas as pd
+        from nepsense.config import DATA_DIR
+        indicators_path = DATA_DIR / "features" / "indicators_all.csv"
+        if not indicators_path.exists():
+            console.print(f"[yellow]! Indicators file not found at {indicators_path}. Run 'indicators' first.[/yellow]")
+            raise typer.Exit(1)
+            
+        df = pd.read_csv(indicators_path)
+        generate_dashboard_json(df, DATA_DIR / "dashboard")
+        console.print("[green]✓ Dashboard JSON artifacts generated in data/dashboard/[/green]")
+    except Exception as e:
+        console.print(f"[red]✗ Dashboard generation failed:[/red] {e}")
+        raise typer.Exit(1)
+
+
+@app.command()
 def daily_run() -> None:
     """Run complete daily pipeline.
     
@@ -192,7 +225,18 @@ def daily_run() -> None:
             f"{data_book['symbols']} symbols\n"
         )
 
-        console.print("[blue]7. Creating manifest...[/blue]")
+        console.print("[blue]7. Computing technical indicators...[/blue]")
+        from nepsense.config import ADJUSTED_DIR, DATA_DIR
+        compute_all_indicators(ADJUSTED_DIR, DATA_DIR / "features")
+        console.print(f"   [green]✓[/green] Indicators computed\n")
+
+        console.print("[blue]8. Generating dashboard artifacts...[/blue]")
+        import pandas as pd
+        indicators_df = pd.read_csv(DATA_DIR / "features" / "indicators_all.csv")
+        generate_dashboard_json(indicators_df, DATA_DIR / "dashboard")
+        console.print(f"   [green]✓[/green] Dashboard JSON generated\n")
+
+        console.print("[blue]9. Creating manifest...[/blue]")
         create_manifest()
         console.print(f"   [green]✓[/green] Manifest created\n")
 
@@ -436,6 +480,8 @@ app.command(name="import-companywise")(import_companywise_cmd)
 app.command(name="import-companywise-github")(import_companywise_github_cmd)
 app.command(name="coverage")(coverage_cmd)
 app.command(name="databook")(databook_cmd)
+app.command(name="indicators")(indicators_cmd)
+app.command(name="dashboard")(dashboard_cmd)
 
 
 if __name__ == "__main__":

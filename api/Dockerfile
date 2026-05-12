@@ -1,3 +1,15 @@
+FROM node:20-alpine AS web-build
+
+WORKDIR /web
+
+COPY web/package.json ./
+COPY web/vite.config.js ./
+COPY web/index.html ./
+COPY web/src ./src
+
+RUN npm install && npm run build
+
+
 FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -8,6 +20,7 @@ WORKDIR /app
 COPY requirements.txt pyproject.toml README.md ./
 COPY api ./api
 COPY src ./src
+COPY --from=web-build /web/dist ./web/dist
 COPY data/history ./data/history
 COPY data/master ./data/master
 COPY data/metadata ./data/metadata
