@@ -1,4 +1,4 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2007-04-18,BPCL,800.0,803.0,803.0,803.0,624.0,0.0,,aabishkar2_nepse_data,0.7
-2007-04-18,CFCL,270.0,280.0,280.0,280.0,530.0,0.0,,aabishkar2_nepse_data,0.7
-2007-04-18,CHCL,725.0,725.0,725.0,725.0,130.0,0.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2007-04-18,BPCL,800.0,803.0,803.0,803.0,,,624.0,0.0,,aabishkar2_nepse_data,0.7
+2007-04-18,CFCL,270.0,280.0,280.0,280.0,,,530.0,0.0,,aabishkar2_nepse_data,0.7
+2007-04-18,CHCL,725.0,725.0,725.0,725.0,,,130.0,0.0,,aabishkar2_nepse_data,0.7

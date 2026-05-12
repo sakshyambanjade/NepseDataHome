@@ -1,1 +1,9 @@
-
+file,level,message
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-01.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-04.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-05.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-06.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-07.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-08.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-11.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"
+/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-12.csv,ERROR,"High < max(Open, Close, Low) in 2 rows"

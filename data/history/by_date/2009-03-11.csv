@@ -1,2 +1,2 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2009-03-11,CFCL,610.0,622.0,610.0,610.0,95.0,0.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2009-03-11,CFCL,610.0,622.0,610.0,610.0,,,95.0,0.0,,aabishkar2_nepse_data,0.7

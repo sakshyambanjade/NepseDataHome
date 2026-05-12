@@ -1,6 +1,6 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2010-06-06,AHPC,481.0,485.0,475.0,485.0,420.0,0.0,,aabishkar2_nepse_data,0.7
-2010-06-06,BPCL,790.0,802.0,802.0,802.0,10.0,0.0,,aabishkar2_nepse_data,0.7
-2010-06-06,CHCL,965.0,984.0,984.0,984.0,40.0,0.0,,aabishkar2_nepse_data,0.7
-2010-06-06,CZBIL,513.0,515.0,501.0,505.0,910.0,0.0,,aabishkar2_nepse_data,0.7
-2010-06-06,EDBL,285.0,295.0,285.0,295.0,779.0,0.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2010-06-06,AHPC,481.0,485.0,475.0,485.0,,,420.0,0.0,,aabishkar2_nepse_data,0.7
+2010-06-06,BPCL,790.0,802.0,802.0,802.0,,,10.0,0.0,,aabishkar2_nepse_data,0.7
+2010-06-06,CHCL,965.0,984.0,984.0,984.0,,,40.0,0.0,,aabishkar2_nepse_data,0.7
+2010-06-06,CZBIL,513.0,515.0,501.0,505.0,,,910.0,0.0,,aabishkar2_nepse_data,0.7
+2010-06-06,EDBL,285.0,295.0,285.0,295.0,,,779.0,0.0,,aabishkar2_nepse_data,0.7

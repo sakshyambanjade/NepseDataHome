@@ -1,7 +1,7 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2011-04-26,ADBL,122.0,122.0,122.0,122.0,70.0,8540.0,,aabishkar2_nepse_data,0.7
-2011-04-26,AHPC,420.0,425.0,425.0,425.0,16.0,6800.0,,aabishkar2_nepse_data,0.7
-2011-04-26,JBBL,104.0,105.0,104.0,105.0,130.0,13580.0,,aabishkar2_nepse_data,0.7
-2011-04-26,MBL,126.0,126.0,124.0,124.0,187.0,23216.0,,aabishkar2_nepse_data,0.7
-2011-04-26,NIB,540.0,535.0,535.0,535.0,115.0,61525.0,,aabishkar2_nepse_data,0.7
-2011-04-26,NMB,206.0,210.0,198.0,198.0,306.0,61540.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2011-04-26,ADBL,122.0,122.0,122.0,122.0,,,70.0,8540.0,,aabishkar2_nepse_data,0.7
+2011-04-26,AHPC,420.0,425.0,425.0,425.0,,,16.0,6800.0,,aabishkar2_nepse_data,0.7
+2011-04-26,JBBL,104.0,105.0,104.0,105.0,,,130.0,13580.0,,aabishkar2_nepse_data,0.7
+2011-04-26,MBL,126.0,126.0,124.0,124.0,,,187.0,23216.0,,aabishkar2_nepse_data,0.7
+2011-04-26,NIB,540.0,535.0,535.0,535.0,,,115.0,61525.0,,aabishkar2_nepse_data,0.7
+2011-04-26,NMB,206.0,210.0,198.0,198.0,,,306.0,61540.0,,aabishkar2_nepse_data,0.7

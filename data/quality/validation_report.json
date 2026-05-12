@@ -1,12 +1,76 @@
 {
-  "files_checked": 1,
-  "total_errors": 0,
+  "files_checked": 9,
+  "total_errors": 8,
   "total_warnings": 0,
   "reports": [
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-01.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
     {
       "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-02.csv",
       "rows": 3,
       "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-04.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-05.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-06.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-07.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-08.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-11.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
+      "warnings": []
+    },
+    {
+      "file": "/Users/skb/Molvis/NepSense/NepSense/data/normalized/2026/05/2026-05-12.csv",
+      "rows": 338,
+      "errors": [
+        "High < max(Open, Close, Low) in 2 rows"
+      ],
       "warnings": []
     }
   ]

@@ -1,4 +1,4 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2009-12-28,AHPC,486.0,495.0,485.0,490.0,170.0,0.0,,aabishkar2_nepse_data,0.7
-2009-12-28,CHCL,1029.0,1040.0,1030.0,1040.0,630.0,0.0,,aabishkar2_nepse_data,0.7
-2009-12-28,CZBIL,590.0,595.0,585.0,593.0,2770.0,0.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2009-12-28,AHPC,486.0,495.0,485.0,490.0,,,170.0,0.0,,aabishkar2_nepse_data,0.7
+2009-12-28,CHCL,1029.0,1040.0,1030.0,1040.0,,,630.0,0.0,,aabishkar2_nepse_data,0.7
+2009-12-28,CZBIL,590.0,595.0,585.0,593.0,,,2770.0,0.0,,aabishkar2_nepse_data,0.7

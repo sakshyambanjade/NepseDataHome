@@ -1,7 +1,7 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2011-03-20,ADBL,132.0,134.0,131.0,133.0,1507.0,198979.0,,aabishkar2_nepse_data,0.7
-2011-03-20,AHPC,423.0,431.0,420.0,426.0,584.0,249658.0,,aabishkar2_nepse_data,0.7
-2011-03-20,ALICL,224.0,229.0,224.0,229.0,610.0,137590.0,,aabishkar2_nepse_data,0.7
-2011-03-20,CFCL,190.0,187.0,185.0,185.0,748.0,138460.0,,aabishkar2_nepse_data,0.7
-2011-03-20,CZBIL,207.0,217.0,211.0,217.0,1650.0,353010.0,,aabishkar2_nepse_data,0.7
-2011-03-20,KBL,260.0,270.0,260.0,270.0,90.0,23800.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2011-03-20,ADBL,132.0,134.0,131.0,133.0,,,1507.0,198979.0,,aabishkar2_nepse_data,0.7
+2011-03-20,AHPC,423.0,431.0,420.0,426.0,,,584.0,249658.0,,aabishkar2_nepse_data,0.7
+2011-03-20,ALICL,224.0,229.0,224.0,229.0,,,610.0,137590.0,,aabishkar2_nepse_data,0.7
+2011-03-20,CFCL,190.0,187.0,185.0,185.0,,,748.0,138460.0,,aabishkar2_nepse_data,0.7
+2011-03-20,CZBIL,207.0,217.0,211.0,217.0,,,1650.0,353010.0,,aabishkar2_nepse_data,0.7
+2011-03-20,KBL,260.0,270.0,260.0,270.0,,,90.0,23800.0,,aabishkar2_nepse_data,0.7

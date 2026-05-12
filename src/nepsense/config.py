@@ -30,6 +30,8 @@ STANDARD_OHLCV_COLUMNS: Final = [
     "high",
     "low",
     "close",
+    "company_name",
+    "sector",
     "volume",
     "turnover",
     "transactions",

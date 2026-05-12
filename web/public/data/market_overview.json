@@ -1,0 +1,168 @@
+{
+  "generated_at": "2026-05-12T23:04:00.251237",
+  "date": "2026-05-12",
+  "active_symbols": 338,
+  "total_volume": 10678550,
+  "total_turnover": 4665020677.74,
+  "total_transactions": 62512,
+  "advancers": 0,
+  "decliners": 0,
+  "unchanged": 338,
+  "sector_performance": [],
+  "top_gainers": [
+    {
+      "symbol": "ACLBSL",
+      "close": 951.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ADBL",
+      "close": 310.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ADBLD83",
+      "close": 1050.8,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AHL",
+      "close": 508.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AHPC",
+      "close": 280.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AKJCL",
+      "close": 350.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AKPL",
+      "close": 271.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ALBSL",
+      "close": 1112.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ALICL",
+      "close": 454.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ANLB",
+      "close": 6065.0,
+      "ret_1d": 0.0
+    }
+  ],
+  "top_losers": [
+    {
+      "symbol": "ACLBSL",
+      "close": 951.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ADBL",
+      "close": 310.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ADBLD83",
+      "close": 1050.8,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AHL",
+      "close": 508.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AHPC",
+      "close": 280.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AKJCL",
+      "close": 350.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "AKPL",
+      "close": 271.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ALBSL",
+      "close": 1112.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ALICL",
+      "close": 454.0,
+      "ret_1d": 0.0
+    },
+    {
+      "symbol": "ANLB",
+      "close": 6065.0,
+      "ret_1d": 0.0
+    }
+  ],
+  "top_turnover": [
+    {
+      "symbol": "NHPC",
+      "close": 285.0,
+      "turnover": 189943304.7
+    },
+    {
+      "symbol": "RSML",
+      "close": 3729.0,
+      "turnover": 180957833.0
+    },
+    {
+      "symbol": "RIDI",
+      "close": 346.1,
+      "turnover": 173095365.4
+    },
+    {
+      "symbol": "SHIVM",
+      "close": 677.0,
+      "turnover": 158906117.9
+    },
+    {
+      "symbol": "SYPNL",
+      "close": 1490.0,
+      "turnover": 153360354.1
+    },
+    {
+      "symbol": "SOHL",
+      "close": 692.9,
+      "turnover": 133775081.0
+    },
+    {
+      "symbol": "NGPL",
+      "close": 443.0,
+      "turnover": 116535236.9
+    },
+    {
+      "symbol": "AKJCL",
+      "close": 350.0,
+      "turnover": 114948701.8
+    },
+    {
+      "symbol": "HFIN",
+      "close": 1000.0,
+      "turnover": 107422786.1
+    },
+    {
+      "symbol": "API",
+      "close": 345.0,
+      "turnover": 102620161.5
+    }
+  ]
+}

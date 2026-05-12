@@ -1,2 +1,2 @@
-date,symbol,open,high,low,close,volume,turnover,transactions,source,source_confidence
-2011-11-29,ADBL,160.0,163.0,155.0,156.0,2778.0,445990.0,,aabishkar2_nepse_data,0.7
+date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
+2011-11-29,ADBL,160.0,163.0,155.0,156.0,,,2778.0,445990.0,,aabishkar2_nepse_data,0.7

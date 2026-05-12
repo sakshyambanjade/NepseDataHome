@@ -1,0 +1,29 @@
+
+> nepsense-platform-web@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 2456 modules transformed.
+x Build failed in 680ms
+error during build:
+src/App.jsx (4:61): "Github" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.mjs", imported by "src/App.jsx".
+file: /Users/skb/Molvis/NepSense/NepSense/web/src/App.jsx:4:61
+
+2: import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+3: import { AnalyticsDashboard } from "./Analytics";
+4: import { Activity, Database, Info, LayoutDashboard, Menu, X, Github } from "lucide-react";
+                                                                ^
+5: 
+6: function TopNav() {
+
+    at getRollupError (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at error (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/parseAst.js:402:42)
+    at Module.error (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:17384:16)
+    at Module.traceVariable (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:17817:29)
+    at ModuleScope.findVariable (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:15407:39)
+    at FunctionScope.findVariable (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at Identifier.bind (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:5450:40)
+    at CallExpression.bind (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:2828:28)
+    at CallExpression.bind (file:///Users/skb/Molvis/NepSense/NepSense/web/node_modules/rollup/dist/es/shared/node-entry.js:12516:15)
