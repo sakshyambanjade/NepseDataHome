@@ -6,7 +6,8 @@ export function BrokerIntelligence() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/broker_overview.json')
+    const base = import.meta.env.BASE_URL || "/";
+    fetch(`${base}data/broker_overview.json`)
       .then(res => res.json())
       .then(d => {
         setData(d);

@@ -11,7 +11,7 @@ export function DataPage() {
             We believe in data sovereignty. Download our processed datasets in industry-standard formats for your own research and backtesting.
           </p>
           <div className="flex space-x-4">
-            <a href="/data/public_data_book.csv" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/20 flex items-center">
+            <a href={`${import.meta.env.BASE_URL}data/public_data_book.csv`} className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/20 flex items-center">
               <Database className="w-5 h-5 mr-2" />
               Download CSV
             </a>

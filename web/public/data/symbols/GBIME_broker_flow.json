@@ -1,80 +1,80 @@
 {
   "symbol": "GBIME",
   "date": "2026-05-12",
-  "total_quantity": 124900,
-  "total_amount": 110049861.14999999,
+  "total_quantity": 75600,
+  "total_amount": 66689244.519999996,
   "top_buyers": [
     {
-      "broker": 55,
-      "buy_qty": 10000.0,
-      "buy_amount": 8512230.77,
-      "buy_share": 0.08006405124099279
-    },
-    {
-      "broker": 57,
-      "buy_qty": 10000.0,
-      "buy_amount": 9289595.99,
-      "buy_share": 0.08006405124099279
-    },
-    {
-      "broker": 25,
-      "buy_qty": 6600.0,
-      "buy_amount": 9145181.51,
-      "buy_share": 0.05284227381905524
-    },
-    {
-      "broker": 16,
-      "buy_qty": 6010.0,
-      "buy_amount": 7499682.51,
-      "buy_share": 0.04811849479583667
-    },
-    {
-      "broker": 7,
+      "broker": 2,
       "buy_qty": 6000.0,
-      "buy_amount": 4915890.41,
-      "buy_share": 0.04803843074459568
+      "buy_amount": 5707314.709999999,
+      "buy_share": 0.07936507936507936
+    },
+    {
+      "broker": 5,
+      "buy_qty": 6000.0,
+      "buy_amount": 7187295.53,
+      "buy_share": 0.07936507936507936
+    },
+    {
+      "broker": 14,
+      "buy_qty": 6000.0,
+      "buy_amount": 3598930.33,
+      "buy_share": 0.07936507936507936
+    },
+    {
+      "broker": 24,
+      "buy_qty": 6000.0,
+      "buy_amount": 3055311.76,
+      "buy_share": 0.07936507936507936
+    },
+    {
+      "broker": 40,
+      "buy_qty": 6000.0,
+      "buy_amount": 2728212.13,
+      "buy_share": 0.07936507936507936
     }
   ],
   "top_sellers": [
     {
-      "broker": 60,
-      "sell_qty": 11000.0,
-      "sell_amount": 14833992.99,
-      "sell_share": 0.08807045636509207
+      "broker": 19,
+      "sell_qty": 10550.0,
+      "sell_amount": 7520929.34,
+      "sell_share": 0.13955026455026456
     },
     {
-      "broker": 44,
-      "sell_qty": 10050.0,
-      "sell_amount": 9238285.32,
-      "sell_share": 0.08046437149719776
+      "broker": 32,
+      "sell_qty": 6000.0,
+      "sell_amount": 4728418.329999999,
+      "sell_share": 0.07936507936507936
     },
     {
-      "broker": 55,
-      "sell_qty": 7000.0,
-      "sell_amount": 4978723.26,
-      "sell_share": 0.05604483586869496
+      "broker": 49,
+      "sell_qty": 6000.0,
+      "sell_amount": 7412748.05,
+      "sell_share": 0.07936507936507936
     },
     {
-      "broker": 35,
-      "sell_qty": 6110.0,
-      "sell_amount": 5852969.58,
-      "sell_share": 0.0489191353082466
-    },
-    {
-      "broker": 20,
+      "broker": 15,
       "sell_qty": 5500.0,
-      "sell_amount": 4934447.68,
-      "sell_share": 0.044035228182546036
+      "sell_amount": 4594627.17,
+      "sell_share": 0.07275132275132275
+    },
+    {
+      "broker": 18,
+      "sell_qty": 5500.0,
+      "sell_amount": 2222734.08,
+      "sell_share": 0.07275132275132275
     }
   ],
   "scores": {
-    "buy_concentration_3": 0.21297037630104082,
-    "sell_concentration_3": 0.2245796637309848,
-    "buy_hhi": 0.04566004765381561,
-    "sell_hhi": 0.04538216321656205,
-    "dominance_score": 22.457966373098483,
-    "accumulation_score": 32.6,
-    "smart_money_score": 35.9,
+    "buy_concentration_3": 0.23809523809523808,
+    "sell_concentration_3": 0.29828042328042326,
+    "buy_hhi": 0.06133916323731138,
+    "sell_hhi": 0.06831499678060525,
+    "dominance_score": 29.828042328042326,
+    "accumulation_score": 33.1,
+    "smart_money_score": 36.4,
     "operator_like_score": 100.0,
     "operator_pattern": "Extreme concentration pattern"
   }

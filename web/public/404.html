@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NepSense Redirect</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA hack to handle non-hash routes
+      // Redirects to index.html and appends the path as a hash
+      var path = window.location.pathname;
+      var repoName = '/NepseDataHome';
+      
+      if (path.startsWith(repoName)) {
+        var subRoute = path.substring(repoName.length);
+        if (subRoute.length > 1 && !subRoute.startsWith('/#')) {
+          window.location.replace(window.location.origin + repoName + '/#' + subRoute);
+        } else {
+          window.location.replace(window.location.origin + repoName + '/');
+        }
+      } else {
+        window.location.replace(window.location.origin + '/');
+      }
+    </script>
+  </head>
+  <body>
+    Redirecting to NepSense...
+  </body>
+</html>
