@@ -2,46 +2,46 @@
   "date": "2026-05-12",
   "most_accumulated": [
     {
-      "symbol": "HRL",
-      "accumulation_score": 42.0
-    },
-    {
       "symbol": "PCBL",
-      "accumulation_score": 37.7
-    },
-    {
-      "symbol": "NABIL",
-      "accumulation_score": 36.0
+      "accumulation_score": 37.4
     },
     {
       "symbol": "GBIME",
-      "accumulation_score": 33.1
+      "accumulation_score": 34.3
     },
     {
       "symbol": "NTC",
-      "accumulation_score": 30.6
+      "accumulation_score": 31.7
+    },
+    {
+      "symbol": "HRL",
+      "accumulation_score": 31.0
+    },
+    {
+      "symbol": "NABIL",
+      "accumulation_score": 30.3
     }
   ],
   "smart_money_ranking": [
     {
-      "symbol": "HRL",
-      "smart_money_score": 46.2
-    },
-    {
       "symbol": "PCBL",
-      "smart_money_score": 41.5
-    },
-    {
-      "symbol": "NABIL",
-      "smart_money_score": 39.6
+      "smart_money_score": 41.1
     },
     {
       "symbol": "GBIME",
-      "smart_money_score": 36.4
+      "smart_money_score": 37.7
     },
     {
       "symbol": "NTC",
-      "smart_money_score": 33.7
+      "smart_money_score": 34.9
+    },
+    {
+      "symbol": "HRL",
+      "smart_money_score": 34.1
+    },
+    {
+      "symbol": "NABIL",
+      "smart_money_score": 33.3
     }
   ],
   "unusual_activity": [

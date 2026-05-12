@@ -248,10 +248,9 @@ def daily_run() -> None:
         console.print(f"   [green]✓[/green] ML predictions generated\n")
 
         console.print("[blue]9. Generating dashboard artifacts...[/blue]")
-        import pandas as pd
-        indicators_df = pd.read_csv(DATA_DIR / "features" / "indicators_all.csv")
-        generate_dashboard_json(indicators_df, DATA_DIR / "dashboard")
-        console.print(f"   [green]✓[/green] Dashboard JSON generated\n")
+        from nepsense.processors.dashboard import generate_dashboard_artifacts
+        generate_dashboard_artifacts()
+        console.print(f"   [green]✓[/green] Dashboard artifacts generated\n")
 
         console.print("[blue]10. Creating manifest...[/blue]")
         create_manifest()

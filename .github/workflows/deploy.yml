@@ -44,14 +44,15 @@ jobs:
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)/src
           nepsense daily-run
+          python src/nepsense/ml/generate_broker_dashboard_data.py
         env:
-          # Add any necessary env vars for collectors if needed
           CI: true
 
       - name: Prepare Frontend Data
         run: |
-          mkdir -p web/public/data
-          cp -r data/dashboard/* web/public/data/
+          # The pipeline now writes directly to web/public/data via config.py
+          # We just ensure the directory exists and has content
+          ls -R web/public/data
 
       - name: Set up Node
         uses: actions/setup-node@v4
