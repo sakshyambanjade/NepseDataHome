@@ -1,0 +1,298 @@
+[
+  {
+    "symbol": "GBIME",
+    "date": "2026-05-12",
+    "total_qty": 225320,
+    "total_amt": 197945569.17000002,
+    "trade_count": 175,
+    "vwap": 878.51,
+    "accumulation_score": 6.0,
+    "distribution_score": 6.6,
+    "operator_like_score": 6.1,
+    "churn_score": 1.4,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 6.7,
+    "repeated_pair_score": 35.5,
+    "cross_trade_ratio": 0.042,
+    "chunk_score": 8.9,
+    "net_buy_strength": 1.3,
+    "top_buyer": "10",
+    "top_seller": "27",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "HDL",
+    "date": "2026-05-12",
+    "total_qty": 158940,
+    "total_amt": 153803033.49,
+    "trade_count": 115,
+    "vwap": 967.68,
+    "accumulation_score": 6.8,
+    "distribution_score": 6.1,
+    "operator_like_score": 6.1,
+    "churn_score": 1.9,
+    "sliced_buy_score": 2.5,
+    "sliced_sell_score": 0.0,
+    "repeated_pair_score": 37.8,
+    "cross_trade_ratio": 0.003,
+    "chunk_score": 12.6,
+    "net_buy_strength": 1.3,
+    "top_buyer": "41",
+    "top_seller": "48",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "HRL",
+    "date": "2026-05-12",
+    "total_qty": 175940,
+    "total_amt": 152983332.43,
+    "trade_count": 172,
+    "vwap": 869.52,
+    "accumulation_score": 8.6,
+    "distribution_score": 7.9,
+    "operator_like_score": 7.6,
+    "churn_score": 2.3,
+    "sliced_buy_score": 7.0,
+    "sliced_sell_score": 6.8,
+    "repeated_pair_score": 46.8,
+    "cross_trade_ratio": 0.002,
+    "chunk_score": 11.4,
+    "net_buy_strength": 2.0,
+    "top_buyer": "23",
+    "top_seller": "42",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "NABIL",
+    "date": "2026-05-12",
+    "total_qty": 195100,
+    "total_amt": 166960112.17000002,
+    "trade_count": 182,
+    "vwap": 855.77,
+    "accumulation_score": 5.8,
+    "distribution_score": 7.9,
+    "operator_like_score": 6.1,
+    "churn_score": 1.6,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 5.2,
+    "repeated_pair_score": 30.8,
+    "cross_trade_ratio": 0.082,
+    "chunk_score": 10.3,
+    "net_buy_strength": 0,
+    "top_buyer": "14",
+    "top_seller": "03",
+    "flags": [
+      "Cross-trade watch"
+    ],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "NICL",
+    "date": "2026-05-12",
+    "total_qty": 80430,
+    "total_amt": 67897723.33999999,
+    "trade_count": 91,
+    "vwap": 844.18,
+    "accumulation_score": 12.6,
+    "distribution_score": 12.0,
+    "operator_like_score": 11.9,
+    "churn_score": 3.8,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 0.0,
+    "repeated_pair_score": 74.6,
+    "cross_trade_ratio": 0.007,
+    "chunk_score": 24.9,
+    "net_buy_strength": 2.0,
+    "top_buyer": "24",
+    "top_seller": "54",
+    "flags": [
+      "Repeated broker pair activity"
+    ],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "NTC",
+    "date": "2026-05-12",
+    "total_qty": 149340,
+    "total_amt": 118853753.93,
+    "trade_count": 136,
+    "vwap": 795.86,
+    "accumulation_score": 6.6,
+    "distribution_score": 7.4,
+    "operator_like_score": 6.7,
+    "churn_score": 2.2,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 0.0,
+    "repeated_pair_score": 40.4,
+    "cross_trade_ratio": 0.014,
+    "chunk_score": 13.4,
+    "net_buy_strength": 0,
+    "top_buyer": "53",
+    "top_seller": "13",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "PCBL",
+    "date": "2026-05-12",
+    "total_qty": 83120,
+    "total_amt": 79576078.92000002,
+    "trade_count": 88,
+    "vwap": 957.36,
+    "accumulation_score": 16.4,
+    "distribution_score": 11.5,
+    "operator_like_score": 12.4,
+    "churn_score": 3.6,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 0.0,
+    "repeated_pair_score": 72.2,
+    "cross_trade_ratio": 0.0,
+    "chunk_score": 24.1,
+    "net_buy_strength": 14.6,
+    "top_buyer": "51",
+    "top_seller": "43",
+    "flags": [
+      "Repeated broker pair activity"
+    ],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "SHL",
+    "date": "2026-05-12",
+    "total_qty": 105870,
+    "total_amt": 85149079.29,
+    "trade_count": 104,
+    "vwap": 804.28,
+    "accumulation_score": 11.7,
+    "distribution_score": 9.5,
+    "operator_like_score": 9.8,
+    "churn_score": 2.6,
+    "sliced_buy_score": 1.0,
+    "sliced_sell_score": 0.0,
+    "repeated_pair_score": 56.7,
+    "cross_trade_ratio": 0.044,
+    "chunk_score": 18.9,
+    "net_buy_strength": 6.4,
+    "top_buyer": "06",
+    "top_seller": "37",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "STC",
+    "date": "2026-05-12",
+    "total_qty": 145130,
+    "total_amt": 126815482.50999999,
+    "trade_count": 114,
+    "vwap": 873.81,
+    "accumulation_score": 7.7,
+    "distribution_score": 9.4,
+    "operator_like_score": 7.5,
+    "churn_score": 3.3,
+    "sliced_buy_score": 0.0,
+    "sliced_sell_score": 16.0,
+    "repeated_pair_score": 42.7,
+    "cross_trade_ratio": 0.001,
+    "chunk_score": 13.8,
+    "net_buy_strength": 2.0,
+    "top_buyer": "58",
+    "top_seller": "35",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  },
+  {
+    "symbol": "UPPER",
+    "date": "2026-05-12",
+    "total_qty": 204170,
+    "total_amt": 190187309.64000002,
+    "trade_count": 189,
+    "vwap": 931.51,
+    "accumulation_score": 6.4,
+    "distribution_score": 7.8,
+    "operator_like_score": 6.7,
+    "churn_score": 1.3,
+    "sliced_buy_score": 1.6,
+    "sliced_sell_score": 1.3,
+    "repeated_pair_score": 42.1,
+    "cross_trade_ratio": 0.02,
+    "chunk_score": 9.8,
+    "net_buy_strength": 0,
+    "top_buyer": "28",
+    "top_seller": "29",
+    "flags": [],
+    "data_quality": {
+      "warnings": [
+        "missing_historical_baseline",
+        "missing_volume_baseline",
+        "missing_settlement_baseline"
+      ],
+      "score": 60
+    }
+  }
+]

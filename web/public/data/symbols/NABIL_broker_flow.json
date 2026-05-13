@@ -5,21 +5,27 @@
   "total_amt": 166960112.17000002,
   "trade_count": 182,
   "vwap": 855.77,
-  "accumulation_score": 2.4,
-  "distribution_score": 3.2,
-  "operator_like_score": 18.0,
-  "churn_score": 2.4,
+  "accumulation_score": 5.8,
+  "distribution_score": 7.9,
+  "operator_like_score": 6.1,
+  "churn_score": 1.6,
   "sliced_buy_score": 0.0,
+  "sliced_sell_score": 5.2,
   "repeated_pair_score": 30.8,
   "cross_trade_ratio": 0.082,
   "chunk_score": 10.3,
+  "net_buy_strength": 0,
   "top_buyer": "14",
   "top_seller": "03",
   "flags": [
     "Cross-trade watch"
   ],
   "data_quality": {
-    "warnings": [],
-    "score": 100
+    "warnings": [
+      "missing_historical_baseline",
+      "missing_volume_baseline",
+      "missing_settlement_baseline"
+    ],
+    "score": 60
   }
 }

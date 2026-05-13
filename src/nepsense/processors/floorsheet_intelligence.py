@@ -44,9 +44,9 @@ def sanitize_floorsheet(df: pd.DataFrame) -> pd.DataFrame:
     for col in ['buyer_broker', 'seller_broker']:
         df[col] = df[col].astype(str).str.strip().str.replace(r'\.0$', '', regex=True).str.zfill(2)
         
-    # Transaction order
+    # Transaction order - fixed regex for mixed IDs
     if 'transaction_no' in df.columns:
-        df['txn_order'] = pd.to_numeric(df['transaction_no'], errors='coerce')
+        df['txn_order'] = df['transaction_no'].astype(str).str.extract(r"(\d+)$")[0].astype(float)
     else:
         df['txn_order'] = range(len(df))
         
@@ -117,13 +117,14 @@ def calculate_normalized_hhi(shares: pd.Series) -> float:
 def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, Any]:
     """
     Computes detailed intelligence for a single symbol.
+    Now with hardened 8-factor scoring model.
     """
     total_qty = df['quantity'].sum()
     total_amt = df['amount'].sum()
     trade_count = len(df)
     vwap = total_amt / total_qty if total_qty > 0 else 0
     
-    # Concentration
+    # concentration
     buyer_shares = df.groupby('buyer_broker')['quantity'].sum() / total_qty
     seller_shares = df.groupby('seller_broker')['quantity'].sum() / total_qty
     
@@ -131,12 +132,13 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
     seller_hhi = calculate_normalized_hhi(seller_shares)
     
     # Top Players
-    top_buyers = [{"broker": b, "qty": q, "share": q/total_qty} 
-                  for b, q in df.groupby('buyer_broker')['quantity'].sum().nlargest(3).items()]
-    top_sellers = [{"broker": b, "qty": q, "share": q/total_qty} 
-                   for b, q in df.groupby('seller_broker')['quantity'].sum().nlargest(3).items()]
+    top_buyers_df = df.groupby('buyer_broker')['quantity'].sum().nlargest(5)
+    top_sellers_df = df.groupby('seller_broker')['quantity'].sum().nlargest(5)
     
-    # Patterns
+    top_buyers = [{"broker": b, "qty": q, "share": q/total_qty} for b, q in top_buyers_df.items()]
+    top_sellers = [{"broker": b, "qty": q, "share": q/total_qty} for b, q in top_sellers_df.items()]
+    
+    # Pattern Scores
     sliced_buy = detect_sliced_runs(df, "buy")
     sliced_sell = detect_sliced_runs(df, "sell")
     repeated_pair = detect_repeated_pairs(df)
@@ -144,50 +146,86 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
     cross_trade_df = df[df['buyer_broker'] == df['seller_broker']]
     cross_trade_ratio = cross_trade_df['amount'].sum() / total_amt if total_amt > 0 else 0
     
-    chunk_trade = (df['quantity'].max() / total_qty) * 100 if total_qty > 0 else 0
-    chunk_score = min(chunk_trade / 25, 1) * 100
+    chunk_trade_pct = (df['quantity'].max() / total_qty) * 100 if total_qty > 0 else 0
+    chunk_score = min(chunk_trade_pct / 25, 1) * 100
     
-    # Net Flow
-    net_buy = 0
-    net_sell = 0
-    # Simplistic daily net for top broker
-    top_b = top_buyers[0]['broker'] if top_buyers else None
-    top_s = top_sellers[0]['broker'] if top_sellers else None
+    # Strength Components
+    top_5_buyer_share = top_buyers_df.sum() / total_qty if total_qty > 0 else 0
+    top_5_seller_share = top_sellers_df.sum() / total_qty if total_qty > 0 else 0
     
-    # Basic direction scores
-    # Accumulation = Concentration * Buyer Concentration * Net Buy Strength
-    acc_score = min(buyer_hhi * 100 * 1.5, 100)
-    dist_score = min(seller_hhi * 100 * 1.5, 100)
-    churn_score = min(acc_score, dist_score)
+    # Net buy strength: How much more concentrated is the buy side vs sell side
+    net_buy_strength = max(0, (top_5_buyer_share - top_5_seller_share)) * 100
+    net_sell_strength = max(0, (top_5_seller_share - top_5_buyer_share)) * 100
+
+    # New Accumulation/Distribution formulas
+    acc_score = (
+        0.30 * net_buy_strength +
+        0.20 * buyer_hhi * 100 +
+        0.15 * sliced_buy +
+        0.15 * chunk_score +
+        0.10 * repeated_pair +
+        0.10 * cross_trade_ratio * 100
+    )
     
+    dist_score = (
+        0.30 * net_sell_strength +
+        0.20 * seller_hhi * 100 +
+        0.15 * sliced_sell +
+        0.15 * chunk_score +
+        0.10 * repeated_pair +
+        0.10 * cross_trade_ratio * 100
+    )
+    
+    churn_score = min(buyer_hhi * 100, seller_hhi * 100)
+    
+    # Advanced Components (Real calculations or warnings)
+    warnings = []
+    
+    # 1. Concentration Surprise
+    # In V1, we use a simple heuristic: if HHI > 0.4, it's a surprise
+    conc_surprise = max(0, (buyer_hhi - 0.2)) * 100
+    # Note: Real surprise needs historical HHI baseline.
+    warnings.append("missing_historical_baseline")
+    
+    # 2. Volume Spike
+    # Real spike needs avg_volume_20.
+    vol_spike_score = 0
+    warnings.append("missing_volume_baseline")
+    
+    # 3. Settlement Followthrough
+    settlement_score = 0
+    warnings.append("missing_settlement_baseline")
+
     # Operator-Like Score (8-Factor Model)
-    # 0.18 * surprise + 0.16 * hhi + 0.14 * churn + 0.14 * max(acc, dist) + 0.12 * pair + 0.10 * cross + 0.08 * spike + 0.08 * settlement
     op_score = (
-        0.18 * 40 + # surprise placeholder
+        0.18 * conc_surprise +
         0.16 * buyer_hhi * 100 +
         0.14 * churn_score +
         0.14 * max(acc_score, dist_score) +
         0.12 * repeated_pair +
         0.10 * cross_trade_ratio * 100 +
-        0.08 * 35 + # spike placeholder
-        0.08 * 30   # settlement placeholder
+        0.08 * vol_spike_score +
+        0.08 * settlement_score
     )
     
     # Data Quality & Guards
-    warnings = []
+    active_brokers = pd.concat([df["buyer_broker"], df["seller_broker"]]).nunique()
+    
     if trade_count < 10:
         op_score = min(op_score, 50)
         warnings.append("low_trade_count")
-    if len(df['buyer_broker'].unique()) < 5:
+    if active_brokers < 5:
         op_score = min(op_score, 55)
         warnings.append("few_active_brokers")
         
     # Flags
     flags = []
     if sliced_buy > 40: flags.append("Sliced buy pattern")
+    if sliced_sell > 40: flags.append("Sliced sell pattern")
     if repeated_pair > 60: flags.append("Repeated broker pair activity")
     if cross_trade_ratio > 0.05: flags.append("Cross-trade watch")
     if chunk_score > 70: flags.append("Large chunk trade")
+    if net_buy_strength > 20: flags.append("Concentrated accumulation")
     
     return {
         "symbol": symbol,
@@ -201,11 +239,13 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         "operator_like_score": round(op_score, 1),
         "churn_score": round(churn_score, 1),
         "sliced_buy_score": round(sliced_buy, 1),
+        "sliced_sell_score": round(sliced_sell, 1),
         "repeated_pair_score": round(repeated_pair, 1),
         "cross_trade_ratio": round(cross_trade_ratio, 3),
         "chunk_score": round(chunk_score, 1),
-        "top_buyer": top_b,
-        "top_seller": top_s,
+        "net_buy_strength": round(net_buy_strength, 1),
+        "top_buyer": top_buyers[0]['broker'] if top_buyers else None,
+        "top_seller": top_sellers[0]['broker'] if top_sellers else None,
         "flags": flags,
         "data_quality": {"warnings": warnings, "score": 100 if not warnings else 60}
     }

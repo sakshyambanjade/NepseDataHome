@@ -8,7 +8,8 @@ export function FlowsheetIntelligence() {
   const [sortConfig, setSortConfig] = useState({ key: 'operator_like_score', direction: 'desc' });
 
   useEffect(() => {
-    fetch('/data/flowsheet_table.json')
+    const base = import.meta.env.BASE_URL || "/";
+    fetch(`${base}data/flowsheet_table.json`)
       .then(res => res.json())
       .then(json => {
         setData(json);
@@ -126,11 +127,17 @@ export function FlowsheetIntelligence() {
                   Dist. Score
                 </th>
                 <th onClick={() => handleSort('operator_like_score')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
-                  Operator-Like
+                  Op Score
                 </th>
-                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Top Buyer/Seller</th>
-                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Flags & Insights</th>
-                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Quality</th>
+                <th onClick={() => handleSort('total_qty')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
+                  Volume
+                </th>
+                <th onClick={() => handleSort('vwap')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
+                  VWAP
+                </th>
+                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Top Players</th>
+                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Intelligence Flags</th>
+                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Data Quality</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
@@ -157,28 +164,39 @@ export function FlowsheetIntelligence() {
                       {row.operator_like_score}
                     </div>
                   </td>
+                  <td className="px-4 py-5">
+                    <div className="text-sm font-bold text-gray-300">{(row.total_qty / 1000).toFixed(1)}k</div>
+                    <div className="text-[10px] text-gray-500 font-medium">Qty</div>
+                  </td>
+                  <td className="px-4 py-5">
+                    <div className="text-sm font-bold text-gray-300">Rs. {row.vwap}</div>
+                    <div className="text-[10px] text-gray-500 font-medium">Avg Rate</div>
+                  </td>
                   <td className="px-6 py-5">
                     <div className="flex flex-col space-y-1">
                       <div className="flex items-center text-xs">
-                        <span className="text-blue-400 font-bold w-12">Buy:</span>
-                        <span className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1">Broker {row.top_buyer}</span>
+                        <span className="text-blue-400 font-bold w-12">Buyer:</span>
+                        <span className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1">B{row.top_buyer}</span>
                       </div>
                       <div className="flex items-center text-xs">
-                        <span className="text-red-400 font-bold w-12">Sell:</span>
-                        <span className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1">Broker {row.top_seller}</span>
+                        <span className="text-red-400 font-bold w-12">Seller:</span>
+                        <span className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1">B{row.top_seller}</span>
                       </div>
                     </div>
                   </td>
                   <td className="px-6 py-5">
                     <div className="flex flex-wrap gap-1.5">
                       {row.flags.length > 0 ? (
-                        row.flags.map((flag, idx) => (
-                          <span key={idx} className="text-[10px] font-bold bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400 uppercase">
-                            {flag}
-                          </span>
-                        ))
+                        row.flags.map((flag, idx) => {
+                          const isNegative = flag.toLowerCase().includes('sell') || flag.toLowerCase().includes('distribution');
+                          return (
+                            <span key={idx} className={`text-[9px] font-bold border px-2 py-0.5 rounded uppercase ${isNegative ? 'bg-red-500/5 border-red-500/10 text-red-400/80' : 'bg-blue-500/5 border-blue-500/10 text-blue-400/80'}`}>
+                              {flag}
+                            </span>
+                          );
+                        })
                       ) : (
-                        <span className="text-[10px] text-gray-600 italic">Normal flow</span>
+                        <span className="text-[10px] text-gray-600 italic">Neutral flow</span>
                       )}
                     </div>
                   </td>
