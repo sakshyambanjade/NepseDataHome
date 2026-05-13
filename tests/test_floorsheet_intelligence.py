@@ -126,8 +126,24 @@ def test_balanced_broker_activity():
     assert metrics["operator_like_score"] < 25
     assert len(metrics["flags"]) == 0
 
+def test_low_trade_count_warning():
+    # Low trade count should add low_trade_count warning and cap score
+    data = [{
+        "symbol": "LOW",
+        "buyer_broker": "01",
+        "seller_broker": "02",
+        "quantity": 100,
+        "rate": 100,
+        "transaction_no": 1
+    }]
+    df = sanitize_floorsheet(pd.DataFrame(data))
+    metrics = compute_symbol_flow(df, "LOW", "2026-05-12")
+    assert "low_trade_count" in metrics["data_quality"]["warnings"]
+    assert metrics["operator_like_score"] <= 50
+
 if __name__ == "__main__":
     print("Running manual tests...")
     test_net_buy_strength()
     test_mixed_transaction_ids()
+    test_low_trade_count_warning()
     print("Basic tests passed!")
