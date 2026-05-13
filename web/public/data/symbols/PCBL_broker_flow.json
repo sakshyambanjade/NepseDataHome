@@ -5,10 +5,17 @@
   "total_amt": 79576078.92000002,
   "trade_count": 88,
   "vwap": 957.36,
+  "buyer_hhi": 0.058,
+  "seller_hhi": 0.036,
   "net_flow": 0.0,
   "accumulation_score": 22.4,
   "distribution_score": 18.8,
   "operator_like_score": 21.8,
+  "concentration_surprise_score": 0.0,
+  "volume_spike_score": 0.0,
+  "unusual_net_buy_score": 0.0,
+  "unusual_net_sell_score": 0.0,
+  "baseline_available": false,
   "churn_score": 3.6,
   "sliced_buy_score": 0.0,
   "sliced_sell_score": 0.0,
@@ -71,6 +78,153 @@
       "share": 0.060153994225216556
     }
   ],
+  "drilldown": {
+    "broker_pairs": [
+      {
+        "buyer_broker": "25",
+        "seller_broker": "01",
+        "quantity": 5000,
+        "pair": "25 \u2192 01"
+      },
+      {
+        "buyer_broker": "27",
+        "seller_broker": "43",
+        "quantity": 5000,
+        "pair": "27 \u2192 43"
+      },
+      {
+        "buyer_broker": "29",
+        "seller_broker": "40",
+        "quantity": 5000,
+        "pair": "29 \u2192 40"
+      },
+      {
+        "buyer_broker": "29",
+        "seller_broker": "44",
+        "quantity": 5000,
+        "pair": "29 \u2192 44"
+      },
+      {
+        "buyer_broker": "37",
+        "seller_broker": "48",
+        "quantity": 5000,
+        "pair": "37 \u2192 48"
+      },
+      {
+        "buyer_broker": "38",
+        "seller_broker": "13",
+        "quantity": 5000,
+        "pair": "38 \u2192 13"
+      },
+      {
+        "buyer_broker": "48",
+        "seller_broker": "59",
+        "quantity": 5000,
+        "pair": "48 \u2192 59"
+      },
+      {
+        "buyer_broker": "51",
+        "seller_broker": "06",
+        "quantity": 5000,
+        "pair": "51 \u2192 06"
+      },
+      {
+        "buyer_broker": "51",
+        "seller_broker": "57",
+        "quantity": 5000,
+        "pair": "51 \u2192 57"
+      },
+      {
+        "buyer_broker": "54",
+        "seller_broker": "60",
+        "quantity": 5000,
+        "pair": "54 \u2192 60"
+      }
+    ],
+    "cross_trades": [],
+    "largest_trades": [
+      {
+        "buyer_broker": "29",
+        "seller_broker": "44",
+        "quantity": 5000,
+        "rate": 1493.32,
+        "amount": 7466607.68,
+        "txn_order": 42.0
+      },
+      {
+        "buyer_broker": "51",
+        "seller_broker": "57",
+        "quantity": 5000,
+        "rate": 1330.17,
+        "amount": 6650867.15,
+        "txn_order": 14.0
+      },
+      {
+        "buyer_broker": "56",
+        "seller_broker": "43",
+        "quantity": 5000,
+        "rate": 1310.98,
+        "amount": 6554913.61,
+        "txn_order": 41.0
+      },
+      {
+        "buyer_broker": "54",
+        "seller_broker": "60",
+        "quantity": 5000,
+        "rate": 1146.48,
+        "amount": 5732420.68,
+        "txn_order": 8.0
+      },
+      {
+        "buyer_broker": "29",
+        "seller_broker": "40",
+        "quantity": 5000,
+        "rate": 1125.96,
+        "amount": 5629777.75,
+        "txn_order": 25.0
+      },
+      {
+        "buyer_broker": "56",
+        "seller_broker": "15",
+        "quantity": 5000,
+        "rate": 1045.6,
+        "amount": 5228008.95,
+        "txn_order": 16.0
+      },
+      {
+        "buyer_broker": "25",
+        "seller_broker": "01",
+        "quantity": 5000,
+        "rate": 995.47,
+        "amount": 4977344.2,
+        "txn_order": 26.0
+      },
+      {
+        "buyer_broker": "51",
+        "seller_broker": "06",
+        "quantity": 5000,
+        "rate": 958.42,
+        "amount": 4792123.85,
+        "txn_order": 27.0
+      },
+      {
+        "buyer_broker": "38",
+        "seller_broker": "13",
+        "quantity": 5000,
+        "rate": 885.77,
+        "amount": 4428844.9,
+        "txn_order": 2.0
+      },
+      {
+        "buyer_broker": "27",
+        "seller_broker": "43",
+        "quantity": 5000,
+        "rate": 603.66,
+        "amount": 3018323.96,
+        "txn_order": 40.0
+      }
+    ]
+  },
   "flags": [
     "Net broker accumulation",
     "Net broker distribution",

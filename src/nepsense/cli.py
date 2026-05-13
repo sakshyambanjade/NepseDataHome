@@ -506,6 +506,48 @@ def databook_cmd() -> None:
         raise typer.Exit(1)
 
 
+# Floorsheet group
+floorsheet_app = typer.Typer(help="Floorsheet data management", no_args_is_help=True)
+app.add_typer(floorsheet_app, name="floorsheet")
+
+@floorsheet_app.command("import")
+def floorsheet_import_cmd(
+    file_path: Path = typer.Argument(..., help="Path to raw floorsheet CSV")
+) -> None:
+    """Import and normalize a raw floorsheet CSV.
+    
+    Normalizes the CSV and saves it to data/floorsheet/normalized/{date}.csv
+    """
+    try:
+        import pandas as pd
+        from nepsense.config import DATA_DIR
+        from nepsense.processors.floorsheet_intelligence import sanitize_floorsheet
+        
+        console.print(f"[bold cyan]Importing floorsheet from {file_path}...[/bold cyan]")
+        df = pd.read_csv(file_path)
+        
+        # We need the date. Try to extract from filename.
+        # Expecting YYYY-MM-DD.csv
+        import re
+        date_match = re.search(r"(\d{4}-\d{2}-\d{2})", file_path.name)
+        if not date_match:
+            console.print(f"[red]✗ Could not find date in filename {file_path.name}. Please use YYYY-MM-DD.csv format.[/red]")
+            raise typer.Exit(1)
+            
+        date = date_match.group(1)
+        normalized_df = sanitize_floorsheet(df)
+        
+        output_dir = DATA_DIR / "floorsheet" / "normalized"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_path = output_dir / f"{date}.csv"
+        
+        normalized_df.to_csv(output_path, index=False)
+        console.print(f"[green]✓ Floorsheet normalized and saved to {output_path}[/green]")
+        
+    except Exception as e:
+        console.print(f"[red]✗ Floorsheet import failed:[/red] {e}")
+        raise typer.Exit(1)
+
 # Add command aliases
 app.command(name="collect")(collect_daily_cmd)
 app.command(name="normalize")(normalize_cmd)
@@ -521,6 +563,7 @@ app.command(name="databook")(databook_cmd)
 app.command(name="indicators")(indicators_cmd)
 app.command(name="dashboard")(dashboard_cmd)
 app.command(name="ml")(ml_cmd)
+app.command(name="broker")(broker_cmd)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, TrendingUp, Users, AlertTriangle, ArrowRight, Info } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function BrokerIntelligence() {
   const [data, setData] = useState(null);
@@ -46,10 +47,10 @@ export function BrokerIntelligence() {
           </div>
           <div className="space-y-4">
             {data.most_accumulated?.map((item, i) => (
-              <div key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-green-500/30 transition-all">
+              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-green-500/30 transition-all group">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
-                  <span className="font-bold text-white">{item.symbol}</span>
+                  <span className="font-bold text-white group-hover:text-green-400 transition-colors">{item.symbol}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="h-1.5 w-16 bg-gray-800 rounded-full overflow-hidden">
@@ -57,7 +58,7 @@ export function BrokerIntelligence() {
                   </div>
                   <span className="text-green-500 font-mono text-xs font-bold">{item.accumulation_score}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -71,16 +72,16 @@ export function BrokerIntelligence() {
           </div>
           <div className="space-y-4">
             {data.smart_money_ranking?.map((item, i) => (
-              <div key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
+              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all group">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
-                  <span className="font-bold text-white">{item.symbol}</span>
+                  <span className="font-bold text-white group-hover:text-blue-400 transition-colors">{item.symbol}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-blue-400 font-mono text-xs font-bold">{item.smart_money_score}</span>
+                  <span className="text-blue-400 font-mono text-xs font-bold">{item.operator_like_score}</span>
                   <ArrowRight className="w-3 h-3 text-gray-700" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -90,20 +91,20 @@ export function BrokerIntelligence() {
             <div className="p-2 bg-amber-500/10 rounded-xl">
               <Users className="text-amber-500 w-5 h-5" />
             </div>
-            <h3 className="text-lg font-bold text-white">Unusual Concentration</h3>
+            <h3 className="text-lg font-bold text-white">Broker Flow Watch</h3>
           </div>
           <div className="space-y-3">
-            {data.unusual_activity?.slice(0, 8).map((item) => (
-              <div key={item.symbol} className="p-3 rounded-2xl bg-white/5 border border-white/5">
+            {data.operator_watchlist?.slice(0, 8).map((item) => (
+              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="block p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all group">
                 <div className="flex justify-between items-start mb-1">
-                  <span className="font-bold text-white">{item.symbol}</span>
-                  <span className="text-[10px] font-bold text-amber-500 uppercase tracking-tighter">{item.operator_pattern}</span>
+                  <span className="font-bold text-white group-hover:text-amber-500 transition-colors">{item.symbol}</span>
+                  <span className="text-[10px] font-bold text-amber-500 uppercase tracking-tighter">Flow Alert</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] text-gray-500">Pattern Match Score</span>
+                  <span className="text-[10px] text-gray-500">Pattern Score</span>
                   <span className="text-xs font-mono text-gray-300">{item.operator_like_score}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

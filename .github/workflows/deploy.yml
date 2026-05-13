@@ -43,6 +43,7 @@ jobs:
       - name: Run Python Tests
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          pip install pytest
           pytest -q
 
       - name: Run NepSense Pipeline

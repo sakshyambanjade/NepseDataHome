@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, Info, ShieldCheck, AlertCircle, ChevronUp, ChevronDown, Table, BarChart3, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function FlowsheetIntelligence() {
   const [data, setData] = useState([]);
@@ -157,10 +158,10 @@ export function FlowsheetIntelligence() {
                 return (
                   <tr key={row.symbol} className="hover:bg-white/5 transition-colors group">
                     <td className="px-6 py-5">
-                      <div className="flex flex-col">
-                        <span className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">{row.symbol}</span>
+                      <Link to={`/flowsheet/${row.symbol}`} className="flex flex-col group/sym">
+                        <span className="text-lg font-bold text-white group-hover/sym:text-blue-400 transition-colors">{row.symbol}</span>
                         <span className="text-[10px] text-gray-500 font-medium">{row.trade_count} Trades</span>
-                      </div>
+                      </Link>
                     </td>
                     <td className="px-4 py-5">
                       <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.accumulation_score)}`}>
@@ -189,15 +190,15 @@ export function FlowsheetIntelligence() {
                       <div className="flex flex-col space-y-1">
                         <div className="flex items-center text-xs">
                           <span className="text-blue-400 font-bold w-12">Buyer:</span>
-                          <span className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1">
+                          <Link to={`/broker/${topBuyer?.broker}`} className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1 hover:bg-blue-500/20 hover:text-white transition-all">
                             B{topBuyer?.broker || "N/A"} ({topBuyer ? (topBuyer.net_qty / 1000).toFixed(1) : 0}k)
-                          </span>
+                          </Link>
                         </div>
                         <div className="flex items-center text-xs">
                           <span className="text-red-400 font-bold w-12">Seller:</span>
-                          <span className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1">
+                          <Link to={`/broker/${topSeller?.broker}`} className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1 hover:bg-red-500/20 hover:text-white transition-all">
                             B{topSeller?.broker || "N/A"} ({topSeller ? (topSeller.net_qty / 1000).toFixed(1) : 0}k)
-                          </span>
+                          </Link>
                         </div>
                       </div>
                     </td>

@@ -1,0 +1,96 @@
+{
+  "broker": 44,
+  "date": "2026-05-12",
+  "total_buy_qty": 21180,
+  "total_sell_qty": 41480,
+  "total_net_qty": -20300,
+  "total_buy_amt": 20363917.090000004,
+  "total_sell_amt": 40560028.43999999,
+  "net_buy_stocks": [
+    {
+      "symbol": "STC",
+      "net_qty": 10460
+    },
+    {
+      "symbol": "GBIME",
+      "net_qty": 1100
+    },
+    {
+      "symbol": "HDL",
+      "net_qty": 600
+    }
+  ],
+  "net_sell_stocks": [
+    {
+      "symbol": "HRL",
+      "net_qty": 10610
+    },
+    {
+      "symbol": "NABIL",
+      "net_qty": 4950
+    },
+    {
+      "symbol": "NTC",
+      "net_qty": 4900
+    },
+    {
+      "symbol": "PCBL",
+      "net_qty": 4850
+    },
+    {
+      "symbol": "SHL",
+      "net_qty": 4850
+    },
+    {
+      "symbol": "UPPER",
+      "net_qty": 1200
+    },
+    {
+      "symbol": "NICL",
+      "net_qty": 1100
+    }
+  ],
+  "top_counterparties": [
+    {
+      "broker": 42,
+      "qty": 6100
+    },
+    {
+      "broker": 46,
+      "qty": 6050
+    },
+    {
+      "broker": 4,
+      "qty": 5500
+    },
+    {
+      "broker": 18,
+      "qty": 5500
+    },
+    {
+      "broker": 35,
+      "qty": 5100
+    },
+    {
+      "broker": 45,
+      "qty": 5000
+    },
+    {
+      "broker": 33,
+      "qty": 5000
+    },
+    {
+      "broker": 29,
+      "qty": 5000
+    },
+    {
+      "broker": 25,
+      "qty": 5000
+    },
+    {
+      "broker": 28,
+      "qty": 5000
+    }
+  ],
+  "exposure": []
+}

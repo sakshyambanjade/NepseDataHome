@@ -119,7 +119,7 @@ def calculate_normalized_hhi(shares: pd.Series) -> float:
     norm_hhi = (raw_hhi - (1/n)) / (1 - (1/n))
     return float(np.clip(norm_hhi, 0, 1))
 
-def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, Any]:
+def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str, baseline: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
     Computes detailed intelligence for a single symbol.
     Upgraded for Production V2 with True Net Flow and 7-Factor Weighted Model.
@@ -196,10 +196,46 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         0.10 * max(sliced_buy, sliced_sell)
     )
     
-    # 6. Data Quality & Warnings
+    # 6. Surprise Scores (Baseline Comparison)
+    concentration_surprise_score = 0.0
+    volume_spike_score = 0.0
+    unusual_net_buy_score = 0.0
+    unusual_net_sell_score = 0.0
+    baseline_available = False
+    
+    if baseline:
+        baseline_available = True
+        # Concentration Surprise: repeated_pair_score today vs baseline
+        repeated_pair_baseline = baseline.get("avg_repeated_pair_score_20", 0)
+        if repeated_pair_baseline > 0:
+            concentration_surprise_score = max(0, repeated_pair - repeated_pair_baseline)
+            
+        # Volume Spike: total_qty today vs avg_volume_20
+        volume_baseline = baseline.get("avg_volume_20", 0)
+        if volume_baseline > 0:
+            volume_spike_score = max(0, (total_qty / volume_baseline - 1) * 50) # 2x volume = 50 pts
+            
+        # Unusual Net Buy/Sell: today strength vs baseline
+        buy_strength_baseline = baseline.get("avg_net_buy_strength_20", 0)
+        if buy_strength_baseline > 0:
+            unusual_net_buy_score = max(0, net_buy_strength - buy_strength_baseline)
+            
+        sell_strength_baseline = baseline.get("avg_net_sell_strength_20", 0)
+        if sell_strength_baseline > 0:
+            unusual_net_sell_score = max(0, net_sell_strength - sell_strength_baseline)
+            
+        # Adjust operator score based on surprise
+        op_score += (concentration_surprise_score * 0.2 + volume_spike_score * 0.2)
+        op_score = min(op_score, 100)
+
+    # 7. Data Quality & Warnings
     warnings = []
-    warnings.append("missing_historical_baseline")
-    warnings.append("missing_volume_baseline")
+    if not baseline_available:
+        warnings.append("missing_historical_baseline")
+    
+    if not baseline or baseline.get("avg_volume_20", 0) == 0:
+        warnings.append("missing_volume_baseline")
+        
     warnings.append("missing_settlement_baseline")
     
     active_brokers = broker_stats.index.nunique()
@@ -210,7 +246,7 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         op_score = min(op_score, 55)
         warnings.append("few_active_brokers")
         
-    # 7. Stronger Intelligence Flags
+    # 8. Stronger Intelligence Flags
     flags = []
     if acc_score >= 40: flags.append("Accumulation pressure")
     if dist_score >= 40: flags.append("Distribution pressure")
@@ -218,12 +254,27 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
     if net_buy_strength >= 20: flags.append("Net broker accumulation")
     if net_sell_strength >= 20: flags.append("Net broker distribution")
     
+    if concentration_surprise_score > 20: flags.append("Unusual concentration")
+    if volume_spike_score > 30: flags.append("Volume spike detected")
+    
     if sliced_buy > 40: flags.append("Sliced buy pattern")
     if sliced_sell > 40: flags.append("Sliced sell pattern")
     if repeated_pair > 60: flags.append("Repeated broker pair activity")
     if cross_trade_ratio > 0.05: flags.append("Cross-trade watch")
     if chunk_score > 70: flags.append("Large chunk trade")
     
+    # 9. Detailed Drilldown Data
+    pair_counts = df.groupby(['buyer_broker', 'seller_broker'])['quantity'].sum().reset_index()
+    pair_counts['pair'] = pair_counts['buyer_broker'] + " → " + pair_counts['seller_broker']
+    broker_pairs = pair_counts.nlargest(10, 'quantity').to_dict(orient="records")
+    
+    cross_trades = cross_trade_df.nlargest(10, 'amount')[['buyer_broker', 'quantity', 'rate', 'amount', 'txn_order']].to_dict(orient="records")
+    largest_trades = df.nlargest(10, 'amount')[['buyer_broker', 'seller_broker', 'quantity', 'rate', 'amount', 'txn_order']].to_dict(orient="records")
+    
+    # Identify sliced run samples
+    # (Simple approach: return brokers with highest sliced volume)
+    # This is already somewhat reflected in sliced_buy_score but we could add more.
+
     return {
         "symbol": symbol,
         "date": date,
@@ -231,10 +282,17 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         "total_amt": float(total_amt),
         "trade_count": trade_count,
         "vwap": round(vwap, 2),
-        "net_flow": float(broker_stats['net_qty'].sum()), # Should be 0 in closed system
+        "buyer_hhi": round(buyer_hhi, 3),
+        "seller_hhi": round(seller_hhi, 3),
+        "net_flow": float(broker_stats['net_qty'].sum()),
         "accumulation_score": round(acc_score, 1),
         "distribution_score": round(dist_score, 1),
         "operator_like_score": round(op_score, 1),
+        "concentration_surprise_score": round(concentration_surprise_score, 1),
+        "volume_spike_score": round(volume_spike_score, 1),
+        "unusual_net_buy_score": round(unusual_net_buy_score, 1),
+        "unusual_net_sell_score": round(unusual_net_sell_score, 1),
+        "baseline_available": baseline_available,
         "churn_score": round(churn_score, 1),
         "sliced_buy_score": round(sliced_buy, 1),
         "sliced_sell_score": round(sliced_sell, 1),
@@ -245,14 +303,21 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         "net_sell_strength": round(net_sell_strength, 1),
         "top_net_buyers": top_net_buyers,
         "top_net_sellers": top_net_sellers,
+        "drilldown": {
+            "broker_pairs": broker_pairs,
+            "cross_trades": cross_trades,
+            "largest_trades": largest_trades
+        },
         "flags": flags,
         "data_quality": {"warnings": warnings, "score": 100 if len(warnings) < 2 else 60}
     }
 
-def analyze_daily_floorsheet(df: pd.DataFrame, date: str) -> List[Dict[str, Any]]:
+def analyze_daily_floorsheet(df: pd.DataFrame, date: str, baselines: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
     """Analyzes a full floorsheet day by day and returns list of metrics."""
     df = sanitize_floorsheet(df)
     results = []
+    baselines = baselines or {}
     for symbol, group in df.groupby('symbol'):
-        results.append(compute_symbol_flow(group, symbol, date))
+        symbol_baseline = baselines.get(symbol)
+        results.append(compute_symbol_flow(group, symbol, date, baseline=symbol_baseline))
     return results
