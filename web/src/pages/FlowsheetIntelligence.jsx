@@ -30,10 +30,17 @@ export function FlowsheetIntelligence() {
   };
 
   const sortedData = [...data]
-    .filter(item => 
-      item.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (item.top_buyer && item.top_buyer.toLowerCase().includes(searchTerm.toLowerCase()))
-    )
+    .filter(item => {
+      const searchLower = searchTerm.toLowerCase();
+      const topBuyers = item.top_net_buyers || [];
+      const topSellers = item.top_net_sellers || [];
+      
+      return (
+        item.symbol.toLowerCase().includes(searchLower) ||
+        topBuyers.some(b => b.broker.toLowerCase().includes(searchLower)) ||
+        topSellers.some(s => s.broker.toLowerCase().includes(searchLower))
+      );
+    })
     .sort((a, b) => {
       if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1;
       if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1;
@@ -135,87 +142,98 @@ export function FlowsheetIntelligence() {
                 <th onClick={() => handleSort('vwap')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
                   VWAP
                 </th>
-                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Top Players</th>
+                <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Top Net Players</th>
                 <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Intelligence Flags</th>
                 <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Data Quality</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
-              {sortedData.map((row) => (
-                <tr key={row.symbol} className="hover:bg-white/5 transition-colors group">
-                  <td className="px-6 py-5">
-                    <div className="flex flex-col">
-                      <span className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">{row.symbol}</span>
-                      <span className="text-[10px] text-gray-500 font-medium">{row.trade_count} Trades</span>
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.accumulation_score)}`}>
-                      {row.accumulation_score}
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.distribution_score)}`}>
-                      {row.distribution_score}
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.operator_like_score)}`}>
-                      {row.operator_like_score}
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className="text-sm font-bold text-gray-300">{(row.total_qty / 1000).toFixed(1)}k</div>
-                    <div className="text-[10px] text-gray-500 font-medium">Qty</div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className="text-sm font-bold text-gray-300">Rs. {row.vwap}</div>
-                    <div className="text-[10px] text-gray-500 font-medium">Avg Rate</div>
-                  </td>
-                  <td className="px-6 py-5">
-                    <div className="flex flex-col space-y-1">
-                      <div className="flex items-center text-xs">
-                        <span className="text-blue-400 font-bold w-12">Buyer:</span>
-                        <span className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1">B{row.top_buyer}</span>
+              {sortedData.map((row) => {
+                const topBuyer = row.top_net_buyers?.[0];
+                const topSeller = row.top_net_sellers?.[0];
+                const flags = row.flags || [];
+                const warnings = row.data_quality?.warnings || [];
+
+                return (
+                  <tr key={row.symbol} className="hover:bg-white/5 transition-colors group">
+                    <td className="px-6 py-5">
+                      <div className="flex flex-col">
+                        <span className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">{row.symbol}</span>
+                        <span className="text-[10px] text-gray-500 font-medium">{row.trade_count} Trades</span>
                       </div>
-                      <div className="flex items-center text-xs">
-                        <span className="text-red-400 font-bold w-12">Seller:</span>
-                        <span className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1">B{row.top_seller}</span>
+                    </td>
+                    <td className="px-4 py-5">
+                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.accumulation_score)}`}>
+                        {row.accumulation_score}
                       </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-5">
-                    <div className="flex flex-wrap gap-1.5">
-                      {row.flags.length > 0 ? (
-                        row.flags.map((flag, idx) => {
-                          const isNegative = flag.toLowerCase().includes('sell') || flag.toLowerCase().includes('distribution');
-                          return (
-                            <span key={idx} className={`text-[9px] font-bold border px-2 py-0.5 rounded uppercase ${isNegative ? 'bg-red-500/5 border-red-500/10 text-red-400/80' : 'bg-blue-500/5 border-blue-500/10 text-blue-400/80'}`}>
-                              {flag}
-                            </span>
-                          );
-                        })
-                      ) : (
-                        <span className="text-[10px] text-gray-600 italic">Neutral flow</span>
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-6 py-5">
-                    <div className="flex items-center">
-                      {row.data_quality.warnings.length === 0 ? (
-                        <ShieldCheck className="w-5 h-5 text-emerald-500/50" />
-                      ) : (
-                        <div className="group relative">
-                          <AlertCircle className="w-5 h-5 text-amber-500/50 cursor-help" />
-                          <div className="absolute bottom-full right-0 mb-2 w-48 p-2 bg-gray-900 border border-white/10 rounded-xl text-[10px] text-gray-400 invisible group-hover:visible z-50">
-                            {row.data_quality.warnings.join(", ").replace(/_/g, " ")}
-                          </div>
+                    </td>
+                    <td className="px-4 py-5">
+                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.distribution_score)}`}>
+                        {row.distribution_score}
+                      </div>
+                    </td>
+                    <td className="px-4 py-5">
+                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${getScoreColor(row.operator_like_score)}`}>
+                        {row.operator_like_score}
+                      </div>
+                    </td>
+                    <td className="px-4 py-5">
+                      <div className="text-sm font-bold text-gray-300">{(row.total_qty / 1000).toFixed(1)}k</div>
+                      <div className="text-[10px] text-gray-500 font-medium">Qty</div>
+                    </td>
+                    <td className="px-4 py-5">
+                      <div className="text-sm font-bold text-gray-300">Rs. {row.vwap}</div>
+                      <div className="text-[10px] text-gray-500 font-medium">Avg Rate</div>
+                    </td>
+                    <td className="px-6 py-5">
+                      <div className="flex flex-col space-y-1">
+                        <div className="flex items-center text-xs">
+                          <span className="text-blue-400 font-bold w-12">Buyer:</span>
+                          <span className="text-gray-300 bg-blue-500/10 px-1.5 py-0.5 rounded ml-1">
+                            B{topBuyer?.broker || "N/A"} ({topBuyer ? (topBuyer.net_qty / 1000).toFixed(1) : 0}k)
+                          </span>
                         </div>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                        <div className="flex items-center text-xs">
+                          <span className="text-red-400 font-bold w-12">Seller:</span>
+                          <span className="text-gray-300 bg-red-500/10 px-1.5 py-0.5 rounded ml-1">
+                            B{topSeller?.broker || "N/A"} ({topSeller ? (topSeller.net_qty / 1000).toFixed(1) : 0}k)
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-5">
+                      <div className="flex flex-wrap gap-1.5">
+                        {flags.length > 0 ? (
+                          flags.map((flag, idx) => {
+                            const isNegative = flag.toLowerCase().includes('sell') || flag.toLowerCase().includes('distribution');
+                            return (
+                              <span key={idx} className={`text-[9px] font-bold border px-2 py-0.5 rounded uppercase ${isNegative ? 'bg-red-500/5 border-red-500/10 text-red-400/80' : 'bg-blue-500/5 border-blue-500/10 text-blue-400/80'}`}>
+                                {flag}
+                              </span>
+                            );
+                          })
+                        ) : (
+                          <span className="text-[10px] text-gray-600 italic">Neutral flow</span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-6 py-5">
+                      <div className="flex items-center">
+                        {warnings.length === 0 ? (
+                          <ShieldCheck className="w-5 h-5 text-emerald-500/50" />
+                        ) : (
+                          <div className="group relative">
+                            <AlertCircle className="w-5 h-5 text-amber-500/50 cursor-help" />
+                            <div className="absolute bottom-full right-0 mb-2 w-48 p-2 bg-gray-900 border border-white/10 rounded-xl text-[10px] text-gray-400 invisible group-hover:visible z-50">
+                              {warnings.join(", ").replace(/_/g, " ")}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

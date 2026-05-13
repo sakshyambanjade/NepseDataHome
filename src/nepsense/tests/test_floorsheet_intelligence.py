@@ -128,6 +128,6 @@ def test_balanced_broker_activity():
 
 if __name__ == "__main__":
     print("Running manual tests...")
-    test_hhi_calculation()
-    test_quality_guards()
+    test_net_buy_strength()
+    test_mixed_transaction_ids()
     print("Basic tests passed!")
