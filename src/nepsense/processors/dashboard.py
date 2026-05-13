@@ -40,6 +40,7 @@ def generate_dashboard_json(
         logger.info("Merged ML predictions into dashboard")
 
     # Sector performance
+    latest_df["sector"] = latest_df["sector"].fillna("Others").replace("", "Others")
     sector_perf = latest_df.groupby("sector")["ret_1d"].mean().reset_index()
     sector_perf["ret_1d"] = sector_perf["ret_1d"].round(4)
     

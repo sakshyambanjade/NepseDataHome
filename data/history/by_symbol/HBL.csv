@@ -2612,49 +2612,49 @@ date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions
 2024-01-02,HBL,208.0,210.0,201.4,206.0,,,46926.0,9615964.2,,aabishkar2_nepse_data,0.7
 2024-01-03,HBL,206.9,206.9,203.1,206.0,,,25666.0,5248464.0,,aabishkar2_nepse_data,0.7
 2024-01-04,HBL,210.0,210.9,203.2,209.0,,,63260.0,13218755.5,,aabishkar2_nepse_data,0.7
-2024-01-05,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-01-05,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-01-07,HBL,209.0,209.0,201.0,201.0,,,46539.0,9447613.2,,aabishkar2_nepse_data,0.7
 2024-01-08,HBL,200.0,205.0,200.0,201.4,,,38483.0,7769498.2,,aabishkar2_nepse_data,0.7
 2024-01-09,HBL,203.0,206.0,202.0,204.0,,,47559.0,9731643.3,,aabishkar2_nepse_data,0.7
 2024-01-10,HBL,206.0,210.1,204.5,205.0,,,39360.0,8184141.1,,aabishkar2_nepse_data,0.7
 2024-01-11,HBL,204.4,207.9,204.0,205.0,,,22127.0,4552792.7,,aabishkar2_nepse_data,0.7
-2024-01-12,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-01-12,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-01-14,HBL,205.0,209.4,202.5,209.0,,,30095.0,6236761.3,,aabishkar2_nepse_data,0.7
-2024-01-15,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-01-15,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-01-16,HBL,211.1,215.1,208.7,214.5,,,75822.0,16102412.7,,aabishkar2_nepse_data,0.7
 2024-01-17,HBL,215.0,220.0,214.5,219.0,,,102684.0,22275917.0,,aabishkar2_nepse_data,0.7
 2024-01-18,HBL,215.0,218.0,212.0,215.0,,,50335.0,10813307.3,,aabishkar2_nepse_data,0.7
-2024-01-19,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-01-19,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-01-21,HBL,219.0,219.0,206.8,208.5,,,146622.0,30895880.5,,aabishkar2_nepse_data,0.7
 2024-01-22,HBL,207.0,209.0,204.4,205.0,,,63822.0,13177374.5,,aabishkar2_nepse_data,0.7
 2024-01-23,HBL,209.1,209.1,203.1,205.5,,,30645.0,6287022.3,,aabishkar2_nepse_data,0.7
 2024-01-24,HBL,206.0,209.0,204.0,205.0,,,23644.0,4839515.8,,aabishkar2_nepse_data,0.7
 2024-01-25,HBL,209.0,209.0,203.1,205.0,,,18818.0,3855823.0,,aabishkar2_nepse_data,0.7
-2024-01-26,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-01-26,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-01-28,HBL,205.0,207.0,201.0,202.4,,,51185.0,10354000.6,,aabishkar2_nepse_data,0.7
 2024-01-29,HBL,202.4,222.6,202.4,203.0,,,45091.0,9233834.7,,aabishkar2_nepse_data,0.7
 2024-01-30,HBL,204.0,206.0,202.2,203.0,,,31810.0,6466301.9,,aabishkar2_nepse_data,0.7
 2024-01-31,HBL,204.0,205.8,201.8,202.5,,,20790.0,4215610.1,,aabishkar2_nepse_data,0.7
 2024-02-01,HBL,201.0,202.4,199.2,200.0,,,32715.0,6552087.0,,aabishkar2_nepse_data,0.7
-2024-02-02,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-02,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-04,HBL,200.0,201.9,199.1,199.4,,,33360.0,6675169.4,,aabishkar2_nepse_data,0.7
 2024-02-05,HBL,203.3,203.3,198.7,200.9,,,22357.0,4466578.1,,aabishkar2_nepse_data,0.7
 2024-02-06,HBL,202.0,202.0,199.0,201.0,,,24371.0,4882725.4,,aabishkar2_nepse_data,0.7
 2024-02-07,HBL,205.0,205.0,199.4,200.0,,,41884.0,8388715.8,,aabishkar2_nepse_data,0.7
 2024-02-08,HBL,198.7,201.0,198.7,200.9,,,20407.0,4083122.6,,aabishkar2_nepse_data,0.7
-2024-02-09,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-09,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-11,HBL,200.0,203.0,198.3,199.0,,,32974.0,6593117.3,,aabishkar2_nepse_data,0.7
 2024-02-12,HBL,201.0,201.0,197.5,199.9,,,26851.0,5341004.2,,aabishkar2_nepse_data,0.7
 2024-02-13,HBL,199.0,199.0,194.1,195.0,,,69621.0,13643216.0,,aabishkar2_nepse_data,0.7
 2024-02-14,HBL,195.1,196.9,193.0,193.0,,,64524.0,12575354.3,,aabishkar2_nepse_data,0.7
 2024-02-15,HBL,193.0,195.0,192.5,192.5,,,23587.0,4560121.4,,aabishkar2_nepse_data,0.7
-2024-02-16,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-16,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-18,HBL,192.0,195.0,189.0,192.0,,,54867.0,10463118.2,,aabishkar2_nepse_data,0.7
-2024-02-19,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-19,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-20,HBL,195.8,198.0,190.0,191.1,,,23755.0,4537972.4,,aabishkar2_nepse_data,0.7
 2024-02-21,HBL,191.1,194.0,190.3,190.5,,,18311.0,3499885.6,,aabishkar2_nepse_data,0.7
 2024-02-22,HBL,188.0,191.8,186.8,188.0,,,39980.0,7570960.4,,aabishkar2_nepse_data,0.7
-2024-02-23,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-23,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-25,HBL,187.9,187.9,185.1,186.2,,,31773.0,5935664.4,,aabishkar2_nepse_data,0.7
 2024-02-26,HBL,187.0,189.0,186.1,188.0,,,27615.0,5174078.1,,aabishkar2_nepse_data,0.7
 2024-02-27,HBL,188.0,189.0,186.0,188.5,,,32101.0,6009550.9,,aabishkar2_nepse_data,0.7
@@ -3149,13 +3149,13 @@ date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions
 2026-04-28,HBL,207.1,210.0,203.0,206.8,,,135988.0,27922940.4,,aabishkar2_nepse_data,0.7
 2026-04-29,HBL,206.8,206.8,200.0,202.9,,,58366.0,11814846.3,,aabishkar2_nepse_data,0.7
 2026-04-30,HBL,202.9,204.9,200.0,202.0,,,51271.0,10349905.1,,aabishkar2_nepse_data,0.7
-2026-05-01,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-01,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
 2026-05-02,HBL,425.0,430.0,420.0,428.0,Himalayan Bank Limited,Finance,75000.0,32100000.0,400.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-04,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-05,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-06,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-07,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-08,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-11,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-12,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-13,HBL,208.0,210.0,203.0,203.9,,,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-04,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-05,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-06,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-07,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-08,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-11,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-12,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-13,HBL,208.0,210.0,203.0,203.9,Himalayan Bank Limited,Commercial Bank,36045.0,7406982.8,695.0,https://www.sharesansar.com/today-share-price,0.9

@@ -42,9 +42,10 @@ def db_path() -> Path:
 def connect() -> Iterator[sqlite3.Connection]:
     path = db_path()
     path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(path)
+    conn = sqlite3.connect(path, timeout=30)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("PRAGMA journal_mode=WAL")
     try:
         yield conn
         conn.commit()
@@ -63,7 +64,14 @@ def row_to_dict(row: sqlite3.Row | None) -> dict[str, Any] | None:
     return data
 
 
+_db_initialized = False
+
+
 def init_db() -> None:
+    global _db_initialized
+    if _db_initialized:
+        return
+
     with connect() as conn:
         conn.executescript(
             """
@@ -190,6 +198,7 @@ def init_db() -> None:
         )
         _ensure_columns(conn)
         seed_plans(conn)
+    _db_initialized = True
 
 
 def _ensure_columns(conn: sqlite3.Connection) -> None:

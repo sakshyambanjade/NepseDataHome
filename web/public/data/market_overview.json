@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T00:02:30.157609",
+  "generated_at": "2026-05-13T09:05:44.462427",
   "date": "2026-05-13",
   "active_symbols": 338,
   "total_volume": 10678550,
@@ -9,7 +9,44 @@
   "decliners": 0,
   "unchanged": 338,
   "market_regime": 2,
-  "sector_performance": [],
+  "sector_performance": [
+    {
+      "sector": "Commercial Bank",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Consumer",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Dev Bank",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Finance",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Insurance",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Microfinance",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Others",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Pharma",
+      "ret_1d": 0.0
+    },
+    {
+      "sector": "Power",
+      "ret_1d": 0.0
+    }
+  ],
   "top_gainers": [
     {
       "symbol": "ACLBSL",

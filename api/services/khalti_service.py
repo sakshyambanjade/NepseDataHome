@@ -62,7 +62,8 @@ class KhaltiService:
                 """,
                 (order_id, user_id, plan.amount, plan.credits, poid, iso_now()),
             )
-            log_payment_event(order_id, "khalti", "initiate_started", "pending", raw_payload={"plan_id": plan_id})
+        
+        log_payment_event(order_id, "khalti", "initiate_started", "pending", raw_payload={"plan_id": plan_id})
 
         payload = {
             "return_url": f"{APP_BASE_URL}/api/v1/payments/khalti/callback",
@@ -93,6 +94,7 @@ class KhaltiService:
                     "UPDATE payment_orders SET status = 'failed', raw_response = ? WHERE id = ?",
                     (json.dumps(body), order_id),
                 )
+            
             log_payment_event(
                 order_id,
                 "khalti",

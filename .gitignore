@@ -6,13 +6,21 @@
 .DS_Store
 *.sqlite3
 web/node_modules/
-/data/
-!/data/metadata/
+# Build and Dist
 dist/
 web/dist/
+
+# Data Lake
 /data/raw/
 /data/normalized/
 /data/adjusted/
 /data/features/
-/data/dashboard/
+/data/master/
 /data/quality/
+!/data/metadata/
+!/data/dashboard/
+
+# Frontend Data
+web/public/data/*.json
+web/public/data/symbols/*.json
+!web/public/data/public_data_book.csv

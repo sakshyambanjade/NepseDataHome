@@ -95,7 +95,8 @@ class EsewaService:
                 """,
                 (order_id, user_id, plan.amount, plan.credits, order_reference, transaction_uuid, iso_now()),
             )
-            log_payment_event(order_id, "esewa", "initiate_started", "pending", raw_payload={"plan_id": plan_id})
+        
+        log_payment_event(order_id, "esewa", "initiate_started", "pending", raw_payload={"plan_id": plan_id})
 
         message = f"{plan.amount},{transaction_uuid},{self.merchant_code}"
         signature = generate_esewa_signature(self.secret_key, message)

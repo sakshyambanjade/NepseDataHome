@@ -1,89 +1,25 @@
 {
   "symbol": "NABIL",
   "date": "2026-05-12",
-  "total_quantity": 195100,
-  "total_amount": 166960112.17000002,
-  "top_buyers": [
-    {
-      "broker": 14,
-      "buy_qty": 11660.0,
-      "buy_amount": 9433708.42,
-      "buy_share": 0.05976422347514095
-    },
-    {
-      "broker": 31,
-      "buy_qty": 10600.0,
-      "buy_amount": 12134785.52,
-      "buy_share": 0.05433111225012814
-    },
-    {
-      "broker": 46,
-      "buy_qty": 10110.0,
-      "buy_amount": 13713586.73,
-      "buy_share": 0.051819579702716556
-    },
-    {
-      "broker": 34,
-      "buy_qty": 10100.0,
-      "buy_amount": 6740481.81,
-      "buy_share": 0.05176832393644285
-    },
-    {
-      "broker": 42,
-      "buy_qty": 10100.0,
-      "buy_amount": 3119818.63,
-      "buy_share": 0.05176832393644285
-    }
+  "total_qty": 195100,
+  "total_amt": 166960112.17000002,
+  "trade_count": 182,
+  "vwap": 855.77,
+  "accumulation_score": 2.4,
+  "distribution_score": 3.2,
+  "operator_like_score": 18.0,
+  "churn_score": 2.4,
+  "sliced_buy_score": 0.0,
+  "repeated_pair_score": 30.8,
+  "cross_trade_ratio": 0.082,
+  "chunk_score": 10.3,
+  "top_buyer": "14",
+  "top_seller": "03",
+  "flags": [
+    "Cross-trade watch"
   ],
-  "top_sellers": [
-    {
-      "broker": 3,
-      "sell_qty": 16150.0,
-      "sell_amount": 17572924.43,
-      "sell_share": 0.08277806253203486
-    },
-    {
-      "broker": 55,
-      "sell_qty": 12210.0,
-      "sell_amount": 11548761.780000001,
-      "sell_share": 0.06258329062019477
-    },
-    {
-      "broker": 1,
-      "sell_qty": 11100.0,
-      "sell_amount": 3663158.12,
-      "sell_share": 0.05689390056381343
-    },
-    {
-      "broker": 46,
-      "sell_qty": 11010.0,
-      "sell_amount": 10921652.89,
-      "sell_share": 0.05643259866735008
-    },
-    {
-      "broker": 24,
-      "sell_qty": 10060.0,
-      "sell_amount": 7287212.32,
-      "sell_share": 0.05156330087134803
-    }
-  ],
-  "scores": {
-    "buy_concentration_3": 0.16591491542798564,
-    "sell_concentration_3": 0.20225525371604308,
-    "buy_hhi": 0.03385976937269616,
-    "top_3_pair_share": 0.07688364941055868,
-    "price_impact_score": 100.0,
-    "trade_count": 182,
-    "active_brokers": 56,
-    "turnover": 166960112.17000002,
-    "accumulation_score": 11.9,
-    "net_buy_strength_score": 14.279856483854433,
-    "distribution_score": 12.9,
-    "net_sell_strength_score": 14.807790876473604,
-    "operator_like_score": 12.9,
-    "operator_pattern": "Normal broker flow",
-    "churn_score": 11.9,
-    "pressure_score": 12.4,
-    "conc_surprise": 0.0
+  "data_quality": {
+    "warnings": [],
+    "score": 100
   }
 }

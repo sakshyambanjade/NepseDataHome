@@ -192,6 +192,35 @@ def normalize_file(
         if col not in df.columns:
             df[col] = None
 
+    # Merge metadata from company master
+    from nepsense.config import METADATA_DIR
+    master_path = METADATA_DIR / "company_master.csv"
+    if master_path.exists():
+        try:
+            master_df = pd.read_csv(master_path)
+            master_df["symbol"] = master_df["symbol"].astype(str).str.strip().str.upper()
+            
+            # Clean symbol column in current df for merging
+            df["symbol"] = df["symbol"].astype(str).str.strip().str.upper()
+            
+            # For each row, if company_name or sector is missing, fill from master
+            # Create a mapping for faster lookup
+            name_map = dict(zip(master_df["symbol"], master_df["company_name"]))
+            sector_map = dict(zip(master_df["symbol"], master_df["sector"]))
+            
+            def fill_metadata(row):
+                symbol = row["symbol"]
+                if pd.isna(row.get("company_name")) or not str(row.get("company_name")).strip():
+                    row["company_name"] = name_map.get(symbol, row.get("company_name"))
+                if pd.isna(row.get("sector")) or not str(row.get("sector")).strip():
+                    row["sector"] = sector_map.get(symbol, row.get("sector"))
+                return row
+            
+            df = df.apply(fill_metadata, axis=1)
+            logger.info("Merged company metadata from master list")
+        except Exception as e:
+            logger.warning(f"Failed to merge company metadata: {e}")
+
     source_label = next(
         (part.removeprefix("source=") for part in input_file.parts if part.startswith("source=")),
         None,

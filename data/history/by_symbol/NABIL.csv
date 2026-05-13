@@ -2878,49 +2878,49 @@ date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions
 2024-01-02,NABIL,506.0,510.0,498.0,499.9,,,97243.0,48739674.8,,aabishkar2_nepse_data,0.7
 2024-01-03,NABIL,500.0,501.5,488.6,496.0,,,150208.0,74243709.5,,aabishkar2_nepse_data,0.7
 2024-01-04,NABIL,498.0,500.9,495.0,495.5,,,93743.0,46626099.4,,aabishkar2_nepse_data,0.7
-2024-01-05,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-01-05,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-01-07,NABIL,500.0,500.0,489.5,490.0,,,97677.0,48049103.8,,aabishkar2_nepse_data,0.7
 2024-01-08,NABIL,495.0,495.0,488.0,488.1,,,109400.0,53586128.1,,aabishkar2_nepse_data,0.7
 2024-01-09,NABIL,488.1,495.0,488.1,490.0,,,123332.0,60580784.6,,aabishkar2_nepse_data,0.7
 2024-01-10,NABIL,495.0,500.0,490.0,492.0,,,91478.0,45338816.5,,aabishkar2_nepse_data,0.7
 2024-01-11,NABIL,499.0,499.9,490.0,493.0,,,52810.0,26080337.0,,aabishkar2_nepse_data,0.7
-2024-01-12,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-01-12,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-01-14,NABIL,500.0,501.0,493.5,494.5,,,66912.0,33128429.6,,aabishkar2_nepse_data,0.7
-2024-01-15,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-01-15,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-01-16,NABIL,500.0,502.0,498.0,501.0,,,126928.0,63423350.8,,aabishkar2_nepse_data,0.7
 2024-01-17,NABIL,503.5,512.0,503.0,504.0,,,111028.0,56271981.3,,aabishkar2_nepse_data,0.7
 2024-01-18,NABIL,507.0,507.0,498.0,498.0,,,78196.0,39099071.9,,aabishkar2_nepse_data,0.7
-2024-01-19,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-01-19,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-01-21,NABIL,504.0,504.0,492.0,493.0,,,85324.0,42440772.6,,aabishkar2_nepse_data,0.7
 2024-01-22,NABIL,495.0,495.0,486.5,489.0,,,106960.0,52410361.9,,aabishkar2_nepse_data,0.7
 2024-01-23,NABIL,489.0,496.0,484.0,484.5,,,102618.0,49850590.0,,aabishkar2_nepse_data,0.7
 2024-01-24,NABIL,492.0,493.0,484.0,484.9,,,75048.0,36499765.1,,aabishkar2_nepse_data,0.7
 2024-01-25,NABIL,492.5,492.5,483.2,488.0,,,78635.0,38332635.4,,aabishkar2_nepse_data,0.7
-2024-01-26,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-01-26,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-01-28,NABIL,497.0,497.0,487.7,491.0,,,62690.0,30688492.6,,aabishkar2_nepse_data,0.7
 2024-01-29,NABIL,492.0,495.0,485.0,488.0,,,112649.0,54993722.6,,aabishkar2_nepse_data,0.7
 2024-01-30,NABIL,485.0,494.0,485.0,487.0,,,58884.0,28719052.7,,aabishkar2_nepse_data,0.7
 2024-01-31,NABIL,489.0,490.0,484.6,484.6,,,101519.0,49422553.3,,aabishkar2_nepse_data,0.7
 2024-02-01,NABIL,494.2,494.2,480.0,480.6,,,88972.0,42874748.3,,aabishkar2_nepse_data,0.7
-2024-02-02,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-02,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-04,NABIL,482.0,483.9,477.0,477.0,,,79654.0,38139312.6,,aabishkar2_nepse_data,0.7
 2024-02-05,NABIL,481.0,481.0,474.9,475.0,,,65154.0,31059134.5,,aabishkar2_nepse_data,0.7
 2024-02-06,NABIL,479.0,484.0,475.0,475.0,,,62626.0,29864909.3,,aabishkar2_nepse_data,0.7
 2024-02-07,NABIL,484.5,484.5,474.5,475.1,,,72757.0,34651267.2,,aabishkar2_nepse_data,0.7
 2024-02-08,NABIL,476.0,480.0,475.0,476.5,,,40791.0,19428344.2,,aabishkar2_nepse_data,0.7
-2024-02-09,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-09,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-11,NABIL,486.0,486.0,474.5,475.0,,,87081.0,41536813.4,,aabishkar2_nepse_data,0.7
 2024-02-12,NABIL,476.0,477.0,474.0,477.0,,,48708.0,23137701.8,,aabishkar2_nepse_data,0.7
 2024-02-13,NABIL,477.0,479.9,469.1,471.5,,,83243.0,39335243.7,,aabishkar2_nepse_data,0.7
 2024-02-14,NABIL,471.5,471.5,464.5,465.5,,,63187.0,29432541.5,,aabishkar2_nepse_data,0.7
 2024-02-15,NABIL,465.0,466.0,462.0,462.5,,,51339.0,23763885.7,,aabishkar2_nepse_data,0.7
-2024-02-16,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-16,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-18,NABIL,456.0,465.0,455.5,457.7,,,65595.0,30047882.8,,aabishkar2_nepse_data,0.7
-2024-02-19,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-19,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-20,NABIL,456.0,460.0,448.0,449.0,,,90305.0,40799800.6,,aabishkar2_nepse_data,0.7
 2024-02-21,NABIL,450.0,454.8,448.0,449.0,,,61605.0,27709782.7,,aabishkar2_nepse_data,0.7
 2024-02-22,NABIL,450.0,452.9,443.0,445.0,,,62441.0,27844413.9,,aabishkar2_nepse_data,0.7
-2024-02-23,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-23,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-25,NABIL,445.0,445.0,434.0,436.5,,,68284.0,29943351.1,,aabishkar2_nepse_data,0.7
 2024-02-26,NABIL,436.5,440.0,430.1,434.0,,,63611.0,27597828.0,,aabishkar2_nepse_data,0.7
 2024-02-27,NABIL,434.0,440.0,432.5,437.8,,,44089.0,19182202.4,,aabishkar2_nepse_data,0.7
@@ -3415,13 +3415,13 @@ date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions
 2026-04-28,NABIL,519.2,532.0,519.2,525.0,,,66167.0,34834152.6,,aabishkar2_nepse_data,0.7
 2026-04-29,NABIL,525.0,527.0,522.0,524.9,,,36190.0,18951819.1,,aabishkar2_nepse_data,0.7
 2026-04-30,NABIL,524.0,528.1,520.0,528.0,,,47024.0,24662941.4,,aabishkar2_nepse_data,0.7
-2026-05-01,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-01,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
 2026-05-02,NABIL,1450.0,1465.0,1445.0,1460.0,Nabil Bank Limited,Finance,50000.0,73000000.0,250.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-04,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-05,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-06,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-07,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-08,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-11,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-12,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-13,NABIL,530.0,533.0,527.0,527.0,,,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-04,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-05,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-06,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-07,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-08,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-11,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-12,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-13,NABIL,530.0,533.0,527.0,527.0,Nabil Bank Limited,Commercial Bank,37974.0,20071403.2,458.0,https://www.sharesansar.com/today-share-price,0.9

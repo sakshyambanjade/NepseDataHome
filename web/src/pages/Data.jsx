@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Github, Code } from 'lucide-react';
+import { Database, Code } from 'lucide-react';
 
 export function DataPage() {
   return (

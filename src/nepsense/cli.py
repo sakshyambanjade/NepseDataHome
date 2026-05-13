@@ -161,15 +161,15 @@ def dashboard_cmd() -> None:
     """Generate dashboard JSON artifacts."""
     try:
         import pandas as pd
-        from nepsense.config import DATA_DIR
+        from nepsense.config import DASHBOARD_DIR, DATA_DIR
         indicators_path = DATA_DIR / "features" / "indicators_all.csv"
         if not indicators_path.exists():
             console.print(f"[yellow]! Indicators file not found at {indicators_path}. Run 'indicators' first.[/yellow]")
             raise typer.Exit(1)
             
         df = pd.read_csv(indicators_path)
-        generate_dashboard_json(df, DATA_DIR / "dashboard")
-        console.print("[green]✓ Dashboard JSON artifacts generated in data/dashboard/[/green]")
+        generate_dashboard_json(df, DASHBOARD_DIR)
+        console.print(f"[green]✓ Dashboard JSON artifacts generated in {DASHBOARD_DIR}[/green]")
     except Exception as e:
         console.print(f"[red]✗ Dashboard generation failed:[/red] {e}")
         raise typer.Exit(1)
@@ -184,6 +184,20 @@ def ml_cmd() -> None:
         console.print("[green]✓ ML pipeline completed. Predictions saved to data/features/predictions_latest.csv[/green]")
     except Exception as e:
         console.print(f"[red]✗ ML pipeline failed:[/red] {e}")
+        raise typer.Exit(1)
+
+
+@app.command()
+def broker_cmd(date: str = typer.Option(None, help="Date in YYYY-MM-DD format")) -> None:
+    """Generate Broker Intelligence artifacts from floorsheet."""
+    try:
+        from nepsense.ml.generate_broker_dashboard_data import generate_broker_artifacts
+        import datetime
+        target_date = date or datetime.datetime.now().strftime("%Y-%m-%d")
+        generate_broker_artifacts(target_date)
+        console.print(f"[green]✓ Broker intelligence artifacts generated for {target_date}[/green]")
+    except Exception as e:
+        console.print(f"[red]✗ Broker intelligence failed:[/red] {e}")
         raise typer.Exit(1)
 
 
@@ -250,9 +264,17 @@ def daily_run() -> None:
         console.print("[blue]9. Generating dashboard artifacts...[/blue]")
         from nepsense.processors.dashboard import generate_dashboard_artifacts
         generate_dashboard_artifacts()
-        console.print(f"   [green]✓[/green] Dashboard artifacts generated\n")
+        console.print(f"   [green]✓[/green] Core dashboard artifacts generated\n")
 
-        console.print("[blue]10. Creating manifest...[/blue]")
+        console.print("[blue]10. Generating broker intelligence...[/blue]")
+        from nepsense.ml.generate_broker_dashboard_data import generate_broker_artifacts
+        # For daily run, we use the date of the raw file collected in step 1 if possible
+        # For now using "today"
+        import datetime
+        generate_broker_artifacts(datetime.datetime.now().strftime("%Y-%m-%d"))
+        console.print(f"   [green]✓[/green] Broker intelligence generated\n")
+
+        console.print("[blue]11. Creating manifest...[/blue]")
         create_manifest()
         console.print(f"   [green]✓[/green] Manifest created\n")
 

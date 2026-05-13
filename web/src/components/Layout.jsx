@@ -10,6 +10,7 @@ export function TopNav() {
     { path: "/", label: "Market Intelligence", icon: LayoutDashboard },
     { path: "/operator", label: "Operator Watch", icon: ShieldAlert, highlight: true },
     { path: "/brokers", label: "Broker Intelligence", icon: Users },
+    { path: "/flowsheet", label: "Flowsheet", icon: Activity },
     { path: "/data", label: "Open Data", icon: Database },
     { path: "/about", label: "About", icon: Info },
   ];

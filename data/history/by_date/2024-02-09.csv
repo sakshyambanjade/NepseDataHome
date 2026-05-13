@@ -1,5 +1,5 @@
 date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions,source,source_confidence
-2024-02-09,HBL,136.0,141.0,131.0,138.0,,,83636.0,9733636.0,,sharesansar,0.9
+2024-02-09,HBL,136.0,141.0,131.0,138.0,Himalayan Bank Limited,Commercial Bank,83636.0,9733636.0,,sharesansar,0.9
 2024-02-09,ICICIHFC,125.0,130.0,120.0,127.0,,,97625.0,8147625.0,,sharesansar,0.9
-2024-02-09,NABIL,104.0,109.0,99.0,106.0,,,125954.0,7375954.0,,sharesansar,0.9
+2024-02-09,NABIL,104.0,109.0,99.0,106.0,Nabil Bank Limited,Commercial Bank,125954.0,7375954.0,,sharesansar,0.9
 2024-02-09,TRH,103.0,108.0,98.0,105.0,,,146403.0,7496403.0,,sharesansar,0.9

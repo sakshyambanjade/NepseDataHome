@@ -1,89 +1,23 @@
 {
   "symbol": "HRL",
   "date": "2026-05-12",
-  "total_quantity": 175940,
-  "total_amount": 152983332.43,
-  "top_buyers": [
-    {
-      "broker": 23,
-      "buy_qty": 15620.0,
-      "buy_amount": 13133552.809999999,
-      "buy_share": 0.08878026599977265
-    },
-    {
-      "broker": 16,
-      "buy_qty": 12500.0,
-      "buy_amount": 8713547.92,
-      "buy_share": 0.07104694782312151
-    },
-    {
-      "broker": 18,
-      "buy_qty": 12100.0,
-      "buy_amount": 11476969.46,
-      "buy_share": 0.06877344549278162
-    },
-    {
-      "broker": 4,
-      "buy_qty": 11160.0,
-      "buy_amount": 14280441.71,
-      "buy_share": 0.0634307150164829
-    },
-    {
-      "broker": 30,
-      "buy_qty": 11000.0,
-      "buy_amount": 9183817.43,
-      "buy_share": 0.06252131408434694
-    }
-  ],
-  "top_sellers": [
-    {
-      "broker": 42,
-      "sell_qty": 12270.0,
-      "sell_amount": 9768768.440000001,
-      "sell_share": 0.06973968398317608
-    },
-    {
-      "broker": 17,
-      "sell_qty": 12210.0,
-      "sell_amount": 7557653.420000001,
-      "sell_share": 0.0693986586336251
-    },
-    {
-      "broker": 44,
-      "sell_qty": 11610.0,
-      "sell_amount": 10498489.14,
-      "sell_share": 0.06598840513811527
-    },
-    {
-      "broker": 8,
-      "sell_qty": 11560.0,
-      "sell_amount": 12730202.17,
-      "sell_share": 0.06570421734682277
-    },
-    {
-      "broker": 10,
-      "sell_qty": 11200.0,
-      "sell_amount": 7145919.95,
-      "sell_share": 0.06365806524951688
-    }
-  ],
-  "scores": {
-    "buy_concentration_3": 0.2286006593156758,
-    "sell_concentration_3": 0.20512674775491646,
-    "buy_hhi": 0.04135337792063286,
-    "top_3_pair_share": 0.11708537001250427,
-    "price_impact_score": 100.0,
-    "trade_count": 172,
-    "active_brokers": 59,
-    "turnover": 152983332.43,
-    "accumulation_score": 17.5,
-    "net_buy_strength_score": 21.490280777537794,
-    "distribution_score": 15.4,
-    "net_sell_strength_score": 18.898488120950326,
-    "operator_like_score": 15.1,
-    "operator_pattern": "Normal broker flow",
-    "churn_score": 15.4,
-    "pressure_score": 16.4,
-    "conc_surprise": 0.0
+  "total_qty": 175940,
+  "total_amt": 152983332.43,
+  "trade_count": 172,
+  "vwap": 869.52,
+  "accumulation_score": 3.7,
+  "distribution_score": 3.4,
+  "operator_like_score": 19.4,
+  "churn_score": 3.4,
+  "sliced_buy_score": 0.0,
+  "repeated_pair_score": 46.8,
+  "cross_trade_ratio": 0.002,
+  "chunk_score": 11.4,
+  "top_buyer": "23",
+  "top_seller": "42",
+  "flags": [],
+  "data_quality": {
+    "warnings": [],
+    "score": 100
   }
 }

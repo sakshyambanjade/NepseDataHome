@@ -2906,12 +2906,12 @@ date,symbol,open,high,low,close,company_name,sector,volume,turnover,transactions
 2026-04-28,NICA,370.0,370.0,355.0,359.0,,,125197.0,45345682.3,,aabishkar2_nepse_data,0.7
 2026-04-29,NICA,359.0,359.0,349.0,359.0,,,86667.0,30769359.2,,aabishkar2_nepse_data,0.7
 2026-04-30,NICA,355.0,359.0,350.1,358.0,,,62652.0,22123788.4,,aabishkar2_nepse_data,0.7
-2026-05-01,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-04,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-05,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-06,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-07,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-08,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-11,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-12,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
-2026-05-13,NICA,364.0,364.9,354.3,355.8,,,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-01,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-04,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-05,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-06,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-07,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-08,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-11,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-12,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9
+2026-05-13,NICA,364.0,364.9,354.3,355.8,NICA Insurance Company Limited,Insurance,102639.0,36697486.1,383.0,https://www.sharesansar.com/today-share-price,0.9

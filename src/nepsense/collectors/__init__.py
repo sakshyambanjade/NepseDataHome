@@ -262,6 +262,7 @@ def collect_daily(
     try:
         response = requests.get(
             SHARESANSAR_TODAY_URL,
+            params={"date": date_str},
             timeout=timeout,
             headers={
                 "User-Agent": "nepsense/0.2 (+https://github.com/sakshyambanjade/NepSense)"
