@@ -44,18 +44,28 @@ def generate_dashboard_json(
     sector_perf = latest_df.groupby("sector")["ret_1d"].mean().reset_index()
     sector_perf["ret_1d"] = sector_perf["ret_1d"].round(4)
     
+    # helper to clean NaNs for JSON serialization
+    def clean_json(data):
+        if isinstance(data, list):
+            return [clean_json(x) for x in data]
+        if isinstance(data, dict):
+            return {k: clean_json(v) for k, v in data.items()}
+        if isinstance(data, float) and np.isnan(data):
+            return None
+        return data
+
     # 1. Market Overview
     market_overview = {
         "generated_at": datetime.now().isoformat(),
         "date": latest_date.strftime("%Y-%m-%d"),
         "active_symbols": len(latest_df),
-        "total_volume": int(latest_df["volume"].sum()),
-        "total_turnover": float(latest_df["turnover"].sum()),
-        "total_transactions": int(latest_df["transactions"].sum()) if "transactions" in latest_df.columns else 0,
+        "total_volume": int(latest_df["volume"].sum()) if not np.isnan(latest_df["volume"].sum()) else 0,
+        "total_turnover": float(latest_df["turnover"].sum()) if not np.isnan(latest_df["turnover"].sum()) else 0.0,
+        "total_transactions": int(latest_df["transactions"].sum()) if "transactions" in latest_df.columns and not np.isnan(latest_df["transactions"].sum()) else 0,
         "advancers": int((latest_df["ret_1d"] > 0).sum()),
         "decliners": int((latest_df["ret_1d"] < 0).sum()),
         "unchanged": int((latest_df["ret_1d"] == 0).sum()),
-        "market_regime": int(latest_df["market_regime"].mode()[0]) if "market_regime" in latest_df.columns else 0,
+        "market_regime": int(latest_df["market_regime"].mode()[0]) if "market_regime" in latest_df.columns and not latest_df["market_regime"].empty else 0,
         "sector_performance": sector_perf.to_dict(orient="records"),
         "top_gainers": latest_df.nlargest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
         "top_losers": latest_df.nsmallest(10, "ret_1d")[["symbol", "close", "ret_1d"]].to_dict(orient="records"),
@@ -63,7 +73,7 @@ def generate_dashboard_json(
     }
     
     with open(output_dir / "market_overview.json", "w") as f:
-        json.dump(market_overview, f, indent=2)
+        json.dump(clean_json(market_overview), f, indent=2)
         
     # 2. Symbols Index (Lightweight list for screener)
     # Filter columns to keep index small
@@ -81,13 +91,9 @@ def generate_dashboard_json(
     # Convert dates to strings
     for item in symbols_index:
         item["date"] = item["date"].strftime("%Y-%m-%d")
-        # Handle NaNs
-        for k, v in item.items():
-            if isinstance(v, float) and np.isnan(v):
-                item[k] = None
 
     with open(output_dir / "symbols_index.json", "w") as f:
-        json.dump(symbols_index, f, indent=2)
+        json.dump(clean_json(symbols_index), f, indent=2)
         
     # 3. Individual Symbol Details (Full History)
     for symbol, group in indicators_df.groupby("symbol"):
@@ -100,8 +106,7 @@ def generate_dashboard_json(
             if col == "date":
                 history[col] = group[col].dt.strftime("%Y-%m-%d").tolist()
             else:
-                # Replace NaN with None for JSON
-                history[col] = [None if isinstance(x, float) and np.isnan(x) else x for x in group[col].tolist()]
+                history[col] = group[col].tolist()
         
         symbol_detail = {
             "symbol": symbol,
@@ -111,7 +116,8 @@ def generate_dashboard_json(
         }
         
         with open(output_dir / "symbols" / f"{symbol}.json", "w") as f:
-            json.dump(symbol_detail, f)
+            json.dump(clean_json(symbol_detail), f)
+
 
 def generate_dashboard_artifacts(output_dir: Path = DASHBOARD_DIR):
     """Convenience wrapper for generating artifacts using the default output directory."""
