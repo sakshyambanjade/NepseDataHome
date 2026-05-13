@@ -81,7 +81,8 @@ def generate_broker_artifacts(date: str):
     symbol_dir.mkdir(exist_ok=True)
     for res in results:
         symbol = res["symbol"]
-        with open(symbol_dir / f"{symbol}_broker_flow.json", "w") as f:
+        safe_symbol = str(symbol).replace("/", "-")
+        with open(symbol_dir / f"{safe_symbol}_broker_flow.json", "w") as f:
             json.dump(res, f, indent=2)
 
     # 4. Individual Broker JSONs

@@ -269,7 +269,8 @@ function SymbolInsight({ symbol }) {
     setData(null);
     setLoading(true);
     const base = import.meta.env.BASE_URL || "/";
-    fetch(`${base}data/symbols/${symbol}.json`)
+    const safeSymbol = String(symbol).replace("/", "-");
+    fetch(`${base}data/symbols/${safeSymbol}.json`)
       .then(r => r.json())
       .then(d => {
         setData(d);

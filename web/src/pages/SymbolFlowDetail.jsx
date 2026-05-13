@@ -10,7 +10,8 @@ export function SymbolFlowDetail() {
 
   useEffect(() => {
     const base = import.meta.env.BASE_URL || "/";
-    fetch(`${base}data/symbols/${symbol}_broker_flow.json`)
+    const safeSymbol = String(symbol).replace("/", "-");
+    fetch(`${base}data/symbols/${safeSymbol}_broker_flow.json`)
       .then(res => {
         if (!res.ok) throw new Error("Symbol data not found");
         return res.json();

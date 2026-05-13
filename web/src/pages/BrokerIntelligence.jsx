@@ -47,7 +47,7 @@ export function BrokerIntelligence() {
           </div>
           <div className="space-y-4">
             {data.most_accumulated?.map((item, i) => (
-              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-green-500/30 transition-all group">
+              <Link to={`/flowsheet/${String(item.symbol).replace("/", "-")}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-green-500/30 transition-all group">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
                   <span className="font-bold text-white group-hover:text-green-400 transition-colors">{item.symbol}</span>
@@ -72,7 +72,7 @@ export function BrokerIntelligence() {
           </div>
           <div className="space-y-4">
             {data.smart_money_ranking?.map((item, i) => (
-              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all group">
+              <Link to={`/flowsheet/${String(item.symbol).replace("/", "-")}`} key={item.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all group">
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-600 font-mono text-xs w-4">{i + 1}</span>
                   <span className="font-bold text-white group-hover:text-blue-400 transition-colors">{item.symbol}</span>
@@ -95,7 +95,7 @@ export function BrokerIntelligence() {
           </div>
           <div className="space-y-3">
             {data.operator_watchlist?.slice(0, 8).map((item) => (
-              <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="block p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all group">
+              <Link to={`/flowsheet/${String(item.symbol).replace("/", "-")}`} key={item.symbol} className="block p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all group">
                 <div className="flex justify-between items-start mb-1">
                   <span className="font-bold text-white group-hover:text-amber-500 transition-colors">{item.symbol}</span>
                   <span className="text-[10px] font-bold text-amber-500 uppercase tracking-tighter">Flow Alert</span>

@@ -110,7 +110,7 @@ export function BrokerDetail() {
               {data.exposure && data.exposure.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {data.exposure.map((exp, idx) => (
-                    <Link to={`/flowsheet/${exp.symbol}`} key={idx} className="group p-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl transition-all">
+                    <Link to={`/flowsheet/${String(exp.symbol).replace("/", "-")}`} key={idx} className="group p-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl transition-all">
                       <div className="flex justify-between items-start mb-2">
                         <span className="text-xl font-black text-white group-hover:text-blue-400 transition-colors">{exp.symbol}</span>
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase ${exp.type === 'accumulation' ? 'bg-blue-500/20 text-blue-400' : 'bg-red-500/20 text-red-400'}`}>

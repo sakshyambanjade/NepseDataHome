@@ -95,9 +95,12 @@ def generate_dashboard_json(
     with open(output_dir / "symbols_index.json", "w") as f:
         json.dump(clean_json(symbols_index), f, indent=2)
         
-    # 3. Individual Symbol Details (Full History)
+        # 3. Individual Symbol Details (Full History)
     for symbol, group in indicators_df.groupby("symbol"):
         group = group.sort_values("date")
+        
+        # Sanitize symbol for filename (e.g. GBILD84/85 -> GBILD84-85)
+        safe_symbol = str(symbol).replace("/", "-")
         
         # Limit history for symbol detail if needed, or keep all
         # Converting to dict with list for each column (better for charts)
@@ -115,7 +118,7 @@ def generate_dashboard_json(
             "latest": history["close"][-1] if history["close"] else None,
         }
         
-        with open(output_dir / "symbols" / f"{symbol}.json", "w") as f:
+        with open(output_dir / "symbols" / f"{safe_symbol}.json", "w") as f:
             json.dump(clean_json(symbol_detail), f)
 
 

@@ -158,7 +158,7 @@ export function FlowsheetIntelligence() {
                 return (
                   <tr key={row.symbol} className="hover:bg-white/5 transition-colors group">
                     <td className="px-6 py-5">
-                      <Link to={`/flowsheet/${row.symbol}`} className="flex flex-col group/sym">
+                      <Link to={`/flowsheet/${String(row.symbol).replace("/", "-")}`} className="flex flex-col group/sym">
                         <span className="text-lg font-bold text-white group-hover/sym:text-blue-400 transition-colors">{row.symbol}</span>
                         <span className="text-[10px] text-gray-500 font-medium">{row.trade_count} Trades</span>
                       </Link>
