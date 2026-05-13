@@ -9,8 +9,8 @@ export function BrokerDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const isDev = import.meta.env.DEV;
-    const base = import.meta.env.BASE_URL || "/";
+    
+    const base = import.meta.env.BASE_URL === '/' ? '/NepseDataHome/' : (import.meta.env.BASE_URL || '/NepseDataHome/');
     fetch(`${base}data/brokers/${brokerId}.json`)
       .then(res => {
         if (!res.ok) throw new Error("Broker data not found");

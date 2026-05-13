@@ -9,8 +9,8 @@ export function FlowsheetIntelligence() {
   const [sortConfig, setSortConfig] = useState({ key: 'operator_like_score', direction: 'desc' });
 
   useEffect(() => {
-    const isDev = import.meta.env.DEV;
-    const base = import.meta.env.BASE_URL || "/";
+    
+    const base = import.meta.env.BASE_URL === '/' ? '/NepseDataHome/' : (import.meta.env.BASE_URL || '/NepseDataHome/');
     fetch(`${base}data/flowsheet_table.json`)
       .then(res => res.json())
       .then(json => {
