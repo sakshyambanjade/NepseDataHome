@@ -105,40 +105,49 @@ def detect_repeated_pairs(df: pd.DataFrame) -> float:
     return min(pair_share / 0.25, 1) * 100
 
 def calculate_normalized_hhi(shares: pd.Series) -> float:
-    """Calculates normalized HHI (0 to 1)."""
+    """Calculates normalized HHI (0 to 1) with robust normalization."""
+    shares = shares.dropna()
+    shares = shares[shares > 0]
     if shares.empty:
         return 0.0
+    shares = shares / shares.sum()
+    
     n = len(shares)
     if n <= 1:
         return 1.0
     raw_hhi = (shares**2).sum()
-    return (raw_hhi - (1/n)) / (1 - (1/n))
+    norm_hhi = (raw_hhi - (1/n)) / (1 - (1/n))
+    return float(np.clip(norm_hhi, 0, 1))
 
 def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, Any]:
     """
     Computes detailed intelligence for a single symbol.
-    Now with hardened 8-factor scoring model.
+    Upgraded for Production V2 with True Net Flow and 7-Factor Weighted Model.
     """
     total_qty = df['quantity'].sum()
     total_amt = df['amount'].sum()
     trade_count = len(df)
     vwap = total_amt / total_qty if total_qty > 0 else 0
     
-    # concentration
-    buyer_shares = df.groupby('buyer_broker')['quantity'].sum() / total_qty
-    seller_shares = df.groupby('seller_broker')['quantity'].sum() / total_qty
+    # 1. Broker-Level Aggregation (True Net Flow)
+    buy_by_broker = df.groupby('buyer_broker')['quantity'].sum()
+    sell_by_broker = df.groupby('seller_broker')['quantity'].sum()
     
-    buyer_hhi = calculate_normalized_hhi(buyer_shares)
-    seller_hhi = calculate_normalized_hhi(seller_shares)
+    broker_stats = pd.DataFrame({'buy': buy_by_broker, 'sell': sell_by_broker}).fillna(0)
+    broker_stats['net_qty'] = broker_stats['buy'] - broker_stats['sell']
     
-    # Top Players
-    top_buyers_df = df.groupby('buyer_broker')['quantity'].sum().nlargest(5)
-    top_sellers_df = df.groupby('seller_broker')['quantity'].sum().nlargest(5)
+    # Concentration (Using Buy/Sell totals for HHI)
+    buyer_hhi = calculate_normalized_hhi(broker_stats['buy'])
+    seller_hhi = calculate_normalized_hhi(broker_stats['sell'])
     
-    top_buyers = [{"broker": b, "qty": q, "share": q/total_qty} for b, q in top_buyers_df.items()]
-    top_sellers = [{"broker": b, "qty": q, "share": q/total_qty} for b, q in top_sellers_df.items()]
+    # Top Players (Based on Net Flow)
+    top_net_buyers_df = broker_stats[broker_stats['net_qty'] > 0].nlargest(5, 'net_qty')
+    top_net_sellers_df = broker_stats[broker_stats['net_qty'] < 0].nsmallest(5, 'net_qty')
     
-    # Pattern Scores
+    top_net_buyers = [{"broker": b, "net_qty": q, "share": q/total_qty} for b, q in top_net_buyers_df['net_qty'].items()]
+    top_net_sellers = [{"broker": b, "net_qty": abs(q), "share": abs(q)/total_qty} for b, q in top_net_sellers_df['net_qty'].items()]
+    
+    # 2. Pattern Scores
     sliced_buy = detect_sliced_runs(df, "buy")
     sliced_sell = detect_sliced_runs(df, "sell")
     repeated_pair = detect_repeated_pairs(df)
@@ -149,15 +158,12 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
     chunk_trade_pct = (df['quantity'].max() / total_qty) * 100 if total_qty > 0 else 0
     chunk_score = min(chunk_trade_pct / 25, 1) * 100
     
-    # Strength Components
-    top_5_buyer_share = top_buyers_df.sum() / total_qty if total_qty > 0 else 0
-    top_5_seller_share = top_sellers_df.sum() / total_qty if total_qty > 0 else 0
-    
-    # Net buy strength: How much more concentrated is the buy side vs sell side
-    net_buy_strength = max(0, (top_5_buyer_share - top_5_seller_share)) * 100
-    net_sell_strength = max(0, (top_5_seller_share - top_5_buyer_share)) * 100
+    # 3. Strength Components (True Net Flow)
+    # net_buy_strength = top 3 positive net_qty / total_qty * 100
+    net_buy_strength = (top_net_buyers_df['net_qty'].nlargest(3).sum() / total_qty * 100) if total_qty > 0 else 0
+    net_sell_strength = (abs(top_net_sellers_df['net_qty'].nsmallest(3).sum()) / total_qty * 100) if total_qty > 0 else 0
 
-    # New Accumulation/Distribution formulas
+    # 4. Scoring Formulas
     acc_score = (
         0.30 * net_buy_strength +
         0.20 * buyer_hhi * 100 +
@@ -178,39 +184,25 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
     
     churn_score = min(buyer_hhi * 100, seller_hhi * 100)
     
-    # Advanced Components (Real calculations or warnings)
-    warnings = []
-    
-    # 1. Concentration Surprise
-    # In V1, we use a simple heuristic: if HHI > 0.4, it's a surprise
-    conc_surprise = max(0, (buyer_hhi - 0.2)) * 100
-    # Note: Real surprise needs historical HHI baseline.
-    warnings.append("missing_historical_baseline")
-    
-    # 2. Volume Spike
-    # Real spike needs avg_volume_20.
-    vol_spike_score = 0
-    warnings.append("missing_volume_baseline")
-    
-    # 3. Settlement Followthrough
-    settlement_score = 0
-    warnings.append("missing_settlement_baseline")
-
-    # Operator-Like Score (8-Factor Model)
+    # 5. Production Operator Score (7-Factor Model)
+    # Rescaled for better sensitivity (normal 0-30, flags 40-70+)
     op_score = (
-        0.18 * conc_surprise +
-        0.16 * buyer_hhi * 100 +
+        0.20 * max(acc_score, dist_score) +
+        0.18 * repeated_pair +
+        0.16 * max(buyer_hhi, seller_hhi) * 100 +
         0.14 * churn_score +
-        0.14 * max(acc_score, dist_score) +
-        0.12 * repeated_pair +
+        0.12 * chunk_score +
         0.10 * cross_trade_ratio * 100 +
-        0.08 * vol_spike_score +
-        0.08 * settlement_score
+        0.10 * max(sliced_buy, sliced_sell)
     )
     
-    # Data Quality & Guards
-    active_brokers = pd.concat([df["buyer_broker"], df["seller_broker"]]).nunique()
+    # 6. Data Quality & Warnings
+    warnings = []
+    warnings.append("missing_historical_baseline")
+    warnings.append("missing_volume_baseline")
+    warnings.append("missing_settlement_baseline")
     
+    active_brokers = broker_stats.index.nunique()
     if trade_count < 10:
         op_score = min(op_score, 50)
         warnings.append("low_trade_count")
@@ -218,14 +210,19 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         op_score = min(op_score, 55)
         warnings.append("few_active_brokers")
         
-    # Flags
+    # 7. Stronger Intelligence Flags
     flags = []
+    if acc_score >= 40: flags.append("Accumulation pressure")
+    if dist_score >= 40: flags.append("Distribution pressure")
+    if op_score >= 40: flags.append("Broker-flow watch")
+    if net_buy_strength >= 20: flags.append("Net broker accumulation")
+    if net_sell_strength >= 20: flags.append("Net broker distribution")
+    
     if sliced_buy > 40: flags.append("Sliced buy pattern")
     if sliced_sell > 40: flags.append("Sliced sell pattern")
     if repeated_pair > 60: flags.append("Repeated broker pair activity")
     if cross_trade_ratio > 0.05: flags.append("Cross-trade watch")
     if chunk_score > 70: flags.append("Large chunk trade")
-    if net_buy_strength > 20: flags.append("Concentrated accumulation")
     
     return {
         "symbol": symbol,
@@ -234,6 +231,7 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         "total_amt": float(total_amt),
         "trade_count": trade_count,
         "vwap": round(vwap, 2),
+        "net_flow": float(broker_stats['net_qty'].sum()), # Should be 0 in closed system
         "accumulation_score": round(acc_score, 1),
         "distribution_score": round(dist_score, 1),
         "operator_like_score": round(op_score, 1),
@@ -244,10 +242,11 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str) -> Dict[str, A
         "cross_trade_ratio": round(cross_trade_ratio, 3),
         "chunk_score": round(chunk_score, 1),
         "net_buy_strength": round(net_buy_strength, 1),
-        "top_buyer": top_buyers[0]['broker'] if top_buyers else None,
-        "top_seller": top_sellers[0]['broker'] if top_sellers else None,
+        "net_sell_strength": round(net_sell_strength, 1),
+        "top_net_buyers": top_net_buyers,
+        "top_net_sellers": top_net_sellers,
         "flags": flags,
-        "data_quality": {"warnings": warnings, "score": 100 if not warnings else 60}
+        "data_quality": {"warnings": warnings, "score": 100 if len(warnings) < 2 else 60}
     }
 
 def analyze_daily_floorsheet(df: pd.DataFrame, date: str) -> List[Dict[str, Any]]:

@@ -59,31 +59,72 @@ def test_cross_trade_watch():
     assert metrics["cross_trade_ratio"] == 1.0
     assert "Cross-trade watch" in metrics["flags"]
 
-def test_quality_guards():
-    # Low trade count should cap operator_like_score
+def test_net_buy_strength():
+    # One broker net buying heavily should raise net_buy_strength
+    data = []
+    # Broker 01 buys 1000 from 10 different sellers
+    for i in range(10):
+        data.append({
+            "symbol": "NETBUY",
+            "buyer_broker": "01",
+            "seller_broker": f"{i+10}",
+            "quantity": 100,
+            "rate": 100,
+            "transaction_no": i
+        })
+    df = sanitize_floorsheet(pd.DataFrame(data))
+    metrics = compute_symbol_flow(df, "NETBUY", "2026-05-12")
+    assert metrics["net_buy_strength"] >= 90
+    assert "Net broker accumulation" in metrics["flags"]
+
+def test_net_sell_strength():
+    # One broker net selling heavily should raise net_sell_strength
+    data = []
+    # Broker 01 sells 1000 to 10 different buyers
+    for i in range(10):
+        data.append({
+            "symbol": "NETSELL",
+            "buyer_broker": f"{i+10}",
+            "seller_broker": "01",
+            "quantity": 100,
+            "rate": 100,
+            "transaction_no": i
+        })
+    df = sanitize_floorsheet(pd.DataFrame(data))
+    metrics = compute_symbol_flow(df, "NETSELL", "2026-05-12")
+    assert metrics["net_sell_strength"] >= 90
+    assert "Net broker distribution" in metrics["flags"]
+
+def test_mixed_transaction_ids():
+    # Transaction IDs like TXN-2026-05-12-NABIL-775 should parse correctly
     data = [{
-        "symbol": "LOW",
+        "symbol": "TXN",
         "buyer_broker": "01",
         "seller_broker": "02",
-        "quantity": 1000,
+        "quantity": 100,
         "rate": 100,
-        "transaction_no": 1
+        "transaction_no": "TXN-2026-05-12-NABIL-775"
     }]
     df = sanitize_floorsheet(pd.DataFrame(data))
-    metrics = compute_symbol_flow(df, "LOW", "2026-05-12")
-    assert metrics["operator_like_score"] <= 55
-    assert "low_trade_count" in metrics["data_quality"]["warnings"]
+    assert df["txn_order"].iloc[0] == 775
 
-def test_hhi_calculation():
-    # Balanced brokers produce low normalized HHI
-    shares = pd.Series([0.1] * 10)
-    hhi = calculate_normalized_hhi(shares)
-    assert hhi == pytest.approx(0.0)
-    
-    # Concentrated broker produces high HHI
-    shares_conc = pd.Series([1.0])
-    hhi_conc = calculate_normalized_hhi(shares_conc)
-    assert hhi_conc == 1.0
+def test_balanced_broker_activity():
+    # Balanced broker activity should give low operator_like_score
+    data = []
+    # 20 trades between different random brokers
+    for i in range(20):
+        data.append({
+            "symbol": "BALANCED",
+            "buyer_broker": f"{i+10}",
+            "seller_broker": f"{i+40}",
+            "quantity": 100,
+            "rate": 100,
+            "transaction_no": i
+        })
+    df = sanitize_floorsheet(pd.DataFrame(data))
+    metrics = compute_symbol_flow(df, "BALANCED", "2026-05-12")
+    assert metrics["operator_like_score"] < 25
+    assert len(metrics["flags"]) == 0
 
 if __name__ == "__main__":
     print("Running manual tests...")

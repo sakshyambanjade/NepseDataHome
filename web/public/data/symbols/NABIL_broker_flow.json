@@ -5,18 +5,72 @@
   "total_amt": 166960112.17000002,
   "trade_count": 182,
   "vwap": 855.77,
-  "accumulation_score": 5.8,
-  "distribution_score": 7.9,
-  "operator_like_score": 6.1,
+  "net_flow": 0.0,
+  "accumulation_score": 10.0,
+  "distribution_score": 11.1,
+  "operator_like_score": 10.9,
   "churn_score": 1.6,
   "sliced_buy_score": 0.0,
   "sliced_sell_score": 5.2,
   "repeated_pair_score": 30.8,
   "cross_trade_ratio": 0.082,
   "chunk_score": 10.3,
-  "net_buy_strength": 0,
-  "top_buyer": "14",
-  "top_seller": "03",
+  "net_buy_strength": 14.3,
+  "net_sell_strength": 14.8,
+  "top_net_buyers": [
+    {
+      "broker": "42",
+      "net_qty": 9900.0,
+      "share": 0.05074320861096873
+    },
+    {
+      "broker": "34",
+      "net_qty": 9100.0,
+      "share": 0.04664274730907227
+    },
+    {
+      "broker": "06",
+      "net_qty": 8860.0,
+      "share": 0.04541260891850333
+    },
+    {
+      "broker": "22",
+      "net_qty": 7010.0,
+      "share": 0.03593029215786776
+    },
+    {
+      "broker": "26",
+      "net_qty": 6060.0,
+      "share": 0.03106099436186571
+    }
+  ],
+  "top_net_sellers": [
+    {
+      "broker": "03",
+      "net_qty": 10900.0,
+      "share": 0.05586878523833931
+    },
+    {
+      "broker": "24",
+      "net_qty": 10040.0,
+      "share": 0.05146078933880061
+    },
+    {
+      "broker": "21",
+      "net_qty": 7950.0,
+      "share": 0.0407483341875961
+    },
+    {
+      "broker": "10",
+      "net_qty": 6900.0,
+      "share": 0.035366478728856995
+    },
+    {
+      "broker": "05",
+      "net_qty": 6610.0,
+      "share": 0.03388006150691953
+    }
+  ],
   "flags": [
     "Cross-trade watch"
   ],
