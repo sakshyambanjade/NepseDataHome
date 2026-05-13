@@ -58,10 +58,17 @@ export function AnalyticsDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const base = import.meta.env.BASE_URL || "/";
+        const isDev = import.meta.env.DEV;
+        const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
         const [marketResp, symbolsResp] = await Promise.all([
-          fetch(`${base}data/market_overview.json`).then(r => r.json()),
-          fetch(`${base}data/symbols_index.json`).then(r => r.json())
+          fetch(`${base}data/market_overview.json`).then(r => {
+            if (!r.ok) throw new Error("Market data not found");
+            return r.json();
+          }),
+          fetch(`${base}data/symbols_index.json`).then(r => {
+            if (!r.ok) throw new Error("Symbols index not found");
+            return r.json();
+          })
         ]);
         setMarketData(marketResp);
         setSymbols(symbolsResp);
@@ -85,6 +92,16 @@ export function AnalyticsDashboard() {
     <div className="flex flex-col items-center justify-center h-[60vh] space-y-4">
       <div className="w-12 h-12 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin"></div>
       <p className="text-gray-500 font-medium animate-pulse text-sm uppercase tracking-widest">Inference Engine Booting...</p>
+    </div>
+  );
+
+  if (!marketData) return (
+    <div className="flex flex-col items-center justify-center h-[60vh] space-y-4">
+      <div className="bg-red-500/10 p-6 rounded-full">
+        <Activity className="text-red-500 w-12 h-12" />
+      </div>
+      <p className="text-gray-400 font-bold">Failed to load market intelligence data.</p>
+      <button onClick={() => window.location.reload()} className="text-blue-400 hover:underline">Retry</button>
     </div>
   );
 

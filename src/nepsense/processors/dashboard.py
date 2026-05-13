@@ -50,7 +50,11 @@ def generate_dashboard_json(
             return [clean_json(x) for x in data]
         if isinstance(data, dict):
             return {k: clean_json(v) for k, v in data.items()}
-        if isinstance(data, float) and np.isnan(data):
+        # Handle numpy and pandas NaN/Inf
+        if isinstance(data, (float, np.floating)):
+            if np.isnan(data) or np.isinf(data):
+                return None
+        if pd.isna(data):
             return None
         return data
 

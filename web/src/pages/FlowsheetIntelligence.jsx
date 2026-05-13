@@ -9,7 +9,8 @@ export function FlowsheetIntelligence() {
   const [sortConfig, setSortConfig] = useState({ key: 'operator_like_score', direction: 'desc' });
 
   useEffect(() => {
-    const base = import.meta.env.BASE_URL || "/";
+    const isDev = import.meta.env.DEV;
+    const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
     fetch(`${base}data/flowsheet_table.json`)
       .then(res => res.json())
       .then(json => {

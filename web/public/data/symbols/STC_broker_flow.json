@@ -12,10 +12,10 @@
   "distribution_score": 16.3,
   "operator_like_score": 15.3,
   "concentration_surprise_score": 0.0,
-  "volume_spike_score": 0.0,
-  "unusual_net_buy_score": 0.0,
-  "unusual_net_sell_score": 0.0,
-  "baseline_available": false,
+  "volume_spike_score": 0,
+  "unusual_net_buy_score": 0,
+  "unusual_net_sell_score": 0,
+  "baseline_available": true,
   "churn_score": 3.3,
   "sliced_buy_score": 0.0,
   "sliced_sell_score": 16.0,
@@ -239,10 +239,8 @@
   ],
   "data_quality": {
     "warnings": [
-      "missing_historical_baseline",
-      "missing_volume_baseline",
       "missing_settlement_baseline"
     ],
-    "score": 60
+    "score": 100
   }
 }

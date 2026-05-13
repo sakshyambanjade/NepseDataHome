@@ -14,6 +14,20 @@ logger = logging.getLogger(__name__)
 # Directory for persistent intelligence history
 INTELLIGENCE_DIR = DATA_DIR / "floorsheet" / "intelligence"
 
+def clean_json(data):
+    """Recursively clean dictionary/list of NaNs, Infinities for JSON compatibility."""
+    import numpy as np
+    if isinstance(data, list):
+        return [clean_json(x) for x in data]
+    if isinstance(data, dict):
+        return {k: clean_json(v) for k, v in data.items()}
+    if isinstance(data, (float, np.floating)):
+        if np.isnan(data) or np.isinf(data):
+            return None
+    if pd.isna(data):
+        return None
+    return data
+
 def generate_broker_artifacts(date: str):
     """
     Generate all floorsheet-related JSON artifacts for the dashboard.
@@ -53,7 +67,7 @@ def generate_broker_artifacts(date: str):
     # 0. Save Persistent Intelligence History (before any UI-specific filtering)
     INTELLIGENCE_DIR.mkdir(parents=True, exist_ok=True)
     with open(INTELLIGENCE_DIR / f"{date}.json", "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(clean_json(results), f, indent=2)
     
     # 1. Broker Overview JSON
     overview = {
@@ -70,11 +84,11 @@ def generate_broker_artifacts(date: str):
     
     # Save overview
     with open(DASHBOARD_DIR / "broker_overview.json", "w") as f:
-        json.dump(overview, f, indent=2)
+        json.dump(clean_json(overview), f, indent=2)
     
     # 2. Flowsheet Table JSON (for the new table page)
     with open(DASHBOARD_DIR / "flowsheet_table.json", "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(clean_json(results), f, indent=2)
     
     # 3. Individual Symbol JSONs
     symbol_dir = DASHBOARD_DIR / "symbols"
@@ -83,7 +97,7 @@ def generate_broker_artifacts(date: str):
         symbol = res["symbol"]
         safe_symbol = str(symbol).replace("/", "-")
         with open(symbol_dir / f"{safe_symbol}_broker_flow.json", "w") as f:
-            json.dump(res, f, indent=2)
+            json.dump(clean_json(res), f, indent=2)
 
     # 4. Individual Broker JSONs
     # We need to aggregate across all symbols for each broker
@@ -162,7 +176,7 @@ def generate_broker_artifacts(date: str):
         broker_data["exposure"] = sorted(exposure, key=lambda x: x["score"], reverse=True)
         
         with open(broker_dir / f"{brk}.json", "w") as f:
-            json.dump(broker_data, f, indent=2)
+            json.dump(clean_json(broker_data), f, indent=2)
             
     logger.info(f"Generated {len(results)} intelligence artifacts for {date}")
 

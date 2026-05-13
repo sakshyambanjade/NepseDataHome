@@ -6,7 +6,8 @@ export function OperatorWatch() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const base = import.meta.env.BASE_URL || "/";
+    const isDev = import.meta.env.DEV;
+    const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
     fetch(`${base}data/broker_overview.json`)
       .then(res => res.json())
       .then(d => {

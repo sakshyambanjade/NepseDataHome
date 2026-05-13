@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T23:33:26.311405",
+  "generated_at": "2026-05-14T00:01:49.694850",
   "date": "2026-05-12",
   "most_accumulated": [
     {
@@ -16,10 +16,10 @@
       "distribution_score": 18.8,
       "operator_like_score": 21.8,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -236,11 +236,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -257,10 +255,10 @@
       "distribution_score": 18.4,
       "operator_like_score": 21.7,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.8,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -492,11 +490,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -513,10 +509,10 @@
       "distribution_score": 14.1,
       "operator_like_score": 17.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.6,
       "sliced_buy_score": 1.0,
       "sliced_sell_score": 0.0,
@@ -746,11 +742,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -767,10 +761,10 @@
       "distribution_score": 16.3,
       "operator_like_score": 15.3,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.3,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 16.0,
@@ -994,11 +988,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -1015,10 +1007,10 @@
       "distribution_score": 13.6,
       "operator_like_score": 14.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.3,
       "sliced_buy_score": 7.0,
       "sliced_sell_score": 6.8,
@@ -1248,11 +1240,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -1269,10 +1259,10 @@
       "distribution_score": 11.2,
       "operator_like_score": 12.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.2,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -1507,11 +1497,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -1528,10 +1516,10 @@
       "distribution_score": 11.5,
       "operator_like_score": 11.5,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.9,
       "sliced_buy_score": 2.5,
       "sliced_sell_score": 0.0,
@@ -1766,11 +1754,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -1787,10 +1773,10 @@
       "distribution_score": 11.0,
       "operator_like_score": 11.2,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.4,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 6.7,
@@ -2039,11 +2025,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -2060,10 +2044,10 @@
       "distribution_score": 11.7,
       "operator_like_score": 11.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.3,
       "sliced_buy_score": 1.6,
       "sliced_sell_score": 1.3,
@@ -2298,11 +2282,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -2319,10 +2301,10 @@
       "distribution_score": 11.1,
       "operator_like_score": 10.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 5.2,
@@ -2559,11 +2541,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     }
   ],
@@ -2582,10 +2562,10 @@
       "distribution_score": 18.8,
       "operator_like_score": 21.8,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -2802,11 +2782,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -2823,10 +2801,10 @@
       "distribution_score": 18.4,
       "operator_like_score": 21.7,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.8,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -3058,11 +3036,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -3079,10 +3055,10 @@
       "distribution_score": 16.3,
       "operator_like_score": 15.3,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.3,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 16.0,
@@ -3306,11 +3282,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -3327,10 +3301,10 @@
       "distribution_score": 14.1,
       "operator_like_score": 17.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.6,
       "sliced_buy_score": 1.0,
       "sliced_sell_score": 0.0,
@@ -3560,11 +3534,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -3581,10 +3553,10 @@
       "distribution_score": 13.6,
       "operator_like_score": 14.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.3,
       "sliced_buy_score": 7.0,
       "sliced_sell_score": 6.8,
@@ -3814,11 +3786,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -3835,10 +3805,10 @@
       "distribution_score": 11.7,
       "operator_like_score": 11.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.3,
       "sliced_buy_score": 1.6,
       "sliced_sell_score": 1.3,
@@ -4073,11 +4043,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -4094,10 +4062,10 @@
       "distribution_score": 11.5,
       "operator_like_score": 11.5,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.9,
       "sliced_buy_score": 2.5,
       "sliced_sell_score": 0.0,
@@ -4332,11 +4300,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -4353,10 +4319,10 @@
       "distribution_score": 11.2,
       "operator_like_score": 12.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.2,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -4591,11 +4557,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -4612,10 +4576,10 @@
       "distribution_score": 11.1,
       "operator_like_score": 10.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 5.2,
@@ -4852,11 +4816,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -4873,10 +4835,10 @@
       "distribution_score": 11.0,
       "operator_like_score": 11.2,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.4,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 6.7,
@@ -5125,11 +5087,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     }
   ],
@@ -5148,10 +5108,10 @@
       "distribution_score": 18.8,
       "operator_like_score": 21.8,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -5368,11 +5328,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -5389,10 +5347,10 @@
       "distribution_score": 18.4,
       "operator_like_score": 21.7,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.8,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -5624,11 +5582,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -5645,10 +5601,10 @@
       "distribution_score": 14.1,
       "operator_like_score": 17.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.6,
       "sliced_buy_score": 1.0,
       "sliced_sell_score": 0.0,
@@ -5878,11 +5834,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -5899,10 +5853,10 @@
       "distribution_score": 16.3,
       "operator_like_score": 15.3,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.3,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 16.0,
@@ -6126,11 +6080,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -6147,10 +6099,10 @@
       "distribution_score": 13.6,
       "operator_like_score": 14.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.3,
       "sliced_buy_score": 7.0,
       "sliced_sell_score": 6.8,
@@ -6380,11 +6332,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -6401,10 +6351,10 @@
       "distribution_score": 11.2,
       "operator_like_score": 12.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.2,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -6639,11 +6589,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -6660,10 +6608,10 @@
       "distribution_score": 11.7,
       "operator_like_score": 11.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.3,
       "sliced_buy_score": 1.6,
       "sliced_sell_score": 1.3,
@@ -6898,11 +6846,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -6919,10 +6865,10 @@
       "distribution_score": 11.5,
       "operator_like_score": 11.5,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.9,
       "sliced_buy_score": 2.5,
       "sliced_sell_score": 0.0,
@@ -7157,11 +7103,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -7178,10 +7122,10 @@
       "distribution_score": 11.0,
       "operator_like_score": 11.2,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.4,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 6.7,
@@ -7430,11 +7374,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -7451,10 +7393,10 @@
       "distribution_score": 11.1,
       "operator_like_score": 10.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 5.2,
@@ -7691,11 +7633,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     }
   ],
@@ -7714,10 +7654,10 @@
       "distribution_score": 18.8,
       "operator_like_score": 21.8,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -7934,11 +7874,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -7955,10 +7893,10 @@
       "distribution_score": 18.4,
       "operator_like_score": 21.7,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.8,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -8190,11 +8128,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -8211,10 +8147,10 @@
       "distribution_score": 14.1,
       "operator_like_score": 17.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.6,
       "sliced_buy_score": 1.0,
       "sliced_sell_score": 0.0,
@@ -8444,11 +8380,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -8465,10 +8399,10 @@
       "distribution_score": 16.3,
       "operator_like_score": 15.3,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 3.3,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 16.0,
@@ -8692,11 +8626,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -8713,10 +8645,10 @@
       "distribution_score": 13.6,
       "operator_like_score": 14.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.3,
       "sliced_buy_score": 7.0,
       "sliced_sell_score": 6.8,
@@ -8946,11 +8878,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -8967,10 +8897,10 @@
       "distribution_score": 11.2,
       "operator_like_score": 12.1,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 2.2,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 0.0,
@@ -9205,11 +9135,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -9226,10 +9154,10 @@
       "distribution_score": 11.7,
       "operator_like_score": 11.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.3,
       "sliced_buy_score": 1.6,
       "sliced_sell_score": 1.3,
@@ -9464,11 +9392,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -9485,10 +9411,10 @@
       "distribution_score": 11.5,
       "operator_like_score": 11.5,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.9,
       "sliced_buy_score": 2.5,
       "sliced_sell_score": 0.0,
@@ -9723,11 +9649,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -9744,10 +9668,10 @@
       "distribution_score": 11.0,
       "operator_like_score": 11.2,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.4,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 6.7,
@@ -9996,11 +9920,9 @@
       "flags": [],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     },
     {
@@ -10017,10 +9939,10 @@
       "distribution_score": 11.1,
       "operator_like_score": 10.9,
       "concentration_surprise_score": 0.0,
-      "volume_spike_score": 0.0,
+      "volume_spike_score": 0,
       "unusual_net_buy_score": 0.0,
       "unusual_net_sell_score": 0.0,
-      "baseline_available": false,
+      "baseline_available": true,
       "churn_score": 1.6,
       "sliced_buy_score": 0.0,
       "sliced_sell_score": 5.2,
@@ -10257,11 +10179,9 @@
       ],
       "data_quality": {
         "warnings": [
-          "missing_historical_baseline",
-          "missing_volume_baseline",
           "missing_settlement_baseline"
         ],
-        "score": 60
+        "score": 100
       }
     }
   ]
