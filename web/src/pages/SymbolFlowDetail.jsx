@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronLeft, BarChart3, Users, Activity, Zap, ShieldCheck, AlertTriangle, ArrowRight, Table, Info } from 'lucide-react';
 
-export function FlowsheetDetail() {
+export function SymbolFlowDetail() {
   const { symbol } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

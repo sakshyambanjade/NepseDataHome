@@ -6,7 +6,7 @@ import { OperatorWatch } from "./pages/OperatorWatch";
 import { DataPage } from "./pages/Data";
 import { AboutPage } from "./pages/About";
 import { FlowsheetIntelligence } from "./pages/FlowsheetIntelligence";
-import { FlowsheetDetail } from "./pages/FlowsheetDetail";
+import { SymbolFlowDetail } from "./pages/SymbolFlowDetail";
 import { BrokerDetail } from "./pages/BrokerDetail";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route path="/brokers" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><BrokerIntelligence /></div>} />
           <Route path="/broker/:brokerId" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><BrokerDetail /></div>} />
           <Route path="/flowsheet" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><FlowsheetIntelligence /></div>} />
-          <Route path="/flowsheet/:symbol" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><FlowsheetDetail /></div>} />
+          <Route path="/flowsheet/:symbol" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><SymbolFlowDetail /></div>} />
           <Route path="/data" element={<DataPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
