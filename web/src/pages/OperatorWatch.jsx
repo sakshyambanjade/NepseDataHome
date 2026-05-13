@@ -7,7 +7,7 @@ export function OperatorWatch() {
 
   useEffect(() => {
     const isDev = import.meta.env.DEV;
-    const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
+    const base = import.meta.env.BASE_URL || "/";
     fetch(`${base}data/broker_overview.json`)
       .then(res => res.json())
       .then(d => {

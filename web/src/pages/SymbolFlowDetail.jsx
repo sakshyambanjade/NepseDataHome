@@ -10,7 +10,7 @@ export function SymbolFlowDetail() {
 
   useEffect(() => {
     const isDev = import.meta.env.DEV;
-    const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
+    const base = import.meta.env.BASE_URL || "/";
     const safeSymbol = String(symbol).replace("/", "-");
     fetch(`${base}data/symbols/${safeSymbol}_broker_flow.json`)
       .then(res => {

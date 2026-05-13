@@ -58,8 +58,7 @@ export function AnalyticsDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const isDev = import.meta.env.DEV;
-        const base = isDev ? "/" : (import.meta.env.BASE_URL || "/");
+        const base = import.meta.env.BASE_URL || "/";
         const [marketResp, symbolsResp] = await Promise.all([
           fetch(`${base}data/market_overview.json`).then(r => {
             if (!r.ok) throw new Error("Market data not found");
