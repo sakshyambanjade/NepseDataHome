@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ChevronLeft, BarChart3, Users, Activity, Zap, ShieldCheck, AlertTriangle, ArrowRight, Table, Info } from 'lucide-react';
+import { 
+  ChevronLeft, BarChart3, Users, Activity, Zap, 
+  ShieldCheck, AlertTriangle, ArrowRight, Table, Info,
+  TrendingUp, TrendingDown 
+} from 'lucide-react';
 
 export function SymbolFlowDetail() {
   const { symbol } = useParams();
@@ -90,7 +94,7 @@ export function SymbolFlowDetail() {
           </div>
           <div className="glass-morphism rounded-3xl px-6 py-4 border border-white/5 flex flex-col items-center">
             <span className="text-[10px] text-gray-500 font-bold uppercase mb-1 leading-none">VWAP</span>
-            <span className="text-2xl font-black text-white leading-none">Rs. {data.vwap}</span>
+            <span className="text-2xl font-black text-white leading-none">Rs. {data.vwap || "0.00"}</span>
           </div>
         </div>
       </div>
@@ -140,13 +144,13 @@ export function SymbolFlowDetail() {
             <div className="flex justify-between items-center">
               <span className="text-[10px] text-gray-500 font-bold uppercase">Volume Spike</span>
               <span className={`font-mono text-sm ${data.volume_spike_score > 30 ? 'text-purple-400' : 'text-gray-400'}`}>
-                {data.volume_spike_score.toFixed(1)}
+                {data.volume_spike_score?.toFixed(1) || "0.0"}
               </span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-[10px] text-gray-500 font-bold uppercase">Conc. Surprise</span>
               <span className={`font-mono text-sm ${data.concentration_surprise_score > 20 ? 'text-purple-400' : 'text-gray-400'}`}>
-                {data.concentration_surprise_score.toFixed(1)}
+                {data.concentration_surprise_score?.toFixed(1) || "0.0"}
               </span>
             </div>
             <div className="flex justify-between items-center">
@@ -188,7 +192,7 @@ export function SymbolFlowDetail() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-black text-blue-400">{(b.share * 100).toFixed(1)}%</div>
+                    <div className="text-lg font-black text-blue-400">{(b.share * 100)?.toFixed(1) || "0.0"}%</div>
                   </div>
                 </Link>
               ))}
@@ -215,7 +219,7 @@ export function SymbolFlowDetail() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-black text-red-400">{(s.share * 100).toFixed(1)}%</div>
+                    <div className="text-lg font-black text-red-400">{(s.share * 100)?.toFixed(1) || "0.0"}%</div>
                   </div>
                 </Link>
               ))}
@@ -247,7 +251,7 @@ export function SymbolFlowDetail() {
                         <ArrowRight className="w-3 h-3 inline mx-2 opacity-30" /> 
                         <Link to={`/broker/${pair.seller_broker}`} className="hover:text-red-400">B{pair.seller_broker}</Link>
                       </td>
-                      <td className="px-4 py-3 text-right font-mono text-gray-400">{(pair.quantity / 1000).toFixed(1)}k</td>
+                      <td className="px-4 py-3 text-right font-mono text-gray-400">{(pair.quantity / 1000)?.toFixed(1) || "0.0"}k</td>
                     </tr>
                   ))}
                 </tbody>
@@ -281,7 +285,7 @@ export function SymbolFlowDetail() {
                       </td>
                       <td className="px-4 py-3 font-bold text-gray-300">{trade.quantity.toLocaleString()}</td>
                       <td className="px-4 py-3 text-gray-500">{trade.rate}</td>
-                      <td className="px-4 py-3 text-right font-mono font-bold text-white">{(trade.amount / 1000000).toFixed(2)}M</td>
+                      <td className="px-4 py-3 text-right font-mono font-bold text-white">{(trade.amount / 1000000)?.toFixed(2) || "0.00"}M</td>
                     </tr>
                   ))}
                 </tbody>
@@ -296,7 +300,7 @@ export function SymbolFlowDetail() {
               <div>
                 <h4 className="text-sm font-black text-amber-400 uppercase mb-2">Cross-Trade Watch</h4>
                 <p className="text-xs text-amber-200/60 leading-relaxed">
-                  {(data.cross_trade_ratio * 100).toFixed(1)}% of today's volume occurred where the same broker was both buyer and seller. High cross-trade ratios can indicate wash trading or internal churn.
+                  {(data.cross_trade_ratio * 100)?.toFixed(1) || "0.0"}% of today's volume occurred where the same broker was both buyer and seller. High cross-trade ratios can indicate wash trading or internal churn.
                 </p>
               </div>
             </div>

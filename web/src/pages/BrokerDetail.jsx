@@ -74,7 +74,7 @@ export function BrokerDetail() {
           <div className={`px-4 py-2 rounded-2xl border ${data.total_net_qty >= 0 ? 'bg-emerald-500/5 border-emerald-500/10 text-emerald-400' : 'bg-red-500/5 border-red-500/10 text-red-400'}`}>
             <span className="text-[10px] uppercase font-bold block opacity-60 leading-none mb-1">Daily Net Position</span>
             <span className="text-lg font-black leading-none">
-              {data.total_net_qty >= 0 ? '+' : ''}{ (data.total_net_qty / 1000).toFixed(1) }k <span className="text-xs opacity-60">QTY</span>
+              {data.total_net_qty >= 0 ? '+' : ''}{ (data.total_net_qty / 1000)?.toFixed(1) || "0.0" }k <span className="text-xs opacity-60">QTY</span>
             </span>
           </div>
         </div>
@@ -83,10 +83,10 @@ export function BrokerDetail() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: "Total Buy Volume", value: `${(data.total_buy_qty / 1000).toFixed(1)}k`, icon: ArrowUpRight, color: "text-blue-400" },
-          { label: "Total Sell Volume", value: `${(data.total_sell_qty / 1000).toFixed(1)}k`, icon: ArrowDownRight, color: "text-red-400" },
-          { label: "Total Buy Amount", value: `Rs. ${(data.total_buy_amt / 1000000).toFixed(2)}M`, icon: TrendingUp, color: "text-emerald-400" },
-          { label: "Total Sell Amount", value: `Rs. ${(data.total_sell_amt / 1000000).toFixed(2)}M`, icon: TrendingDown, color: "text-rose-400" },
+          { label: "Total Buy Volume", value: `${(data.total_buy_qty / 1000)?.toFixed(1) || "0.0"}k`, icon: ArrowUpRight, color: "text-blue-400" },
+          { label: "Total Sell Volume", value: `${(data.total_sell_qty / 1000)?.toFixed(1) || "0.0"}k`, icon: ArrowDownRight, color: "text-red-400" },
+          { label: "Total Buy Amount", value: `Rs. ${(data.total_buy_amt / 1000000)?.toFixed(2) || "0.00"}M`, icon: TrendingUp, color: "text-emerald-400" },
+          { label: "Total Sell Amount", value: `Rs. ${(data.total_sell_amt / 1000000)?.toFixed(2) || "0.00"}M`, icon: TrendingDown, color: "text-rose-400" },
         ].map((stat, i) => (
           <div key={i} className="glass-morphism rounded-3xl p-6 border border-white/5">
             <stat.icon className={`w-5 h-5 ${stat.color} mb-3`} />
@@ -195,7 +195,7 @@ export function BrokerDetail() {
                     </div>
                     <div className="text-right">
                       <div className="text-[10px] text-gray-500 font-bold uppercase leading-none">Shared Vol</div>
-                      <div className="text-xs font-black text-gray-400 group-hover:text-purple-400">{(cp.qty / 1000).toFixed(1)}k</div>
+                      <div className="text-xs font-black text-gray-400 group-hover:text-purple-400">{(cp.qty / 1000)?.toFixed(1) || "0.0"}k</div>
                     </div>
                   </div>
                 </Link>
