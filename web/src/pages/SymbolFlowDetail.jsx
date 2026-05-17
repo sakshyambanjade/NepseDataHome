@@ -227,13 +227,40 @@ export function SymbolFlowDetail() {
         </Card>
       </div>
 
-      <Card className="text-center bg-blue-500/5 border-blue-500/10">
-        <Info className="w-6 h-6 text-blue-400 mx-auto mb-3" />
-        <h4 className="text-sm font-bold text-white mb-2 uppercase">Flow Explanation</h4>
-        <p className="text-xs text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          The flow analysis measures institutional routing behavior. High Accumulation Scores imply coordinated buying through a small network of brokers, while high Pattern Scores highlight structured anomalies (e.g., sliced trades or unusual matching sequences). These signals reflect broker-channel order routing, not specific investor identities.
-        </p>
-      </Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="bg-blue-500/5 border-blue-500/10">
+          <div className="flex items-center mb-4">
+            <Info className="w-5 h-5 text-blue-400 mr-2" />
+            <h4 className="text-sm font-bold text-white uppercase">Signal Explanation</h4>
+          </div>
+          {data.explain_score?.length > 0 ? (
+            <ul className="space-y-3">
+              {data.explain_score.map((reason, idx) => (
+                <li key={idx} className="flex items-start text-sm text-gray-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 mr-3 shrink-0"></span>
+                  <span className="leading-relaxed">{reason}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-gray-500 italic">No specific explanations generated for this signal.</p>
+          )}
+        </Card>
+
+        <Card className="bg-gray-800/10 border-white/5 flex flex-col justify-center">
+          <div className="text-center">
+            <div className="text-[10px] uppercase font-bold text-gray-500 tracking-widest mb-2">Signal Confidence</div>
+            <div className="text-4xl font-black text-white mb-2">{data.confidence?.score || 0}<span className="text-xl text-gray-500">/100</span></div>
+            <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+              data.confidence?.label === 'High confidence' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+              data.confidence?.label === 'Medium confidence' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
+              'bg-gray-500/10 text-gray-400 border border-gray-500/20'
+            }`}>
+              {data.confidence?.label || 'Unknown'}
+            </div>
+          </div>
+        </Card>
+      </div>
 
     </div>
   );

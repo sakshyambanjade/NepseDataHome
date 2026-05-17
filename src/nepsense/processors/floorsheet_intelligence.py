@@ -275,6 +275,41 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str, baseline: Opti
     # (Simple approach: return brokers with highest sliced volume)
     # This is already somewhat reflected in sliced_buy_score but we could add more.
 
+    data_quality_score = 100 if len(warnings) < 2 else 60
+    
+    # Trust Layer: Confidence Score
+    trade_count_score = min((trade_count / 200) * 100, 100)
+    liquidity_score = min((total_qty / 50000) * 100, 100)
+    baseline_score = 100 if baseline_available else 0
+    
+    confidence_score = (
+        0.35 * data_quality_score +
+        0.25 * trade_count_score +
+        0.20 * baseline_score +
+        0.20 * liquidity_score
+    )
+    
+    confidence_label = "Low confidence"
+    if confidence_score >= 80:
+        confidence_label = "High confidence"
+    elif confidence_score >= 50:
+        confidence_label = "Medium confidence"
+        
+    # Explain Score
+    explain_score = []
+    if top_net_buyers:
+        explain_score.append(f"Broker {top_net_buyers[0]['broker']} was top net buyer with {(top_net_buyers[0]['share']*100):.1f}% of volume.")
+    if top_net_sellers:
+        explain_score.append(f"Broker {top_net_sellers[0]['broker']} was top net seller with {(top_net_sellers[0]['share']*100):.1f}% of volume.")
+    if repeated_pair > 30:
+        explain_score.append(f"Repeated broker-pair activity was above normal (score: {repeated_pair:.1f}).")
+    if cross_trade_ratio > 0.05:
+        explain_score.append(f"Cross-trade ratio crossed 5% threshold at {(cross_trade_ratio*100):.1f}%.")
+    if net_buy_strength > 20:
+        explain_score.append(f"Net buy strength is high: Top 3 buyers acquired {net_buy_strength:.1f}% of daily volume.")
+    if volume_spike_score > 30:
+        explain_score.append("Significant volume spike detected compared to 20-day baseline.")
+
     return {
         "symbol": symbol,
         "date": date,
@@ -309,7 +344,12 @@ def compute_symbol_flow(df: pd.DataFrame, symbol: str, date: str, baseline: Opti
             "largest_trades": largest_trades
         },
         "flags": flags,
-        "data_quality": {"warnings": warnings, "score": 100 if len(warnings) < 2 else 60}
+        "explain_score": explain_score,
+        "confidence": {
+            "score": round(confidence_score, 1),
+            "label": confidence_label
+        },
+        "data_quality": {"warnings": warnings, "score": data_quality_score}
     }
 
 def analyze_daily_floorsheet(df: pd.DataFrame, date: str, baselines: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:

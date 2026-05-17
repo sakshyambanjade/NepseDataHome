@@ -248,6 +248,15 @@
     ]
   },
   "flags": [],
+  "explain_score": [
+    "Broker 26 was top net buyer with 5.0% of volume.",
+    "Broker 29 was top net seller with 8.1% of volume.",
+    "Repeated broker-pair activity was above normal (score: 42.1)."
+  ],
+  "confidence": {
+    "score": 98.6,
+    "label": "High confidence"
+  },
   "data_quality": {
     "warnings": [
       "missing_settlement_baseline"

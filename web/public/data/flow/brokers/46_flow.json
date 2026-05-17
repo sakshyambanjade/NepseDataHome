@@ -21,6 +21,15 @@
       "net_amount": 12175.39
     },
     {
+      "symbol": "NICL",
+      "buy_qty": 1000.0,
+      "buy_amount": 323147.83,
+      "sell_qty": 1500.0,
+      "sell_amount": 732649.26,
+      "net_qty": -500.0,
+      "net_amount": -409501.43
+    },
+    {
       "symbol": "HRL",
       "buy_qty": 3020.0,
       "buy_amount": 2590130.0200000005,
@@ -30,22 +39,13 @@
       "net_amount": 2065300.9100000006
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 10010.0,
-      "buy_amount": 10682481.309999999,
-      "sell_qty": 1510.0,
-      "sell_amount": 2150227.0700000003,
-      "net_qty": 8500.0,
-      "net_amount": 8532254.239999998
-    },
-    {
-      "symbol": "NTC",
-      "buy_qty": 2100.0,
-      "buy_amount": 1545495.69,
-      "sell_qty": 5100.0,
-      "sell_amount": 1542139.8199999998,
-      "net_qty": -3000.0,
-      "net_amount": 3355.8700000001118
+      "symbol": "SHL",
+      "buy_qty": 500.0,
+      "buy_amount": 169858.22,
+      "sell_qty": 500.0,
+      "sell_amount": 555930.95,
+      "net_qty": 0.0,
+      "net_amount": -386072.73
     },
     {
       "symbol": "GBIME",
@@ -66,22 +66,22 @@
       "net_amount": 2791933.839999998
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 1000.0,
-      "buy_amount": 323147.83,
-      "sell_qty": 1500.0,
-      "sell_amount": 732649.26,
-      "net_qty": -500.0,
-      "net_amount": -409501.43
+      "symbol": "UPPER",
+      "buy_qty": 10010.0,
+      "buy_amount": 10682481.309999999,
+      "sell_qty": 1510.0,
+      "sell_amount": 2150227.0700000003,
+      "net_qty": 8500.0,
+      "net_amount": 8532254.239999998
     },
     {
-      "symbol": "SHL",
-      "buy_qty": 500.0,
-      "buy_amount": 169858.22,
-      "sell_qty": 500.0,
-      "sell_amount": 555930.95,
-      "net_qty": 0.0,
-      "net_amount": -386072.73
+      "symbol": "NTC",
+      "buy_qty": 2100.0,
+      "buy_amount": 1545495.69,
+      "sell_qty": 5100.0,
+      "sell_amount": 1542139.8199999998,
+      "net_qty": -3000.0,
+      "net_amount": 3355.8700000001118
     },
     {
       "symbol": "PCBL",

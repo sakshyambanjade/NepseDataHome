@@ -11,6 +11,8 @@ from nepsense.processors.floorsheet_baseline import load_previous_floorsheet_tab
 from nepsense.processors.broker_detail import build_all_broker_details
 from nepsense.processors.flow_database import build_flow_database
 from nepsense.processors.flow_map import generate_flow_artifacts
+from nepsense.processors.alerts import generate_alerts
+from nepsense.processors.daily_report import generate_daily_report
 
 logger = logging.getLogger(__name__)
 
@@ -117,6 +119,13 @@ def generate_broker_artifacts(date: str):
     build_flow_database(date)
     logger.info(f"Generating Flow Map Artifacts for {date}...")
     generate_flow_artifacts(date)
+
+    # 6. Trust Layer: Alerts and Daily Report
+    logger.info(f"Generating Flow Alerts for {date}...")
+    generate_alerts(results, date)
+    
+    logger.info(f"Generating Daily Report for {date}...")
+    generate_daily_report(results, date)
 
     logger.info(f"Generated {len(results)} intelligence artifacts for {date}")
 

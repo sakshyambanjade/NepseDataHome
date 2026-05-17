@@ -245,6 +245,16 @@
     "Net broker distribution",
     "Repeated broker pair activity"
   ],
+  "explain_score": [
+    "Broker 24 was top net buyer with 12.4% of volume.",
+    "Broker 13 was top net seller with 7.5% of volume.",
+    "Repeated broker-pair activity was above normal (score: 74.6).",
+    "Net buy strength is high: Top 3 buyers acquired 28.1% of daily volume."
+  ],
+  "confidence": {
+    "score": 86.4,
+    "label": "High confidence"
+  },
   "data_quality": {
     "warnings": [
       "missing_settlement_baseline"

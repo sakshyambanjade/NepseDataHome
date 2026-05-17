@@ -12,6 +12,7 @@ import { HoldingIntelligence } from "./pages/HoldingIntelligence";
 import { DailyReport } from "./pages/DailyReport";
 import { BrokerNetwork } from "./pages/BrokerNetwork";
 import { FlowMap } from "./pages/FlowMap";
+import { DataHealth } from "./pages/DataHealth";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/report" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><DailyReport /></div>} />
           <Route path="/network" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><BrokerNetwork /></div>} />
           <Route path="/flow" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><FlowMap /></div>} />
-          <Route path="/data" element={<DataPage />} />
+          <Route path="/data" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><DataHealth /></div>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

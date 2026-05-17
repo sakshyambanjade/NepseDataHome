@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T22:17:59.456349",
+  "generated_at": "2026-05-17T22:25:33.966296",
   "date": "2026-05-12",
   "most_accumulated": [
     {
@@ -234,6 +234,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 56 was top net buyer with 12.8% of volume.",
+        "Broker 43 was top net seller with 12.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 72.2).",
+        "Net buy strength is high: Top 3 buyers acquired 34.8% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -488,6 +498,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 24 was top net buyer with 12.4% of volume.",
+        "Broker 13 was top net seller with 7.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 74.6).",
+        "Net buy strength is high: Top 3 buyers acquired 28.1% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -740,6 +760,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 15 was top net buyer with 9.3% of volume.",
+        "Broker 20 was top net seller with 5.7% of volume.",
+        "Repeated broker-pair activity was above normal (score: 56.7).",
+        "Net buy strength is high: Top 3 buyers acquired 21.2% of daily volume."
+      ],
+      "confidence": {
+        "score": 88.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -986,6 +1016,16 @@
         "Net broker accumulation",
         "Net broker distribution"
       ],
+      "explain_score": [
+        "Broker 58 was top net buyer with 13.8% of volume.",
+        "Broker 35 was top net seller with 8.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.7).",
+        "Net buy strength is high: Top 3 buyers acquired 28.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 89.2,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -1238,6 +1278,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 23 was top net buyer with 8.9% of volume.",
+        "Broker 08 was top net seller with 6.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 46.8).",
+        "Net buy strength is high: Top 3 buyers acquired 21.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 96.5,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -1495,6 +1545,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 33 was top net buyer with 7.4% of volume.",
+        "Broker 13 was top net seller with 8.0% of volume.",
+        "Repeated broker-pair activity was above normal (score: 40.4)."
+      ],
+      "confidence": {
+        "score": 92.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -1752,6 +1811,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 6.3% of volume.",
+        "Broker 48 was top net seller with 7.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 37.8)."
+      ],
+      "confidence": {
+        "score": 89.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -2023,6 +2091,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 10 was top net buyer with 7.6% of volume.",
+        "Broker 27 was top net seller with 6.4% of volume.",
+        "Repeated broker-pair activity was above normal (score: 35.5)."
+      ],
+      "confidence": {
+        "score": 96.9,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -2280,6 +2357,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 5.0% of volume.",
+        "Broker 29 was top net seller with 8.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.1)."
+      ],
+      "confidence": {
+        "score": 98.6,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -2539,6 +2625,16 @@
       "flags": [
         "Cross-trade watch"
       ],
+      "explain_score": [
+        "Broker 42 was top net buyer with 5.1% of volume.",
+        "Broker 03 was top net seller with 5.6% of volume.",
+        "Repeated broker-pair activity was above normal (score: 30.8).",
+        "Cross-trade ratio crossed 5% threshold at 8.2%."
+      ],
+      "confidence": {
+        "score": 97.8,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -2780,6 +2876,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 56 was top net buyer with 12.8% of volume.",
+        "Broker 43 was top net seller with 12.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 72.2).",
+        "Net buy strength is high: Top 3 buyers acquired 34.8% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -3034,6 +3140,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 24 was top net buyer with 12.4% of volume.",
+        "Broker 13 was top net seller with 7.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 74.6).",
+        "Net buy strength is high: Top 3 buyers acquired 28.1% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -3280,6 +3396,16 @@
         "Net broker accumulation",
         "Net broker distribution"
       ],
+      "explain_score": [
+        "Broker 58 was top net buyer with 13.8% of volume.",
+        "Broker 35 was top net seller with 8.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.7).",
+        "Net buy strength is high: Top 3 buyers acquired 28.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 89.2,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -3532,6 +3658,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 15 was top net buyer with 9.3% of volume.",
+        "Broker 20 was top net seller with 5.7% of volume.",
+        "Repeated broker-pair activity was above normal (score: 56.7).",
+        "Net buy strength is high: Top 3 buyers acquired 21.2% of daily volume."
+      ],
+      "confidence": {
+        "score": 88.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -3784,6 +3920,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 23 was top net buyer with 8.9% of volume.",
+        "Broker 08 was top net seller with 6.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 46.8).",
+        "Net buy strength is high: Top 3 buyers acquired 21.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 96.5,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -4041,6 +4187,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 5.0% of volume.",
+        "Broker 29 was top net seller with 8.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.1)."
+      ],
+      "confidence": {
+        "score": 98.6,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -4298,6 +4453,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 6.3% of volume.",
+        "Broker 48 was top net seller with 7.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 37.8)."
+      ],
+      "confidence": {
+        "score": 89.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -4555,6 +4719,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 33 was top net buyer with 7.4% of volume.",
+        "Broker 13 was top net seller with 8.0% of volume.",
+        "Repeated broker-pair activity was above normal (score: 40.4)."
+      ],
+      "confidence": {
+        "score": 92.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -4814,6 +4987,16 @@
       "flags": [
         "Cross-trade watch"
       ],
+      "explain_score": [
+        "Broker 42 was top net buyer with 5.1% of volume.",
+        "Broker 03 was top net seller with 5.6% of volume.",
+        "Repeated broker-pair activity was above normal (score: 30.8).",
+        "Cross-trade ratio crossed 5% threshold at 8.2%."
+      ],
+      "confidence": {
+        "score": 97.8,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -5085,6 +5268,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 10 was top net buyer with 7.6% of volume.",
+        "Broker 27 was top net seller with 6.4% of volume.",
+        "Repeated broker-pair activity was above normal (score: 35.5)."
+      ],
+      "confidence": {
+        "score": 96.9,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -5326,6 +5518,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 56 was top net buyer with 12.8% of volume.",
+        "Broker 43 was top net seller with 12.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 72.2).",
+        "Net buy strength is high: Top 3 buyers acquired 34.8% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -5580,6 +5782,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 24 was top net buyer with 12.4% of volume.",
+        "Broker 13 was top net seller with 7.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 74.6).",
+        "Net buy strength is high: Top 3 buyers acquired 28.1% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -5832,6 +6044,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 15 was top net buyer with 9.3% of volume.",
+        "Broker 20 was top net seller with 5.7% of volume.",
+        "Repeated broker-pair activity was above normal (score: 56.7).",
+        "Net buy strength is high: Top 3 buyers acquired 21.2% of daily volume."
+      ],
+      "confidence": {
+        "score": 88.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -6078,6 +6300,16 @@
         "Net broker accumulation",
         "Net broker distribution"
       ],
+      "explain_score": [
+        "Broker 58 was top net buyer with 13.8% of volume.",
+        "Broker 35 was top net seller with 8.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.7).",
+        "Net buy strength is high: Top 3 buyers acquired 28.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 89.2,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -6330,6 +6562,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 23 was top net buyer with 8.9% of volume.",
+        "Broker 08 was top net seller with 6.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 46.8).",
+        "Net buy strength is high: Top 3 buyers acquired 21.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 96.5,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -6587,6 +6829,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 33 was top net buyer with 7.4% of volume.",
+        "Broker 13 was top net seller with 8.0% of volume.",
+        "Repeated broker-pair activity was above normal (score: 40.4)."
+      ],
+      "confidence": {
+        "score": 92.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -6844,6 +7095,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 5.0% of volume.",
+        "Broker 29 was top net seller with 8.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.1)."
+      ],
+      "confidence": {
+        "score": 98.6,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -7101,6 +7361,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 6.3% of volume.",
+        "Broker 48 was top net seller with 7.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 37.8)."
+      ],
+      "confidence": {
+        "score": 89.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -7372,6 +7641,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 10 was top net buyer with 7.6% of volume.",
+        "Broker 27 was top net seller with 6.4% of volume.",
+        "Repeated broker-pair activity was above normal (score: 35.5)."
+      ],
+      "confidence": {
+        "score": 96.9,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -7631,6 +7909,16 @@
       "flags": [
         "Cross-trade watch"
       ],
+      "explain_score": [
+        "Broker 42 was top net buyer with 5.1% of volume.",
+        "Broker 03 was top net seller with 5.6% of volume.",
+        "Repeated broker-pair activity was above normal (score: 30.8).",
+        "Cross-trade ratio crossed 5% threshold at 8.2%."
+      ],
+      "confidence": {
+        "score": 97.8,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -7872,6 +8160,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 56 was top net buyer with 12.8% of volume.",
+        "Broker 43 was top net seller with 12.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 72.2).",
+        "Net buy strength is high: Top 3 buyers acquired 34.8% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -8126,6 +8424,16 @@
         "Net broker distribution",
         "Repeated broker pair activity"
       ],
+      "explain_score": [
+        "Broker 24 was top net buyer with 12.4% of volume.",
+        "Broker 13 was top net seller with 7.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 74.6).",
+        "Net buy strength is high: Top 3 buyers acquired 28.1% of daily volume."
+      ],
+      "confidence": {
+        "score": 86.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -8378,6 +8686,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 15 was top net buyer with 9.3% of volume.",
+        "Broker 20 was top net seller with 5.7% of volume.",
+        "Repeated broker-pair activity was above normal (score: 56.7).",
+        "Net buy strength is high: Top 3 buyers acquired 21.2% of daily volume."
+      ],
+      "confidence": {
+        "score": 88.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -8624,6 +8942,16 @@
         "Net broker accumulation",
         "Net broker distribution"
       ],
+      "explain_score": [
+        "Broker 58 was top net buyer with 13.8% of volume.",
+        "Broker 35 was top net seller with 8.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.7).",
+        "Net buy strength is high: Top 3 buyers acquired 28.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 89.2,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -8876,6 +9204,16 @@
       "flags": [
         "Net broker accumulation"
       ],
+      "explain_score": [
+        "Broker 23 was top net buyer with 8.9% of volume.",
+        "Broker 08 was top net seller with 6.5% of volume.",
+        "Repeated broker-pair activity was above normal (score: 46.8).",
+        "Net buy strength is high: Top 3 buyers acquired 21.5% of daily volume."
+      ],
+      "confidence": {
+        "score": 96.5,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -9133,6 +9471,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 33 was top net buyer with 7.4% of volume.",
+        "Broker 13 was top net seller with 8.0% of volume.",
+        "Repeated broker-pair activity was above normal (score: 40.4)."
+      ],
+      "confidence": {
+        "score": 92.0,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -9390,6 +9737,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 5.0% of volume.",
+        "Broker 29 was top net seller with 8.1% of volume.",
+        "Repeated broker-pair activity was above normal (score: 42.1)."
+      ],
+      "confidence": {
+        "score": 98.6,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -9647,6 +10003,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 26 was top net buyer with 6.3% of volume.",
+        "Broker 48 was top net seller with 7.9% of volume.",
+        "Repeated broker-pair activity was above normal (score: 37.8)."
+      ],
+      "confidence": {
+        "score": 89.4,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -9918,6 +10283,15 @@
         ]
       },
       "flags": [],
+      "explain_score": [
+        "Broker 10 was top net buyer with 7.6% of volume.",
+        "Broker 27 was top net seller with 6.4% of volume.",
+        "Repeated broker-pair activity was above normal (score: 35.5)."
+      ],
+      "confidence": {
+        "score": 96.9,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"
@@ -10177,6 +10551,16 @@
       "flags": [
         "Cross-trade watch"
       ],
+      "explain_score": [
+        "Broker 42 was top net buyer with 5.1% of volume.",
+        "Broker 03 was top net seller with 5.6% of volume.",
+        "Repeated broker-pair activity was above normal (score: 30.8).",
+        "Cross-trade ratio crossed 5% threshold at 8.2%."
+      ],
+      "confidence": {
+        "score": 97.8,
+        "label": "High confidence"
+      },
       "data_quality": {
         "warnings": [
           "missing_settlement_baseline"

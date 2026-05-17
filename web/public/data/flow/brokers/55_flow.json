@@ -3,22 +3,13 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "HDL",
-      "buy_qty": 7000.0,
-      "buy_amount": 3763274.9,
-      "sell_qty": 500.0,
-      "sell_amount": 237627.66,
-      "net_qty": 6500.0,
-      "net_amount": 3525647.2399999998
-    },
-    {
-      "symbol": "STC",
-      "buy_qty": 1050.0,
-      "buy_amount": 1145727.81,
-      "sell_qty": 100.0,
-      "sell_amount": 32800.94,
-      "net_qty": 950.0,
-      "net_amount": 1112926.87
+      "symbol": "UPPER",
+      "buy_qty": 370.0,
+      "buy_amount": 198259.15999999997,
+      "sell_qty": 10.0,
+      "sell_amount": 3014.97,
+      "net_qty": 360.0,
+      "net_amount": 195244.18999999997
     },
     {
       "symbol": "GBIME",
@@ -48,22 +39,22 @@
       "net_amount": -4411958.709999999
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 370.0,
-      "buy_amount": 198259.15999999997,
-      "sell_qty": 10.0,
-      "sell_amount": 3014.97,
-      "net_qty": 360.0,
-      "net_amount": 195244.18999999997
+      "symbol": "HDL",
+      "buy_qty": 7000.0,
+      "buy_amount": 3763274.9,
+      "sell_qty": 500.0,
+      "sell_amount": 237627.66,
+      "net_qty": 6500.0,
+      "net_amount": 3525647.2399999998
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 1510.0,
-      "buy_amount": 1185400.66,
-      "sell_qty": 2010.0,
-      "sell_amount": 1378586.35,
-      "net_qty": -500.0,
-      "net_amount": -193185.69000000018
+      "symbol": "STC",
+      "buy_qty": 1050.0,
+      "buy_amount": 1145727.81,
+      "sell_qty": 100.0,
+      "sell_amount": 32800.94,
+      "net_qty": 950.0,
+      "net_amount": 1112926.87
     },
     {
       "symbol": "PCBL",
@@ -82,6 +73,15 @@
       "sell_amount": 5681284.98,
       "net_qty": -3780.0,
       "net_amount": -4261202.540000001
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 1510.0,
+      "buy_amount": 1185400.66,
+      "sell_qty": 2010.0,
+      "sell_amount": 1378586.35,
+      "net_qty": -500.0,
+      "net_amount": -193185.69000000018
     },
     {
       "symbol": "SHL",

@@ -12,6 +12,15 @@
       "net_amount": -9580468.11
     },
     {
+      "symbol": "HDL",
+      "buy_qty": 1000.0,
+      "buy_amount": 1488129.82,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 1000.0,
+      "net_amount": 1488129.82
+    },
+    {
       "symbol": "GBIME",
       "buy_qty": 2000.0,
       "buy_amount": 938593.78,
@@ -46,15 +55,6 @@
       "sell_amount": 12143274.88,
       "net_qty": -4460.0,
       "net_amount": -4748684.960000001
-    },
-    {
-      "symbol": "HDL",
-      "buy_qty": 1000.0,
-      "buy_amount": 1488129.82,
-      "sell_qty": 0.0,
-      "sell_amount": 0.0,
-      "net_qty": 1000.0,
-      "net_amount": 1488129.82
     },
     {
       "symbol": "HRL",

@@ -250,6 +250,16 @@
   "flags": [
     "Cross-trade watch"
   ],
+  "explain_score": [
+    "Broker 42 was top net buyer with 5.1% of volume.",
+    "Broker 03 was top net seller with 5.6% of volume.",
+    "Repeated broker-pair activity was above normal (score: 30.8).",
+    "Cross-trade ratio crossed 5% threshold at 8.2%."
+  ],
+  "confidence": {
+    "score": 97.8,
+    "label": "High confidence"
+  },
   "data_quality": {
     "warnings": [
       "missing_settlement_baseline"

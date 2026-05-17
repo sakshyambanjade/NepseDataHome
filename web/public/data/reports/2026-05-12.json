@@ -1,0 +1,138 @@
+{
+  "date": "2026-05-12",
+  "summary": {
+    "total_volume": 1523360,
+    "total_amount": 1340171474.89,
+    "active_symbols": 10
+  },
+  "top_accumulation": [
+    {
+      "symbol": "PCBL",
+      "score": 22.4,
+      "volume": 83120
+    },
+    {
+      "symbol": "NICL",
+      "score": 20.5,
+      "volume": 80430
+    },
+    {
+      "symbol": "SHL",
+      "score": 16.1,
+      "volume": 105870
+    },
+    {
+      "symbol": "STC",
+      "score": 15.6,
+      "volume": 145130
+    },
+    {
+      "symbol": "HRL",
+      "score": 14.4,
+      "volume": 175940
+    },
+    {
+      "symbol": "NTC",
+      "score": 12.0,
+      "volume": 149340
+    },
+    {
+      "symbol": "HDL",
+      "score": 11.5,
+      "volume": 158940
+    },
+    {
+      "symbol": "GBIME",
+      "score": 10.8,
+      "volume": 225320
+    },
+    {
+      "symbol": "UPPER",
+      "score": 10.5,
+      "volume": 204170
+    },
+    {
+      "symbol": "NABIL",
+      "score": 10.0,
+      "volume": 195100
+    }
+  ],
+  "top_distribution": [
+    {
+      "symbol": "PCBL",
+      "score": 18.8,
+      "volume": 83120
+    },
+    {
+      "symbol": "NICL",
+      "score": 18.4,
+      "volume": 80430
+    },
+    {
+      "symbol": "STC",
+      "score": 16.3,
+      "volume": 145130
+    },
+    {
+      "symbol": "SHL",
+      "score": 14.1,
+      "volume": 105870
+    },
+    {
+      "symbol": "HRL",
+      "score": 13.6,
+      "volume": 175940
+    },
+    {
+      "symbol": "UPPER",
+      "score": 11.7,
+      "volume": 204170
+    },
+    {
+      "symbol": "HDL",
+      "score": 11.5,
+      "volume": 158940
+    },
+    {
+      "symbol": "NTC",
+      "score": 11.2,
+      "volume": 149340
+    },
+    {
+      "symbol": "NABIL",
+      "score": 11.1,
+      "volume": 195100
+    },
+    {
+      "symbol": "GBIME",
+      "score": 11.0,
+      "volume": 225320
+    }
+  ],
+  "top_volume": [
+    {
+      "symbol": "GBIME",
+      "amount": 197945569.17000002
+    },
+    {
+      "symbol": "UPPER",
+      "amount": 190187309.64000002
+    },
+    {
+      "symbol": "NABIL",
+      "amount": 166960112.17000002
+    },
+    {
+      "symbol": "HDL",
+      "amount": 153803033.49
+    },
+    {
+      "symbol": "HRL",
+      "amount": 152983332.43
+    }
+  ],
+  "data_quality_notes": [
+    "Baseline data was successfully loaded.",
+    "10 symbols processed with valid transaction streams."
+  ]
+}

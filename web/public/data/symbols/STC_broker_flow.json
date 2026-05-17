@@ -237,6 +237,16 @@
     "Net broker accumulation",
     "Net broker distribution"
   ],
+  "explain_score": [
+    "Broker 58 was top net buyer with 13.8% of volume.",
+    "Broker 35 was top net seller with 8.9% of volume.",
+    "Repeated broker-pair activity was above normal (score: 42.7).",
+    "Net buy strength is high: Top 3 buyers acquired 28.5% of daily volume."
+  ],
+  "confidence": {
+    "score": 89.2,
+    "label": "High confidence"
+  },
   "data_quality": {
     "warnings": [
       "missing_settlement_baseline"

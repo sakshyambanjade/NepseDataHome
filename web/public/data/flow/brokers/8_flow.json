@@ -3,6 +3,24 @@
   "date": "2026-05-12",
   "symbols": [
     {
+      "symbol": "NTC",
+      "buy_qty": 1500.0,
+      "buy_amount": 1067934.2,
+      "sell_qty": 1110.0,
+      "sell_amount": 1152760.0,
+      "net_qty": 390.0,
+      "net_amount": -84825.80000000005
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 7000.0,
+      "buy_amount": 3744592.69,
+      "sell_qty": 500.0,
+      "sell_amount": 606988.34,
+      "net_qty": 6500.0,
+      "net_amount": 3137604.35
+    },
+    {
       "symbol": "HDL",
       "buy_qty": 500.0,
       "buy_amount": 668715.52,
@@ -21,31 +39,22 @@
       "net_amount": 4629594.51
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 7000.0,
-      "buy_amount": 3744592.69,
-      "sell_qty": 500.0,
-      "sell_amount": 606988.34,
-      "net_qty": 6500.0,
-      "net_amount": 3137604.35
+      "symbol": "GBIME",
+      "buy_qty": 1010.0,
+      "buy_amount": 415907.57,
+      "sell_qty": 5500.0,
+      "sell_amount": 5552842.33,
+      "net_qty": -4490.0,
+      "net_amount": -5136934.76
     },
     {
-      "symbol": "NTC",
-      "buy_qty": 1500.0,
-      "buy_amount": 1067934.2,
-      "sell_qty": 1110.0,
-      "sell_amount": 1152760.0,
-      "net_qty": 390.0,
-      "net_amount": -84825.80000000005
-    },
-    {
-      "symbol": "HRL",
-      "buy_qty": 60.0,
-      "buy_amount": 61289.369999999995,
-      "sell_qty": 11560.0,
-      "sell_amount": 12730202.170000004,
-      "net_qty": -11500.0,
-      "net_amount": -12668912.800000004
+      "symbol": "NABIL",
+      "buy_qty": 2100.0,
+      "buy_amount": 1217505.27,
+      "sell_qty": 6050.0,
+      "sell_amount": 3065622.61,
+      "net_qty": -3950.0,
+      "net_amount": -1848117.3399999999
     },
     {
       "symbol": "SHL",
@@ -66,22 +75,13 @@
       "net_amount": 5553774.430000001
     },
     {
-      "symbol": "GBIME",
-      "buy_qty": 1010.0,
-      "buy_amount": 415907.57,
-      "sell_qty": 5500.0,
-      "sell_amount": 5552842.33,
-      "net_qty": -4490.0,
-      "net_amount": -5136934.76
-    },
-    {
-      "symbol": "NABIL",
-      "buy_qty": 2100.0,
-      "buy_amount": 1217505.27,
-      "sell_qty": 6050.0,
-      "sell_amount": 3065622.61,
-      "net_qty": -3950.0,
-      "net_amount": -1848117.3399999999
+      "symbol": "HRL",
+      "buy_qty": 60.0,
+      "buy_amount": 61289.369999999995,
+      "sell_qty": 11560.0,
+      "sell_amount": 12730202.170000004,
+      "net_qty": -11500.0,
+      "net_amount": -12668912.800000004
     }
   ]
 }

@@ -10,11 +10,11 @@ export function DailyReport() {
     const fetchData = async () => {
       try {
         const base = import.meta.env.BASE_URL === '/' ? '/NepseDataHome/' : (import.meta.env.BASE_URL || '/NepseDataHome/');
-        const [market, flowsheet] = await Promise.all([
+        const [market, report] = await Promise.all([
           fetch(`${base}data/market_overview.json`).then(r => r.json()),
-          fetch(`${base}data/flowsheet_table.json`).then(r => r.json())
+          fetch(`${base}data/reports/latest.json`).then(r => r.json())
         ]);
-        setData({ market, flowsheet });
+        setData({ market, report });
       } catch (err) {
         console.error("Error loading report data", err);
       } finally {
@@ -27,8 +27,8 @@ export function DailyReport() {
   if (loading) return <LoadingState text="Generating End of Day Intelligence Report..." />;
   if (!data) return <EmptyState icon={<AlertTriangle />} title="Report Unavailable" description="Unable to generate the daily report." />;
 
-  const topAccumulated = data.flowsheet.sort((a, b) => b.accumulation_score - a.accumulation_score).slice(0, 10);
-  const anomalies = data.flowsheet.filter(f => f.operator_like_score > 70).sort((a, b) => b.operator_like_score - a.operator_like_score).slice(0, 10);
+  const topAccumulated = data.report.top_accumulation || [];
+  const topDistributed = data.report.top_distribution || [];
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700 max-w-4xl mx-auto">
@@ -66,7 +66,7 @@ export function DailyReport() {
           </div>
           <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
             <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Total Volume</div>
-            <div className="text-2xl font-black text-blue-600">{(data.market.total_volume / 1e6).toFixed(2)}M</div>
+            <div className="text-2xl font-black text-blue-600">{(data.report.summary.total_volume / 1e6).toFixed(2)}M</div>
           </div>
         </div>
 
@@ -79,17 +79,15 @@ export function DailyReport() {
               <tr className="bg-gray-100 text-gray-600 uppercase tracking-wider text-[10px]">
                 <th className="p-3 font-bold">Symbol</th>
                 <th className="p-3 font-bold">Acc. Score</th>
-                <th className="p-3 font-bold">Top Buyer</th>
-                <th className="p-3 font-bold text-right">Net Buy Strength</th>
+                <th className="p-3 font-bold text-right">Volume</th>
               </tr>
             </thead>
             <tbody>
               {topAccumulated.map((row, idx) => (
                 <tr key={idx} className="border-b border-gray-100">
                   <td className="p-3 font-black text-gray-900">{row.symbol}</td>
-                  <td className="p-3 font-bold text-green-600">{row.accumulation_score}</td>
-                  <td className="p-3 font-mono text-gray-600">B{row.top_net_buyers?.[0]?.broker || '-'}</td>
-                  <td className="p-3 text-right font-black text-gray-900">{row.net_buy_strength}</td>
+                  <td className="p-3 font-bold text-green-600">{row.score.toFixed(1)}</td>
+                  <td className="p-3 text-right font-black text-gray-900">{row.volume.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -98,36 +96,41 @@ export function DailyReport() {
 
         <div>
           <h3 className="text-xl font-black border-b-2 border-gray-200 pb-2 mb-4 flex items-center text-gray-900">
-            <AlertTriangle className="w-5 h-5 mr-2 text-amber-500" /> Flow Anomalies Detected
+            <TrendingDown className="w-5 h-5 mr-2 text-rose-500" /> Top Distribution Targets
           </h3>
-          {anomalies.length > 0 ? (
+          {topDistributed.length > 0 ? (
             <table className="w-full text-left text-sm border-collapse">
               <thead>
                 <tr className="bg-gray-100 text-gray-600 uppercase tracking-wider text-[10px]">
                   <th className="p-3 font-bold">Symbol</th>
-                  <th className="p-3 font-bold">Pattern Score</th>
-                  <th className="p-3 font-bold">Cross Trade</th>
-                  <th className="p-3 font-bold text-right">Flags</th>
+                  <th className="p-3 font-bold">Dist. Score</th>
+                  <th className="p-3 font-bold text-right">Volume</th>
                 </tr>
               </thead>
               <tbody>
-                {anomalies.map((row, idx) => (
+                {topDistributed.map((row, idx) => (
                   <tr key={idx} className="border-b border-gray-100">
                     <td className="p-3 font-black text-gray-900">{row.symbol}</td>
-                    <td className="p-3 font-bold text-amber-600">{row.operator_like_score}</td>
-                    <td className="p-3 font-mono text-gray-600">{(row.cross_trade_ratio * 100).toFixed(1)}%</td>
-                    <td className="p-3 text-right">
-                      {row.flags?.slice(0, 2).map((f, i) => (
-                        <span key={i} className="inline-block bg-gray-200 text-gray-700 text-[9px] px-2 py-1 rounded uppercase font-bold ml-1">{f}</span>
-                      ))}
-                    </td>
+                    <td className="p-3 font-bold text-rose-600">{row.score.toFixed(1)}</td>
+                    <td className="p-3 text-right font-black text-gray-900">{row.volume.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           ) : (
-            <p className="text-gray-500 italic">No severe anomalies detected today.</p>
+            <p className="text-gray-500 italic">No distribution patterns detected today.</p>
           )}
+        </div>
+
+        <div className="mt-8">
+          <h3 className="text-xl font-black border-b-2 border-gray-200 pb-2 mb-4 flex items-center text-gray-900">
+            <Info className="w-5 h-5 mr-2 text-blue-500" /> Data Quality Notes
+          </h3>
+          <ul className="list-disc pl-5 text-gray-600 text-sm">
+            {data.report.data_quality_notes?.map((note, idx) => (
+              <li key={idx}>{note}</li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-16 text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest border-t border-gray-200 pt-8">
