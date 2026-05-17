@@ -8,6 +8,9 @@ import { AboutPage } from "./pages/About";
 import { FlowsheetIntelligence } from "./pages/FlowsheetIntelligence";
 import { SymbolFlowDetail } from "./pages/SymbolFlowDetail";
 import { BrokerDetail } from "./pages/BrokerDetail";
+import { HoldingIntelligence } from "./pages/HoldingIntelligence";
+import { DailyReport } from "./pages/DailyReport";
+import { BrokerNetwork } from "./pages/BrokerNetwork";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/broker/:brokerId" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><BrokerDetail /></div>} />
           <Route path="/flowsheet" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><FlowsheetIntelligence /></div>} />
           <Route path="/flowsheet/:symbol" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><SymbolFlowDetail /></div>} />
+          <Route path="/holdings" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><HoldingIntelligence /></div>} />
+          <Route path="/report" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><DailyReport /></div>} />
+          <Route path="/network" element={<div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 lg:px-8"><BrokerNetwork /></div>} />
           <Route path="/data" element={<DataPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   TrendingUp, TrendingDown, Activity, Layers, 
   Search, Filter, ChevronRight, BarChart3, 
@@ -59,7 +60,7 @@ export function AnalyticsDashboard() {
     const fetchData = async () => {
       try {
         const base = import.meta.env.BASE_URL === '/' ? '/NepseDataHome/' : (import.meta.env.BASE_URL || '/NepseDataHome/');
-        const [marketResp, symbolsResp] = await Promise.all([
+        const [marketResp, symbolsResp, brokerResp] = await Promise.all([
           fetch(`${base}data/market_overview.json`).then(r => {
             if (!r.ok) throw new Error("Market data not found");
             return r.json();
@@ -67,9 +68,13 @@ export function AnalyticsDashboard() {
           fetch(`${base}data/symbols_index.json`).then(r => {
             if (!r.ok) throw new Error("Symbols index not found");
             return r.json();
+          }),
+          fetch(`${base}data/broker_overview.json`).then(r => {
+            if (!r.ok) throw new Error("Broker data not found");
+            return r.json();
           })
         ]);
-        setMarketData(marketResp);
+        setMarketData({ ...marketResp, brokerOverview: brokerResp });
         setSymbols(symbolsResp);
       } catch (err) {
         console.error("Failed to fetch analytics data", err);
@@ -273,6 +278,56 @@ export function AnalyticsDashboard() {
           </div>
         </div>
       </div>
+
+      {/* Broker Flow Section */}
+      {marketData?.brokerOverview && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-8 border-t border-white/5">
+          <div className="glass-morphism rounded-3xl p-6 border border-white/5 flex flex-col h-full">
+            <h4 className="text-[10px] font-black text-amber-500 uppercase tracking-[0.2em] mb-4 flex items-center">
+              <AlertTriangle className="w-3 h-3 mr-2" /> Flow Anomalies
+            </h4>
+            <div className="space-y-3 flex-grow">
+              {marketData.brokerOverview.operator_watchlist?.slice(0, 5).map(item => (
+                <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex justify-between items-center p-3 rounded-2xl bg-amber-500/5 hover:bg-amber-500/10 border border-amber-500/10 transition-colors">
+                  <span className="font-bold text-white">{item.symbol}</span>
+                  <span className="text-amber-500 font-black text-sm">{item.operator_like_score}</span>
+                </Link>
+              ))}
+            </div>
+            <Link to="/operator" className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mt-4 text-center hover:text-amber-400">View All Flow Watch →</Link>
+          </div>
+          
+          <div className="glass-morphism rounded-3xl p-6 border border-white/5 flex flex-col h-full">
+            <h4 className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] mb-4 flex items-center">
+              <TrendingUp className="w-3 h-3 mr-2" /> Accumulation Watch
+            </h4>
+            <div className="space-y-3 flex-grow">
+              {marketData.brokerOverview.most_accumulated?.slice(0, 5).map(item => (
+                <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex justify-between items-center p-3 rounded-2xl bg-emerald-500/5 hover:bg-emerald-500/10 border border-emerald-500/10 transition-colors">
+                  <span className="font-bold text-white">{item.symbol}</span>
+                  <span className="text-emerald-500 font-black text-sm">{item.accumulation_score}</span>
+                </Link>
+              ))}
+            </div>
+            <Link to="/holdings" className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-4 text-center hover:text-emerald-400">View All Holdings →</Link>
+          </div>
+
+          <div className="glass-morphism rounded-3xl p-6 border border-white/5 flex flex-col h-full">
+            <h4 className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] mb-4 flex items-center">
+              <Activity className="w-3 h-3 mr-2" /> High Pattern Score
+            </h4>
+            <div className="space-y-3 flex-grow">
+              {marketData.brokerOverview.smart_money_ranking?.slice(0, 5).map(item => (
+                <Link to={`/flowsheet/${item.symbol}`} key={item.symbol} className="flex justify-between items-center p-3 rounded-2xl bg-blue-500/5 hover:bg-blue-500/10 border border-blue-500/10 transition-colors">
+                  <span className="font-bold text-white">{item.symbol}</span>
+                  <span className="text-blue-500 font-black text-sm">{item.operator_like_score}</span>
+                </Link>
+              ))}
+            </div>
+            <Link to="/flowsheet" className="text-[10px] font-bold text-blue-500 uppercase tracking-widest mt-4 text-center hover:text-blue-400">Go to Flowsheet →</Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
