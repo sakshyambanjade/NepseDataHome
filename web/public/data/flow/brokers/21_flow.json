@@ -3,15 +3,6 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "NTC",
-      "buy_qty": 2300.0,
-      "buy_amount": 2652253.6099999994,
-      "sell_qty": 1060.0,
-      "sell_amount": 1201567.92,
-      "net_qty": 1240.0,
-      "net_amount": 1450685.6899999995
-    },
-    {
       "symbol": "HRL",
       "buy_qty": 1160.0,
       "buy_amount": 960176.9299999999,
@@ -21,31 +12,13 @@
       "net_amount": 453118.62999999995
     },
     {
-      "symbol": "HDL",
-      "buy_qty": 1000.0,
-      "buy_amount": 1400351.19,
-      "sell_qty": 6500.0,
-      "sell_amount": 8501977.41,
-      "net_qty": -5500.0,
-      "net_amount": -7101626.220000001
-    },
-    {
-      "symbol": "NICL",
-      "buy_qty": 50.0,
-      "buy_amount": 57056.69,
-      "sell_qty": 5510.0,
-      "sell_amount": 2464848.86,
-      "net_qty": -5460.0,
-      "net_amount": -2407792.17
-    },
-    {
-      "symbol": "UPPER",
-      "buy_qty": 8060.0,
-      "buy_amount": 7499457.079999999,
-      "sell_qty": 1100.0,
-      "sell_amount": 1491247.3299999998,
-      "net_qty": 6960.0,
-      "net_amount": 6008209.749999999
+      "symbol": "NTC",
+      "buy_qty": 2300.0,
+      "buy_amount": 2652253.6099999994,
+      "sell_qty": 1060.0,
+      "sell_amount": 1201567.92,
+      "net_qty": 1240.0,
+      "net_amount": 1450685.6899999995
     },
     {
       "symbol": "GBIME",
@@ -73,6 +46,33 @@
       "sell_amount": 0.0,
       "net_qty": 1010.0,
       "net_amount": 843632.5599999999
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 1000.0,
+      "buy_amount": 1400351.19,
+      "sell_qty": 6500.0,
+      "sell_amount": 8501977.41,
+      "net_qty": -5500.0,
+      "net_amount": -7101626.220000001
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 8060.0,
+      "buy_amount": 7499457.079999999,
+      "sell_qty": 1100.0,
+      "sell_amount": 1491247.3299999998,
+      "net_qty": 6960.0,
+      "net_amount": 6008209.749999999
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 50.0,
+      "buy_amount": 57056.69,
+      "sell_qty": 5510.0,
+      "sell_amount": 2464848.86,
+      "net_qty": -5460.0,
+      "net_amount": -2407792.17
     },
     {
       "symbol": "PCBL",

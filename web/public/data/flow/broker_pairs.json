@@ -45,7 +45,7 @@
     "buyer": "53",
     "seller": "6",
     "quantity": 7000.0,
-    "amount": 8039772.52,
+    "amount": 8039772.5200000005,
     "trade_count": 3
   },
   {
@@ -661,7 +661,7 @@
     "buyer": "14",
     "seller": "32",
     "quantity": 5110.0,
-    "amount": 5401463.26,
+    "amount": 5401463.260000001,
     "trade_count": 3
   },
   {

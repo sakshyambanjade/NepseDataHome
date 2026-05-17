@@ -21,13 +21,22 @@
       "net_amount": -5826263.930000001
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 5120.0,
-      "buy_amount": 3429248.53,
-      "sell_qty": 10550.0,
-      "sell_amount": 9704146.180000002,
-      "net_qty": -5430.0,
-      "net_amount": -6274897.650000002
+      "symbol": "HDL",
+      "buy_qty": 1000.0,
+      "buy_amount": 305903.67,
+      "sell_qty": 1500.0,
+      "sell_amount": 1438512.63,
+      "net_qty": -500.0,
+      "net_amount": -1132608.96
+    },
+    {
+      "symbol": "STC",
+      "buy_qty": 300.0,
+      "buy_amount": 142892.63,
+      "sell_qty": 500.0,
+      "sell_amount": 460455.85,
+      "net_qty": -200.0,
+      "net_amount": -317563.22
     },
     {
       "symbol": "NTC",
@@ -37,6 +46,15 @@
       "sell_amount": 2786894.96,
       "net_qty": -4880.0,
       "net_amount": -1308759.2899999996
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 1200.0,
+      "buy_amount": 649798.94,
+      "sell_qty": 610.0,
+      "sell_amount": 830393.62,
+      "net_qty": 590.0,
+      "net_amount": -180594.68000000005
     },
     {
       "symbol": "GBIME",
@@ -57,31 +75,13 @@
       "net_amount": 10688858.219999999
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 1200.0,
-      "buy_amount": 649798.94,
-      "sell_qty": 610.0,
-      "sell_amount": 830393.62,
-      "net_qty": 590.0,
-      "net_amount": -180594.68000000005
-    },
-    {
-      "symbol": "HDL",
-      "buy_qty": 1000.0,
-      "buy_amount": 305903.67,
-      "sell_qty": 1500.0,
-      "sell_amount": 1438512.63,
-      "net_qty": -500.0,
-      "net_amount": -1132608.96
-    },
-    {
-      "symbol": "STC",
-      "buy_qty": 300.0,
-      "buy_amount": 142892.63,
-      "sell_qty": 500.0,
-      "sell_amount": 460455.85,
-      "net_qty": -200.0,
-      "net_amount": -317563.22
+      "symbol": "UPPER",
+      "buy_qty": 5120.0,
+      "buy_amount": 3429248.53,
+      "sell_qty": 10550.0,
+      "sell_amount": 9704146.180000002,
+      "net_qty": -5430.0,
+      "net_amount": -6274897.650000002
     },
     {
       "symbol": "HRL",

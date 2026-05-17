@@ -3,13 +3,13 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "UPPER",
-      "buy_qty": 5100.0,
-      "buy_amount": 1869875.5799999998,
-      "sell_qty": 1110.0,
-      "sell_amount": 1401225.6,
-      "net_qty": 3990.0,
-      "net_amount": 468649.97999999975
+      "symbol": "NICL",
+      "buy_qty": 1000.0,
+      "buy_amount": 1255086.32,
+      "sell_qty": 100.0,
+      "sell_amount": 74505.6,
+      "net_qty": 900.0,
+      "net_amount": 1180580.72
     },
     {
       "symbol": "GBIME",
@@ -30,13 +30,22 @@
       "net_amount": 406032.21
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 1000.0,
-      "buy_amount": 1255086.32,
-      "sell_qty": 100.0,
-      "sell_amount": 74505.6,
-      "net_qty": 900.0,
-      "net_amount": 1180580.72
+      "symbol": "NTC",
+      "buy_qty": 600.0,
+      "buy_amount": 743881.21,
+      "sell_qty": 20.0,
+      "sell_amount": 9786.48,
+      "net_qty": 580.0,
+      "net_amount": 734094.73
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 5100.0,
+      "buy_amount": 1869875.5799999998,
+      "sell_qty": 1110.0,
+      "sell_amount": 1401225.6,
+      "net_qty": 3990.0,
+      "net_amount": 468649.97999999975
     },
     {
       "symbol": "HDL",
@@ -57,15 +66,6 @@
       "net_amount": -326627.3400000001
     },
     {
-      "symbol": "PCBL",
-      "buy_qty": 500.0,
-      "buy_amount": 457890.15,
-      "sell_qty": 0.0,
-      "sell_amount": 0.0,
-      "net_qty": 500.0,
-      "net_amount": 457890.15
-    },
-    {
       "symbol": "SHL",
       "buy_qty": 2100.0,
       "buy_amount": 2014606.25,
@@ -75,6 +75,15 @@
       "net_amount": -794577.7000000002
     },
     {
+      "symbol": "PCBL",
+      "buy_qty": 500.0,
+      "buy_amount": 457890.15,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 500.0,
+      "net_amount": 457890.15
+    },
+    {
       "symbol": "HRL",
       "buy_qty": 5060.0,
       "buy_amount": 1480880.18,
@@ -82,15 +91,6 @@
       "sell_amount": 6773372.68,
       "net_qty": -4990.0,
       "net_amount": -5292492.5
-    },
-    {
-      "symbol": "NTC",
-      "buy_qty": 600.0,
-      "buy_amount": 743881.21,
-      "sell_qty": 20.0,
-      "sell_amount": 9786.48,
-      "net_qty": 580.0,
-      "net_amount": 734094.73
     }
   ]
 }

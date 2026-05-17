@@ -12,33 +12,6 @@
       "net_amount": -5003813.68
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 5110.0,
-      "buy_amount": 5660163.73,
-      "sell_qty": 1500.0,
-      "sell_amount": 1451749.9000000001,
-      "net_qty": 3610.0,
-      "net_amount": 4208413.83
-    },
-    {
-      "symbol": "HRL",
-      "buy_qty": 11000.0,
-      "buy_amount": 9183817.430000002,
-      "sell_qty": 1000.0,
-      "sell_amount": 624593.77,
-      "net_qty": 10000.0,
-      "net_amount": 8559223.660000002
-    },
-    {
-      "symbol": "PCBL",
-      "buy_qty": 500.0,
-      "buy_amount": 214353.6,
-      "sell_qty": 150.0,
-      "sell_amount": 79911.06,
-      "net_qty": 350.0,
-      "net_amount": 134442.54
-    },
-    {
       "symbol": "SHL",
       "buy_qty": 6610.0,
       "buy_amount": 7666097.08,
@@ -64,6 +37,33 @@
       "sell_amount": 4949372.359999999,
       "net_qty": -560.0,
       "net_amount": -3578698.2999999993
+    },
+    {
+      "symbol": "PCBL",
+      "buy_qty": 500.0,
+      "buy_amount": 214353.6,
+      "sell_qty": 150.0,
+      "sell_amount": 79911.06,
+      "net_qty": 350.0,
+      "net_amount": 134442.54
+    },
+    {
+      "symbol": "HRL",
+      "buy_qty": 11000.0,
+      "buy_amount": 9183817.430000002,
+      "sell_qty": 1000.0,
+      "sell_amount": 624593.77,
+      "net_qty": 10000.0,
+      "net_amount": 8559223.660000002
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 5110.0,
+      "buy_amount": 5660163.73,
+      "sell_qty": 1500.0,
+      "sell_amount": 1451749.9000000001,
+      "net_qty": 3610.0,
+      "net_amount": 4208413.83
     },
     {
       "symbol": "NTC",

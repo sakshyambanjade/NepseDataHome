@@ -3,15 +3,6 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "HRL",
-      "buy_qty": 2000.0,
-      "buy_amount": 1702316.4500000002,
-      "sell_qty": 1050.0,
-      "sell_amount": 675652.87,
-      "net_qty": 950.0,
-      "net_amount": 1026663.5800000002
-    },
-    {
       "symbol": "NTC",
       "buy_qty": 5600.0,
       "buy_amount": 4265513.6899999995,
@@ -21,22 +12,22 @@
       "net_amount": 1739358.8099999996
     },
     {
-      "symbol": "GBIME",
-      "buy_qty": 7100.0,
-      "buy_amount": 3715417.87,
-      "sell_qty": 5100.0,
-      "sell_amount": 4403666.22,
-      "net_qty": 2000.0,
-      "net_amount": -688248.3499999996
+      "symbol": "NICL",
+      "buy_qty": 10.0,
+      "buy_amount": 9965.82,
+      "sell_qty": 1000.0,
+      "sell_amount": 885264.69,
+      "net_qty": -990.0,
+      "net_amount": -875298.87
     },
     {
-      "symbol": "NABIL",
+      "symbol": "HRL",
       "buy_qty": 2000.0,
-      "buy_amount": 1571141.74,
-      "sell_qty": 600.0,
-      "sell_amount": 363220.69,
-      "net_qty": 1400.0,
-      "net_amount": 1207921.05
+      "buy_amount": 1702316.4500000002,
+      "sell_qty": 1050.0,
+      "sell_amount": 675652.87,
+      "net_qty": 950.0,
+      "net_amount": 1026663.5800000002
     },
     {
       "symbol": "STC",
@@ -57,13 +48,22 @@
       "net_amount": 4195272.58
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 10.0,
-      "buy_amount": 9965.82,
-      "sell_qty": 1000.0,
-      "sell_amount": 885264.69,
-      "net_qty": -990.0,
-      "net_amount": -875298.87
+      "symbol": "GBIME",
+      "buy_qty": 7100.0,
+      "buy_amount": 3715417.87,
+      "sell_qty": 5100.0,
+      "sell_amount": 4403666.22,
+      "net_qty": 2000.0,
+      "net_amount": -688248.3499999996
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 2000.0,
+      "buy_amount": 1571141.74,
+      "sell_qty": 600.0,
+      "sell_amount": 363220.69,
+      "net_qty": 1400.0,
+      "net_amount": 1207921.05
     },
     {
       "symbol": "SHL",

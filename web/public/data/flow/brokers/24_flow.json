@@ -3,15 +3,6 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "NICL",
-      "buy_qty": 10010.0,
-      "buy_amount": 7620932.450000001,
-      "sell_qty": 50.0,
-      "sell_amount": 19267.66,
-      "net_qty": 9960.0,
-      "net_amount": 7601664.790000001
-    },
-    {
       "symbol": "GBIME",
       "buy_qty": 5250.0,
       "buy_amount": 5517477.61,
@@ -39,22 +30,22 @@
       "net_amount": 987063.79
     },
     {
-      "symbol": "HDL",
-      "buy_qty": 5050.0,
-      "buy_amount": 1962099.0,
-      "sell_qty": 5600.0,
-      "sell_amount": 7441472.85,
-      "net_qty": -550.0,
-      "net_amount": -5479373.85
+      "symbol": "HRL",
+      "buy_qty": 500.0,
+      "buy_amount": 669662.16,
+      "sell_qty": 5010.0,
+      "sell_amount": 3139707.6799999997,
+      "net_qty": -4510.0,
+      "net_amount": -2470045.5199999996
     },
     {
-      "symbol": "SHL",
-      "buy_qty": 5000.0,
-      "buy_amount": 2113155.73,
-      "sell_qty": 150.0,
-      "sell_amount": 100666.37,
-      "net_qty": 4850.0,
-      "net_amount": 2012489.3599999999
+      "symbol": "NICL",
+      "buy_qty": 10010.0,
+      "buy_amount": 7620932.450000001,
+      "sell_qty": 50.0,
+      "sell_amount": 19267.66,
+      "net_qty": 9960.0,
+      "net_amount": 7601664.790000001
     },
     {
       "symbol": "NTC",
@@ -66,13 +57,22 @@
       "net_amount": -3553839.1
     },
     {
-      "symbol": "HRL",
-      "buy_qty": 500.0,
-      "buy_amount": 669662.16,
-      "sell_qty": 5010.0,
-      "sell_amount": 3139707.6799999997,
-      "net_qty": -4510.0,
-      "net_amount": -2470045.5199999996
+      "symbol": "SHL",
+      "buy_qty": 5000.0,
+      "buy_amount": 2113155.73,
+      "sell_qty": 150.0,
+      "sell_amount": 100666.37,
+      "net_qty": 4850.0,
+      "net_amount": 2012489.3599999999
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 5050.0,
+      "buy_amount": 1962099.0,
+      "sell_qty": 5600.0,
+      "sell_amount": 7441472.85,
+      "net_qty": -550.0,
+      "net_amount": -5479373.85
     },
     {
       "symbol": "PCBL",

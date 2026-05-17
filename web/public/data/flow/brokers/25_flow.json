@@ -3,15 +3,6 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "NTC",
-      "buy_qty": 5000.0,
-      "buy_amount": 1366519.94,
-      "sell_qty": 210.0,
-      "sell_amount": 134711.95,
-      "net_qty": 4790.0,
-      "net_amount": 1231807.99
-    },
-    {
       "symbol": "SHL",
       "buy_qty": 6600.0,
       "buy_amount": 6147066.220000001,
@@ -30,22 +21,13 @@
       "net_amount": 5804693.75
     },
     {
-      "symbol": "GBIME",
-      "buy_qty": 11000.0,
-      "buy_amount": 11232919.69,
-      "sell_qty": 50.0,
-      "sell_amount": 28039.26,
-      "net_qty": 10950.0,
-      "net_amount": 11204880.43
-    },
-    {
-      "symbol": "NABIL",
-      "buy_qty": 2010.0,
-      "buy_amount": 1203471.4,
-      "sell_qty": 770.0,
-      "sell_amount": 912377.1699999999,
-      "net_qty": 1240.0,
-      "net_amount": 291094.23
+      "symbol": "HRL",
+      "buy_qty": 2160.0,
+      "buy_amount": 1612109.08,
+      "sell_qty": 5700.0,
+      "sell_amount": 2636643.91,
+      "net_qty": -3540.0,
+      "net_amount": -1024534.8300000001
     },
     {
       "symbol": "UPPER",
@@ -55,6 +37,15 @@
       "sell_amount": 2978811.93,
       "net_qty": -5050.0,
       "net_amount": -2878217.95
+    },
+    {
+      "symbol": "NTC",
+      "buy_qty": 5000.0,
+      "buy_amount": 1366519.94,
+      "sell_qty": 210.0,
+      "sell_amount": 134711.95,
+      "net_qty": 4790.0,
+      "net_amount": 1231807.99
     },
     {
       "symbol": "NICL",
@@ -75,13 +66,22 @@
       "net_amount": 6515426.819999999
     },
     {
-      "symbol": "HRL",
-      "buy_qty": 2160.0,
-      "buy_amount": 1612109.08,
-      "sell_qty": 5700.0,
-      "sell_amount": 2636643.91,
-      "net_qty": -3540.0,
-      "net_amount": -1024534.8300000001
+      "symbol": "GBIME",
+      "buy_qty": 11000.0,
+      "buy_amount": 11232919.69,
+      "sell_qty": 50.0,
+      "sell_amount": 28039.26,
+      "net_qty": 10950.0,
+      "net_amount": 11204880.43
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 2010.0,
+      "buy_amount": 1203471.4,
+      "sell_qty": 770.0,
+      "sell_amount": 912377.1699999999,
+      "net_qty": 1240.0,
+      "net_amount": 291094.23
     }
   ]
 }

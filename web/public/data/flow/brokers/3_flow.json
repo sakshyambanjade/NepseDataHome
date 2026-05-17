@@ -12,6 +12,24 @@
       "net_amount": -2712647.1199999996
     },
     {
+      "symbol": "UPPER",
+      "buy_qty": 3110.0,
+      "buy_amount": 3387347.88,
+      "sell_qty": 70.0,
+      "sell_amount": 47787.9,
+      "net_qty": 3040.0,
+      "net_amount": 3339559.98
+    },
+    {
+      "symbol": "HRL",
+      "buy_qty": 6100.0,
+      "buy_amount": 6468747.75,
+      "sell_qty": 1550.0,
+      "sell_amount": 1219600.9000000001,
+      "net_qty": 4550.0,
+      "net_amount": 5249146.85
+    },
+    {
       "symbol": "GBIME",
       "buy_qty": 5600.0,
       "buy_amount": 5481936.6899999995,
@@ -30,13 +48,13 @@
       "net_amount": -10663218.829999998
     },
     {
-      "symbol": "NICL",
-      "buy_qty": 550.0,
-      "buy_amount": 174072.0,
-      "sell_qty": 5500.0,
-      "sell_amount": 4329799.82,
-      "net_qty": -4950.0,
-      "net_amount": -4155727.8200000003
+      "symbol": "SHL",
+      "buy_qty": 600.0,
+      "buy_amount": 587893.67,
+      "sell_qty": 600.0,
+      "sell_amount": 785395.3,
+      "net_qty": 0.0,
+      "net_amount": -197501.63
     },
     {
       "symbol": "NTC",
@@ -48,15 +66,6 @@
       "net_amount": 6097872.9
     },
     {
-      "symbol": "UPPER",
-      "buy_qty": 3110.0,
-      "buy_amount": 3387347.88,
-      "sell_qty": 70.0,
-      "sell_amount": 47787.9,
-      "net_qty": 3040.0,
-      "net_amount": 3339559.98
-    },
-    {
       "symbol": "PCBL",
       "buy_qty": 610.0,
       "buy_amount": 656963.82,
@@ -66,22 +75,13 @@
       "net_amount": 656963.82
     },
     {
-      "symbol": "HRL",
-      "buy_qty": 6100.0,
-      "buy_amount": 6468747.75,
-      "sell_qty": 1550.0,
-      "sell_amount": 1219600.9000000001,
-      "net_qty": 4550.0,
-      "net_amount": 5249146.85
-    },
-    {
-      "symbol": "SHL",
-      "buy_qty": 600.0,
-      "buy_amount": 587893.67,
-      "sell_qty": 600.0,
-      "sell_amount": 785395.3,
-      "net_qty": 0.0,
-      "net_amount": -197501.63
+      "symbol": "NICL",
+      "buy_qty": 550.0,
+      "buy_amount": 174072.0,
+      "sell_qty": 5500.0,
+      "sell_amount": 4329799.82,
+      "net_qty": -4950.0,
+      "net_amount": -4155727.8200000003
     },
     {
       "symbol": "STC",

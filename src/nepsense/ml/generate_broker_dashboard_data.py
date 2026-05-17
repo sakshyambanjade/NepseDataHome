@@ -14,6 +14,7 @@ from nepsense.processors.flow_map import generate_flow_artifacts
 from nepsense.processors.alerts import generate_alerts
 from nepsense.processors.daily_report import generate_daily_report
 from nepsense.processors.data_health import generate_data_health
+from nepsense.processors.advanced_flow_signals import generate_advanced_signals
 
 logger = logging.getLogger(__name__)
 
@@ -130,6 +131,9 @@ def generate_broker_artifacts(date: str):
     
     logger.info(f"Generating Data Health Metrics for {date}...")
     generate_data_health(df, date, bool(baselines))
+    
+    logger.info(f"Generating Advanced Flow Signals for {date}...")
+    generate_advanced_signals(results, date)
 
     logger.info(f"Generated {len(results)} intelligence artifacts for {date}")
 
