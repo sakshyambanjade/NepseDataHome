@@ -40,7 +40,7 @@ export function OperatorWatch() {
             <span>Pattern Analysis V2</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
-            Operator-Like <span className="text-amber-500 text-glow-amber">Activity Watch</span>
+            Broker-Flow <span className="text-amber-500 text-glow-amber">Pattern Watch</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
             Statistical detection of unusual broker concentration, churn, and wash-like patterns in NEPSE floorsheet data.

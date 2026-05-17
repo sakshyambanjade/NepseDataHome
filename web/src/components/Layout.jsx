@@ -7,11 +7,11 @@ export function TopNav() {
   const location = useLocation();
   
   const links = [
-    { path: "/", label: "Market Intelligence", icon: LayoutDashboard },
-    { path: "/operator", label: "Operator Watch", icon: ShieldAlert, highlight: true },
-    { path: "/brokers", label: "Broker Intelligence", icon: Users },
+    { path: "/", label: "Market", icon: LayoutDashboard },
     { path: "/flowsheet", label: "Flowsheet", icon: Activity },
-    { path: "/data", label: "Open Data", icon: Database },
+    { path: "/brokers", label: "Brokers", icon: Users },
+    { path: "/operator", label: "Flow Watch", icon: ShieldAlert, highlight: true },
+    { path: "/data", label: "Data", icon: Database },
     { path: "/about", label: "About", icon: Info },
   ];
 
