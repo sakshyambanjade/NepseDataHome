@@ -3,22 +3,13 @@
   "date": "2026-05-12",
   "symbols": [
     {
-      "symbol": "NICL",
-      "buy_qty": 1550.0,
-      "buy_amount": 1683542.77,
-      "sell_qty": 500.0,
-      "sell_amount": 162373.0,
-      "net_qty": 1050.0,
-      "net_amount": 1521169.77
-    },
-    {
-      "symbol": "UPPER",
-      "buy_qty": 700.0,
-      "buy_amount": 822351.09,
-      "sell_qty": 5100.0,
-      "sell_amount": 3344539.32,
-      "net_qty": -4400.0,
-      "net_amount": -2522188.23
+      "symbol": "HRL",
+      "buy_qty": 60.0,
+      "buy_amount": 38835.58,
+      "sell_qty": 11200.0,
+      "sell_amount": 7145919.95,
+      "net_qty": -11140.0,
+      "net_amount": -7107084.37
     },
     {
       "symbol": "SHL",
@@ -30,13 +21,13 @@
       "net_amount": -178324.91999999998
     },
     {
-      "symbol": "HRL",
-      "buy_qty": 60.0,
-      "buy_amount": 38835.58,
-      "sell_qty": 11200.0,
-      "sell_amount": 7145919.95,
-      "net_qty": -11140.0,
-      "net_amount": -7107084.37
+      "symbol": "NTC",
+      "buy_qty": 6010.0,
+      "buy_amount": 6070167.35,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 6010.0,
+      "net_amount": 6070167.35
     },
     {
       "symbol": "STC",
@@ -57,13 +48,22 @@
       "net_amount": 7077519.489999999
     },
     {
-      "symbol": "NTC",
-      "buy_qty": 6010.0,
-      "buy_amount": 6070167.35,
-      "sell_qty": 0.0,
-      "sell_amount": 0.0,
-      "net_qty": 6010.0,
-      "net_amount": 6070167.35
+      "symbol": "UPPER",
+      "buy_qty": 700.0,
+      "buy_amount": 822351.09,
+      "sell_qty": 5100.0,
+      "sell_amount": 3344539.32,
+      "net_qty": -4400.0,
+      "net_amount": -2522188.23
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 1550.0,
+      "buy_amount": 1683542.77,
+      "sell_qty": 500.0,
+      "sell_amount": 162373.0,
+      "net_qty": 1050.0,
+      "net_amount": 1521169.77
     },
     {
       "symbol": "GBIME",

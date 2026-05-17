@@ -10,7 +10,7 @@ export function DataHealth() {
     const fetchData = async () => {
       try {
         const base = import.meta.env.BASE_URL === '/' ? '/NepseDataHome/' : (import.meta.env.BASE_URL || '/NepseDataHome/');
-        const res = await fetch(`${base}data/reports/latest.json`);
+        const res = await fetch(`${base}data/data_health.json`);
         const json = await res.json();
         setData(json);
       } catch (err) {
@@ -34,24 +34,43 @@ export function DataHealth() {
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <MetricCard title="Latest Floorsheet" value={data.date} icon={<CheckCircle2 className="w-5 h-5 text-emerald-400" />} />
-        <MetricCard title="Active Symbols" value={data.summary.active_symbols} icon={<Activity className="w-5 h-5 text-blue-400" />} />
-        <MetricCard title="Total Volume Processed" value={(data.summary.total_volume / 1000000).toFixed(2) + "M"} />
-        <MetricCard title="Pipeline Status" value="Healthy" colorClass="text-emerald-400" />
+        <MetricCard title="Latest Floorsheet" value={data.latest_floorsheet_date} icon={<CheckCircle2 className="w-5 h-5 text-emerald-400" />} />
+        <MetricCard title="Active Symbols" value={data.symbol_count} icon={<Activity className="w-5 h-5 text-blue-400" />} />
+        <MetricCard title="Total Transactions" value={data.transaction_count.toLocaleString()} />
+        <MetricCard title="Pipeline Status" value={data.invalid_row_count === 0 ? "Healthy" : "Warnings"} colorClass={data.invalid_row_count === 0 ? "text-emerald-400" : "text-amber-400"} />
       </div>
 
-      <Card title="Data Quality Notes">
-        <ul className="space-y-3">
-          {data.data_quality_notes?.map((note, idx) => (
-            <li key={idx} className="flex items-start bg-white/5 p-4 rounded-xl border border-white/10">
-              <Check className="w-5 h-5 text-emerald-400 mr-3 mt-0.5 shrink-0" />
-              <span className="text-gray-300">{note}</span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card title="Data Quality Metrics">
+          <ul className="space-y-4">
+            <li className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+              <span className="text-gray-400 font-bold">Baseline Available</span>
+              {data.baseline_available ? (
+                <span className="flex items-center text-emerald-400 font-bold"><CheckCircle2 className="w-4 h-4 mr-2" /> Yes</span>
+              ) : (
+                <span className="flex items-center text-rose-400 font-bold"><AlertCircle className="w-4 h-4 mr-2" /> No</span>
+              )}
             </li>
-          ))}
-        </ul>
-      </Card>
+            <li className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+              <span className="text-gray-400 font-bold">Invalid Rows</span>
+              <span className={`font-mono font-bold ${data.invalid_row_count > 0 ? 'text-rose-400' : 'text-emerald-400'}`}>{data.invalid_row_count}</span>
+            </li>
+            <li className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+              <span className="text-gray-400 font-bold">Duplicate Transactions</span>
+              <span className={`font-mono font-bold ${data.duplicate_transaction_count > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>{data.duplicate_transaction_count}</span>
+            </li>
+            <li className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+              <span className="text-gray-400 font-bold">Brokers Detected</span>
+              <span className="font-mono font-bold text-white">{data.broker_count}</span>
+            </li>
+            <li className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+              <span className="text-gray-400 font-bold">Generated Artifacts</span>
+              <span className="font-mono font-bold text-blue-400">{data.generated_files} Files</span>
+            </li>
+          </ul>
+        </Card>
 
-      <Card title="Generation Artifacts">
+        <Card title="Generation Artifacts">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Artifact file="flow_overview.json" desc="Market flow summary" />
           <Artifact file="broker_pairs.json" desc="Broker-to-broker volume" />
@@ -61,6 +80,7 @@ export function DataHealth() {
           <Artifact file="flowsheet_table.json" desc="Full symbol metrics" />
         </div>
       </Card>
+      </div>
     </div>
   );
 }
