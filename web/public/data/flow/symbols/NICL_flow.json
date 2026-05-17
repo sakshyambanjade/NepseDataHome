@@ -1,0 +1,648 @@
+{
+  "symbol": "NICL",
+  "date": "2026-05-12",
+  "summary": {
+    "total_quantity": 80430.0,
+    "total_amount": 67897723.33999997,
+    "vwap": 844.1840524679842
+  },
+  "nodes": [
+    {
+      "id": "18"
+    },
+    {
+      "id": "53"
+    },
+    {
+      "id": "31"
+    },
+    {
+      "id": "55"
+    },
+    {
+      "id": "20"
+    },
+    {
+      "id": "45"
+    },
+    {
+      "id": "59"
+    },
+    {
+      "id": "38"
+    },
+    {
+      "id": "24"
+    },
+    {
+      "id": "15"
+    },
+    {
+      "id": "51"
+    },
+    {
+      "id": "28"
+    },
+    {
+      "id": "23"
+    },
+    {
+      "id": "25"
+    },
+    {
+      "id": "54"
+    },
+    {
+      "id": "12"
+    },
+    {
+      "id": "37"
+    },
+    {
+      "id": "14"
+    },
+    {
+      "id": "21"
+    },
+    {
+      "id": "41"
+    },
+    {
+      "id": "3"
+    },
+    {
+      "id": "27"
+    },
+    {
+      "id": "11"
+    },
+    {
+      "id": "43"
+    },
+    {
+      "id": "8"
+    },
+    {
+      "id": "34"
+    },
+    {
+      "id": "17"
+    },
+    {
+      "id": "19"
+    },
+    {
+      "id": "13"
+    },
+    {
+      "id": "36"
+    },
+    {
+      "id": "10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "13",
+      "target": "14",
+      "quantity": 5000.0,
+      "amount": 7016157.95,
+      "trade_count": 1
+    },
+    {
+      "source": "17",
+      "target": "27",
+      "quantity": 5000.0,
+      "amount": 5869186.21,
+      "trade_count": 1
+    },
+    {
+      "source": "38",
+      "target": "28",
+      "quantity": 5000.0,
+      "amount": 5605926.24,
+      "trade_count": 1
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "quantity": 5010.0,
+      "amount": 5421058.340000001,
+      "trade_count": 2
+    },
+    {
+      "source": "54",
+      "target": "8",
+      "quantity": 5000.0,
+      "amount": 5088454.61,
+      "trade_count": 1
+    },
+    {
+      "source": "3",
+      "target": "24",
+      "quantity": 5000.0,
+      "amount": 3874561.24,
+      "trade_count": 1
+    },
+    {
+      "source": "11",
+      "target": "24",
+      "quantity": 5000.0,
+      "amount": 3732683.74,
+      "trade_count": 1
+    },
+    {
+      "source": "23",
+      "target": "36",
+      "quantity": 5000.0,
+      "amount": 3625717.56,
+      "trade_count": 1
+    },
+    {
+      "source": "54",
+      "target": "25",
+      "quantity": 5000.0,
+      "amount": 2289125.0,
+      "trade_count": 1
+    },
+    {
+      "source": "21",
+      "target": "18",
+      "quantity": 5000.0,
+      "amount": 1961546.26,
+      "trade_count": 1
+    },
+    {
+      "source": "34",
+      "target": "10",
+      "quantity": 1000.0,
+      "amount": 1339187.32,
+      "trade_count": 1
+    },
+    {
+      "source": "37",
+      "target": "19",
+      "quantity": 1000.0,
+      "amount": 1321404.66,
+      "trade_count": 1
+    },
+    {
+      "source": "43",
+      "target": "41",
+      "quantity": 1000.0,
+      "amount": 1255086.32,
+      "trade_count": 1
+    },
+    {
+      "source": "14",
+      "target": "51",
+      "quantity": 1000.0,
+      "amount": 1211089.09,
+      "trade_count": 1
+    },
+    {
+      "source": "59",
+      "target": "17",
+      "quantity": 1000.0,
+      "amount": 1151373.12,
+      "trade_count": 1
+    },
+    {
+      "source": "55",
+      "target": "15",
+      "quantity": 1000.0,
+      "amount": 1143542.12,
+      "trade_count": 1
+    },
+    {
+      "source": "28",
+      "target": "23",
+      "quantity": 1000.0,
+      "amount": 1108404.66,
+      "trade_count": 1
+    },
+    {
+      "source": "45",
+      "target": "51",
+      "quantity": 1000.0,
+      "amount": 899150.29,
+      "trade_count": 1
+    },
+    {
+      "source": "12",
+      "target": "20",
+      "quantity": 1000.0,
+      "amount": 885264.69,
+      "trade_count": 1
+    },
+    {
+      "source": "31",
+      "target": "25",
+      "quantity": 500.0,
+      "amount": 700638.97,
+      "trade_count": 1
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-0",
+      "from": "43",
+      "to": "41",
+      "quantity": 1000.0,
+      "rate": 1255.09,
+      "amount": 1255086.32
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-1",
+      "from": "9",
+      "to": "55",
+      "quantity": 1000.0,
+      "rate": 613.34,
+      "amount": 613335.05
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-10",
+      "from": "54",
+      "to": "38",
+      "quantity": 10.0,
+      "rate": 987.51,
+      "amount": 9875.12
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-11",
+      "from": "21",
+      "to": "19",
+      "quantity": 10.0,
+      "rate": 924.9,
+      "amount": 9248.96
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-12",
+      "from": "53",
+      "to": "4",
+      "quantity": 500.0,
+      "rate": 861.76,
+      "amount": 430878.85
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-13",
+      "from": "57",
+      "to": "31",
+      "quantity": 100.0,
+      "rate": 1206.33,
+      "amount": 120633.31
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-14",
+      "from": "2",
+      "to": "39",
+      "quantity": 500.0,
+      "rate": 296.38,
+      "amount": 148190.73
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-15",
+      "from": "21",
+      "to": "1",
+      "quantity": 500.0,
+      "rate": 988.11,
+      "amount": 494053.64
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-16",
+      "from": "53",
+      "to": "12",
+      "quantity": 10.0,
+      "rate": 996.58,
+      "amount": 9965.82
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-17",
+      "from": "18",
+      "to": "11",
+      "quantity": 50.0,
+      "rate": 579.29,
+      "amount": 28964.64
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-18",
+      "from": "55",
+      "to": "8",
+      "quantity": 1000.0,
+      "rate": 221.07,
+      "amount": 221066.38
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-19",
+      "from": "1",
+      "to": "8",
+      "quantity": 50.0,
+      "rate": 972.84,
+      "amount": 48641.87
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-2",
+      "from": "36",
+      "to": "10",
+      "quantity": 50.0,
+      "rate": 1460.86,
+      "amount": 73042.79
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-20",
+      "from": "40",
+      "to": "38",
+      "quantity": 500.0,
+      "rate": 632.44,
+      "amount": 316221.95
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-21",
+      "from": "29",
+      "to": "1",
+      "quantity": 10.0,
+      "rate": 1215.81,
+      "amount": 12158.14
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-22",
+      "from": "17",
+      "to": "27",
+      "quantity": 5000.0,
+      "rate": 1173.84,
+      "amount": 5869186.21
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-23",
+      "from": "31",
+      "to": "17",
+      "quantity": 10.0,
+      "rate": 265.45,
+      "amount": 2654.47
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-24",
+      "from": "13",
+      "to": "14",
+      "quantity": 5000.0,
+      "rate": 1403.23,
+      "amount": 7016157.95
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-25",
+      "from": "14",
+      "to": "51",
+      "quantity": 1000.0,
+      "rate": 1211.09,
+      "amount": 1211089.09
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-26",
+      "from": "48",
+      "to": "2",
+      "quantity": 50.0,
+      "rate": 527.24,
+      "amount": 26362.22
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-27",
+      "from": "44",
+      "to": "42",
+      "quantity": 1000.0,
+      "rate": 698.6,
+      "amount": 698603.1
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-28",
+      "from": "27",
+      "to": "57",
+      "quantity": 1000.0,
+      "rate": 481.84,
+      "amount": 481836.61
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-29",
+      "from": "28",
+      "to": "23",
+      "quantity": 1000.0,
+      "rate": 1108.4,
+      "amount": 1108404.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-3",
+      "from": "57",
+      "to": "11",
+      "quantity": 50.0,
+      "rate": 338.09,
+      "amount": 16904.3
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-30",
+      "from": "23",
+      "to": "36",
+      "quantity": 5000.0,
+      "rate": 725.14,
+      "amount": 3625717.56
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-31",
+      "from": "56",
+      "to": "37",
+      "quantity": 50.0,
+      "rate": 932.23,
+      "amount": 46611.38
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-32",
+      "from": "8",
+      "to": "24",
+      "quantity": 10.0,
+      "rate": 1368.75,
+      "amount": 13687.47
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-33",
+      "from": "11",
+      "to": "24",
+      "quantity": 5000.0,
+      "rate": 746.54,
+      "amount": 3732683.74
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-34",
+      "from": "22",
+      "to": "39",
+      "quantity": 100.0,
+      "rate": 378.25,
+      "amount": 37824.72
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-35",
+      "from": "50",
+      "to": "8",
+      "quantity": 1000.0,
+      "rate": 200.24,
+      "amount": 200242.25
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-36",
+      "from": "53",
+      "to": "54",
+      "quantity": 5000.0,
+      "rate": 1082.94,
+      "amount": 5414681.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-37",
+      "from": "38",
+      "to": "34",
+      "quantity": 10.0,
+      "rate": 402.21,
+      "amount": 4022.07
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-38",
+      "from": "60",
+      "to": "36",
+      "quantity": 10.0,
+      "rate": 1380.29,
+      "amount": 13802.85
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-39",
+      "from": "38",
+      "to": "28",
+      "quantity": 5000.0,
+      "rate": 1121.19,
+      "amount": 5605926.24
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-4",
+      "from": "25",
+      "to": "13",
+      "quantity": 10.0,
+      "rate": 875.1,
+      "amount": 8750.96
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-40",
+      "from": "45",
+      "to": "51",
+      "quantity": 1000.0,
+      "rate": 899.15,
+      "amount": 899150.29
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-41",
+      "from": "9",
+      "to": "3",
+      "quantity": 50.0,
+      "rate": 262.67,
+      "amount": 13133.4
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-42",
+      "from": "3",
+      "to": "24",
+      "quantity": 5000.0,
+      "rate": 774.91,
+      "amount": 3874561.24
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-43",
+      "from": "10",
+      "to": "38",
+      "quantity": 500.0,
+      "rate": 324.75,
+      "amount": 162373.0
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-44",
+      "from": "50",
+      "to": "10",
+      "quantity": 500.0,
+      "rate": 542.63,
+      "amount": 271312.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-45",
+      "from": "46",
+      "to": "28",
+      "quantity": 500.0,
+      "rate": 819.0,
+      "amount": 409501.43
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-46",
+      "from": "53",
+      "to": "57",
+      "quantity": 500.0,
+      "rate": 1125.94,
+      "amount": 562968.07
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-47",
+      "from": "31",
+      "to": "15",
+      "quantity": 100.0,
+      "rate": 1271.0,
+      "amount": 127100.18
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-48",
+      "from": "4",
+      "to": "3",
+      "quantity": 500.0,
+      "rate": 321.88,
+      "amount": 160938.6
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-49",
+      "from": "7",
+      "to": "29",
+      "quantity": 500.0,
+      "rate": 465.54,
+      "amount": 232771.83
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-5",
+      "from": "52",
+      "to": "38",
+      "quantity": 10.0,
+      "rate": 419.44,
+      "amount": 4194.36
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-50",
+      "from": "27",
+      "to": "18",
+      "quantity": 1000.0,
+      "rate": 595.5,
+      "amount": 595504.05
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-51",
+      "from": "28",
+      "to": "55",
+      "quantity": 500.0,
+      "rate": 1125.61,
+      "amount": 562806.91
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-52",
+      "from": "2",
+      "to": "25",
+      "quantity": 100.0,
+      "rate": 836.93,
+      "amount": 83693.21
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NICL-53",
+      "from": "48",
+      "to": "53",
+      "quantity": 500.0,
+      "rate": 756.6,
+      "amount": 378300.47
+    }
+  ]
+}

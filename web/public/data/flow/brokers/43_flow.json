@@ -1,0 +1,87 @@
+{
+  "broker": "43",
+  "date": "2026-05-12",
+  "symbols": [
+    {
+      "symbol": "PCBL",
+      "buy_qty": 10.0,
+      "buy_amount": 3773.33,
+      "sell_qty": 10050.0,
+      "sell_amount": 9584241.44,
+      "net_qty": -10040.0,
+      "net_amount": -9580468.11
+    },
+    {
+      "symbol": "GBIME",
+      "buy_qty": 2000.0,
+      "buy_amount": 938593.78,
+      "sell_qty": 6000.0,
+      "sell_amount": 4367907.59,
+      "net_qty": -4000.0,
+      "net_amount": -3429313.8099999996
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 600.0,
+      "buy_amount": 586975.07,
+      "sell_qty": 1050.0,
+      "sell_amount": 1353965.01,
+      "net_qty": -450.0,
+      "net_amount": -766989.9400000001
+    },
+    {
+      "symbol": "NTC",
+      "buy_qty": 520.0,
+      "buy_amount": 641432.86,
+      "sell_qty": 2000.0,
+      "sell_amount": 1361446.04,
+      "net_qty": -1480.0,
+      "net_amount": -720013.18
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 6110.0,
+      "buy_amount": 7394589.92,
+      "sell_qty": 10570.0,
+      "sell_amount": 12143274.88,
+      "net_qty": -4460.0,
+      "net_amount": -4748684.960000001
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 1000.0,
+      "buy_amount": 1488129.82,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 1000.0,
+      "net_amount": 1488129.82
+    },
+    {
+      "symbol": "HRL",
+      "buy_qty": 50.0,
+      "buy_amount": 25157.66,
+      "sell_qty": 1010.0,
+      "sell_amount": 1312626.05,
+      "net_qty": -960.0,
+      "net_amount": -1287468.3900000001
+    },
+    {
+      "symbol": "SHL",
+      "buy_qty": 0.0,
+      "buy_amount": 0.0,
+      "sell_qty": 550.0,
+      "sell_amount": 200445.06999999998,
+      "net_qty": -550.0,
+      "net_amount": -200445.06999999998
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 0.0,
+      "buy_amount": 0.0,
+      "sell_qty": 1000.0,
+      "sell_amount": 1255086.32,
+      "net_qty": -1000.0,
+      "net_amount": -1255086.32
+    }
+  ]
+}

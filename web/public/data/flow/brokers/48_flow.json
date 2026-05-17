@@ -1,0 +1,96 @@
+{
+  "broker": "48",
+  "date": "2026-05-12",
+  "symbols": [
+    {
+      "symbol": "PCBL",
+      "buy_qty": 7050.0,
+      "buy_amount": 4596758.6899999995,
+      "sell_qty": 5070.0,
+      "sell_amount": 1308354.69,
+      "net_qty": 1980.0,
+      "net_amount": 3288403.9999999995
+    },
+    {
+      "symbol": "GBIME",
+      "buy_qty": 60.0,
+      "buy_amount": 18566.09,
+      "sell_qty": 1600.0,
+      "sell_amount": 813016.0,
+      "net_qty": -1540.0,
+      "net_amount": -794449.91
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 10.0,
+      "buy_amount": 2336.57,
+      "sell_qty": 1600.0,
+      "sell_amount": 1026374.42,
+      "net_qty": -1590.0,
+      "net_amount": -1024037.8500000001
+    },
+    {
+      "symbol": "NTC",
+      "buy_qty": 50.0,
+      "buy_amount": 59249.03,
+      "sell_qty": 1010.0,
+      "sell_amount": 1474032.1700000002,
+      "net_qty": -960.0,
+      "net_amount": -1414783.1400000001
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 500.0,
+      "buy_amount": 269968.6,
+      "sell_qty": 13100.0,
+      "sell_amount": 11859840.12,
+      "net_qty": -12600.0,
+      "net_amount": -11589871.52
+    },
+    {
+      "symbol": "STC",
+      "buy_qty": 5100.0,
+      "buy_amount": 1829919.33,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 5100.0,
+      "net_amount": 1829919.33
+    },
+    {
+      "symbol": "SHL",
+      "buy_qty": 1000.0,
+      "buy_amount": 325131.33,
+      "sell_qty": 0.0,
+      "sell_amount": 0.0,
+      "net_qty": 1000.0,
+      "net_amount": 325131.33
+    },
+    {
+      "symbol": "HRL",
+      "buy_qty": 1060.0,
+      "buy_amount": 697003.41,
+      "sell_qty": 310.0,
+      "sell_amount": 187198.66,
+      "net_qty": 750.0,
+      "net_amount": 509804.75
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 0.0,
+      "buy_amount": 0.0,
+      "sell_qty": 7100.0,
+      "sell_amount": 8969687.11,
+      "net_qty": -7100.0,
+      "net_amount": -8969687.11
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 0.0,
+      "buy_amount": 0.0,
+      "sell_qty": 550.0,
+      "sell_amount": 404662.68999999994,
+      "net_qty": -550.0,
+      "net_amount": -404662.68999999994
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "broker": "39",
+  "date": "2026-05-12",
+  "symbols": [
+    {
+      "symbol": "UPPER",
+      "buy_qty": 10.0,
+      "buy_amount": 12482.68,
+      "sell_qty": 1000.0,
+      "sell_amount": 744436.18,
+      "net_qty": -990.0,
+      "net_amount": -731953.5
+    },
+    {
+      "symbol": "SHL",
+      "buy_qty": 650.0,
+      "buy_amount": 829382.96,
+      "sell_qty": 1500.0,
+      "sell_amount": 793921.6799999999,
+      "net_qty": -850.0,
+      "net_amount": 35461.28000000003
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 5000.0,
+      "buy_amount": 6457449.39,
+      "sell_qty": 7100.0,
+      "sell_amount": 6266863.53,
+      "net_qty": -2100.0,
+      "net_amount": 190585.8599999994
+    },
+    {
+      "symbol": "STC",
+      "buy_qty": 800.0,
+      "buy_amount": 933100.2299999999,
+      "sell_qty": 10210.0,
+      "sell_amount": 8904716.87,
+      "net_qty": -9410.0,
+      "net_amount": -7971616.64
+    },
+    {
+      "symbol": "NICL",
+      "buy_qty": 600.0,
+      "buy_amount": 186015.45,
+      "sell_qty": 10.0,
+      "sell_amount": 14475.7,
+      "net_qty": 590.0,
+      "net_amount": 171539.75
+    },
+    {
+      "symbol": "GBIME",
+      "buy_qty": 10150.0,
+      "buy_amount": 3873290.13,
+      "sell_qty": 5510.0,
+      "sell_amount": 6471250.51,
+      "net_qty": 4640.0,
+      "net_amount": -2597960.38
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 510.0,
+      "buy_amount": 574546.6900000001,
+      "sell_qty": 110.0,
+      "sell_amount": 80718.71,
+      "net_qty": 400.0,
+      "net_amount": 493827.98000000004
+    },
+    {
+      "symbol": "NTC",
+      "buy_qty": 5000.0,
+      "buy_amount": 6771548.28,
+      "sell_qty": 550.0,
+      "sell_amount": 726612.93,
+      "net_qty": 4450.0,
+      "net_amount": 6044935.350000001
+    },
+    {
+      "symbol": "HRL",
+      "buy_qty": 500.0,
+      "buy_amount": 483860.96,
+      "sell_qty": 210.0,
+      "sell_amount": 150158.11,
+      "net_qty": 290.0,
+      "net_amount": 333702.85000000003
+    }
+  ]
+}

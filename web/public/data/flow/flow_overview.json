@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-12",
+  "total_trades": 1366,
+  "total_amount": 1340171474.8900003,
+  "top_flow_symbols": [
+    {
+      "symbol": "GBIME",
+      "amount": 197945569.16999996
+    },
+    {
+      "symbol": "UPPER",
+      "amount": 190187309.64
+    },
+    {
+      "symbol": "NABIL",
+      "amount": 166960112.17000002
+    },
+    {
+      "symbol": "HDL",
+      "amount": 153803033.48999995
+    },
+    {
+      "symbol": "HRL",
+      "amount": 152983332.42999998
+    }
+  ],
+  "top_broker_pairs": [
+    {
+      "buyer": "51",
+      "seller": "57",
+      "amount": 13187832.63
+    },
+    {
+      "buyer": "3",
+      "seller": "6",
+      "amount": 11251896.23
+    },
+    {
+      "buyer": "26",
+      "seller": "48",
+      "amount": 11213947.83
+    },
+    {
+      "buyer": "46",
+      "seller": "49",
+      "amount": 10682481.309999999
+    },
+    {
+      "buyer": "41",
+      "seller": "27",
+      "amount": 8651446.06
+    }
+  ],
+  "top_rotating_brokers": [
+    {
+      "broker": "37",
+      "score": 51919082.199999996
+    },
+    {
+      "broker": "44",
+      "score": 49275668.77000001
+    },
+    {
+      "broker": "10",
+      "score": 48138725.28
+    },
+    {
+      "broker": "15",
+      "score": 44788270.43
+    },
+    {
+      "broker": "57",
+      "score": 43155296.290000014
+    }
+  ],
+  "cross_trade_watch": [
+    {
+      "symbol": "NABIL",
+      "amount": 13640091.06
+    },
+    {
+      "symbol": "GBIME",
+      "amount": 8231318.960000001
+    },
+    {
+      "symbol": "UPPER",
+      "amount": 3811830.21
+    },
+    {
+      "symbol": "SHL",
+      "amount": 3780970.3099999996
+    },
+    {
+      "symbol": "NTC",
+      "amount": 1708961.01
+    }
+  ],
+  "largest_transfers": []
+}

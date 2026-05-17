@@ -1,0 +1,642 @@
+{
+  "symbol": "STC",
+  "date": "2026-05-12",
+  "summary": {
+    "total_quantity": 145130.0,
+    "total_amount": 126815482.51,
+    "vwap": 873.8061221663337
+  },
+  "nodes": [
+    {
+      "id": "49"
+    },
+    {
+      "id": "56"
+    },
+    {
+      "id": "20"
+    },
+    {
+      "id": "32"
+    },
+    {
+      "id": "60"
+    },
+    {
+      "id": "45"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "59"
+    },
+    {
+      "id": "38"
+    },
+    {
+      "id": "15"
+    },
+    {
+      "id": "23"
+    },
+    {
+      "id": "54"
+    },
+    {
+      "id": "48"
+    },
+    {
+      "id": "37"
+    },
+    {
+      "id": "14"
+    },
+    {
+      "id": "21"
+    },
+    {
+      "id": "3"
+    },
+    {
+      "id": "39"
+    },
+    {
+      "id": "40"
+    },
+    {
+      "id": "8"
+    },
+    {
+      "id": "7"
+    },
+    {
+      "id": "42"
+    },
+    {
+      "id": "57"
+    },
+    {
+      "id": "58"
+    },
+    {
+      "id": "22"
+    },
+    {
+      "id": "19"
+    },
+    {
+      "id": "35"
+    },
+    {
+      "id": "13"
+    },
+    {
+      "id": "44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "60",
+      "target": "15",
+      "quantity": 5000.0,
+      "amount": 7076300.03,
+      "trade_count": 1
+    },
+    {
+      "source": "19",
+      "target": "58",
+      "quantity": 5000.0,
+      "amount": 7021361.37,
+      "trade_count": 1
+    },
+    {
+      "source": "54",
+      "target": "58",
+      "quantity": 5000.0,
+      "amount": 6893538.44,
+      "trade_count": 1
+    },
+    {
+      "source": "35",
+      "target": "44",
+      "quantity": 5000.0,
+      "amount": 6686002.32,
+      "trade_count": 1
+    },
+    {
+      "source": "35",
+      "target": "13",
+      "quantity": 5000.0,
+      "amount": 6363410.49,
+      "trade_count": 1
+    },
+    {
+      "source": "21",
+      "target": "59",
+      "quantity": 5000.0,
+      "amount": 6344972.86,
+      "trade_count": 1
+    },
+    {
+      "source": "37",
+      "target": "56",
+      "quantity": 5500.0,
+      "amount": 6014796.0,
+      "trade_count": 2
+    },
+    {
+      "source": "39",
+      "target": "22",
+      "quantity": 5000.0,
+      "amount": 5992354.91,
+      "trade_count": 1
+    },
+    {
+      "source": "37",
+      "target": "59",
+      "quantity": 5000.0,
+      "amount": 5619276.17,
+      "trade_count": 1
+    },
+    {
+      "source": "32",
+      "target": "14",
+      "quantity": 5000.0,
+      "amount": 5303117.82,
+      "trade_count": 1
+    },
+    {
+      "source": "45",
+      "target": "49",
+      "quantity": 5000.0,
+      "amount": 5112696.48,
+      "trade_count": 1
+    },
+    {
+      "source": "22",
+      "target": "8",
+      "quantity": 5000.0,
+      "amount": 4869272.9,
+      "trade_count": 1
+    },
+    {
+      "source": "4",
+      "target": "57",
+      "quantity": 5000.0,
+      "amount": 4746204.38,
+      "trade_count": 1
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "quantity": 5000.0,
+      "amount": 4509979.28,
+      "trade_count": 1
+    },
+    {
+      "source": "54",
+      "target": "38",
+      "quantity": 5000.0,
+      "amount": 3761310.68,
+      "trade_count": 1
+    },
+    {
+      "source": "35",
+      "target": "40",
+      "quantity": 5000.0,
+      "amount": 3129070.41,
+      "trade_count": 1
+    },
+    {
+      "source": "20",
+      "target": "19",
+      "quantity": 5000.0,
+      "amount": 3070024.46,
+      "trade_count": 1
+    },
+    {
+      "source": "39",
+      "target": "38",
+      "quantity": 5000.0,
+      "amount": 2851091.87,
+      "trade_count": 1
+    },
+    {
+      "source": "42",
+      "target": "7",
+      "quantity": 5000.0,
+      "amount": 2410798.72,
+      "trade_count": 1
+    },
+    {
+      "source": "23",
+      "target": "48",
+      "quantity": 5000.0,
+      "amount": 1728002.71,
+      "trade_count": 1
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_no": "TXN-2026-05-12-STC-0",
+      "from": "42",
+      "to": "7",
+      "quantity": 5000.0,
+      "rate": 482.16,
+      "amount": 2410798.72
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-1",
+      "from": "39",
+      "to": "32",
+      "quantity": 100.0,
+      "rate": 289.16,
+      "amount": 28915.81
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-10",
+      "from": "28",
+      "to": "44",
+      "quantity": 5000.0,
+      "rate": 294.93,
+      "amount": 1474663.13
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-100",
+      "from": "20",
+      "to": "50",
+      "quantity": 1000.0,
+      "rate": 971.65,
+      "amount": 971647.23
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-101",
+      "from": "23",
+      "to": "48",
+      "quantity": 5000.0,
+      "rate": 345.6,
+      "amount": 1728002.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-102",
+      "from": "8",
+      "to": "58",
+      "quantity": 5000.0,
+      "rate": 269.14,
+      "amount": 1345683.15
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-103",
+      "from": "32",
+      "to": "18",
+      "quantity": 500.0,
+      "rate": 388.1,
+      "amount": 194049.06
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-104",
+      "from": "18",
+      "to": "2",
+      "quantity": 100.0,
+      "rate": 382.3,
+      "amount": 38229.7
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-105",
+      "from": "34",
+      "to": "11",
+      "quantity": 5000.0,
+      "rate": 212.33,
+      "amount": 1061629.51
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-106",
+      "from": "28",
+      "to": "45",
+      "quantity": 50.0,
+      "rate": 1077.21,
+      "amount": 53860.3
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-107",
+      "from": "9",
+      "to": "47",
+      "quantity": 10.0,
+      "rate": 530.55,
+      "amount": 5305.46
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-108",
+      "from": "29",
+      "to": "37",
+      "quantity": 50.0,
+      "rate": 234.68,
+      "amount": 11733.93
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-109",
+      "from": "14",
+      "to": "10",
+      "quantity": 10.0,
+      "rate": 634.99,
+      "amount": 6349.88
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-11",
+      "from": "46",
+      "to": "55",
+      "quantity": 1000.0,
+      "rate": 1103.41,
+      "amount": 1103408.01
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-110",
+      "from": "37",
+      "to": "50",
+      "quantity": 50.0,
+      "rate": 1473.84,
+      "amount": 73691.86
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-111",
+      "from": "45",
+      "to": "49",
+      "quantity": 5000.0,
+      "rate": 1022.54,
+      "amount": 5112696.48
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-112",
+      "from": "10",
+      "to": "59",
+      "quantity": 50.0,
+      "rate": 249.68,
+      "amount": 12483.8
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-113",
+      "from": "35",
+      "to": "44",
+      "quantity": 5000.0,
+      "rate": 1337.2,
+      "amount": 6686002.32
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-12",
+      "from": "32",
+      "to": "58",
+      "quantity": 5000.0,
+      "rate": 242.64,
+      "amount": 1213214.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-13",
+      "from": "12",
+      "to": "53",
+      "quantity": 100.0,
+      "rate": 1428.25,
+      "amount": 142824.6
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-14",
+      "from": "33",
+      "to": "54",
+      "quantity": 500.0,
+      "rate": 1002.8,
+      "amount": 501400.62
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-15",
+      "from": "30",
+      "to": "49",
+      "quantity": 10.0,
+      "rate": 798.42,
+      "amount": 7984.16
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-16",
+      "from": "60",
+      "to": "37",
+      "quantity": 50.0,
+      "rate": 948.81,
+      "amount": 47440.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-17",
+      "from": "37",
+      "to": "35",
+      "quantity": 100.0,
+      "rate": 1246.27,
+      "amount": 124627.0
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-18",
+      "from": "9",
+      "to": "51",
+      "quantity": 50.0,
+      "rate": 219.4,
+      "amount": 10970.23
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-19",
+      "from": "36",
+      "to": "1",
+      "quantity": 100.0,
+      "rate": 1093.28,
+      "amount": 109328.43
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-2",
+      "from": "39",
+      "to": "38",
+      "quantity": 5000.0,
+      "rate": 570.22,
+      "amount": 2851091.87
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-20",
+      "from": "9",
+      "to": "47",
+      "quantity": 500.0,
+      "rate": 1464.51,
+      "amount": 732256.73
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-21",
+      "from": "54",
+      "to": "8",
+      "quantity": 1000.0,
+      "rate": 1322.04,
+      "amount": 1322042.64
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-22",
+      "from": "56",
+      "to": "19",
+      "quantity": 50.0,
+      "rate": 1068.34,
+      "amount": 53417.13
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-23",
+      "from": "3",
+      "to": "7",
+      "quantity": 5000.0,
+      "rate": 902.0,
+      "amount": 4509979.28
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-24",
+      "from": "13",
+      "to": "52",
+      "quantity": 10.0,
+      "rate": 442.76,
+      "amount": 4427.64
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-25",
+      "from": "17",
+      "to": "16",
+      "quantity": 1000.0,
+      "rate": 208.1,
+      "amount": 208100.13
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-26",
+      "from": "57",
+      "to": "16",
+      "quantity": 10.0,
+      "rate": 912.23,
+      "amount": 9122.33
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-27",
+      "from": "37",
+      "to": "6",
+      "quantity": 100.0,
+      "rate": 786.31,
+      "amount": 78630.68
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-28",
+      "from": "4",
+      "to": "28",
+      "quantity": 500.0,
+      "rate": 618.28,
+      "amount": 309137.86
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-29",
+      "from": "13",
+      "to": "44",
+      "quantity": 500.0,
+      "rate": 792.82,
+      "amount": 396411.18
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-3",
+      "from": "57",
+      "to": "41",
+      "quantity": 100.0,
+      "rate": 1428.13,
+      "amount": 142813.48
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-30",
+      "from": "52",
+      "to": "53",
+      "quantity": 10.0,
+      "rate": 937.05,
+      "amount": 9370.53
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-31",
+      "from": "35",
+      "to": "15",
+      "quantity": 10.0,
+      "rate": 924.67,
+      "amount": 9246.74
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-32",
+      "from": "38",
+      "to": "35",
+      "quantity": 1000.0,
+      "rate": 280.82,
+      "amount": 280819.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-33",
+      "from": "52",
+      "to": "35",
+      "quantity": 1000.0,
+      "rate": 519.74,
+      "amount": 519737.54
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-34",
+      "from": "16",
+      "to": "33",
+      "quantity": 50.0,
+      "rate": 753.16,
+      "amount": 37658.12
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-35",
+      "from": "40",
+      "to": "22",
+      "quantity": 500.0,
+      "rate": 1267.79,
+      "amount": 633895.19
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-36",
+      "from": "19",
+      "to": "26",
+      "quantity": 500.0,
+      "rate": 1428.06,
+      "amount": 714028.86
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-37",
+      "from": "60",
+      "to": "15",
+      "quantity": 5000.0,
+      "rate": 1415.26,
+      "amount": 7076300.03
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-38",
+      "from": "1",
+      "to": "46",
+      "quantity": 10.0,
+      "rate": 1154.67,
+      "amount": 11546.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-39",
+      "from": "58",
+      "to": "1",
+      "quantity": 10.0,
+      "rate": 716.25,
+      "amount": 7162.46
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-4",
+      "from": "55",
+      "to": "4",
+      "quantity": 50.0,
+      "rate": 379.25,
+      "amount": 18962.34
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-STC-40",
+      "from": "8",
+      "to": "38",
+      "quantity": 10.0,
+      "rate": 238.54,
+      "amount": 2385.38
+    }
+  ]
+}

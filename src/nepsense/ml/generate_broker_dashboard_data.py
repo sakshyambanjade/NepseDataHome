@@ -9,6 +9,8 @@ from nepsense.config import DASHBOARD_DIR, DATA_DIR
 from nepsense.processors.floorsheet_intelligence import analyze_daily_floorsheet
 from nepsense.processors.floorsheet_baseline import load_previous_floorsheet_tables, compute_symbol_baselines
 from nepsense.processors.broker_detail import build_all_broker_details
+from nepsense.processors.flow_database import build_flow_database
+from nepsense.processors.flow_map import generate_flow_artifacts
 
 logger = logging.getLogger(__name__)
 
@@ -110,6 +112,12 @@ def generate_broker_artifacts(date: str):
         with open(broker_dir / f"{broker}.json", "w") as f:
             json.dump(clean_json(detail), f, indent=2)
             
+    # 5. Build Flow Database & Generate Flow Artifacts
+    logger.info(f"Building DuckDB Flow Database for {date}...")
+    build_flow_database(date)
+    logger.info(f"Generating Flow Map Artifacts for {date}...")
+    generate_flow_artifacts(date)
+
     logger.info(f"Generated {len(results)} intelligence artifacts for {date}")
 
 if __name__ == "__main__":

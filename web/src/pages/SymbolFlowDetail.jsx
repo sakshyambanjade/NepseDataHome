@@ -61,11 +61,16 @@ export function SymbolFlowDetail() {
         subtitle={`Daily Broker-Flow Intelligence • Total Volume: ${(data.total_qty / 1000).toFixed(1)}k QTY • VWAP: Rs. ${data.vwap || "0.00"}`}
         icon={<Zap />}
         rightElement={
-          <div className="flex flex-col items-end">
-            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Trade Count</span>
-            <span className="text-2xl font-black text-white">{data.trade_count}</span>
-            <div className="mt-2 text-[10px] font-bold text-gray-400 uppercase">
-              {data.date}
+          <div className="flex items-center space-x-4">
+            <Link to={`/flow?symbol=${data.symbol}`} className="flex items-center px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-bold rounded-xl border border-blue-500/20 transition-colors shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+              <Zap className="w-4 h-4 mr-2" /> View Flow Map
+            </Link>
+            <div className="flex flex-col items-end">
+              <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Trade Count</span>
+              <span className="text-2xl font-black text-white">{data.trade_count}</span>
+              <div className="mt-2 text-[10px] font-bold text-gray-400 uppercase">
+                {data.date}
+              </div>
             </div>
           </div>
         }

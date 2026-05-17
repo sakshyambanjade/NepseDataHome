@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, TrendingUp, TrendingDown, Users, AlertTriangle } from "lucide-react";
+import { ArrowLeft, TrendingUp, TrendingDown, Users, AlertTriangle, Activity } from "lucide-react";
 import { Card, MetricCard, PageHeader, LoadingState, EmptyState } from '../components/ui';
 
 export function BrokerDetail() {
@@ -54,12 +54,17 @@ export function BrokerDetail() {
         title={`Broker ${data.broker}`}
         subtitle={`Broker Channel Position • ${data.date}`}
         rightElement={
-          <div className="flex flex-col items-end">
-            <div className={`px-5 py-3 rounded-2xl border ${summary.total_net_qty >= 0 ? 'bg-emerald-500/5 border-emerald-500/10 text-emerald-400' : 'bg-rose-500/5 border-rose-500/10 text-rose-400'}`}>
-              <span className="text-[10px] uppercase font-bold block opacity-60 leading-none mb-1">Total Net Flow</span>
-              <span className="text-2xl font-black leading-none tracking-tight">
+          <div className="flex items-center space-x-4">
+            <Link to={`/flow?broker=${data.broker}`} className="flex items-center px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-bold rounded-xl border border-blue-500/20 transition-colors shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+              <Activity className="w-4 h-4 mr-2" /> View Flow Map
+            </Link>
+            <div className="flex flex-col items-end">
+              <div className={`px-5 py-3 rounded-2xl border ${summary.total_net_qty >= 0 ? 'bg-emerald-500/5 border-emerald-500/10 text-emerald-400' : 'bg-rose-500/5 border-rose-500/10 text-rose-400'}`}>
+                <span className="text-[10px] uppercase font-bold block opacity-60 leading-none mb-1">Total Net Flow</span>
+                <span className="text-2xl font-black leading-none tracking-tight">
                 {summary.total_net_qty > 0 ? '+' : ''}{Number(summary.total_net_qty).toLocaleString()} <span className="text-sm opacity-60">QTY</span>
               </span>
+              </div>
             </div>
           </div>
         }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Activity, LayoutDashboard, Database, Info, Menu, X, Code, ShieldAlert, Users, Share2, FileText, Briefcase } from 'lucide-react';
+import { Activity, LayoutDashboard, Database, Info, Menu, X, Code, ShieldAlert, Users, Share2, FileText, Briefcase, ArrowRightLeft } from 'lucide-react';
 
 export function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +8,7 @@ export function TopNav() {
   
   const links = [
     { path: "/", label: "Market", icon: LayoutDashboard },
+    { path: "/flow", label: "Flow Map", icon: ArrowRightLeft },
     { path: "/flowsheet", label: "Flowsheet", icon: Activity },
     { path: "/brokers", label: "Brokers", icon: Users },
     { path: "/operator", label: "Flow Watch", icon: ShieldAlert, highlight: true },

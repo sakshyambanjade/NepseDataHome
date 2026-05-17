@@ -1,0 +1,87 @@
+{
+  "broker": "35",
+  "date": "2026-05-12",
+  "symbols": [
+    {
+      "symbol": "HRL",
+      "buy_qty": 250.0,
+      "buy_amount": 199160.64,
+      "sell_qty": 660.0,
+      "sell_amount": 599556.84,
+      "net_qty": -410.0,
+      "net_amount": -400396.19999999995
+    },
+    {
+      "symbol": "HDL",
+      "buy_qty": 50.0,
+      "buy_amount": 30254.14,
+      "sell_qty": 1500.0,
+      "sell_amount": 1105460.56,
+      "net_qty": -1450.0,
+      "net_amount": -1075206.4200000002
+    },
+    {
+      "symbol": "STC",
+      "buy_qty": 2600.0,
+      "buy_amount": 1138836.15,
+      "sell_qty": 15510.0,
+      "sell_amount": 16445556.270000001,
+      "net_qty": -12910.0,
+      "net_amount": -15306720.120000001
+    },
+    {
+      "symbol": "SHL",
+      "buy_qty": 2500.0,
+      "buy_amount": 1724128.6700000002,
+      "sell_qty": 1200.0,
+      "sell_amount": 953530.2200000001,
+      "net_qty": 1300.0,
+      "net_amount": 770598.4500000001
+    },
+    {
+      "symbol": "NTC",
+      "buy_qty": 5510.0,
+      "buy_amount": 7930833.0200000005,
+      "sell_qty": 10.0,
+      "sell_amount": 12316.42,
+      "net_qty": 5500.0,
+      "net_amount": 7918516.600000001
+    },
+    {
+      "symbol": "GBIME",
+      "buy_qty": 2560.0,
+      "buy_amount": 2449427.11,
+      "sell_qty": 5120.0,
+      "sell_amount": 2350131.8,
+      "net_qty": -2560.0,
+      "net_amount": 99295.31000000006
+    },
+    {
+      "symbol": "NABIL",
+      "buy_qty": 2100.0,
+      "buy_amount": 1349675.3199999998,
+      "sell_qty": 50.0,
+      "sell_amount": 49495.98,
+      "net_qty": 2050.0,
+      "net_amount": 1300179.3399999999
+    },
+    {
+      "symbol": "PCBL",
+      "buy_qty": 1000.0,
+      "buy_amount": 401634.03,
+      "sell_qty": 1100.0,
+      "sell_amount": 495200.05,
+      "net_qty": -100.0,
+      "net_amount": -93566.01999999996
+    },
+    {
+      "symbol": "UPPER",
+      "buy_qty": 1000.0,
+      "buy_amount": 785133.38,
+      "sell_qty": 150.0,
+      "sell_amount": 112060.44,
+      "net_qty": 850.0,
+      "net_amount": 673072.94
+    }
+  ]
+}

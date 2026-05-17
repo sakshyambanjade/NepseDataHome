@@ -1,0 +1,654 @@
+{
+  "symbol": "GBIME",
+  "date": "2026-05-12",
+  "summary": {
+    "total_quantity": 225320.0,
+    "total_amount": 197945569.16999996,
+    "vwap": 878.508650674596
+  },
+  "nodes": [
+    {
+      "id": "26"
+    },
+    {
+      "id": "20"
+    },
+    {
+      "id": "32"
+    },
+    {
+      "id": "60"
+    },
+    {
+      "id": "30"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "33"
+    },
+    {
+      "id": "24"
+    },
+    {
+      "id": "28"
+    },
+    {
+      "id": "25"
+    },
+    {
+      "id": "12"
+    },
+    {
+      "id": "50"
+    },
+    {
+      "id": "9"
+    },
+    {
+      "id": "14"
+    },
+    {
+      "id": "41"
+    },
+    {
+      "id": "21"
+    },
+    {
+      "id": "3"
+    },
+    {
+      "id": "27"
+    },
+    {
+      "id": "39"
+    },
+    {
+      "id": "11"
+    },
+    {
+      "id": "40"
+    },
+    {
+      "id": "8"
+    },
+    {
+      "id": "7"
+    },
+    {
+      "id": "42"
+    },
+    {
+      "id": "57"
+    },
+    {
+      "id": "6"
+    },
+    {
+      "id": "2"
+    },
+    {
+      "id": "22"
+    },
+    {
+      "id": "52"
+    },
+    {
+      "id": "19"
+    },
+    {
+      "id": "44"
+    },
+    {
+      "id": "36"
+    },
+    {
+      "id": "10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "27",
+      "target": "41",
+      "quantity": 10000.0,
+      "amount": 8651446.06,
+      "trade_count": 2
+    },
+    {
+      "source": "60",
+      "target": "11",
+      "quantity": 5000.0,
+      "amount": 7376911.12,
+      "trade_count": 1
+    },
+    {
+      "source": "19",
+      "target": "40",
+      "quantity": 5000.0,
+      "amount": 7351373.29,
+      "trade_count": 1
+    },
+    {
+      "source": "14",
+      "target": "40",
+      "quantity": 5000.0,
+      "amount": 7134436.24,
+      "trade_count": 1
+    },
+    {
+      "source": "9",
+      "target": "32",
+      "quantity": 5000.0,
+      "amount": 7057371.91,
+      "trade_count": 1
+    },
+    {
+      "source": "57",
+      "target": "30",
+      "quantity": 5000.0,
+      "amount": 6998614.16,
+      "trade_count": 1
+    },
+    {
+      "source": "42",
+      "target": "44",
+      "quantity": 5000.0,
+      "amount": 6776669.61,
+      "trade_count": 1
+    },
+    {
+      "source": "50",
+      "target": "28",
+      "quantity": 5000.0,
+      "amount": 6507798.37,
+      "trade_count": 1
+    },
+    {
+      "source": "39",
+      "target": "10",
+      "quantity": 5000.0,
+      "amount": 5996008.12,
+      "trade_count": 1
+    },
+    {
+      "source": "9",
+      "target": "4",
+      "quantity": 5000.0,
+      "amount": 5845230.62,
+      "trade_count": 1
+    },
+    {
+      "source": "7",
+      "target": "25",
+      "quantity": 5000.0,
+      "amount": 5763823.73,
+      "trade_count": 1
+    },
+    {
+      "source": "21",
+      "target": "24",
+      "quantity": 5000.0,
+      "amount": 5286888.49,
+      "trade_count": 1
+    },
+    {
+      "source": "26",
+      "target": "33",
+      "quantity": 5000.0,
+      "amount": 5040551.5,
+      "trade_count": 1
+    },
+    {
+      "source": "6",
+      "target": "3",
+      "quantity": 5000.0,
+      "amount": 5011678.26,
+      "trade_count": 1
+    },
+    {
+      "source": "52",
+      "target": "21",
+      "quantity": 5000.0,
+      "amount": 4979346.34,
+      "trade_count": 1
+    },
+    {
+      "source": "57",
+      "target": "2",
+      "quantity": 5000.0,
+      "amount": 4944470.49,
+      "trade_count": 1
+    },
+    {
+      "source": "8",
+      "target": "4",
+      "quantity": 5000.0,
+      "amount": 4852342.08,
+      "trade_count": 1
+    },
+    {
+      "source": "36",
+      "target": "42",
+      "quantity": 5000.0,
+      "amount": 4524282.54,
+      "trade_count": 1
+    },
+    {
+      "source": "12",
+      "target": "22",
+      "quantity": 5000.0,
+      "amount": 4321697.89,
+      "trade_count": 1
+    },
+    {
+      "source": "20",
+      "target": "25",
+      "quantity": 5000.0,
+      "amount": 4268201.77,
+      "trade_count": 1
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-0",
+      "from": "47",
+      "to": "35",
+      "quantity": 10.0,
+      "rate": 288.19,
+      "amount": 2881.95
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-1",
+      "from": "50",
+      "to": "28",
+      "quantity": 5000.0,
+      "rate": 1301.56,
+      "amount": 6507798.37
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-10",
+      "from": "56",
+      "to": "28",
+      "quantity": 50.0,
+      "rate": 515.68,
+      "amount": 25784.23
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-100",
+      "from": "49",
+      "to": "50",
+      "quantity": 1000.0,
+      "rate": 495.31,
+      "amount": 495306.19
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-101",
+      "from": "4",
+      "to": "56",
+      "quantity": 50.0,
+      "rate": 297.8,
+      "amount": 14889.83
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-102",
+      "from": "48",
+      "to": "34",
+      "quantity": 50.0,
+      "rate": 1026.36,
+      "amount": 51317.88
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-103",
+      "from": "18",
+      "to": "38",
+      "quantity": 100.0,
+      "rate": 601.66,
+      "amount": 60166.07
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-104",
+      "from": "45",
+      "to": "8",
+      "quantity": 10.0,
+      "rate": 208.6,
+      "amount": 2086.04
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-105",
+      "from": "53",
+      "to": "24",
+      "quantity": 50.0,
+      "rate": 1130.86,
+      "amount": 56543.24
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-106",
+      "from": "27",
+      "to": "41",
+      "quantity": 5000.0,
+      "rate": 328.36,
+      "amount": 1641797.53
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-107",
+      "from": "34",
+      "to": "27",
+      "quantity": 10.0,
+      "rate": 450.58,
+      "amount": 4505.78
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-108",
+      "from": "60",
+      "to": "11",
+      "quantity": 5000.0,
+      "rate": 1475.38,
+      "amount": 7376911.12
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-109",
+      "from": "42",
+      "to": "27",
+      "quantity": 500.0,
+      "rate": 589.39,
+      "amount": 294694.68
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-11",
+      "from": "5",
+      "to": "5",
+      "quantity": 5000.0,
+      "rate": 424.67,
+      "amount": 2123374.91
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-110",
+      "from": "38",
+      "to": "56",
+      "quantity": 1000.0,
+      "rate": 1107.71,
+      "amount": 1107707.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-111",
+      "from": "41",
+      "to": "57",
+      "quantity": 50.0,
+      "rate": 220.31,
+      "amount": 11015.37
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-112",
+      "from": "3",
+      "to": "5",
+      "quantity": 50.0,
+      "rate": 480.59,
+      "amount": 24029.47
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-113",
+      "from": "52",
+      "to": "35",
+      "quantity": 1000.0,
+      "rate": 1284.1,
+      "amount": 1284104.01
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-114",
+      "from": "49",
+      "to": "52",
+      "quantity": 10.0,
+      "rate": 650.85,
+      "amount": 6508.49
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-115",
+      "from": "13",
+      "to": "5",
+      "quantity": 50.0,
+      "rate": 1438.98,
+      "amount": 71948.78
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-116",
+      "from": "49",
+      "to": "30",
+      "quantity": 100.0,
+      "rate": 1390.37,
+      "amount": 139037.05
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-117",
+      "from": "32",
+      "to": "39",
+      "quantity": 5000.0,
+      "rate": 446.3,
+      "amount": 2231485.34
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-118",
+      "from": "54",
+      "to": "54",
+      "quantity": 5000.0,
+      "rate": 760.13,
+      "amount": 3800631.42
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-119",
+      "from": "18",
+      "to": "60",
+      "quantity": 100.0,
+      "rate": 1254.15,
+      "amount": 125414.95
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-12",
+      "from": "20",
+      "to": "38",
+      "quantity": 10.0,
+      "rate": 245.07,
+      "amount": 2450.7
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-120",
+      "from": "9",
+      "to": "32",
+      "quantity": 5000.0,
+      "rate": 1411.47,
+      "amount": 7057371.91
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-121",
+      "from": "7",
+      "to": "12",
+      "quantity": 500.0,
+      "rate": 755.37,
+      "amount": 377685.1
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-122",
+      "from": "52",
+      "to": "21",
+      "quantity": 5000.0,
+      "rate": 995.87,
+      "amount": 4979346.34
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-123",
+      "from": "45",
+      "to": "13",
+      "quantity": 50.0,
+      "rate": 1451.18,
+      "amount": 72559.04
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-124",
+      "from": "12",
+      "to": "16",
+      "quantity": 100.0,
+      "rate": 819.68,
+      "amount": 81968.33
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-125",
+      "from": "9",
+      "to": "19",
+      "quantity": 50.0,
+      "rate": 744.59,
+      "amount": 37229.45
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-126",
+      "from": "4",
+      "to": "10",
+      "quantity": 1000.0,
+      "rate": 1145.55,
+      "amount": 1145546.19
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-127",
+      "from": "60",
+      "to": "2",
+      "quantity": 50.0,
+      "rate": 1221.7,
+      "amount": 61085.07
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-128",
+      "from": "60",
+      "to": "34",
+      "quantity": 100.0,
+      "rate": 490.51,
+      "amount": 49050.81
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-129",
+      "from": "3",
+      "to": "4",
+      "quantity": 50.0,
+      "rate": 1119.91,
+      "amount": 55995.65
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-13",
+      "from": "8",
+      "to": "57",
+      "quantity": 500.0,
+      "rate": 1401.0,
+      "amount": 700500.25
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-130",
+      "from": "57",
+      "to": "2",
+      "quantity": 5000.0,
+      "rate": 988.89,
+      "amount": 4944470.49
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-131",
+      "from": "57",
+      "to": "30",
+      "quantity": 5000.0,
+      "rate": 1399.72,
+      "amount": 6998614.16
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-132",
+      "from": "48",
+      "to": "12",
+      "quantity": 1000.0,
+      "rate": 241.61,
+      "amount": 241611.21
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-133",
+      "from": "57",
+      "to": "31",
+      "quantity": 1000.0,
+      "rate": 669.19,
+      "amount": 669189.38
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-134",
+      "from": "19",
+      "to": "40",
+      "quantity": 5000.0,
+      "rate": 1470.27,
+      "amount": 7351373.29
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-135",
+      "from": "47",
+      "to": "15",
+      "quantity": 100.0,
+      "rate": 649.78,
+      "amount": 64977.52
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-136",
+      "from": "39",
+      "to": "10",
+      "quantity": 5000.0,
+      "rate": 1199.2,
+      "amount": 5996008.12
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-137",
+      "from": "19",
+      "to": "5",
+      "quantity": 1000.0,
+      "rate": 728.58,
+      "amount": 728577.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-138",
+      "from": "55",
+      "to": "10",
+      "quantity": 1000.0,
+      "rate": 872.85,
+      "amount": 872847.9
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-139",
+      "from": "7",
+      "to": "25",
+      "quantity": 5000.0,
+      "rate": 1152.76,
+      "amount": 5763823.73
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-14",
+      "from": "23",
+      "to": "55",
+      "quantity": 500.0,
+      "rate": 996.21,
+      "amount": 498103.65
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-140",
+      "from": "58",
+      "to": "38",
+      "quantity": 100.0,
+      "rate": 1348.85,
+      "amount": 134885.12
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-141",
+      "from": "16",
+      "to": "19",
+      "quantity": 5000.0,
+      "rate": 534.87,
+      "amount": 2674346.16
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-142",
+      "from": "23",
+      "to": "30",
+      "quantity": 50.0,
+      "rate": 835.15,
+      "amount": 41757.45
+    }
+  ]
+}

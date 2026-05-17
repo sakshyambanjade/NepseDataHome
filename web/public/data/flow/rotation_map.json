@@ -1,0 +1,362 @@
+[
+  {
+    "broker": "37",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 6.086130805992299
+  },
+  {
+    "broker": "44",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 6.0770530144221
+  },
+  {
+    "broker": "10",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.072997837974395
+  },
+  {
+    "broker": "15",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 6.060465720598335
+  },
+  {
+    "broker": "57",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 6.054013645096854
+  },
+  {
+    "broker": "60",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.051391829842865
+  },
+  {
+    "broker": "33",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 6.044254626185046
+  },
+  {
+    "broker": "14",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.04186274368832
+  },
+  {
+    "broker": "3",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.036112433676735
+  },
+  {
+    "broker": "13",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.034621544813598
+  },
+  {
+    "broker": "4",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.030372852714365
+  },
+  {
+    "broker": "27",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 6.025636131030236
+  },
+  {
+    "broker": "26",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 6.023202243720004
+  },
+  {
+    "broker": "40",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 6.019880454733233
+  },
+  {
+    "broker": "29",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.018639929441669
+  },
+  {
+    "broker": "49",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 6.01577116661342
+  },
+  {
+    "broker": "17",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.010193336796105
+  },
+  {
+    "broker": "21",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 6.0057355654895535
+  },
+  {
+    "broker": "58",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 6.003484130763418
+  },
+  {
+    "broker": "34",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.998230761699578
+  },
+  {
+    "broker": "20",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.995998317028969
+  },
+  {
+    "broker": "48",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.991719263027964
+  },
+  {
+    "broker": "56",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.9864573743011515
+  },
+  {
+    "broker": "31",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.985885490602497
+  },
+  {
+    "broker": "51",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.9843466366658715
+  },
+  {
+    "broker": "54",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.9834390139231335
+  },
+  {
+    "broker": "41",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.972925729065823
+  },
+  {
+    "broker": "11",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.96544230517395
+  },
+  {
+    "broker": "18",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.9652280661410835
+  },
+  {
+    "broker": "55",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.962314501276401
+  },
+  {
+    "broker": "36",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.961655400594816
+  },
+  {
+    "broker": "59",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.955421570667108
+  },
+  {
+    "broker": "7",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.954466519590966
+  },
+  {
+    "broker": "23",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.947861829311888
+  },
+  {
+    "broker": "9",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.947341999404186
+  },
+  {
+    "broker": "2",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.9315014339294665
+  },
+  {
+    "broker": "53",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.910697496471057
+  },
+  {
+    "broker": "50",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.908816932492357
+  },
+  {
+    "broker": "28",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.907582319435418
+  },
+  {
+    "broker": "46",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.902352340640087
+  },
+  {
+    "broker": "1",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.898417434396412
+  },
+  {
+    "broker": "45",
+    "net_buy_symbols": 2,
+    "net_sell_symbols": 8,
+    "rotation_score": 5.892455681487583
+  },
+  {
+    "broker": "32",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.88632642087277
+  },
+  {
+    "broker": "19",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.852843981788238
+  },
+  {
+    "broker": "30",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.724436231221264
+  },
+  {
+    "broker": "25",
+    "net_buy_symbols": 7,
+    "net_sell_symbols": 2,
+    "rotation_score": 5.723765448112118
+  },
+  {
+    "broker": "8",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.713521781262441
+  },
+  {
+    "broker": "24",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.708900550897906
+  },
+  {
+    "broker": "38",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.692452165576979
+  },
+  {
+    "broker": "6",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.692197640130775
+  },
+  {
+    "broker": "35",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.6765998315989314
+  },
+  {
+    "broker": "22",
+    "net_buy_symbols": 9,
+    "net_sell_symbols": 0,
+    "rotation_score": 5.670548287920264
+  },
+  {
+    "broker": "43",
+    "net_buy_symbols": 1,
+    "net_sell_symbols": 8,
+    "rotation_score": 5.648254084601895
+  },
+  {
+    "broker": "42",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 6,
+    "rotation_score": 5.632371883504295
+  },
+  {
+    "broker": "39",
+    "net_buy_symbols": 6,
+    "net_sell_symbols": 3,
+    "rotation_score": 5.607539584314079
+  },
+  {
+    "broker": "52",
+    "net_buy_symbols": 2,
+    "net_sell_symbols": 7,
+    "rotation_score": 5.596400432807025
+  },
+  {
+    "broker": "47",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.588944579589161
+  },
+  {
+    "broker": "12",
+    "net_buy_symbols": 4,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.5809075963706185
+  },
+  {
+    "broker": "5",
+    "net_buy_symbols": 5,
+    "net_sell_symbols": 4,
+    "rotation_score": 5.572690665767204
+  },
+  {
+    "broker": "16",
+    "net_buy_symbols": 3,
+    "net_sell_symbols": 5,
+    "rotation_score": 5.322887122005055
+  }
+]

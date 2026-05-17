@@ -1,0 +1,633 @@
+{
+  "symbol": "NABIL",
+  "date": "2026-05-12",
+  "summary": {
+    "total_quantity": 195100.0,
+    "total_amount": 166960112.17000002,
+    "vwap": 855.7668486417223
+  },
+  "nodes": [
+    {
+      "id": "18"
+    },
+    {
+      "id": "31"
+    },
+    {
+      "id": "26"
+    },
+    {
+      "id": "55"
+    },
+    {
+      "id": "46"
+    },
+    {
+      "id": "30"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "33"
+    },
+    {
+      "id": "24"
+    },
+    {
+      "id": "15"
+    },
+    {
+      "id": "1"
+    },
+    {
+      "id": "23"
+    },
+    {
+      "id": "50"
+    },
+    {
+      "id": "37"
+    },
+    {
+      "id": "14"
+    },
+    {
+      "id": "21"
+    },
+    {
+      "id": "3"
+    },
+    {
+      "id": "27"
+    },
+    {
+      "id": "11"
+    },
+    {
+      "id": "34"
+    },
+    {
+      "id": "57"
+    },
+    {
+      "id": "6"
+    },
+    {
+      "id": "22"
+    },
+    {
+      "id": "13"
+    },
+    {
+      "id": "44"
+    },
+    {
+      "id": "10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "10",
+      "target": "6",
+      "quantity": 5000.0,
+      "amount": 7455873.28,
+      "trade_count": 1
+    },
+    {
+      "source": "50",
+      "target": "37",
+      "quantity": 5000.0,
+      "amount": 7208690.95,
+      "trade_count": 1
+    },
+    {
+      "source": "44",
+      "target": "46",
+      "quantity": 5000.0,
+      "amount": 7019137.38,
+      "trade_count": 1
+    },
+    {
+      "source": "46",
+      "target": "46",
+      "quantity": 5000.0,
+      "amount": 6639050.5,
+      "trade_count": 1
+    },
+    {
+      "source": "3",
+      "target": "3",
+      "quantity": 5000.0,
+      "amount": 6605810.57,
+      "trade_count": 1
+    },
+    {
+      "source": "24",
+      "target": "18",
+      "quantity": 5000.0,
+      "amount": 6018795.3,
+      "trade_count": 1
+    },
+    {
+      "source": "50",
+      "target": "31",
+      "quantity": 5000.0,
+      "amount": 5974891.43,
+      "trade_count": 1
+    },
+    {
+      "source": "3",
+      "target": "1",
+      "quantity": 5000.0,
+      "amount": 5880826.32,
+      "trade_count": 1
+    },
+    {
+      "source": "55",
+      "target": "50",
+      "quantity": 5000.0,
+      "amount": 5842473.74,
+      "trade_count": 1
+    },
+    {
+      "source": "57",
+      "target": "31",
+      "quantity": 5000.0,
+      "amount": 5686573.9,
+      "trade_count": 1
+    },
+    {
+      "source": "21",
+      "target": "26",
+      "quantity": 5000.0,
+      "amount": 5232506.28,
+      "trade_count": 1
+    },
+    {
+      "source": "4",
+      "target": "14",
+      "quantity": 5000.0,
+      "amount": 4897261.44,
+      "trade_count": 1
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "quantity": 5000.0,
+      "amount": 4698142.1,
+      "trade_count": 1
+    },
+    {
+      "source": "30",
+      "target": "22",
+      "quantity": 5000.0,
+      "amount": 4585138.18,
+      "trade_count": 1
+    },
+    {
+      "source": "21",
+      "target": "27",
+      "quantity": 5000.0,
+      "amount": 4510948.69,
+      "trade_count": 1
+    },
+    {
+      "source": "14",
+      "target": "23",
+      "quantity": 5000.0,
+      "amount": 4508475.02,
+      "trade_count": 1
+    },
+    {
+      "source": "3",
+      "target": "15",
+      "quantity": 5000.0,
+      "amount": 4218227.65,
+      "trade_count": 1
+    },
+    {
+      "source": "55",
+      "target": "13",
+      "quantity": 5000.0,
+      "amount": 3760475.66,
+      "trade_count": 1
+    },
+    {
+      "source": "46",
+      "target": "14",
+      "quantity": 5000.0,
+      "amount": 3651666.61,
+      "trade_count": 1
+    },
+    {
+      "source": "23",
+      "target": "11",
+      "quantity": 5000.0,
+      "amount": 2983158.11,
+      "trade_count": 1
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-0",
+      "from": "15",
+      "to": "41",
+      "quantity": 50.0,
+      "rate": 1221.32,
+      "amount": 61066.07
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-1",
+      "from": "3",
+      "to": "15",
+      "quantity": 5000.0,
+      "rate": 843.65,
+      "amount": 4218227.65
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-10",
+      "from": "12",
+      "to": "11",
+      "quantity": 100.0,
+      "rate": 574.42,
+      "amount": 57442.31
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-100",
+      "from": "36",
+      "to": "40",
+      "quantity": 10.0,
+      "rate": 1015.38,
+      "amount": 10153.83
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-101",
+      "from": "38",
+      "to": "28",
+      "quantity": 100.0,
+      "rate": 445.17,
+      "amount": 44517.16
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-102",
+      "from": "2",
+      "to": "11",
+      "quantity": 1000.0,
+      "rate": 1417.07,
+      "amount": 1417072.13
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-103",
+      "from": "27",
+      "to": "16",
+      "quantity": 500.0,
+      "rate": 1117.2,
+      "amount": 558601.77
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-104",
+      "from": "47",
+      "to": "51",
+      "quantity": 1000.0,
+      "rate": 212.84,
+      "amount": 212842.65
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-105",
+      "from": "9",
+      "to": "3",
+      "quantity": 100.0,
+      "rate": 1179.83,
+      "amount": 117983.28
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-106",
+      "from": "31",
+      "to": "40",
+      "quantity": 5000.0,
+      "rate": 218.21,
+      "amount": 1091035.96
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-107",
+      "from": "27",
+      "to": "18",
+      "quantity": 10.0,
+      "rate": 973.33,
+      "amount": 9733.25
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-108",
+      "from": "46",
+      "to": "38",
+      "quantity": 10.0,
+      "rate": 528.8,
+      "amount": 5287.99
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-109",
+      "from": "23",
+      "to": "6",
+      "quantity": 10.0,
+      "rate": 559.69,
+      "amount": 5596.9
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-11",
+      "from": "55",
+      "to": "13",
+      "quantity": 5000.0,
+      "rate": 752.1,
+      "amount": 3760475.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-110",
+      "from": "2",
+      "to": "45",
+      "quantity": 1000.0,
+      "rate": 1278.9,
+      "amount": 1278897.75
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-111",
+      "from": "48",
+      "to": "38",
+      "quantity": 1000.0,
+      "rate": 879.6,
+      "amount": 879603.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-112",
+      "from": "25",
+      "to": "58",
+      "quantity": 500.0,
+      "rate": 1353.27,
+      "amount": 676635.61
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-113",
+      "from": "44",
+      "to": "46",
+      "quantity": 5000.0,
+      "rate": 1403.83,
+      "amount": 7019137.38
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-114",
+      "from": "14",
+      "to": "59",
+      "quantity": 1000.0,
+      "rate": 952.76,
+      "amount": 952756.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-115",
+      "from": "2",
+      "to": "59",
+      "quantity": 10.0,
+      "rate": 560.09,
+      "amount": 5600.87
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-116",
+      "from": "4",
+      "to": "14",
+      "quantity": 5000.0,
+      "rate": 979.45,
+      "amount": 4897261.44
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-117",
+      "from": "55",
+      "to": "9",
+      "quantity": 500.0,
+      "rate": 1476.62,
+      "amount": 738308.51
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-118",
+      "from": "2",
+      "to": "52",
+      "quantity": 1000.0,
+      "rate": 846.09,
+      "amount": 846087.04
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-119",
+      "from": "24",
+      "to": "34",
+      "quantity": 50.0,
+      "rate": 378.9,
+      "amount": 18945.0
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-12",
+      "from": "55",
+      "to": "50",
+      "quantity": 5000.0,
+      "rate": 1168.49,
+      "amount": 5842473.74
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-120",
+      "from": "1",
+      "to": "30",
+      "quantity": 5000.0,
+      "rate": 274.13,
+      "amount": 1370674.06
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-121",
+      "from": "24",
+      "to": "52",
+      "quantity": 10.0,
+      "rate": 321.92,
+      "amount": 3219.24
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-122",
+      "from": "3",
+      "to": "3",
+      "quantity": 5000.0,
+      "rate": 1321.16,
+      "amount": 6605810.57
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-123",
+      "from": "32",
+      "to": "51",
+      "quantity": 500.0,
+      "rate": 839.55,
+      "amount": 419773.65
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-124",
+      "from": "16",
+      "to": "27",
+      "quantity": 500.0,
+      "rate": 1467.66,
+      "amount": 733831.1
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-125",
+      "from": "1",
+      "to": "39",
+      "quantity": 500.0,
+      "rate": 1119.1,
+      "amount": 559547.9
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-126",
+      "from": "15",
+      "to": "28",
+      "quantity": 50.0,
+      "rate": 468.82,
+      "amount": 23441.08
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-127",
+      "from": "59",
+      "to": "41",
+      "quantity": 500.0,
+      "rate": 642.81,
+      "amount": 321402.69
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-128",
+      "from": "23",
+      "to": "47",
+      "quantity": 100.0,
+      "rate": 822.55,
+      "amount": 82255.18
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-129",
+      "from": "35",
+      "to": "50",
+      "quantity": 50.0,
+      "rate": 989.92,
+      "amount": 49495.98
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-13",
+      "from": "10",
+      "to": "40",
+      "quantity": 1000.0,
+      "rate": 1462.74,
+      "amount": 1462743.71
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-130",
+      "from": "21",
+      "to": "26",
+      "quantity": 5000.0,
+      "rate": 1046.5,
+      "amount": 5232506.28
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-131",
+      "from": "7",
+      "to": "7",
+      "quantity": 500.0,
+      "rate": 790.46,
+      "amount": 395229.99
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-132",
+      "from": "13",
+      "to": "8",
+      "quantity": 100.0,
+      "rate": 1272.84,
+      "amount": 127283.53
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-133",
+      "from": "55",
+      "to": "8",
+      "quantity": 1000.0,
+      "rate": 464.57,
+      "amount": 464573.95
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-134",
+      "from": "23",
+      "to": "11",
+      "quantity": 5000.0,
+      "rate": 596.63,
+      "amount": 2983158.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-135",
+      "from": "1",
+      "to": "17",
+      "quantity": 500.0,
+      "rate": 890.52,
+      "amount": 445258.15
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-136",
+      "from": "55",
+      "to": "45",
+      "quantity": 100.0,
+      "rate": 1173.91,
+      "amount": 117391.17
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-137",
+      "from": "9",
+      "to": "13",
+      "quantity": 10.0,
+      "rate": 864.21,
+      "amount": 8642.11
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-138",
+      "from": "54",
+      "to": "59",
+      "quantity": 1000.0,
+      "rate": 1477.64,
+      "amount": 1477643.69
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-139",
+      "from": "25",
+      "to": "29",
+      "quantity": 10.0,
+      "rate": 557.96,
+      "amount": 5579.59
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-14",
+      "from": "5",
+      "to": "55",
+      "quantity": 5000.0,
+      "rate": 414.96,
+      "amount": 2074797.17
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-140",
+      "from": "37",
+      "to": "10",
+      "quantity": 50.0,
+      "rate": 1124.13,
+      "amount": 56206.35
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-141",
+      "from": "48",
+      "to": "37",
+      "quantity": 100.0,
+      "rate": 438.21,
+      "amount": 43820.92
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-142",
+      "from": "19",
+      "to": "41",
+      "quantity": 50.0,
+      "rate": 471.27,
+      "amount": 23563.45
+    }
+  ]
+}
