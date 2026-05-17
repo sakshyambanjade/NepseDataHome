@@ -119,7 +119,7 @@ export function OperatorWatch() {
           <div>
             <h4 className="text-white font-bold mb-2">Risk Disclaimer</h4>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Pattern detection is statistical, not investigative. These scores do not imply illegal market manipulation. 
+              Pattern detection is statistical, not investigative. These scores represent anomalous flow behavior, not confirmed identities. 
               Always cross-verify with fundamental data and official NEPSE disclosures before making decisions.
             </p>
           </div>

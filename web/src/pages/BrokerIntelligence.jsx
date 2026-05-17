@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, TrendingUp, Users, AlertTriangle, ArrowRight, Info } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Shield, TrendingUp, Users, AlertTriangle, ArrowRight, Info, Search } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function BrokerIntelligence() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchBroker, setSearchBroker] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     
@@ -35,6 +37,43 @@ export function BrokerIntelligence() {
         <div className="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
           Last Snapshot: {data.date}
         </div>
+      </div>
+
+      {/* Broker Search Card */}
+      <div className="glass-morphism rounded-3xl p-6 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center space-x-4">
+          <div className="p-3 bg-blue-500/10 rounded-2xl">
+            <Search className="w-6 h-6 text-blue-400" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Find Broker Portfolio</h3>
+            <p className="text-sm text-gray-400">Enter a broker ID to see their net accumulation, distribution, and top counterparties.</p>
+          </div>
+        </div>
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (searchBroker.trim()) navigate(`/broker/${searchBroker.trim()}`);
+          }} 
+          className="flex w-full md:w-auto"
+        >
+          <input 
+            type="number" 
+            placeholder="Broker ID (e.g. 58)" 
+            value={searchBroker}
+            onChange={(e) => setSearchBroker(e.target.value)}
+            className="bg-white/5 border border-white/10 rounded-l-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors w-full md:w-48"
+            min="1"
+            max="100"
+            required
+          />
+          <button 
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-r-xl font-bold transition-colors border border-blue-600 hover:border-blue-500"
+          >
+            Go
+          </button>
+        </form>
       </div>
 
       {/* Top Ranking Cards */}
@@ -118,8 +157,8 @@ export function BrokerIntelligence() {
           <h4 className="text-blue-400 font-bold">Important: Activity Patterns</h4>
           <p className="text-gray-400 text-sm leading-relaxed">
             These scores detect statistical patterns in floorsheet data such as broker concentration, 
-            net accumulation, and repetitive pairing. High scores do not necessarily indicate market manipulation, 
-            but rather institutional or coordinated trading behavior through specific broker channels.
+            net accumulation, and repetitive pairing. High scores highlight statistical outliers and 
+            institutional or coordinated trading behavior through specific broker channels.
           </p>
         </div>
       </div>

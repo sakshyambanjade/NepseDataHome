@@ -136,7 +136,7 @@ export function FlowsheetIntelligence() {
                   Dist. Score
                 </th>
                 <th onClick={() => handleSort('operator_like_score')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
-                  Op Score
+                  Pattern Score
                 </th>
                 <th onClick={() => handleSort('total_qty')} className="px-4 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider cursor-pointer hover:text-white transition-colors">
                   Volume

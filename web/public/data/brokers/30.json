@@ -1,92 +1,450 @@
 {
-  "broker": 30,
+  "broker": "30",
   "date": "2026-05-12",
-  "total_buy_qty": 33980,
-  "total_sell_qty": 20440,
-  "total_net_qty": 13540,
-  "total_buy_amt": 32037232.359999992,
-  "total_sell_amt": 15375037.909999998,
+  "summary": {
+    "total_buy_qty": 33980.0,
+    "total_sell_qty": 20440.0,
+    "total_net_qty": 13540.0,
+    "total_buy_amt": 32037232.359999996,
+    "total_sell_amt": 15375037.909999998,
+    "total_net_amt": 16662194.449999997,
+    "buy_symbols_count": 7,
+    "sell_symbols_count": 9,
+    "net_accumulation_symbols": 5,
+    "net_distribution_symbols": 4
+  },
   "net_buy_stocks": [
     {
       "symbol": "HRL",
-      "net_qty": 10000
+      "buy_qty": 11000.0,
+      "buy_amt": 9183817.43,
+      "buy_trades": 4.0,
+      "sell_qty": 1000,
+      "sell_amt": 624593.77,
+      "sell_trades": 1,
+      "net_qty": 10000.0,
+      "net_amt": 8559223.66,
+      "avg_buy_price": 834.8924936363636,
+      "avg_sell_price": 624.5937700000001,
+      "symbol_total_qty": 175940,
+      "symbol_total_amt": 152983332.43,
+      "broker_participation_pct": 6.820506991019666,
+      "direction": "Accumulating"
     },
     {
       "symbol": "SHL",
-      "net_qty": 6100
+      "buy_qty": 6610.0,
+      "buy_amt": 7666097.08,
+      "buy_trades": 5.0,
+      "sell_qty": 510,
+      "sell_amt": 486358.85000000003,
+      "sell_trades": 2,
+      "net_qty": 6100.0,
+      "net_amt": 7179738.23,
+      "avg_buy_price": 1159.7726293494704,
+      "avg_sell_price": 953.6448039215687,
+      "symbol_total_qty": 105870,
+      "symbol_total_amt": 85149079.29,
+      "broker_participation_pct": 6.725229054500803,
+      "direction": "Accumulating"
     },
     {
       "symbol": "UPPER",
-      "net_qty": 3610
+      "buy_qty": 5110.0,
+      "buy_amt": 5660163.73,
+      "buy_trades": 3.0,
+      "sell_qty": 1500,
+      "sell_amt": 1451749.9,
+      "sell_trades": 3,
+      "net_qty": 3610.0,
+      "net_amt": 4208413.83,
+      "avg_buy_price": 1107.6641350293544,
+      "avg_sell_price": 967.8332666666666,
+      "symbol_total_qty": 204170,
+      "symbol_total_amt": 190187309.64,
+      "broker_participation_pct": 3.237498163295293,
+      "direction": "Accumulating"
     },
     {
       "symbol": "GBIME",
-      "net_qty": 3560
+      "buy_qty": 5160.0,
+      "buy_amt": 7184550.590000001,
+      "buy_trades": 4.0,
+      "sell_qty": 1600,
+      "sell_amt": 735724.95,
+      "sell_trades": 3,
+      "net_qty": 3560.0,
+      "net_amt": 6448825.640000001,
+      "avg_buy_price": 1392.354765503876,
+      "avg_sell_price": 459.82809375,
+      "symbol_total_qty": 225320,
+      "symbol_total_amt": 197945569.17,
+      "broker_participation_pct": 3.000177525297355,
+      "direction": "Accumulating"
     },
     {
       "symbol": "PCBL",
-      "net_qty": 350
+      "buy_qty": 500.0,
+      "buy_amt": 214353.6,
+      "buy_trades": 1.0,
+      "sell_qty": 150,
+      "sell_amt": 79911.06,
+      "sell_trades": 2,
+      "net_qty": 350.0,
+      "net_amt": 134442.54,
+      "avg_buy_price": 428.7072,
+      "avg_sell_price": 532.7404,
+      "symbol_total_qty": 83120,
+      "symbol_total_amt": 79576078.92,
+      "broker_participation_pct": 0.7820019249278153,
+      "direction": "Accumulating"
     }
   ],
   "net_sell_stocks": [
     {
       "symbol": "NTC",
-      "net_qty": 5110
+      "buy_qty": 0.0,
+      "buy_amt": 0.0,
+      "buy_trades": 0.0,
+      "sell_qty": 5110,
+      "sell_amt": 1277953.31,
+      "sell_trades": 3,
+      "net_qty": -5110.0,
+      "net_amt": -1277953.31,
+      "avg_buy_price": null,
+      "avg_sell_price": 250.08871037181999,
+      "symbol_total_qty": 149340,
+      "symbol_total_amt": 118853753.93,
+      "broker_participation_pct": 3.421722244542654,
+      "direction": "Distributing"
     },
     {
       "symbol": "HDL",
-      "net_qty": 4400
+      "buy_qty": 600.0,
+      "buy_amt": 757575.87,
+      "buy_trades": 2.0,
+      "sell_qty": 5000,
+      "sell_amt": 5761389.55,
+      "sell_trades": 1,
+      "net_qty": -4400.0,
+      "net_amt": -5003813.68,
+      "avg_buy_price": 1262.62645,
+      "avg_sell_price": 1152.27791,
+      "symbol_total_qty": 158940,
+      "symbol_total_amt": 153803033.49,
+      "broker_participation_pct": 3.5233421416886874,
+      "direction": "Distributing"
     },
     {
       "symbol": "NABIL",
-      "net_qty": 560
+      "buy_qty": 5000.0,
+      "buy_amt": 1370674.06,
+      "buy_trades": 1.0,
+      "sell_qty": 5560,
+      "sell_amt": 4949372.359999999,
+      "sell_trades": 4,
+      "net_qty": -560.0,
+      "net_amt": -3578698.2999999993,
+      "avg_buy_price": 274.134812,
+      "avg_sell_price": 890.1748848920862,
+      "symbol_total_qty": 195100,
+      "symbol_total_amt": 166960112.17000002,
+      "broker_participation_pct": 5.412608918503332,
+      "direction": "Distributing"
     },
     {
       "symbol": "STC",
-      "net_qty": 10
+      "buy_qty": 0.0,
+      "buy_amt": 0.0,
+      "buy_trades": 0.0,
+      "sell_qty": 10,
+      "sell_amt": 7984.16,
+      "sell_trades": 1,
+      "net_qty": -10.0,
+      "net_amt": -7984.16,
+      "avg_buy_price": null,
+      "avg_sell_price": 798.4159999999999,
+      "symbol_total_qty": 145130,
+      "symbol_total_amt": 126815482.51,
+      "broker_participation_pct": 0.006890374147316199,
+      "direction": "Distributing"
     }
   ],
   "top_counterparties": [
     {
       "broker": 50,
-      "qty": 5500
+      "quantity": 5500,
+      "amount": 1679072.6400000001,
+      "relationship": "30 \u2194 50"
     },
     {
       "broker": 13,
-      "qty": 5500
+      "quantity": 5500,
+      "amount": 3351685.69,
+      "relationship": "30 \u2194 13"
     },
     {
       "broker": 27,
-      "qty": 5010
-    },
-    {
-      "broker": 22,
-      "qty": 5000
-    },
-    {
-      "broker": 1,
-      "qty": 5000
-    },
-    {
-      "broker": 57,
-      "qty": 5000
-    },
-    {
-      "broker": 7,
-      "qty": 5000
-    },
-    {
-      "broker": 28,
-      "qty": 5000
+      "quantity": 5010,
+      "amount": 5769119.25,
+      "relationship": "30 \u2194 27"
     },
     {
       "broker": 20,
-      "qty": 5000
+      "quantity": 5000,
+      "amount": 6838114.57,
+      "relationship": "30 \u2194 20"
+    },
+    {
+      "broker": 28,
+      "quantity": 5000,
+      "amount": 5501879.24,
+      "relationship": "30 \u2194 28"
+    },
+    {
+      "broker": 22,
+      "quantity": 5000,
+      "amount": 4585138.18,
+      "relationship": "30 \u2194 22"
+    },
+    {
+      "broker": 1,
+      "quantity": 5000,
+      "amount": 1370674.06,
+      "relationship": "30 \u2194 1"
+    },
+    {
+      "broker": 57,
+      "quantity": 5000,
+      "amount": 6998614.16,
+      "relationship": "30 \u2194 57"
+    },
+    {
+      "broker": 7,
+      "quantity": 5000,
+      "amount": 5839247.05,
+      "relationship": "30 \u2194 7"
+    },
+    {
+      "broker": 56,
+      "quantity": 1100,
+      "amount": 789785.9099999999,
+      "relationship": "30 \u2194 56"
     },
     {
       "broker": 17,
-      "qty": 1100
+      "quantity": 1100,
+      "amount": 449169.13999999996,
+      "relationship": "30 \u2194 17"
+    },
+    {
+      "broker": 29,
+      "quantity": 1000,
+      "amount": 579730.4,
+      "relationship": "30 \u2194 29"
+    },
+    {
+      "broker": 48,
+      "quantity": 1000,
+      "amount": 624593.77,
+      "relationship": "30 \u2194 48"
+    },
+    {
+      "broker": 44,
+      "quantity": 600,
+      "amount": 273722.93,
+      "relationship": "30 \u2194 44"
+    },
+    {
+      "broker": 18,
+      "quantity": 600,
+      "amount": 327386.9,
+      "relationship": "30 \u2194 18"
     }
   ],
-  "exposure": []
+  "largest_trades": [
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-131",
+      "symbol": "GBIME",
+      "side": "BUY",
+      "counterparty_broker": 57,
+      "quantity": 5000,
+      "rate": 1399.72,
+      "amount": 6998614.16
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-SHL-27",
+      "symbol": "SHL",
+      "side": "BUY",
+      "counterparty_broker": 20,
+      "quantity": 5000,
+      "rate": 1367.62,
+      "amount": 6838114.57
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HRL-0",
+      "symbol": "HRL",
+      "side": "BUY",
+      "counterparty_broker": 7,
+      "quantity": 5000,
+      "rate": 1167.85,
+      "amount": 5839247.05
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HDL-49",
+      "symbol": "HDL",
+      "side": "SELL",
+      "counterparty_broker": 27,
+      "quantity": 5000,
+      "rate": 1152.28,
+      "amount": 5761389.55
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-UPPER-74",
+      "symbol": "UPPER",
+      "side": "BUY",
+      "counterparty_broker": 28,
+      "quantity": 5000,
+      "rate": 1100.38,
+      "amount": 5501879.24
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-69",
+      "symbol": "NABIL",
+      "side": "SELL",
+      "counterparty_broker": 22,
+      "quantity": 5000,
+      "rate": 917.03,
+      "amount": 4585138.18
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HRL-122",
+      "symbol": "HRL",
+      "side": "BUY",
+      "counterparty_broker": 13,
+      "quantity": 5000,
+      "rate": 529.17,
+      "amount": 2645834.03
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-120",
+      "symbol": "NABIL",
+      "side": "BUY",
+      "counterparty_broker": 1,
+      "quantity": 5000,
+      "rate": 274.13,
+      "amount": 1370674.06
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NTC-77",
+      "symbol": "NTC",
+      "side": "SELL",
+      "counterparty_broker": 50,
+      "quantity": 5000,
+      "rate": 239.95,
+      "amount": 1199730.31
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HDL-95",
+      "symbol": "HDL",
+      "side": "BUY",
+      "counterparty_broker": 21,
+      "quantity": 500,
+      "rate": 1451.73,
+      "amount": 725863.39
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-UPPER-14",
+      "symbol": "UPPER",
+      "side": "SELL",
+      "counterparty_broker": 13,
+      "quantity": 500,
+      "rate": 1411.7,
+      "amount": 705851.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HRL-134",
+      "symbol": "HRL",
+      "side": "SELL",
+      "counterparty_broker": 48,
+      "quantity": 1000,
+      "rate": 624.59,
+      "amount": 624593.77
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-SHL-0",
+      "symbol": "SHL",
+      "side": "BUY",
+      "counterparty_broker": 29,
+      "quantity": 1000,
+      "rate": 579.73,
+      "amount": 579730.4
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-UPPER-156",
+      "symbol": "UPPER",
+      "side": "SELL",
+      "counterparty_broker": 45,
+      "quantity": 500,
+      "rate": 1041.72,
+      "amount": 520858.89
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-SHL-30",
+      "symbol": "SHL",
+      "side": "SELL",
+      "counterparty_broker": 50,
+      "quantity": 500,
+      "rate": 958.68,
+      "amount": 479342.33
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-27",
+      "symbol": "GBIME",
+      "side": "SELL",
+      "counterparty_broker": 17,
+      "quantity": 1000,
+      "rate": 417.46,
+      "amount": 417456.66
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HRL-131",
+      "symbol": "HRL",
+      "side": "BUY",
+      "counterparty_broker": 56,
+      "quantity": 500,
+      "rate": 791.8,
+      "amount": 395898.72
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-NABIL-175",
+      "symbol": "NABIL",
+      "side": "SELL",
+      "counterparty_broker": 25,
+      "quantity": 500,
+      "rate": 634.58,
+      "amount": 317290.93
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-HRL-161",
+      "symbol": "HRL",
+      "side": "BUY",
+      "counterparty_broker": 56,
+      "quantity": 500,
+      "rate": 605.68,
+      "amount": 302837.63
+    },
+    {
+      "transaction_no": "TXN-2026-05-12-GBIME-79",
+      "symbol": "GBIME",
+      "side": "SELL",
+      "counterparty_broker": 18,
+      "quantity": 500,
+      "rate": 513.79,
+      "amount": 256893.6
+    }
+  ],
+  "flags": [
+    "Net accumulation"
+  ]
 }
