@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, TrendingUp, TrendingDown, Users, AlertTriangle } from "lucide-react";
+import { Card, MetricCard, PageHeader, LoadingState, EmptyState } from '../components/ui';
 
 export function BrokerDetail() {
   const { brokerId } = useParams();
@@ -23,22 +24,22 @@ export function BrokerDetail() {
 
   if (error) {
     return (
-      <div className="text-center py-32 animate-in fade-in duration-500">
-        <div className="bg-red-500/10 text-red-500 inline-flex p-4 rounded-full mb-4">
-          <AlertTriangle className="w-8 h-8" />
+      <div className="max-w-3xl mx-auto mt-12">
+        <EmptyState 
+          icon={<AlertTriangle />}
+          title="Data Unavailable"
+          description={error || "Could not find intelligence for this broker today."}
+        />
+        <div className="text-center mt-4">
+          <Link to="/brokers" className="text-blue-400 hover:text-blue-300 font-bold transition-colors inline-flex items-center">
+            <ArrowLeft className="w-4 h-4 mr-1" /> Back to Broker Intelligence
+          </Link>
         </div>
-        <h2 className="text-2xl font-bold text-white mb-2">Data Unavailable</h2>
-        <p className="text-gray-400 mb-6">{error || "Could not find intelligence for this broker today."}</p>
-        <Link to="/brokers" className="text-blue-400 hover:text-blue-300 font-bold transition-colors flex items-center justify-center">
-          <ArrowLeft className="w-4 h-4 mr-1" /> Back to Broker Intelligence
-        </Link>
       </div>
     );
   }
 
-  if (!data) {
-    return <div className="text-center py-32 text-gray-400 animate-pulse">Loading broker detail...</div>;
-  }
+  if (!data) return <LoadingState text="Loading broker detail..." />;
 
   const summary = data.summary || {};
 
@@ -49,48 +50,35 @@ export function BrokerDetail() {
         Back to Broker Intelligence
       </Link>
 
-      <div className="glass-morphism rounded-3xl p-8 border border-white/5 relative overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-10">
-          <div>
-            <div className="flex items-center space-x-4 mb-2">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center border border-blue-500/20 shadow-[inset_0_0_20px_rgba(59,130,246,0.2)]">
-                <span className="text-2xl font-black text-blue-400">B{data.broker}</span>
-              </div>
-              <div>
-                <h2 className="text-3xl font-black text-white tracking-tight">Broker {data.broker}</h2>
-                <p className="text-gray-400 mt-1">
-                  Broker Channel Position • <span className="text-gray-300">{data.date}</span>
-                </p>
-              </div>
+      <PageHeader 
+        title={`Broker ${data.broker}`}
+        subtitle={`Broker Channel Position • ${data.date}`}
+        rightElement={
+          <div className="flex flex-col items-end">
+            <div className={`px-5 py-3 rounded-2xl border ${summary.total_net_qty >= 0 ? 'bg-emerald-500/5 border-emerald-500/10 text-emerald-400' : 'bg-rose-500/5 border-rose-500/10 text-rose-400'}`}>
+              <span className="text-[10px] uppercase font-bold block opacity-60 leading-none mb-1">Total Net Flow</span>
+              <span className="text-2xl font-black leading-none tracking-tight">
+                {summary.total_net_qty > 0 ? '+' : ''}{Number(summary.total_net_qty).toLocaleString()} <span className="text-sm opacity-60">QTY</span>
+              </span>
             </div>
-            {data.flags && data.flags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-4 ml-20">
-                {data.flags.map((flag, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                    {flag}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
-          
-          <div className={`px-5 py-3 rounded-2xl border ${summary.total_net_qty >= 0 ? 'bg-emerald-500/5 border-emerald-500/10 text-emerald-400' : 'bg-rose-500/5 border-rose-500/10 text-rose-400'}`}>
-            <span className="text-[10px] uppercase font-bold block opacity-60 leading-none mb-1">Total Net Flow</span>
-            <span className="text-2xl font-black leading-none tracking-tight">
-              {summary.total_net_qty > 0 ? '+' : ''}{Number(summary.total_net_qty).toLocaleString()} <span className="text-sm opacity-60">QTY</span>
+        }
+      />
+      {data.flags && data.flags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-[-1rem] mb-4">
+          {data.flags.map((flag, idx) => (
+            <span key={idx} className="px-3 py-1 bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-full text-[10px] font-bold uppercase tracking-wider">
+              {flag}
             </span>
-          </div>
+          ))}
         </div>
+      )}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 relative z-10">
-          <Metric title="Total Buy Qty" value={summary.total_buy_qty} color="text-blue-400" />
-          <Metric title="Total Sell Qty" value={summary.total_sell_qty} color="text-rose-400" />
-          <Metric title="Buy Amount" value={`Rs. ${(summary.total_buy_amt / 1000000).toFixed(2)}M`} rawValue={true} />
-          <Metric title="Sell Amount" value={`Rs. ${(summary.total_sell_amt / 1000000).toFixed(2)}M`} rawValue={true} />
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 relative z-10">
+        <MetricCard title="Total Buy Qty" value={Number(summary.total_buy_qty || 0).toLocaleString()} colorClass="text-blue-400" />
+        <MetricCard title="Total Sell Qty" value={Number(summary.total_sell_qty || 0).toLocaleString()} colorClass="text-rose-400" />
+        <MetricCard title="Buy Amount" value={`Rs. ${(summary.total_buy_amt / 1000000).toFixed(2)}M`} colorClass="text-emerald-400" />
+        <MetricCard title="Sell Amount" value={`Rs. ${(summary.total_sell_amt / 1000000).toFixed(2)}M`} colorClass="text-amber-400" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -191,20 +179,9 @@ export function BrokerDetail() {
   );
 }
 
-function Metric({ title, value, rawValue, color }) {
-  return (
-    <div className="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 border border-white/5">
-      <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">{title}</div>
-      <div className={`text-2xl font-black ${color || 'text-white'}`}>
-        {rawValue ? value : Number(value || 0).toLocaleString()}
-      </div>
-    </div>
-  );
-}
-
 function Section({ title, subtitle, children, icon }) {
   return (
-    <div className="glass-morphism rounded-3xl border border-white/5 overflow-hidden flex flex-col h-full">
+    <Card noPadding className="flex flex-col h-full">
       <div className="px-6 py-5 border-b border-white/5 bg-white/[0.02]">
         <div className="flex items-center gap-3">
           {icon && React.cloneElement(icon, { className: "w-5 h-5 text-blue-400" })}
@@ -217,7 +194,7 @@ function Section({ title, subtitle, children, icon }) {
       <div className="p-6 flex-grow">
         {children}
       </div>
-    </div>
+    </Card>
   );
 }
 
